@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DR K's Ed-Venture &amp; E-Career Lab v8.0 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
+  <meta name="description" content="이커리어(E-Career) 6단계와 사회정서학습(SEL)으로 설계한 연간 32차시 진로·기업가정신 수업, 실습 스튜디오, 성찰·상담 통합 플랫폼" />
+  <script id="baked">window.__BAKED_LINKS__ = null; window.__BAKED_GAS_URL__ = ""; window.__BAKED_LOCKED__ = false;</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <script>
+    if (window.tailwind) tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Pretendard', 'Noto Sans KR', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'] } } }
+    };
+  </script>
+  <style>
+    :root { --ink: #0F172A; --canvas: #F8FAFC; --card: #FFFFFF; --line: #E2E8F0; --muted: #475569; }
+    html { scroll-padding-top: 112px; }
+    body { background: var(--canvas); color: var(--ink); font-family: Pretendard, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; word-break: keep-all; overflow-wrap: anywhere; -webkit-font-smoothing: antialiased; }
+    [hidden] { display: none !important; }
+    .num { font-variant-numeric: tabular-nums; }
+    /* 모바일 1열 그리드에서 긴 한 줄 텍스트가 칸을 밀어내지 않도록 기본 열 폭을 고정 */
+    :where(.grid) { grid-template-columns: minmax(0, 1fr); }
+
+    /* ---------- 공통 컴포넌트 ---------- */
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 1px 2px rgba(15, 23, 42, .04); }
+    .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 12px; font-weight: 700; font-size: 13px; line-height: 1; padding: 10px 14px; transition: background-color .15s, color .15s, border-color .15s, transform .1s; cursor: pointer; white-space: nowrap; }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible, .tabbtn:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #34D399; outline-offset: 2px; }
+    .btn-ink { background: #0F172A; color: #FFFFFF; }
+    .btn-ink:hover { background: #1E293B; }
+    .btn-emerald { background: #047857; color: #FFFFFF; }
+    .btn-emerald:hover { background: #065F46; }
+    .btn-ghost { background: #FFFFFF; color: #0F172A; border: 1px solid #CBD5E1; }
+    .btn-ghost:hover { background: #F1F5F9; }
+    .btn-sm { padding: 8px 10px; font-size: 12px; border-radius: 10px; }
+    .btn svg, .tabbtn svg { width: 15px; height: 15px; flex: none; }
+    .tabbtn { cursor: pointer; transition: background-color .15s, color .15s, border-color .15s; }
+    .inp { width: 100%; background: #FFFFFF; color: #0F172A; border: 1px solid #CBD5E1; border-radius: 12px; padding: 10px 12px; font-size: 14px; line-height: 1.5; }
+    .inp::placeholder { color: #64748B; }
+    .lbl { display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px; }
+    .out { width: 100%; background: #0F172A; color: #E2E8F0; border-radius: 14px; padding: 14px; font-size: 13px; line-height: 1.7; white-space: pre-wrap; border: 1px solid #1E293B; }
+    textarea.out { resize: vertical; font-family: inherit; }
+    input[type=range] { width: 100%; accent-color: #059669; height: 24px; }
+    .rule { border-bottom: 1px dashed #94A3B8; height: 34px; }
+
+    /* ---------- 히어로 ---------- */
+    .hero { background: radial-gradient(900px 480px at 85% -10%, rgba(16, 185, 129, .22), transparent 60%), radial-gradient(700px 420px at 0% 110%, rgba(99, 102, 241, .28), transparent 60%), #0B1120; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(148, 163, 184, .07) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, .07) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse at 50% 30%, #000 30%, transparent 75%); pointer-events: none; }
+    .glass { background: rgba(15, 23, 42, .72); border: 1px solid rgba(148, 163, 184, .22); border-radius: 22px; }
+    .navlink { position: relative; padding: 10px 12px; font-size: 13px; font-weight: 600; color: #CBD5E1; white-space: nowrap; border-radius: 10px; }
+    .navlink:hover { color: #FFFFFF; background: rgba(255, 255, 255, .06); }
+    .navlink.on { color: #FFFFFF; }
+    .navlink.on::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; border-radius: 2px; background: #34D399; }
+    .noscroll::-webkit-scrollbar { display: none; } .noscroll { scrollbar-width: none; }
+
+    /* ---------- 모달 ---------- */
+    .modal { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(2, 6, 23, .72); }
+    .modal.hidden { display: none; }
+    .modal-box { background: #FFFFFF; color: #0F172A; border-radius: 22px; width: 100%; max-height: 92vh; overflow: auto; box-shadow: 0 30px 80px rgba(2, 6, 23, .45); }
+    #mfCircle { width: 150px; height: 150px; border-radius: 9999px; background: radial-gradient(circle at 35% 30%, #6EE7B7, #059669); transform: scale(.6); transition: transform 4s ease-in-out; box-shadow: 0 0 0 14px rgba(16, 185, 129, .15), 0 0 0 30px rgba(16, 185, 129, .08); }
+    #mfCircle.inhale, #mfCircle.hold { transform: scale(1); }
+    #mfCircle.exhale { transform: scale(.6); }
+    #toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 80; background: #0F172A; color: #FFFFFF; border: 1px solid #334155; padding: 12px 18px; border-radius: 14px; font-size: 14px; font-weight: 600; max-width: 92vw; box-shadow: 0 12px 30px rgba(2, 6, 23, .35); }
+    #toast.show { opacity: 1; transform: translate(-50%, 0); }
+    body.editing [contenteditable=true] { outline: 2px dashed #F59E0B; outline-offset: 3px; border-radius: 6px; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+    /* ---------- 전자칠판 다크모드: 글씨·서피스 동시 전환 ---------- */
+    body.board-dark { --canvas: #0B1120; --card: #111827; --line: #26334D; --muted: #CBD5E1; background: #0B1120; color: #F8FAFC; }
+    body.board-dark .card, body.board-dark .modal-box { background: #111827; border-color: #26334D; color: #F8FAFC; }
+    body.board-dark .bg-white, body.board-dark .bg-slate-50, body.board-dark .bg-slate-100 { background-color: #1E293B !important; border-color: #334155 !important; }
+    body.board-dark .bg-emerald-50 { background-color: rgba(6, 78, 59, .45) !important; border-color: rgba(52, 211, 153, .35) !important; }
+    body.board-dark .bg-indigo-50 { background-color: rgba(49, 46, 129, .5) !important; border-color: rgba(129, 140, 248, .4) !important; }
+    body.board-dark .bg-amber-50 { background-color: rgba(120, 53, 15, .45) !important; border-color: rgba(251, 191, 36, .4) !important; }
+    body.board-dark .bg-rose-50 { background-color: rgba(136, 19, 55, .45) !important; border-color: rgba(251, 113, 133, .4) !important; }
+    body.board-dark .bg-sky-50 { background-color: rgba(12, 74, 110, .5) !important; border-color: rgba(56, 189, 248, .4) !important; }
+    body.board-dark .bg-violet-50 { background-color: rgba(76, 29, 149, .45) !important; border-color: rgba(167, 139, 250, .4) !important; }
+    body.board-dark .text-slate-900, body.board-dark .text-slate-800 { color: #F8FAFC !important; }
+    body.board-dark .text-slate-700, body.board-dark .text-slate-600 { color: #CBD5E1 !important; }
+    body.board-dark .text-slate-500 { color: #A8B5C8 !important; }
+    body.board-dark .text-emerald-700, body.board-dark .text-emerald-800 { color: #6EE7B7 !important; }
+    body.board-dark .text-indigo-700, body.board-dark .text-indigo-800 { color: #C7D2FE !important; }
+    body.board-dark .text-amber-700, body.board-dark .text-amber-800 { color: #FCD34D !important; }
+    body.board-dark .text-rose-700, body.board-dark .text-rose-800 { color: #FDA4AF !important; }
+    body.board-dark .text-sky-700, body.board-dark .text-sky-800 { color: #7DD3FC !important; }
+    body.board-dark .text-violet-700, body.board-dark .text-violet-800 { color: #C4B5FD !important; }
+    body.board-dark .border-slate-200, body.board-dark .border-slate-300 { border-color: #334155 !important; }
+    body.board-dark .inp, body.board-dark input[type=text], body.board-dark input[type=date], body.board-dark input[type=url], body.board-dark input[type=number], body.board-dark select, body.board-dark textarea:not(.out) { background: #0F172A !important; color: #F8FAFC !important; border-color: #475569 !important; }
+    body.board-dark .inp::placeholder { color: #94A3B8; }
+    body.board-dark .lbl { color: #CBD5E1; }
+    body.board-dark .btn-ghost { background: #1E293B; color: #F8FAFC; border-color: #475569; }
+    body.board-dark .btn-ghost:hover { background: #334155; }
+    body.board-dark .btn-ink { background: #34D399; color: #052E1B; }
+    body.board-dark .btn-ink:hover { background: #6EE7B7; }
+    body.board-dark .rule { border-color: #64748B; }
+    /* 활성 탭: 칠판모드에서는 남색 대신 밝은 에메랄드 + 짙은 글씨로 대비 확보 */
+    body.board-dark .is-active { background-color: #34D399 !important; border-color: #34D399 !important; color: #052E1B !important; }
+    body.board-dark .is-active * { color: #052E1B !important; }
+    body.board-dark .is-active .sub-badge { background-color: rgba(5, 46, 27, .14) !important; }
+
+    /* ---------- A4 활동지 인쇄 ---------- */
+    #printArea { display: none; }
+    @media print {
+      @page { size: A4; margin: 16mm; }
+      body { background: #FFFFFF !important; color: #000000 !important; }
+      body > *:not(#printArea) { display: none !important; }
+      #printArea { display: block !important; color: #000; font-size: 12pt; line-height: 1.7; }
+      #printArea * { color: #000 !important; background: transparent !important; }
+      #printArea .ws-box { border: 1px solid #000; padding: 10pt; border-radius: 6pt; margin-top: 10pt; }
+      #printArea .rule { border-bottom: 1px dashed #555; height: 26pt; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#curriculum" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-slate-900 focus:px-3 focus:py-2 focus:rounded-lg">본문(수업 허브)으로 건너뛰기</a>
+
+  <!-- ==================== 상단 고정 헤더 ==================== -->
+  <header class="sticky top-0 z-40 bg-[#0B1120] border-b border-slate-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-14 flex items-center justify-between gap-3">
+        <a href="#top" class="flex items-center gap-3 min-w-0">
+          <span class="flex-none w-9 h-9 rounded-xl bg-emerald-400 text-[#052E1B] grid place-items-center text-[11px] font-black tracking-tight">DR.K</span>
+          <span class="min-w-0">
+            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v8.0</span></span>
+            <span class="hidden sm:block text-[11px] text-slate-300 truncate">이커리어 6단계 × SEL · 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</span>
+          </span>
+        </a>
+        <div class="flex items-center gap-1.5 flex-none">
+          <button type="button" onclick="openMindful()" class="btn btn-sm bg-emerald-400 text-[#052E1B] hover:bg-emerald-300" title="1분 마음챙김 루틴"><span aria-hidden="true">🧘</span><span class="hidden md:inline">1분 마음챙김 루틴</span></button>
+          <button type="button" onclick="openQr()" class="btn btn-sm bg-slate-800 text-white border border-slate-600 hover:bg-slate-700" title="수업 QR"><span aria-hidden="true">📱</span><span class="hidden md:inline">수업 QR</span></button>
+          <button type="button" onclick="toggleDark()" id="darkBtn" aria-pressed="false" class="btn btn-sm bg-slate-800 text-white border border-slate-600 hover:bg-slate-700" title="전자칠판 눈부심 방지 모드"><span aria-hidden="true">🌙</span><span class="hidden md:inline">칠판모드</span></button>
+          <button type="button" onclick="adminButton()" id="adminBtn" class="btn btn-sm bg-amber-300 text-[#3B2A00] hover:bg-amber-200" title="교사 관제실"><span aria-hidden="true" id="adminBtnIco">🔒</span><span class="hidden md:inline">교사 관제실</span></button>
+        </div>
+      </div>
+      <nav id="mainNav" aria-label="빠른 이동" class="flex items-center gap-0.5 overflow-x-auto noscroll -mx-2 pb-1">
+        <a class="navlink" href="#profile">프로필 &amp; 철학</a>
+        <a class="navlink" href="#map">이커리어 6단계×SEL 맵</a>
+        <a class="navlink" href="#curriculum">연간 32차시 수업 허브</a>
+        <a class="navlink" href="#workbench">실습 스튜디오·연구모형</a>
+        <a class="navlink" href="#showcase">학생 쇼케이스</a>
+        <a class="navlink" href="#gift">선물 꾸러미</a>
+        <a class="navlink" href="#reflection">자기주도 성찰</a>
+        <a class="navlink" href="#counseling">💬 진로·학부모 상담센터</a>
+        <a class="navlink" href="#admin-panel" id="navAdmin" hidden>⚙️ 교사 관제실</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 히어로 ==================== -->
+    <section id="top" class="hero text-white">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <div class="flex flex-wrap gap-2 text-xs font-bold">
+            <span class="px-3 py-1.5 rounded-full border border-emerald-400 text-emerald-300">E-Career 6-Stage</span>
+            <span class="px-3 py-1.5 rounded-full border border-indigo-300 text-indigo-200">CASEL SEL × Gemini Gems</span>
+            <span class="px-3 py-1.5 rounded-full border border-amber-300 text-amber-200">1학기 16 + 2학기 16 = 32차시</span>
+          </div>
+          <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">나를 아는 진로에서,<br /><span class="text-emerald-300">세상을 바꾸는 기업가정신</span>으로.</h1>
+          <p class="mt-5 text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">자기성찰에서 데모데이까지, <b class="text-white">이커리어(E-Career) 6단계</b>와 <b class="text-white">사회정서학습(SEL)</b>으로 학생이 스스로 진로를 설계하는 연간 32차시 수업·실습·성찰·상담 플랫폼입니다.</p>
+          <blockquote class="mt-7 border-l-4 border-amber-300 pl-5 py-1 max-w-2xl">
+            <p class="text-lg sm:text-xl font-bold text-amber-200 leading-snug">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
+            <footer class="mt-2 text-sm text-slate-300">수업 대원칙 · 권대륜(DR K), 장안여자중학교 미래진로부장</footer>
+          </blockquote>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#curriculum" class="btn bg-emerald-400 text-[#052E1B] hover:bg-emerald-300 text-sm px-5 py-3.5"><i data-lucide="book-open-check"></i>연간 32차시 수업 허브 열기</a>
+            <a href="#map" class="btn bg-white text-slate-900 hover:bg-slate-100 text-sm px-5 py-3.5"><i data-lucide="route"></i>이커리어 6단계 × SEL 맵</a>
+            <a href="#counseling" class="btn border border-slate-500 text-white hover:bg-slate-800 text-sm px-5 py-3.5"><i data-lucide="messages-square"></i>상담 신청</a>
+          </div>
+        </div>
+
+        <!-- 벤토: 6단계 요약 + 진도율 -->
+        <div class="lg:col-span-5">
+          <div class="glass p-5 sm:p-6">
+            <div class="flex items-center justify-between">
+              <span class="eyebrow text-emerald-300">E-Career 6-Stage Loop</span>
+              <span class="text-[11px] font-bold text-slate-300">단계를 누르면 맵으로 이동</span>
+            </div>
+            <div id="heroStages" data-dyn class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2.5"></div>
+            <div class="mt-4 rounded-2xl bg-slate-900 border border-slate-700 p-4">
+              <div class="flex items-end justify-between gap-3">
+                <div>
+                  <div class="text-xs font-bold text-slate-300">연간 32차시 이수 진도율</div>
+                  <div class="mt-1 text-3xl font-black num text-white"><span id="heroPct">0</span><span class="text-lg text-emerald-300">%</span></div>
+                </div>
+                <div class="text-right text-sm font-bold text-emerald-300 num"><span id="heroDone">0</span>/32차시 완료</div>
+              </div>
+              <div class="mt-3 h-2.5 rounded-full bg-slate-700 overflow-hidden" role="progressbar" aria-label="연간 이수 진도율" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="heroBarWrap">
+                <div id="heroBar" class="h-full rounded-full bg-emerald-400 transition-all duration-500" style="width:0%"></div>
+              </div>
+              <div id="heroNext" data-dyn class="mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative border-t border-slate-800">
+        <dl class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4 text-sm">
+          <div><dt class="text-slate-300">연간 교육과정</dt><dd class="mt-0.5 text-xl font-black num">32차시 <span class="text-sm font-semibold text-slate-300">· 6단계 나선형</span></dd></div>
+          <div><dt class="text-slate-300">교직 경력</dt><dd class="mt-0.5 text-xl font-black num">19년 <span class="text-sm font-semibold text-slate-300">· 2008년 임용, 연속 재직</span></dd></div>
+          <div><dt class="text-slate-300">장안여중 비즈쿨</dt><dd class="mt-0.5 text-xl font-black num">11년 연속 <span class="text-sm font-semibold text-slate-300">· 2016~2026</span></dd></div>
+          <div><dt class="text-slate-300">비즈쿨 성과평가</dt><dd class="mt-0.5 text-xl font-black num">‘탁월’ 통산 6회 <span class="text-sm font-semibold text-slate-300">· 2019, 2021~2025</span></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ==================== 1. 프로필 & 두 시선 ==================== -->
+    <section id="profile" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
+        <div>
+          <div class="eyebrow text-emerald-700">Section 01 · Director Profile</div>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">디렉터 프로필 &amp; 두 시선</h2>
+          <p class="mt-2 text-slate-600">교실의 실천과 교육행정 연구, 두 언어로 같은 수업을 설명합니다.</p>
+        </div>
+        <div class="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200 self-start" role="tablist" aria-label="언어 전환">
+          <button type="button" role="tab" id="langBtn-school" onclick="setLang('school')" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">🏫 학교 현장의 언어</button>
+          <button type="button" role="tab" id="langBtn-policy" onclick="setLang('policy')" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">🏛️ 교육행정·정책 연구의 언어</button>
+        </div>
+      </div>
+      <div id="langBanner" data-dyn class="mt-6 card p-5 sm:p-6 border-l-4" aria-live="polite"></div>
+
+      <div class="mt-6 grid lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+          <article class="card p-6 border-t-4 border-t-emerald-500">
+            <div class="flex items-center gap-2 text-emerald-700"><i data-lucide="school" class="w-5 h-5"></i><span class="eyebrow">현장 교육가</span></div>
+            <h3 class="mt-3 text-xl font-black text-slate-900">권대륜 <span class="text-slate-500 font-bold text-base">DR K</span></h3>
+            <p class="mt-1 text-sm font-semibold text-slate-700">화성 장안여자중학교 미래진로부장 · 2학년부장 · 교총분회장 · 친목회장</p>
+            <ul class="mt-4 space-y-2.5 text-sm text-slate-700 leading-relaxed">
+              <li><b class="text-slate-900">경력</b> — 2008년 임용 후 무휴직 19년 연속 재직 (삼괴고 12년·학생안전부장 4년 → 장안여중)</li>
+              <li><b class="text-slate-900">자격</b> — 중등 1급 정교사 2종 (진로진학상담 · 체육)</li>
+              <li><b class="text-slate-900">표창</b> — 중소벤처기업부 장관 표창(2025.10) · 경기도교육감 표창(2026.06)</li>
+              <li><b class="text-slate-900">선도교사</b> — AI 디지털 기반 교육 혁신 · 사회정서교육(SEL)</li>
+              <li><b class="text-slate-900">네트워크</b> — 아산 티처프러너 커뮤니티(EDventure) 팀장 · 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원 · 화성오산교육지원청 창업교육 활성화 TF 위원 · 경기도 진로진학교사 협의회 사무국 위원</li>
+              <li><b class="text-slate-900">2026 무대</b> — 청소년 비즈쿨 페스티벌(11.3~5, 청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장 · 화성 다가치 글로벌 창업 공유학교, 조잘조잘 스타트업 데모데이 총괄</li>
+            </ul>
+          </article>
+          <article class="card p-6 border-t-4 border-t-indigo-500">
+            <div class="flex items-center gap-2 text-indigo-700"><i data-lucide="graduation-cap" class="w-5 h-5"></i><span class="eyebrow">학술 연구자</span></div>
+            <h3 class="mt-3 text-xl font-black text-slate-900">교육행정 박사과정</h3>
+            <p class="mt-1 text-sm font-semibold text-slate-700">성균관대학교 일반대학원 교육학과 교육행정전공 (지도교수 배상훈)</p>
+            <ul class="mt-4 space-y-2.5 text-sm text-slate-700 leading-relaxed">
+              <li><b class="text-slate-900">학력</b> — 아주대 진로진학상담 석사 · 경희대 체육교육 석사 · 경희대 태권도학·스포츠경영학 학사</li>
+              <li><b class="text-slate-900">연구 모형</b> — 프로젝트 기반 기업가정신 교육(X) → 중학생 진로적응성(Y), ‘실수에 대한 건설적 태도(M)’의 매개효과와 ‘교사 지지(W)’의 조절된 매개효과 (Hayes PROCESS Macro Model 7)</li>
+              <li><b class="text-slate-900">조직 연구</b> — 소규모 학교의 영웅 없는 조직문화(Hero-less Culture)</li>
+              <li><b class="text-slate-900">정책 연구</b> — 세종특별자치시교육청 교사 연수 자료 개발 연구 공동연구원</li>
+              <li><b class="text-slate-900">저술</b> — 공저 『청소년 기업가정신 교과서』, 『세상을 바꾸는 기업가정신』 · 아산 티처프러너 6기 기업가정신 교육과정(공동 집필)</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- 대외 소개문 복사 키트 -->
+        <aside class="lg:col-span-5 card p-6 flex flex-col">
+          <div class="flex items-center justify-between gap-3">
+            <h3 class="text-lg font-black text-slate-900">대외 소개문 원클릭 복사 키트</h3>
+            <span id="bioLen" class="text-xs font-bold text-slate-500 num"></span>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-1 p-1 rounded-xl bg-slate-100" role="tablist" aria-label="소개문 종류">
+            <button type="button" id="bioTab-short" onclick="setBio('short')" class="tabbtn py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">250자 요약</button>
+            <button type="button" id="bioTab-talk" onclick="setBio('talk')" class="tabbtn py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">강연·좌장용</button>
+            <button type="button" id="bioTab-hwp" onclick="setBio('hwp')" class="tabbtn py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">HWP 개조식(□, ◦, -)</button>
+          </div>
+          <textarea id="bioBox" readonly rows="11" class="out mt-3 flex-1" aria-label="소개문"></textarea>
+          <button type="button" onclick="copyText(document.getElementById('bioBox').value,'소개문을 복사했습니다.')" class="btn btn-ink mt-3"><i data-lucide="copy"></i>소개문 복사</button>
+        </aside>
+      </div>
+
+      <!-- 두 시선 -->
+      <div class="mt-10">
+        <h3 class="text-xl font-black text-slate-900">두 시선 — 교사의 설계 의도 vs 아이들의 실제 반응</h3>
+        <div id="pvTabs" data-dyn class="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="두 시선 키워드"></div>
+        <div id="pvPair" data-dyn class="mt-4 grid md:grid-cols-2 gap-5" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. 이커리어 6단계 × SEL 맵 ==================== -->
+    <section id="map" class="bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="eyebrow text-indigo-700">Section 02 · E-Career × CASEL SEL × Research Model</div>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">이커리어 6단계 × SEL × 연구 변인 매핑 맵</h2>
+        <p class="mt-2 text-slate-600">단계를 누르면 SEL 역량, 중점 활동, 교사 지지 발문, 박사과정 연구 변인과 단계별 Gemini Gem을 확인할 수 있습니다.</p>
+        <div id="stageStepper" data-dyn class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" role="tablist" aria-label="이커리어 6단계"></div>
+        <div id="stageDetail" data-dyn class="mt-6" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. 연간 32차시 수업 허브 ==================== -->
+    <section id="curriculum" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="eyebrow text-emerald-700">Section 03 · 32-Session Curriculum Hub</div>
+      <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">연간 32차시 수업 허브</h2>
+      <p class="mt-2 text-slate-600">차시마다 활동지·45분 지도안·Gems·슬라이드·Padlet을 바로 열고, 수업을 마치면 진도를 체크하세요.</p>
+      <div id="semTabs" data-dyn class="mt-8 grid md:grid-cols-3 gap-4" role="tablist" aria-label="학기 선택"></div>
+      <div class="mt-5 card p-4 flex flex-col lg:flex-row lg:items-center gap-3">
+        <div id="stageFilters" data-dyn class="flex flex-wrap gap-2 flex-1" role="tablist" aria-label="단계 필터"></div>
+        <div class="relative lg:w-80">
+          <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+          <input id="lessonSearch" type="search" oninput="renderLessons()" placeholder="차시명·SEL 역량·키워드 검색" class="inp pl-9" aria-label="차시 검색" />
+        </div>
+      </div>
+      <div id="lessonCount" class="mt-4 text-sm font-semibold text-slate-600 num" aria-live="polite"></div>
+      <div id="lessonGrid" data-dyn class="mt-3 grid lg:grid-cols-2 gap-5"></div>
+    </section>
+
+    <!-- ==================== 4. 실습 스튜디오 ==================== -->
+    <section id="workbench" class="bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="eyebrow text-amber-700">Section 04 · Live Workbench</div>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">글로벌 에듀테크 벤치마킹 라이브 실습 스튜디오</h2>
+        <p class="mt-2 text-slate-600">전자칠판에서 학생과 함께 입력하며 문제정의 → 린 캔버스 → 연구모형까지 이어지는 수업 도구입니다.</p>
+        <div class="mt-8 grid md:grid-cols-3 gap-3" role="tablist" aria-label="실습 도구">
+          <button type="button" id="wbTab-pov" onclick="setWb('pov')" class="tabbtn text-left p-4 rounded-2xl border" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-200 text-slate-900 hover:border-slate-400">
+            <span class="block text-sm font-extrabold">🌳 Stage 3: Why Tree &amp; POV·HMW 합성기</span>
+            <span class="block mt-1 text-xs font-medium" data-on="text-slate-200" data-off="text-slate-600">Stanford d.school 방식의 관점 정의문 자동 합성</span>
+          </button>
+          <button type="button" id="wbTab-lean" onclick="setWb('lean')" class="tabbtn text-left p-4 rounded-2xl border" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-200 text-slate-900 hover:border-slate-400">
+            <span class="block text-sm font-extrabold">🧩 Stage 4: 9-블록 소셜 린 캔버스 빌더</span>
+            <span class="block mt-1 text-xs font-medium" data-on="text-slate-200" data-off="text-slate-600">YEEP·아산 스쿨 벤치마킹, 수상작 프리셋 3종</span>
+          </button>
+          <button type="button" id="wbTab-phd" onclick="setWb('phd')" class="tabbtn text-left p-4 rounded-2xl border" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-200 text-slate-900 hover:border-slate-400">
+            <span class="block text-sm font-extrabold">📊 박사연구(PROCESS Model 7) &amp; SEL 역량 시뮬레이터</span>
+            <span class="block mt-1 text-xs font-medium" data-on="text-slate-200" data-off="text-slate-600">조절된 매개모형의 작동 원리를 슬라이더로 체험</span>
+          </button>
+        </div>
+
+        <!-- 탭 1: POV / HMW -->
+        <div id="wb-pov" class="mt-6 grid lg:grid-cols-2 gap-6">
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-black text-slate-900">Why Tree 입력</h3>
+              <div class="flex gap-2">
+                <button type="button" onclick="loadPov('market')" class="btn btn-ghost btn-sm">조암시장 예시</button>
+                <button type="button" onclick="loadPov('keycap')" class="btn btn-ghost btn-sm">병뚜껑 키캡 예시</button>
+              </div>
+            </div>
+            <div class="mt-4 space-y-4">
+              <div><label class="lbl" for="povPersona">① 페르소나 — 우리가 도울 한 사람</label><input id="povPersona" class="inp" oninput="updatePov()" placeholder="예) 조암시장에서 40년째 방앗간을 하시는 70대 사장님" /></div>
+              <div><label class="lbl" for="povPain">② 표면적 불편 — 관찰한 현상</label><input id="povPain" class="inp" oninput="updatePov()" placeholder="예) 시장을 찾는 젊은 손님이 눈에 띄게 줄었다" /></div>
+              <div><label class="lbl" for="povWhy1">③ Why 1 — 왜 그럴까?</label><input id="povWhy1" class="inp" oninput="updatePov()" /></div>
+              <div><label class="lbl" for="povWhy2">④ Why 2 — 그건 왜 그럴까?</label><input id="povWhy2" class="inp" oninput="updatePov()" /></div>
+              <div><label class="lbl" for="povWhy3">⑤ Why 3 — 근본 통찰</label><input id="povWhy3" class="inp" oninput="updatePov()" /></div>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-[#0F172A] text-white p-6 flex flex-col">
+            <span class="eyebrow text-emerald-300">실시간 합성 결과</span>
+            <h3 class="mt-3 text-sm font-bold text-slate-300">관점 정의문 (POV)</h3>
+            <p id="povOut" class="mt-1.5 text-lg font-bold leading-relaxed" aria-live="polite"></p>
+            <h3 class="mt-6 text-sm font-bold text-slate-300">HMW 질문 (How Might We)</h3>
+            <p id="hmwOut" class="mt-1.5 text-lg font-bold leading-relaxed text-amber-200" aria-live="polite"></p>
+            <div class="mt-auto pt-6 flex flex-wrap gap-2">
+              <button type="button" onclick="copyPov()" class="btn bg-white text-slate-900 hover:bg-slate-100"><i data-lucide="copy"></i>POV·HMW 복사</button>
+              <button type="button" onclick="povToLean()" class="btn bg-emerald-400 text-[#052E1B] hover:bg-emerald-300">린 캔버스로 연동 →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 탭 2: 린 캔버스 -->
+        <div id="wb-lean" class="mt-6" hidden>
+          <div class="card p-6">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h3 class="text-lg font-black text-slate-900">9-블록 소셜 린 캔버스</h3>
+                <p class="mt-1 text-sm text-slate-600">POV 탭에서 연동하면 ①·②·③ 블록이 자동으로 채워집니다.</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <select id="leanPreset" class="inp w-auto" aria-label="수상작 프리셋">
+                  <option value="">수상작 프리셋 선택</option>
+                  <option value="keycap">폐조개껍질 공룡알 굿즈·병뚜껑 키캡</option>
+                  <option value="market">조암시장 어르신 기억저장소</option>
+                  <option value="ai">농어촌 AI 스마트 공동물류</option>
+                </select>
+                <button type="button" onclick="applyLean()" class="btn btn-ghost">불러오기</button>
+                <button type="button" onclick="copyLean()" class="btn btn-ink"><i data-lucide="copy"></i>HWP 개조식 복사</button>
+              </div>
+            </div>
+            <div id="leanGrid" data-dyn class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+          </div>
+        </div>
+
+        <!-- 탭 3: PROCESS Model 7 -->
+        <div id="wb-phd" class="mt-6 grid lg:grid-cols-12 gap-6" hidden>
+          <div class="lg:col-span-5 card p-6">
+            <h3 class="text-lg font-black text-slate-900">조절된 매개모형 시뮬레이터</h3>
+            <p class="mt-2 text-xs leading-relaxed text-amber-800 bg-amber-50 border border-amber-200 rounded-xl p-3"><b>안내</b> — 아래 계수는 모형의 작동 방식을 설명하기 위한 <b>교육용 가상 값</b>이며, 실증 분석 결과가 아닙니다. 실제 추정치는 자료 수집·분석 후 교체합니다.</p>
+            <div class="mt-5 space-y-5">
+              <div>
+                <div class="flex justify-between text-sm font-bold text-slate-800"><label for="phdX">X · 이커리어 PBL 몰입도</label><span class="num text-emerald-700"><span id="phdXv">3.0</span>점</span></div>
+                <input id="phdX" type="range" min="1" max="5" step="0.1" value="3" oninput="drawPhd()" />
+              </div>
+              <div>
+                <div class="flex justify-between text-sm font-bold text-slate-800"><label for="phdW">W · 교사 지지</label><span class="num text-indigo-700"><span id="phdWv">3.0</span>점</span></div>
+                <input id="phdW" type="range" min="1" max="5" step="0.1" value="3" oninput="drawPhd()" />
+              </div>
+            </div>
+            <dl class="mt-5 grid grid-cols-2 gap-3 text-sm">
+              <div class="rounded-xl bg-rose-50 border border-rose-200 p-3"><dt class="text-xs font-bold text-rose-700">M · 실수에 대한 건설적 태도</dt><dd class="mt-1 text-2xl font-black num text-slate-900" id="phdM">-</dd></div>
+              <div class="rounded-xl bg-violet-50 border border-violet-200 p-3"><dt class="text-xs font-bold text-violet-700">Y · 진로적응성</dt><dd class="mt-1 text-2xl font-black num text-slate-900" id="phdY">-</dd></div>
+              <div class="rounded-xl bg-slate-50 border border-slate-200 p-3"><dt class="text-xs font-bold text-slate-700">조건부 간접효과 (a₁+a₃W)·b</dt><dd class="mt-1 text-xl font-black num text-slate-900" id="phdInd">-</dd></div>
+              <div class="rounded-xl bg-slate-50 border border-slate-200 p-3"><dt class="text-xs font-bold text-slate-700">조절된 매개지수 a₃·b</dt><dd class="mt-1 text-xl font-black num text-slate-900" id="phdIdx">-</dd></div>
+            </dl>
+            <p class="mt-4 text-xs text-slate-600 leading-relaxed num">M = 3.0 + 0.45(X−3) + 0.30(W−3) + 0.15(X−3)(W−3)<br />Y = 3.0 + 0.25(X−3) + 0.50(M−3) &nbsp;· 1~5점 척도, 평균 중심화</p>
+          </div>
+          <div class="lg:col-span-7 card p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-black text-slate-900">사전 진단 vs 32차시 이수 후 6대 역량 (시뮬레이션)</h3>
+              <div class="flex gap-4 text-xs font-bold text-slate-700"><span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-400"></span>사전</span><span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-600"></span>사후(예측)</span></div>
+            </div>
+            <canvas id="phdChart" class="mt-4 w-full" style="height:320px" role="img" aria-label="사전·사후 6대 역량 비교 막대그래프"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. 학생 쇼케이스 ==================== -->
+    <section id="showcase" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="eyebrow text-rose-700">Section 05 · Student Demo Day Showcase</div>
+      <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">학생 데모데이 쇼케이스 &amp; 시뮬레이터</h2>
+      <p class="mt-2 text-slate-600">교실에서 출발해 지역과 전국 무대로 확장된 6대 학생 프로젝트입니다. 자료 링크는 교사 관제실에서 연결합니다.</p>
+      <div id="caseGrid" data-dyn class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+      <div class="mt-8 grid lg:grid-cols-2 gap-6">
+        <!-- BEP 시뮬레이터 -->
+        <div class="card p-6">
+          <h3 class="text-lg font-black text-slate-900">♻️ 업사이클링 메이커 손익분기점(BEP) &amp; 탄소감축 시뮬레이터</h3>
+          <p class="mt-1 text-xs text-slate-600">가정: 병뚜껑 3개 = 키캡 1개 · 부스 고정비 <input id="bepFixed" type="number" min="0" step="1000" value="50000" oninput="runBep()" class="inp inline-block w-28 py-1 px-2 text-xs num" aria-label="부스 고정비(원)" />원 · 병뚜껑 1개(HDPE 약 3g)당 7.2gCO₂ 감축</p>
+          <div class="mt-5 space-y-4">
+            <div><div class="flex justify-between text-sm font-bold text-slate-800"><label for="bepCaps">폐자원 수거량</label><span class="num"><span id="bepCapsV"></span>개</span></div><input id="bepCaps" type="range" min="300" max="6000" step="100" value="1800" oninput="runBep()" /></div>
+            <div><div class="flex justify-between text-sm font-bold text-slate-800"><label for="bepCost">개당 원가</label><span class="num"><span id="bepCostV"></span>원</span></div><input id="bepCost" type="range" min="200" max="3000" step="100" value="1000" oninput="runBep()" /></div>
+            <div><div class="flex justify-between text-sm font-bold text-slate-800"><label for="bepPrice">부스 판매·체험가</label><span class="num"><span id="bepPriceV"></span>원</span></div><input id="bepPrice" type="range" min="500" max="6000" step="100" value="2000" oninput="runBep()" /></div>
+          </div>
+          <dl class="mt-5 grid grid-cols-2 gap-3">
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-3"><dt class="text-xs font-bold text-slate-600">제작 수량</dt><dd id="bepQty" class="mt-1 text-xl font-black num text-slate-900"></dd></div>
+            <div class="rounded-xl bg-amber-50 border border-amber-200 p-3"><dt class="text-xs font-bold text-amber-800">손익분기점(BEP)</dt><dd id="bepBep" class="mt-1 text-xl font-black num text-slate-900"></dd></div>
+            <div class="rounded-xl bg-emerald-50 border border-emerald-200 p-3"><dt class="text-xs font-bold text-emerald-800">사회적 순이익</dt><dd id="bepProfit" class="mt-1 text-xl font-black num text-slate-900"></dd></div>
+            <div class="rounded-xl bg-sky-50 border border-sky-200 p-3"><dt class="text-xs font-bold text-sky-800">탄소 감축량</dt><dd id="bepCo2" class="mt-1 text-xl font-black num text-slate-900"></dd></div>
+          </dl>
+          <button type="button" onclick="copyBep()" class="btn btn-ghost mt-4"><i data-lucide="copy"></i>시뮬레이션 결과 복사</button>
+        </div>
+
+        <!-- YEEP 모의 펀딩 -->
+        <div class="card p-6">
+          <h3 class="text-lg font-black text-slate-900">🪙 YEEP형 모의 크라우드 펀딩</h3>
+          <p class="mt-1 text-xs text-slate-600">가상 시드머니 1,000만 포인트를 세 팀에 나누어 투자하고 응원 심사평을 남깁니다.</p>
+          <div id="yeepRows" data-dyn class="mt-5 space-y-4"></div>
+          <div class="mt-4 flex items-center justify-between rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm font-bold text-slate-800"><span>남은 포인트</span><span class="num text-lg"><span id="yeepLeft"></span>만 P</span></div>
+          <label class="lbl mt-4" for="yeepNote">응원 심사평</label>
+          <textarea id="yeepNote" rows="2" class="inp" placeholder="예) 직접 인터뷰한 근거가 설득력 있었어요. 다음에는 비용 계산을 더 보여 주세요!"></textarea>
+          <button type="button" onclick="copyYeep()" class="btn btn-ink mt-3"><i data-lucide="copy"></i>Padlet 공유용 심사카드 복사</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. 선물 꾸러미 ==================== -->
+    <section id="gift" class="bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="eyebrow text-emerald-700">Section 06 · Open-Source Gift Box</div>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">동료 교사를 위한 오픈소스 선물 꾸러미 3종</h2>
+        <p class="mt-2 text-slate-600">한 번 누르면 클립보드로 복사됩니다. 한글(HWP)·Gemini Gems에 그대로 붙여 넣어 쓰세요.</p>
+        <div class="mt-8 grid md:grid-cols-3 gap-5">
+          <article class="card p-6 flex flex-col">
+            <span class="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 grid place-items-center"><i data-lucide="calendar-range" class="w-5 h-5"></i></span>
+            <h3 class="mt-4 text-base font-extrabold text-slate-900">① 연간 32차시 전체 진도표</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">1·2학기 32차시의 단계·SEL 역량·차시명을 HWP 기안문 서식(□, ◦, -)으로 정리한 진도표입니다.</p>
+            <button type="button" onclick="copyGift(1)" class="btn btn-ink mt-5"><i data-lucide="copy"></i>진도표 복사</button>
+          </article>
+          <article class="card p-6 flex flex-col">
+            <span class="w-11 h-11 rounded-2xl bg-sky-50 border border-sky-200 text-sky-700 grid place-items-center"><i data-lucide="wind" class="w-5 h-5"></i></span>
+            <h3 class="mt-4 text-base font-extrabold text-slate-900">② 6단계별 1분 마음챙김 교사 대본 6종</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">4초 들숨–4초 머금기–4초 날숨 호흡과 단계별 SEL 발문을 묶은 수업 도입 대본입니다.</p>
+            <button type="button" onclick="copyGift(2)" class="btn btn-ink mt-5"><i data-lucide="copy"></i>명상 대본 복사</button>
+          </article>
+          <article class="card p-6 flex flex-col">
+            <span class="w-11 h-11 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-700 grid place-items-center"><i data-lucide="gem" class="w-5 h-5"></i></span>
+            <h3 class="mt-4 text-base font-extrabold text-slate-900">③ Gemini Gems 시스템 프롬프트 세트</h3>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed flex-1">Gems의 [지침(Instructions)] 칸에 붙여 넣는 6단계 시스템 프롬프트와 학생용 시작 질문입니다.</p>
+            <button type="button" onclick="copyGift(3)" class="btn btn-ink mt-5"><i data-lucide="copy"></i>프롬프트 세트 복사</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. 자기주도 성찰 ==================== -->
+    <section id="reflection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="eyebrow text-sky-700">Section 07 · Student Reflection</div>
+      <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">학생 자기주도 성찰 &amp; 구글 스프레드시트 취합</h2>
+      <p class="mt-2 text-slate-600">제출한 성찰은 이 기기에 저장되고, 선생님이 연동을 설정한 경우 구글 스프레드시트로 함께 전송됩니다.</p>
+      <div class="mt-8 grid lg:grid-cols-2 gap-6">
+        <form class="card p-6" onsubmit="submitReflection(event)">
+          <h3 class="text-lg font-black text-slate-900">오늘의 성찰 쓰기</h3>
+          <div class="mt-4 grid sm:grid-cols-2 gap-4">
+            <div><label class="lbl" for="rfSid">학번 / 모둠명</label><input id="rfSid" class="inp" required placeholder="예) 20314 / 3모둠" /></div>
+            <div><label class="lbl" for="rfName">이름</label><input id="rfName" class="inp" required /></div>
+          </div>
+          <div class="mt-4"><label class="lbl" for="rfLesson">참여 차시</label><select id="rfLesson" data-dyn class="inp"></select></div>
+          <div class="mt-4">
+            <span class="lbl">SEL 마음날씨</span>
+            <div id="rfWeather" data-dyn class="flex flex-wrap gap-2" role="radiogroup" aria-label="마음날씨"></div>
+          </div>
+          <fieldset class="mt-4">
+            <legend class="lbl">이커리어 자기주도 체크</legend>
+            <div class="space-y-2 text-sm text-slate-800">
+              <label class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer"><input id="rfC1" type="checkbox" class="mt-0.5 w-4 h-4 accent-emerald-600" /><span>오늘 활동의 목표와 방법을 내가 스스로 정했다.</span></label>
+              <label class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer"><input id="rfC2" type="checkbox" class="mt-0.5 w-4 h-4 accent-emerald-600" /><span>관찰과 근거를 바탕으로 내 의견을 말했다.</span></label>
+              <label class="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer"><input id="rfC3" type="checkbox" class="mt-0.5 w-4 h-4 accent-emerald-600" /><span>실수를 발견했을 때 고쳐 볼 방법(피보팅)을 찾았다.</span></label>
+            </div>
+          </fieldset>
+          <div class="mt-4"><label class="lbl" for="rfText">오늘 배운 점 한 줄</label><textarea id="rfText" class="inp" rows="3" required placeholder="오늘 새롭게 알게 된 것, 잘 안 됐던 것, 다음에 바꿔 볼 것을 적어 보세요."></textarea></div>
+          <button type="submit" class="btn btn-emerald mt-5 w-full py-3.5 text-sm"><i data-lucide="send"></i>성찰 제출하기</button>
+        </form>
+
+        <div class="space-y-6">
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-black text-slate-900">스프레드시트 취합 &amp; 생기부 초안 합성</h3>
+              <span id="sheetBadge" class="text-xs font-bold px-2.5 py-1 rounded-full border"></span>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <button type="button" onclick="exportReflCsv()" class="btn btn-ghost">📥 성찰 전체 엑셀(CSV) 다운로드</button>
+              <button type="button" onclick="openSheet()" class="btn btn-ghost">⚙️ 구글시트 자동연동 설정</button>
+            </div>
+            <div class="mt-5">
+              <label class="lbl" for="rfStudentSel">👩‍🎓 학생별 누적 성찰 모아보기</label>
+              <select id="rfStudentSel" data-dyn class="inp" onchange="synthReflection()"></select>
+            </div>
+            <textarea id="rfSynth" readonly rows="8" class="out mt-3" aria-label="생기부 초안" placeholder="학생을 선택하면 누적 성찰을 바탕으로 진로·자율 특기사항 초안이 합성됩니다."></textarea>
+            <div class="mt-3 flex flex-wrap items-center justify-between gap-2">
+              <p class="text-xs text-slate-600">초안입니다. 교사의 직접 관찰 근거로 수정·보완한 뒤 NEIS에 입력하세요.</p>
+              <button type="button" onclick="copyText(document.getElementById('rfSynth').value,'생기부 초안을 복사했습니다.')" class="btn btn-ink btn-sm"><i data-lucide="copy"></i>초안 복사</button>
+            </div>
+          </div>
+          <div class="card p-6">
+            <div class="flex items-center justify-between gap-2">
+              <h3 class="text-base font-extrabold text-slate-900">최근 성찰 기록 <span id="rfCount" class="text-slate-500 num"></span></h3>
+              <button type="button" onclick="clearReflections()" class="text-xs font-bold text-rose-700 underline underline-offset-2">이 기기 기록 전체 삭제</button>
+            </div>
+            <div id="rfList" data-dyn class="mt-3 space-y-2 max-h-72 overflow-auto"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. 상담 센터 ==================== -->
+    <section id="counseling" class="bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="eyebrow text-amber-700">Section 08 · Counseling Center</div>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">학생·학부모 진로·진학 상담 센터 &amp; AI 사전 분석 스튜디오</h2>
+        <p class="mt-2 text-slate-600">신청서는 이 기기와 선생님의 구글 스프레드시트에만 저장됩니다. 사전 분석은 입력한 척도에 따른 규칙 기반 자동 분석이며, 외부 AI 서버로 전송되지 않습니다.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-2">
+          <div class="inline-flex p-1 rounded-2xl bg-slate-100 border border-slate-200" role="tablist" aria-label="상담 센터 보기">
+            <button type="button" id="cnsTab-form" onclick="setCnsTab('form')" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">📝 상담 신청서 작성 (학생·학부모용)</button>
+            <button type="button" id="cnsTab-board" onclick="setCnsTab('board')" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">📊 신청 데이터 취합 &amp; AI 사전 분석 보드</button>
+          </div>
+          <button type="button" onclick="exportCnsCsv()" class="btn btn-ghost">📥 상담대장 CSV 다운로드</button>
+        </div>
+
+        <!-- 서브뷰 1: 신청서 -->
+        <form id="cns-form" class="mt-6 grid lg:grid-cols-2 gap-6" onsubmit="submitCns(event)">
+          <div class="card p-6">
+            <div class="eyebrow text-slate-500">Step 1 · 기본 정보</div>
+            <div class="mt-3 grid grid-cols-2 gap-2" role="radiogroup" aria-label="신청 대상">
+              <button type="button" id="cnsTypeS" onclick="setCnsType('학생')" class="tabbtn py-3 rounded-xl border text-sm font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">👩‍🎓 학생 본인 신청</button>
+              <button type="button" id="cnsTypeP" onclick="setCnsType('학부모')" class="tabbtn py-3 rounded-xl border text-sm font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">👨‍👩‍👧 학부모 신청</button>
+            </div>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div><label class="lbl" for="cnsStudent">학번 · 학생 이름</label><input id="cnsStudent" class="inp" required placeholder="예) 20314 홍길동" /></div>
+              <div><label class="lbl" for="cnsContact">연락처 / 전달 방법</label><input id="cnsContact" class="inp" placeholder="예) 2학년 3반 교실로 전달" /></div>
+              <div><label class="lbl" for="cnsMethod">희망 상담 방식</label><select id="cnsMethod" class="inp"><option>미래진로실 대면상담</option><option>전화 상담</option><option>온라인 화상·채팅 상담</option></select></div>
+              <div><label class="lbl" for="cnsCat">희망 상담 영역</label><select id="cnsCat" data-dyn class="inp"></select></div>
+              <div><label class="lbl" for="cnsDate">희망 날짜</label><input id="cnsDate" type="date" class="inp" /></div>
+              <div><label class="lbl" for="cnsTime">희망 시간대</label><select id="cnsTime" class="inp"><option>점심시간 (12:40~13:20)</option><option>방과후 (15:30~16:20)</option><option>진로·자율 공강시간</option><option>학부모 저녁 전화 (17:00~)</option></select></div>
+            </div>
+          </div>
+          <div class="card p-6">
+            <div class="eyebrow text-slate-500">Step 2 · 상담 전 30초 사전 자기진단</div>
+            <div class="mt-4 space-y-5">
+              <div><div class="flex justify-between gap-3 text-sm font-bold text-slate-800"><label for="cnsClarity">① 현재 진로·진학 목표 확신도</label><span id="cnsClarityV" class="text-emerald-700 text-right"></span></div><input id="cnsClarity" type="range" min="1" max="5" step="1" value="3" oninput="cnsSliders()" /></div>
+              <div><div class="flex justify-between gap-3 text-sm font-bold text-slate-800"><label for="cnsStress">② 최근 학업·진로·관계 스트레스 지수</label><span id="cnsStressV" class="text-rose-700 text-right"></span></div><input id="cnsStress" type="range" min="1" max="5" step="1" value="3" oninput="cnsSliders()" /></div>
+              <div><span class="lbl">③ 상담 시급도</span><div id="cnsUrg" data-dyn class="grid sm:grid-cols-3 gap-2" role="radiogroup" aria-label="상담 시급도"></div></div>
+            </div>
+            <div class="eyebrow text-slate-500 mt-6">Step 3 · 사전 질문 및 고민</div>
+            <textarea id="cnsNote" class="inp mt-3" rows="4" required placeholder="상담에서 꼭 이야기하고 싶은 고민이나 질문을 자유롭게 적어 주세요."></textarea>
+            <button type="submit" class="btn btn-emerald mt-4 w-full py-3.5 text-sm"><i data-lucide="send"></i>상담 신청서 제출</button>
+          </div>
+        </form>
+
+        <!-- 서브뷰 2: 분석 보드 -->
+        <div id="cns-board" class="mt-6" hidden>
+          <div id="cnsKpi" data-dyn class="grid grid-cols-2 lg:grid-cols-4 gap-4"></div>
+          <div class="mt-6 grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-5 space-y-6">
+              <div class="card p-5">
+                <div id="cnsFilters" data-dyn class="flex flex-wrap gap-2" role="tablist" aria-label="신청서 필터"></div>
+                <div id="cnsList" data-dyn class="mt-4 space-y-2 max-h-96 overflow-auto"></div>
+              </div>
+              <div class="card p-5">
+                <h3 class="text-sm font-extrabold text-slate-900">영역별 신청 분포</h3>
+                <canvas id="cnsChart" class="mt-3 w-full" style="height:240px" role="img" aria-label="상담 영역별 신청 건수 막대그래프"></canvas>
+              </div>
+            </div>
+            <div id="cnsBrief" data-dyn class="lg:col-span-7" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. 교사 통합 관제실 (PIN) ==================== -->
+    <section id="admin-panel" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" hidden>
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+        <div>
+          <div class="eyebrow text-amber-700">Section 09 · Teacher Control Room</div>
+          <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">교사 통합 관제실</h2>
+          <p class="mt-2 text-slate-600">업무 보드, 생기부·HWP 변환기, 마스터 링크를 관리하고 배포용 파일을 내려받습니다.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" id="editBtn" onclick="toggleEdit()" class="btn btn-ghost">✏️ 화면 직접 편집 OFF</button>
+          <button type="button" onclick="exportHtml()" class="btn btn-emerald">💾 외부 배포용 index.html 다운로드</button>
+          <button type="button" onclick="lockAdmin()" class="btn btn-ink"><i data-lucide="lock"></i>잠그기</button>
+        </div>
+      </div>
+      <div class="mt-6 inline-flex flex-wrap p-1 rounded-2xl bg-slate-100 border border-slate-200" role="tablist" aria-label="관제실 탭">
+        <button type="button" id="adTab-1" onclick="setAd(1)" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">3대 트랙 업무 &amp; 아이젠하워</button>
+        <button type="button" id="adTab-2" onclick="setAd(2)" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">생기부 스탬프 &amp; HWP 3종</button>
+        <button type="button" id="adTab-3" onclick="setAd(3)" class="tabbtn px-4 py-2.5 rounded-xl text-sm font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">마스터 링크 제어판</button>
+      </div>
+
+      <!-- Tab 1 -->
+      <div id="ad-1" class="mt-6">
+        <div class="card p-5">
+          <form class="grid sm:grid-cols-2 lg:grid-cols-12 gap-3 items-end" onsubmit="addTask(event)">
+            <div class="lg:col-span-5"><label class="lbl" for="tkTitle">새 과제</label><input id="tkTitle" class="inp" required placeholder="과제명을 입력하세요" /></div>
+            <div class="lg:col-span-2"><label class="lbl" for="tkTrack">트랙</label><select id="tkTrack" class="inp"><option>학교·미래진로부</option><option>학술·박사연구</option><option>대외·네트워크</option></select></div>
+            <div class="lg:col-span-2"><label class="lbl" for="tkQuad">사분면</label><select id="tkQuad" class="inp"><option value="Q1">Q1 긴급·중요</option><option value="Q2">Q2 중요</option><option value="Q3">Q3 긴급</option><option value="Q4">Q4 기타</option></select></div>
+            <div class="lg:col-span-2"><label class="lbl" for="tkDue">마감일</label><input id="tkDue" type="date" class="inp" /></div>
+            <button type="submit" class="btn btn-ink lg:col-span-1 h-11">등록</button>
+          </form>
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-2">
+            <div class="inline-flex p-1 rounded-xl bg-slate-100" role="tablist" aria-label="보드 보기">
+              <button type="button" id="tkView-kanban" onclick="setTaskView('kanban')" class="tabbtn px-3 py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">3대 트랙 칸반</button>
+              <button type="button" id="tkView-matrix" onclick="setTaskView('matrix')" class="tabbtn px-3 py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">아이젠하워 4사분면</button>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" onclick="backupJson()" class="btn btn-ghost btn-sm"><i data-lucide="download"></i>JSON 백업</button>
+              <label class="btn btn-ghost btn-sm cursor-pointer"><i data-lucide="upload"></i>JSON 복원<input type="file" accept="application/json" class="hidden" onchange="restoreJson(this)" /></label>
+            </div>
+          </div>
+        </div>
+        <div id="taskBoard" data-dyn class="mt-5"></div>
+      </div>
+
+      <!-- Tab 2 -->
+      <div id="ad-2" class="mt-6 grid lg:grid-cols-2 gap-6" hidden>
+        <div class="card p-6">
+          <h3 class="text-lg font-black text-slate-900">30초 생기부 관찰기록 스탬프</h3>
+          <label class="lbl mt-4" for="recTrack">활동명</label>
+          <input id="recTrack" class="inp" value="이커리어 6단계 기반 진로·기업가정신 프로젝트 수업(32차시)" oninput="genRecord()" />
+          <div id="stampBox" data-dyn class="mt-4 grid sm:grid-cols-2 gap-2"></div>
+          <textarea id="recOut" readonly rows="8" class="out mt-4" aria-label="생기부 문장"></textarea>
+          <div class="mt-3 flex items-center justify-between gap-2"><span id="recLen" class="text-xs font-bold text-slate-600 num"></span><button type="button" onclick="copyText(document.getElementById('recOut').value,'생기부 문장을 복사했습니다.')" class="btn btn-ink btn-sm"><i data-lucide="copy"></i>문장 복사</button></div>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-black text-slate-900">HWP 행정 3종 변환기</h3>
+          <div class="mt-4 grid sm:grid-cols-2 gap-4">
+            <div><label class="lbl" for="hwName">사업명</label><input id="hwName" class="inp" value="2026학년도 이커리어 6단계·SEL 기반 진로·기업가정신 교육 운영" oninput="renderHwp()" /></div>
+            <div><label class="lbl" for="hwDate">일시</label><input id="hwDate" class="inp" value="[입력 필요]" oninput="renderHwp()" /></div>
+          </div>
+          <label class="lbl mt-4" for="hwBody">핵심 내용 (쉼표로 구분)</label>
+          <input id="hwBody" class="inp" value="1학기 16차시 진로·스타트업 기초 트랙 운영, 2학기 16차시 소셜벤처·메이커 실전 트랙 운영, 학기별 데모데이 및 성찰 포트폴리오 평가" oninput="renderHwp()" />
+          <div class="mt-4 grid grid-cols-3 gap-1 p-1 rounded-xl bg-slate-100" role="tablist" aria-label="HWP 서식">
+            <button type="button" id="hwTab-draft" onclick="setHwp('draft')" class="tabbtn py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">기안문(□ ◦ -)</button>
+            <button type="button" id="hwTab-notice" onclick="setHwp('notice')" class="tabbtn py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">교직원 공지</button>
+            <button type="button" id="hwTab-table" onclick="setHwp('table')" class="tabbtn py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">32차시 진도표</button>
+          </div>
+          <textarea id="hwOut" readonly rows="10" class="out mt-3" aria-label="HWP 변환 결과"></textarea>
+          <button type="button" onclick="copyText(document.getElementById('hwOut').value,'HWP 서식을 복사했습니다.')" class="btn btn-ink btn-sm mt-3"><i data-lucide="copy"></i>서식 복사</button>
+        </div>
+      </div>
+
+      <!-- Tab 3 -->
+      <div id="ad-3" class="mt-6" hidden>
+        <div id="linkPanel" data-dyn class="space-y-5"></div>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <button type="button" onclick="saveLinks()" class="btn btn-emerald px-5 py-3"><i data-lucide="save"></i>마스터 링크 전체 저장</button>
+          <p class="text-xs text-slate-600">https:// 로 시작하는 주소만 저장됩니다. 저장 후 ‘외부 배포용 index.html 다운로드’를 누르면 링크가 파일 안에 함께 담깁니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0B1120] text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
+      <div>
+        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v8.0</div>
+        <div class="mt-1">장안여자중학교 미래진로부 · 권대륜 (DR K)</div>
+      </div>
+      <p class="max-w-xl text-slate-300 leading-relaxed">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
+    </div>
+  </footer>
+
+  <!-- ==================== 모달 8종 ==================== -->
+  <!-- 1. 마음챙김 -->
+  <div id="m-mindful" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="mfTitle">
+    <div class="modal-box max-w-md p-7 text-center">
+      <div class="eyebrow text-emerald-700">SEL Routine</div>
+      <h3 id="mfTitle" class="mt-1 text-xl font-black text-slate-900">🧘 1분 마음챙김 루틴</h3>
+      <p class="mt-1 text-sm text-slate-600">4초 들숨 · 4초 머금기 · 4초 날숨 × 5회</p>
+      <div class="my-9 grid place-items-center h-48"><div id="mfCircle"></div></div>
+      <div id="mfPhase" class="text-2xl font-black text-slate-900" aria-live="assertive">준비</div>
+      <div class="mt-1 text-sm font-bold text-slate-600 num">남은 시간 <span id="mfSec">60</span>초</div>
+      <div class="mt-6 flex justify-center gap-2">
+        <button type="button" id="mfBtn" onclick="toggleMindful()" class="btn btn-emerald px-6 py-3">시작</button>
+        <button type="button" onclick="resetMindful()" class="btn btn-ghost px-5 py-3">처음부터</button>
+        <button type="button" onclick="closeModal()" class="btn btn-ghost px-5 py-3">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 2. QR -->
+  <div id="m-qr" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+    <div class="modal-box max-w-md p-7">
+      <h3 id="qrTitle" class="text-xl font-black text-slate-900">📱 수업 접속 QR</h3>
+      <p class="mt-1 text-sm text-slate-600">학생 기기 카메라로 스캔하면 아래 주소로 접속합니다.</p>
+      <div id="qrBox" class="mt-5 grid place-items-center bg-white rounded-2xl border border-slate-200 p-4 min-h-[280px]"></div>
+      <label class="lbl mt-4" for="qrUrl">접속 주소</label>
+      <input id="qrUrl" type="url" class="inp" oninput="drawQr()" placeholder="https://" />
+      <p id="qrMsg" class="mt-2 text-xs font-semibold text-amber-700"></p>
+      <div class="mt-5 flex justify-end gap-2">
+        <button type="button" onclick="copyText(document.getElementById('qrUrl').value,'주소를 복사했습니다.')" class="btn btn-ghost"><i data-lucide="copy"></i>주소 복사</button>
+        <button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 3. PIN -->
+  <div id="m-pin" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="pinTitle">
+    <div class="modal-box max-w-xs p-7 text-center">
+      <h3 id="pinTitle" class="text-xl font-black text-slate-900">🔒 교사 관제실 PIN</h3>
+      <p class="mt-1 text-sm text-slate-600">4자리 숫자를 입력하세요.</p>
+      <div id="pinDots" class="mt-5 flex justify-center gap-3" aria-hidden="true"></div>
+      <p id="pinMsg" class="mt-3 h-5 text-sm font-bold text-rose-700" aria-live="assertive"></p>
+      <div id="pinPad" class="mt-3 grid grid-cols-3 gap-2"></div>
+      <button type="button" onclick="closeModal()" class="btn btn-ghost mt-4 w-full">취소</button>
+    </div>
+  </div>
+  <!-- 4. Gems -->
+  <div id="m-gems" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="gmTitle">
+    <div class="modal-box max-w-2xl p-7">
+      <div class="eyebrow text-indigo-700" id="gmEyebrow">Gemini Gems AI Coach</div>
+      <h3 id="gmTitle" class="mt-1 text-xl font-black text-slate-900"></h3>
+      <p id="gmMeta" class="mt-2 text-sm text-slate-600 leading-relaxed"></p>
+      <label class="lbl mt-5" for="gmPrompt">학생용 질문 프롬프트 — [ ] 부분을 내 이야기로 바꿔서 붙여 넣으세요</label>
+      <textarea id="gmPrompt" rows="6" class="out"></textarea>
+      <div class="mt-5 flex flex-wrap justify-end gap-2">
+        <button type="button" onclick="copyText(document.getElementById('gmPrompt').value,'프롬프트를 복사했습니다. Gem 대화창에 붙여 넣으세요.')" class="btn btn-ghost"><i data-lucide="copy"></i>프롬프트 복사</button>
+        <a id="gmLaunch" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-emerald">🚀 Gem 새 창에서 열기 ↗</a>
+        <button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 5. 활동지 -->
+  <div id="m-ws" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="wsTitle">
+    <div class="modal-box max-w-3xl p-7">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div><div class="eyebrow text-emerald-700">Smart Worksheet Studio</div><h3 id="wsTitle" class="mt-1 text-xl font-black text-slate-900"></h3></div>
+        <div class="inline-flex p-1 rounded-xl bg-slate-100" role="tablist" aria-label="활동지 보기">
+          <button type="button" id="wsBtn-student" onclick="setWs('student')" class="tabbtn px-3 py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">학생 작성용 빈칸</button>
+          <button type="button" id="wsBtn-teacher" onclick="setWs('teacher')" class="tabbtn px-3 py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">교사 예시답안 가이드</button>
+        </div>
+      </div>
+      <div id="wsBody" class="mt-5"></div>
+      <div class="mt-5 flex flex-wrap justify-end gap-2">
+        <button type="button" onclick="printWs()" class="btn btn-emerald">🖨️ A4 활동지 인쇄</button>
+        <button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 6. 지도안 -->
+  <div id="m-plan" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="plTitle">
+    <div class="modal-box max-w-3xl p-7">
+      <div class="eyebrow text-amber-700">45분 교수·학습 과정안</div>
+      <h3 id="plTitle" class="mt-1 text-xl font-black text-slate-900"></h3>
+      <div id="plBody" class="mt-5"></div>
+      <div class="mt-5 flex flex-wrap justify-end gap-2">
+        <button type="button" onclick="copyPlan()" class="btn btn-emerald">📋 이 차시 지도안 HWP 개조식 복사</button>
+        <button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 7. 임베드 뷰어 -->
+  <div id="m-embed" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="emTitle">
+    <div class="modal-box max-w-6xl p-5">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h3 id="emTitle" class="text-lg font-black text-slate-900"></h3>
+        <div class="flex gap-2">
+          <a id="emOpen" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">새 창에서 열기 ↗</a>
+          <button type="button" onclick="closeModal()" class="btn btn-ink btn-sm">닫기</button>
+        </div>
+      </div>
+      <div class="mt-4 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100" style="aspect-ratio:16/9">
+        <iframe id="emFrame" title="라이브 임베드 뷰어" class="w-full h-full" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p class="mt-2 text-xs text-slate-600">화면이 비어 보이면 자료의 공유 설정(링크가 있는 모든 사용자 보기)을 확인하거나 ‘새 창에서 열기’를 이용하세요.</p>
+    </div>
+  </div>
+  <!-- 8. 구글시트 연동 -->
+  <div id="m-sheet" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="shTitle">
+    <div class="modal-box max-w-3xl p-7">
+      <h3 id="shTitle" class="text-xl font-black text-slate-900">⚙️ 구글 스프레드시트 자동연동 설정</h3>
+      <ol class="mt-3 space-y-1.5 text-sm text-slate-700 list-decimal pl-5 leading-relaxed">
+        <li>취합용 구글 스프레드시트를 열고 <b>[확장 프로그램] → [Apps Script]</b>를 누릅니다.</li>
+        <li>기존 코드를 지우고 아래 코드를 붙여 넣은 뒤 저장합니다.</li>
+        <li><b>[배포] → [새 배포] → 유형: 웹 앱</b>, 실행 사용자 ‘나’, 액세스 권한 ‘모든 사용자’로 배포합니다.</li>
+        <li>발급된 웹 앱 URL(…/exec)을 아래 칸에 붙여 넣고 저장합니다. <b>[성찰기록]</b>·<b>[상담신청]</b> 탭이 첫 전송 때 자동으로 만들어집니다.</li>
+      </ol>
+      <textarea id="gasCode" readonly rows="9" class="out mt-4 font-mono text-xs" aria-label="Apps Script 코드"></textarea>
+      <button type="button" onclick="copyText(document.getElementById('gasCode').value,'Apps Script 코드를 복사했습니다.')" class="btn btn-ghost btn-sm mt-2"><i data-lucide="copy"></i>doPost(e) 코드 복사</button>
+      <label class="lbl mt-5" for="gasUrl">웹 앱 URL</label>
+      <input id="gasUrl" type="url" class="inp" placeholder="https://script.google.com/macros/s/…/exec" />
+      <div class="mt-5 flex flex-wrap justify-end gap-2">
+        <button type="button" onclick="testGas()" class="btn btn-ghost">테스트 전송</button>
+        <button type="button" onclick="saveGas()" class="btn btn-emerald">웹 앱 URL 저장</button>
+        <button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="printArea"></div>
+
+  <script>
+const PERSPECTIVES = [{"tag":"#이커리어6단계","teacherTitle":"진로교사 권대륜의 설계 의도 (이커리어 6단계 × Gems)","teacherText":"진로 수업이 단순 직업 정보 탐색에 머물지 않도록, [1.자기성찰 → 2.타인공감 → 3.문제정의 → 4.아이디어 도출 → 5.실전구현 → 6.평가와 진화]의 6단계 이커리어(E-Career) 프레임워크와 맞춤형 Gemini Gems AI 코치를 결합해 1년 32차시 동안 학생 스스로 미래를 설계하게 돕습니다.","studentTitle":"학생들의 실제 반응 (수업 성찰 노트)","studentText":"“막연하게 ‘내 꿈이 뭐지?’ 고민할 때는 답답했는데, 이커리어 6단계를 따라 내가 좋아하는 것(Stage 1)부터 친구들의 불편(Stage 2)을 연결하고 Gems 코치와 대화하다 보니 내가 진짜 잘할 수 있는 일을 찾게 되었어요!”"},{"tag":"#실패해도괜찮아","teacherTitle":"연구자 권대륜의 다짐 (실수에 대한 건설적 태도)","teacherText":"박사학위 연구 변인인 ‘실수에 대한 건설적 태도’와 ‘교사 지지’를 교실에 그대로 녹여내어, 시제품이 부서지거나 예상과 다른 결과가 나왔을 때 이를 실패가 아닌 피보팅(Pivoting)의 데이터로 환영하는 문화를 만듭니다.","studentTitle":"학생들의 실제 반응 (데모데이 소감)","studentText":"“처음 기획한 아이디어가 친구들 인터뷰에서 반응이 별로라 속상했지만, 선생님께서 ‘레몬으로 레모네이드를 만들 기회’라고 격려해 주셔서 방향을 수정(피보팅)해 결국 데모데이에서 큰 박수를 받았어요.”"},{"tag":"#1분명상의힘","teacherTitle":"교사 권대륜의 다짐 (사회정서학습 · SEL 루틴)","teacherText":"매 차시 도입부 단 1분의 마음챙김 호흡 명상과 마음 날씨 체크인을 통해, 교실의 정서적 소란을 가라앉히고 서로의 의견을 비난 없이 경청하는 심리적 안전기지(Psychological Safety)를 구축합니다.","studentTitle":"학생들의 실제 반응 (교실 피드백)","studentText":"“수업 시작할 때 1분 동안 눈을 감고 호흡에 집중하면 조급했던 마음이 차분해지고, 모둠 활동할 때 친구의 말에 화내기보다 먼저 공감하며 듣게 됩니다.”"},{"tag":"#우리동네체인지메이커","teacherTitle":"교사 권대륜의 다짐 (학교에서 지역사회 소셜벤처로)","teacherText":"1학기에는 나와 교실의 문제를 해결하며 기초 체력을 기르고, 2학기에는 화성 지역사회(조암시장·궁평항·동아리 축제)로 시야를 넓혀 삶과 배움이 하나 되는 지역 연계 진로교육을 실천합니다.","studentTitle":"학생·동료 교원의 시선 (소셜벤처 & 비즈쿨)","studentText":"“교실에서 모은 플라스틱 병뚜껑이 축제 부스에서 멋진 키캡으로 재탄생하고, 조암시장 어르신들의 이야기를 기록하며 우리가 지금 당장 세상을 바꾸는 체인지메이커라는 자부심을 느꼈습니다.”"}];
+const STAGES = [{"stageNum":1,"code":"Stage 1","name":"자기성찰 (Self-Reflection)","engName":"Who Am I & Bird in Hand","selCompetency":"자기인식 (Self-Awareness)","selActivity":"1분 호흡 명상 & 나의 강점·흥미·가치관 감정 카드 체크인","theory":"이펙추에이션 손안의 새(Bird in Hand) & 진로 자기이해","phdVariable":"독립변인 도입: 자기주도성(Student Agency) 깨우기 & 교사 자율성 지지","scaffolding":"“거창한 스펙이 없어도 괜찮습니다. 지금 내가 좋아하는 것, 잘하는 것, 내 곁에 있는 친구라는 소중한 자원(Bird in Hand)에서 출발해 볼까요?”","gemName":"💎 이커리어 Stage 1: 자기성찰 & 강점탐색 Gem","gemUrl":"https://gemini.google.com","gemStudentPrompt":"안녕! 나는 중학생이야. 이커리어 1단계(자기성찰) 수업 중인데, 내가 평소에 좋아하는 활동은 [여기에 입력]이고, 친구들이 나에게 자주 해주는 칭찬은 [여기에 입력]이야. 손안의 새(Bird in Hand) 원칙에 따라 나의 강점 키워드 3가지와 내가 도전해 볼 만한 교내·지역 프로젝트 주제를 추천해 줄래?","gemSystemInstruction":"당신은 중학생의 진로 자기이해와 기업가정신을 돕는 이커리어(E-Career) Stage 1 전담 AI 코치입니다. 학생이 입력한 일상적 취미와 경험을 이펙추에이션의 손안의 새(Bird in Hand) 관점으로 분석하여 강점 키워드 3가지를 도출하고 따뜻한 격려(SEL 자기인식 강화)와 함께 작은 도전 과제를 제시하세요."},{"stageNum":2,"code":"Stage 2","name":"타인공감 (Empathetic Discovery)","engName":"Empathy & Field Observation","selCompetency":"사회적 인식 (Social Awareness)","selActivity":"판단 없이 바라보는 관찰 일지 & 경청의 3원칙 공감 인터뷰","theory":"디자인 씽킹 공감(Empathy) & 현장 관찰·공공데이터 탐색","phdVariable":"사회적 민감성 및 문제발견 자기효능감 형성","scaffolding":"“내 머릿속 추측을 잠시 내려놓고, 우리 교실 친구들과 우리 동네(조암시장·궁평항) 이웃들의 표정과 목소리에 귀를 기울여 봅시다.”","gemName":"💎 이커리어 Stage 2: 타인공감 & 인터뷰 코치 Gem","gemUrl":"https://gemini.google.com","gemStudentPrompt":"이커리어 2단계(타인공감) 수업 중이야. 우리 모둠은 [관심 대상: 예) 급식실 잔반 문제 / 조암시장 어르신 상인]의 어려움을 알아보고 싶어. 상대방의 마음을 편안하게 열면서 진짜 불편함(Needs)을 끌어낼 수 있는 공감 인터뷰 질문 5가지를 함께 만들어 줄래?","gemSystemInstruction":"당신은 이커리어 Stage 2 타인공감 코치입니다. 중학생들이 인터뷰 대상자의 입장에 깊이 공감(SEL 사회적 인식)할 수 있도록 열린 질문(Open-ended questions) 5가지를 설계해 주고, 인터뷰 시 지켜야 할 경청 태도를 안내하세요."},{"stageNum":3,"code":"Stage 3","name":"문제정의 (Problem Definition)","engName":"Why Tree & Impact Gaps","selCompetency":"책임 있는 의사결정 (Responsible Decision-Making)","selActivity":"관점 수용 토의 & 핵심 타깃(페르소나) 공감지도 완성","theory":"Why Tree(왜 나무) 근본원인 분석 & Impact Gaps · POV 정의","phdVariable":"비판적 사고 및 객관적 데이터·근거 기반 문제정의 역량","scaffolding":"“겉으로 보이는 현상에만 머물지 말고 ‘왜(Why)?’를 다섯 번 질문해 뿌리 원인을 찾아봅시다. 우리가 도울 단 한 사람의 진짜 문제는 무엇인가요?”","gemName":"💎 이커리어 Stage 3: Why Tree & 문제정의 Gem","gemUrl":"https://gemini.google.com","gemStudentPrompt":"이커리어 3단계(문제정의) 활동 중이야. 우리가 관찰한 표면적인 문제는 [현상 입력]이야. Why Tree(5 Whys) 기법으로 이 문제의 근본 원인을 5단계로 파고드는 질문을 던져주고, 마지막에 \"어떻게 하면 우리가(HMW) ~할 수 있을까?\" 문장으로 정리하는 걸 도와줘!","gemSystemInstruction":"당신은 이커리어 Stage 3 문제정의 코치입니다. 학생이 제시한 표면적 문제를 Why Tree(5 Whys)와 Impact Gaps 기법으로 분석하도록 소크라테스식 발문을 던지고, 구체적인 페르소나와 HMW(How Might We) 질문을 도출하도록 안내하세요."},{"stageNum":4,"code":"Stage 4","name":"아이디어 도출 (Ideation & Value)","engName":"Ideation & Affordable Loss","selCompetency":"자기관리 (Self-Management)","selActivity":"비판 유보 브레인스토밍 & 실패 불안 조절(감수 가능한 손실 설정)","theory":"창의적 아이디어 발산(SCAMPER) & 감수할 수 있는 손실(Affordable Loss)","phdVariable":"도전적 과제 선택 및 실패 두려움 완충 기제 작동","scaffolding":"“엉뚱한 아이디어도 모두 환영합니다! 만약 실패하더라도 우리 모둠이 웃으며 감당할 수 있는 시간과 재료의 범위(Affordable Loss) 안에서 첫 실험을 설계해 볼까요?”","gemName":"💎 이커리어 Stage 4: 아이디어 & 소셜 린캔버스 Gem","gemUrl":"https://gemini.google.com","gemStudentPrompt":"이커리어 4단계(아이디어 도출) 수업 중이야. 우리의 핵심 질문(HMW)은 [질문 입력]이야. 중학생 수준에서 감수할 수 있는 손실(Affordable Loss: 적은 비용과 교실 재료)로 바로 실험해 볼 수 있는 창의적인 해결 아이디어 3가지와 소셜 린 캔버스 초안을 제안해 줘!","gemSystemInstruction":"당신은 이커리어 Stage 4 아이디어 코치입니다. 학생의 HMW 질문에 대해 SCAMPER 기법과 이펙추에이션의 감수할 수 있는 손실(Affordable Loss) 원칙을 적용해 중학생이 즉시 실행 가능한 아이디어 3가지와 소셜 린 캔버스 핵심 요소를 코칭하세요."},{"stageNum":5,"code":"Stage 5","name":"실전구현 (Prototyping & Pivoting)","engName":"MVP, Crazy Quilt & Pivoting","selCompetency":"관계 기술 (Relationship Skills)","selActivity":"조각보(Crazy Quilt) 강점 결합 협업 & 따뜻한 피드백(I Like·I Wish)","theory":"최소기능제품(MVP) 메이커 실습 & 레모네이드 원칙(피보팅)","phdVariable":"핵심 매개변인(M): 실수에 대한 건설적 태도(Constructive Attitude Toward Mistakes)","scaffolding":"“시제품이 계획대로 안 나왔나요? 가장 중요한 배움의 순간입니다! 친구들의 피드백을 연결(조각보 원칙)해 더 나은 버전으로 수정(Pivoting)해 봅시다.”","gemName":"💎 이커리어 Stage 5: MVP 프로토타이핑 & 피보팅 Gem","gemUrl":"https://gemini.google.com","gemStudentPrompt":"이커리어 5단계(실전구현) 중이야. 우리 모둠이 만든 1차 시제품(MVP)은 [시제품 설명]인데, 친구들에게 테스트해 보니 [문제점/피드백 입력]이라는 지적이 나왔어. 실망하지 않고 레모네이드 원칙(피보팅)을 적용해 우리 시제품을 업그레이드할 수 있는 방법 3가지를 알려줘!","gemSystemInstruction":"당신은 이커리어 Stage 5 실전구현 및 피보팅 코치입니다. 시제품 시행착오를 겪은 학생들의 감정을 먼저 지지(SEL 회복탄력성)하고, 동료 피드백을 반영해 모델을 수정(Pivoting)하는 구체적인 대안을 제시하세요."},{"stageNum":6,"code":"Stage 6","name":"평가와 진화 (Pitching & Evolution)","engName":"Demoday Pitching & Career Adaptability","selCompetency":"통합 성찰 & 진로적응성 (Career Adaptability)","selActivity":"데모데이 공감 투표 & 실패-성장 스토리 메타인지 성찰","theory":"임팩트 스토리텔링 피칭 & 미래 진로 로드맵 연결(진화)","phdVariable":"종속변인(Y): 청소년 진로적응성(관심·통제·호기심·자신감) 완성","scaffolding":"“완벽한 성공담보다 여러분이 어떤 문제를 발견했고, 어떤 실수를 겪으며 어떻게 함께 성장했는지 그 진솔한 진화의 스토리를 들려주세요.”","gemName":"💎 이커리어 Stage 6: 데모데이 피칭 & 진로진화 Gem","gemUrl":"https://gemini.google.com","gemStudentPrompt":"이커리어 6단계(평가와 진화) 데모데이 발표를 앞두고 있어! 우리 팀의 프로젝트 주제는 [주제 입력]이고, 겪었던 시행착오와 피보팅 과정은 [내용 입력]이야. 청중의 마음을 움직이는 3분 스토리텔링 발표 대본(도입 Hook - 문제와 근거 - MVP와 피보팅 - 나의 진로 성장)을 구성해 줘!","gemSystemInstruction":"당신은 이커리어 Stage 6 피칭 및 진로성찰 코치입니다. 학생의 프로젝트 여정을 3분 엘리베이터 피치 스토리라인으로 구조화해 주고, 이번 경험이 학생의 미래 진로적응성(자신감·호기심·통제)과 어떻게 연결되는지 성찰 질문을 던지세요."}];
+const LESSONS = [{"id":"1-01","sem":"sem1","code":"1-01차시","stage":"Stage 1","stageName":"자기성찰","sel":"자기인식","title":"오리엔테이션 & 이커리어 마인드셋: 나의 손안의 새(Bird in Hand) 찾기","goal":"수업 전 1분 호흡 명상으로 마음의 안전기지를 만들고, 내가 가진 3가지 자원(강점·흥미·관계)을 탐색할 수 있다.","mindfulPrompt":"눈을 감고 4초간 숨을 들이마시며, 내 안에 이미 있는 소중한 가능성들을 떠올려 봅니다.","wsTask":"지금 내가 가진 3가지 자원(나는 누구인가, 무엇을 좋아하는가, 누구와 함께하는가)을 적고, 이번 학기 도전 다짐을 선언하세요.","wsAnswer":"[교사 예시답안] ① 나의 흥미: 그림 그리기와 영상 편집 / ② 내가 잘하는 것: 친구 이야기 들어주기 / ③ 함께할 동료: 아이디어가 풍부한 짝꿍 ➔ 우리 반 친구들의 고민을 웹툰·포스터로 해결하는 프로젝트를 해보고 싶다!","planIntro":"1분 마음챙김 호흡 루틴 및 이커리어(E-Career) 6단계 연간 여정 소개 (10분)","planMain":"이펙추에이션 손안의 새(Bird in Hand) 개념 이해 및 나만의 강점·자원 카드 3장 작성·모둠 나눔 (30분)","planWrap":"이커리어 Stage 1 Gems에 나의 강점 키워드를 입력해 피드백 받고 오늘의 마음날씨 기록 (5분)"},{"id":"1-02","sem":"sem1","code":"1-02차시","stage":"Stage 1","stageName":"자기성찰","sel":"자기인식","title":"실패를 배움으로 바꾸는 힘: 토스(Toss) 이승건 대표의 집요함과 진로 탄력성","goal":"8번의 실패 끝에 일상의 불편을 혁신한 창업 사례를 통해 실수에 대한 건설적 태도와 기업가적 집요함(Grit)을 이해할 수 있다.","mindfulPrompt":"과거에 내가 겪었던 작은 실수를 떠올리고, 그 실수가 나에게 남긴 배움 한 가지를 따뜻하게 바라봅니다.","wsTask":"토스 창업팀이 8번의 실패에도 포기하지 않을 수 있었던 이유를 적고, 내가 실패를 겪었을 때 스스로에게 해줄 응원 문장을 만드세요.","wsAnswer":"[교사 예시답안] 실패를 개인의 무능이 아니라 \"이 방법은 고객이 원하지 않는다는 소중한 데이터\"로 보았기 때문이다. / 나만의 응원 문장: \"실수해도 괜찮아! 안 되는 방법 하나를 지웠으니 진짜 해답에 한 걸음 더 가까워졌어.\"","planIntro":"1분 마음챙김 명상 및 \"실패란 무엇인가?\" 키워드 브레인스토밍 (10분)","planMain":"토스 이승건 대표의 8전 9기 스토리 탐구 및 기업가적 집요함·회복탄력성 활동지 작성 (30분)","planWrap":"실패를 두려워하지 않는 우리 반 안전기지 서약 공유 (5분)"},{"id":"1-03","sem":"sem1","code":"1-03차시","stage":"Stage 1","stageName":"자기성찰","sel":"자기관리","title":"나의 가치관과 미래 직업 세계 연결: 변화하는 기술과 변하지 않는 나의 가치","goal":"AI·디지털 전환 시대의 직업 변화를 탐색하고, 내가 진로에서 가장 중요하게 여기는 핵심 가치를 선택할 수 있다.","mindfulPrompt":"열정, 나눔, 창의, 안정, 자율 중 내 가슴을 가장 뛰게 하는 단어 하나를 마음속으로 되뇌어 봅니다.","wsTask":"내가 미래 진로를 선택할 때 가장 소중하게 생각하는 핵심 가치 3가지를 고르고, 그 가치로 세상에 어떤 도움을 주고 싶은지 적으세요.","wsAnswer":"[교사 예시답안] 핵심 가치: 창의성, 환경보호, 협력 ➔ 버려지는 자원에 창의적인 디자인을 입혀 환경을 지키는 에코 디자이너·소셜벤처 활동가가 되고 싶다.","planIntro":"1분 마음챙김 및 미래 직업 트렌드 퀴즈 (10분)","planMain":"진로 가치관 경매 게임 및 나만의 이커리어 비전 보드 작성 (30분)","planWrap":"Stage 1 자기성찰 포트폴리오 갈무리 및 동료 격려 (5분)"},{"id":"1-04","sem":"sem1","code":"1-04차시","stage":"Stage 2","stageName":"타인공감","sel":"사회적 인식","title":"일상과 교실 속 불편 관찰하기: 무심코 지나쳤던 주변의 어려움 수집","goal":"교실, 복도, 급식실, 통학로에서 친구들과 선생님이 겪는 실제 불편 상황을 편견 없이 관찰하여 기록할 수 있다.","mindfulPrompt":"평소 당연하게 지나쳤던 교실 풍경을 처음 보는 여행자의 눈으로 호기심 있게 둘러봅니다.","wsTask":"최근 일주일 동안 우리 학교(교실·급식실·체육관 등)에서 목격한 불편한 장면 3가지를 육하원칙에 따라 생생하게 기록하세요.","wsAnswer":"[교사 예시답안] ① 점심시간 급식실 줄서기 혼잡, ② 체육 시간 후 교실 환기 및 물병 분리배출 문제, ③ 비 오는 날 우산 꽂이 파손 및 바닥 미끄러움.","planIntro":"1분 관찰 명상 및 \"관찰과 추측 구분하기\" 미니 게임 (10분)","planMain":"모둠별 교내 불편 탐색 미션 및 사진·메모 기반 관찰 일지 작성 (30분)","planWrap":"Padlet 학급 보드에 우리 모둠이 찾은 불편 사진·사례 업로드 (5분)"},{"id":"1-05","sem":"sem1","code":"1-05차시","stage":"Stage 2","stageName":"타인공감","sel":"관계 기술","title":"마음을 여는 공감 인터뷰 실습: 경청의 3원칙으로 진짜 니즈(Needs) 발견하기","goal":"공감적 경청(눈맞춤·끄덕임·열린 질문)을 실천하여 인터뷰 대상자의 숨겨진 감정과 진짜 필요를 파악할 수 있다.","mindfulPrompt":"내 할 말을 먼저 생각하기보다, 친구의 목소리와 표정에 온전히 귀를 기울이는 연습을 합니다.","wsTask":"이커리어 Stage 2 Gems와 함께 인터뷰 질문 4개를 만들고, 실제 친구·선생님을 인터뷰한 핵심 발언(따옴표 인용)을 기록하세요.","wsAnswer":"[교사 예시답안] 인터뷰 질문: \"급식 시간이나 쉬는 시간에 가장 답답했던 순간은 언제인가요?\" / 실제 발언: \"우유갑이나 페트병을 버릴 때 뚜껑과 라벨을 따로 떼어 버리는 통이 한눈에 안 보여서 그냥 섞어 버리게 돼요.\"","planIntro":"1분 경청 명상 및 공감 인터뷰 경청 3원칙 안내 (10분)","planMain":"Stage 2 Gems 활용 질문지 설계 및 교실 내 짝·모둠 심층 인터뷰 실습 (30분)","planWrap":"인터뷰를 통해 내 예상과 달랐던 새로운 발견 한 줄 공유 (5분)"},{"id":"1-06","sem":"sem1","code":"1-06차시","stage":"Stage 3","stageName":"문제정의","sel":"책임있는 의사결정","title":"Why Tree(왜 나무)로 근본 원인 파고들기: 표면적 현상 너머의 핵심 문제 정의","goal":"수집한 관찰·인터뷰 데이터를 바탕으로 Why Tree(5 Whys) 기법을 적용해 문제의 근본 원인을 정의할 수 있다.","mindfulPrompt":"나무의 잎사귀(겉모습)에서 줄기를 따라 땅속 깊은 뿌리(근본 원인)로 차분히 내려가 봅니다.","wsTask":"우리 모둠이 선택한 불편 1가지를 맨 위에 적고, \"왜 그럴까?\"를 5번 연속 질문하여 찾은 뿌리 원인을 기록하세요.","wsAnswer":"[교사 예시답안] 현상: 교실 분리수거함이 늘 넘치고 섞여 있다 ➔ Why 1~5 추적 결과 뿌리 원인: 학생들이 분리배출 기준을 직관적으로 알 수 있는 시각적 안내와 재미있는 참여 보상이 없다.","planIntro":"1분 집중 명상 및 Why Tree 기법 예시 안내 (10분)","planMain":"모둠별 Why Tree 활동지 작성 및 Stage 3 Gems를 통한 논리적 빈틈 점검 (30분)","planWrap":"모둠별 도출한 뿌리 원인 발표 및 상호 피드백 (5분)"},{"id":"1-07","sem":"sem1","code":"1-07차시","stage":"Stage 3","stageName":"문제정의","sel":"사회적 인식","title":"핵심 타깃 페르소나 & 공감지도(Empathy Map) 완성: 우리가 도울 한 사람","goal":"문제를 가장 절실하게 겪는 페르소나를 설정하고 공감지도와 HMW(어떻게 하면 우리가) 질문을 완성할 수 있다.","mindfulPrompt":"우리가 돕고 싶은 그 친구의 입장이 되어, 그 친구의 눈으로 교실 하루를 바라봅니다.","wsTask":"페르소나(이름·특징·고충)를 정의하고, \"어떻게 하면 우리가(HMW) [대상]을 위해 [문제]를 해결할 수 있을까?\" 질문을 완성하세요.","wsAnswer":"[교사 예시답안] 페르소나: 환경은 지키고 싶지만 귀찮은 건 싫어하는 1학년 김OO / HMW: \"어떻게 하면 우리가 1학년 친구들이 쉬는 시간 10초 만에 게임처럼 즐겁게 플라스틱 병뚜껑을 분리배출하게 할 수 있을까?\"","planIntro":"1분 공감 명상 및 페르소나·공감지도 작성법 안내 (10분)","planMain":"모둠별 공감지도(생각·감정·말·행동) 작성 및 HMW 핵심 질문 도출 (30분)","planWrap":"우리 모둠의 HMW 질문 학급 칠판 공유 (5분)"},{"id":"1-08","sem":"sem1","code":"1-08차시","stage":"Stage 4","stageName":"아이디어 도출","sel":"자기관리","title":"이커리어 Gems와 함께하는 브레인스토밍: 판단 유보와 창의적 연결","goal":"비판을 멈추고 자유롭게 아이디어를 발산하며, Stage 4 Gems 코치와 협업해 해결 아이디어를 구체화할 수 있다.","mindfulPrompt":"“안 될 거야”라는 내 안의 검열관을 잠시 쉬게 하고, 어린아이 같은 호기심으로 상상력을 펼칩니다.","wsTask":"HMW 질문에 대한 모둠원들의 아이디어 6가지를 모으고, [실현 가능성 × 공감 효과] 기준으로 최고의 아이디어 1가지를 선정하세요.","wsAnswer":"[교사 예시답안] 선정 아이디어: 교실 뒤편에 농구 골대 모양의 ‘병뚜껑 슛 수거함’을 만들고, 모인 병뚜껑 개수로 학급 간식 온도계를 채우는 캠페인.","planIntro":"1분 개방 명상 및 브레인스토밍 4대 규칙(비판 금지·양 추구·결합) 약속 (10분)","planMain":"브레인라이팅 및 Stage 4 Gems 활용 아이디어 확장·선정 매트릭스 작성 (30분)","planWrap":"선정된 아이디어 한 줄 엘리베이터 피치 공유 (5분)"},{"id":"1-09","sem":"sem1","code":"1-09차시","stage":"Stage 4","stageName":"아이디어 도출","sel":"책임있는 의사결정","title":"감수할 수 있는 손실(Affordable Loss)과 미니 진로·창업 캔버스 설계","goal":"실패해도 감당 가능한 범위(Affordable Loss)를 설정하고, 한 장의 미니 비즈니스 모델 캔버스를 설계할 수 있다.","mindfulPrompt":"결과에 대한 불안을 내려놓고, 오늘 우리가 통제하고 실행할 수 있는 작은 한 걸음에 집중합니다.","wsTask":"우리 모둠이 감수할 수 있는 손실(시간·교실 재료) 한계를 정하고, [문제 - 타깃 - 해결책 - 고유가치 - 기대효과] 5칸 캔버스를 채우세요.","wsAnswer":"[교사 예시답안] 감수 가능 손실: 방과후 30분, 재활용 우드락 2장 / 고유가치: 버리는 순간이 즐거운 농구 게임이 되는 교실 환경 캠페인.","planIntro":"1분 균형 명상 및 Affordable Loss 원칙 안내 (10분)","planMain":"Canva 템플릿 또는 활동지를 활용한 모둠별 미니 린 캔버스 완성 (30분)","planWrap":"모둠별 캔버스 점검 및 다음 차시 준비물 확인 (5분)"},{"id":"1-10","sem":"sem1","code":"1-10차시","stage":"Stage 5","stageName":"실전구현","sel":"관계 기술","title":"조각보(Crazy Quilt) 팀 빌딩과 역할 분담: 서로 다른 강점 연결하기","goal":"이펙추에이션 조각보 원칙(Crazy Quilt)에 따라 모둠원 각자의 강점을 연결해 역할을 나누고 갈등 해결 규칙을 세울 수 있다.","mindfulPrompt":"모양과 색깔이 다른 천 조각들이 모여 아름다운 조각보가 되듯, 친구와 나의 다름을 고마운 강점으로 바라봅니다.","wsTask":"모둠원 각자의 역할(기획·디자인·메이커·데이터·발표)을 배분하고, 의견 충돌 시 지킬 우리 모둠만의 평화 규칙 2가지를 적으세요.","wsAnswer":"[교사 예시답안] 역할 분담 완료 / 평화 규칙: ① 친구 의견을 부정할 때는 반드시 대안도 함께 말하기, ② 감정이 격해지면 10초 심호흡 후 \"내 생각에는~\"으로 대화 시작하기.","planIntro":"1분 조화 명상 및 조각보 원칙(Crazy Quilt) 스토리 나눔 (10분)","planMain":"강점 카드 기반 역할 분담 및 모둠 협업 헌장(SEL 갈등조정 규칙) 작성 (30분)","planWrap":"모둠 구호 제창 및 응원 하이파이브 (5분)"},{"id":"1-11","sem":"sem1","code":"1-11차시","stage":"Stage 5","stageName":"실전구현","sel":"자기관리","title":"디지털 & 페이퍼 프로토타이핑 실습: 눈에 보이는 시제품(MVP) 만들기","goal":"Canva와 교실 메이커 재료를 활용해 친구들에게 아이디어를 시연할 수 있는 1차 프로토타입(MVP)을 제작할 수 있다.","mindfulPrompt":"완벽해야 한다는 부담을 내려놓고, 손과 도구를 움직여 생각을 눈에 보이는 형태로 꺼내어 놓습니다.","wsTask":"우리 모둠의 1차 프로토타입(포스터·앱 화면 스케치·모형) 핵심 모습을 스케치하거나 설명하고, 제작 중 겪은 어려움을 기록하세요.","wsAnswer":"[교사 예시답안] 우드락으로 제작한 병뚜껑 농구대 프로토타입 1호 + Canva로 디자인한 분리배출 안내 포스터 완성.","planIntro":"1분 몰입 명상 및 프로토타이핑(MVP) 안전·실행 가이드 (10분)","planMain":"모둠별 디지털(Canva) 및 실물 모형 1차 프로토타입 제작 실습 (30분)","planWrap":"제작 결과물 촬영 및 Padlet 보드 1차 업로드 (5분)"},{"id":"1-12","sem":"sem1","code":"1-12차시","stage":"Stage 5","stageName":"실전구현","sel":"관계 기술","title":"동료 피드백(I Like, I Wish, What If) 워크숍: 성장을 돕는 따뜻한 피드백","goal":"다른 모둠의 시제품을 체험하고 I Like(장점), I Wish(아쉬운 점), What If(새로운 제안) 구조로 건설적 피드백을 주고받을 수 있다.","mindfulPrompt":"친구의 노력을 먼저 인정하고(I Like), 더 멋지게 발전할 수 있도록 따뜻한 제안을 건네는 마음을 준비합니다.","wsTask":"갤러리 워크를 통해 우리 모둠이 받은 가장 인상 깊은 [I Like], [I Wish], [What If] 피드백을 각각 정리하세요.","wsAnswer":"[교사 예시답안] I Like: 농구대 아이디어가 재미있다 / I Wish: 병뚜껑이 튕겨 나가 바닥에 떨어진다 / What If: 골대 아래에 투명 깔때기 그물을 달아 개수가 바로 보이게 하면 어떨까?","planIntro":"1분 수용 명상 및 I Like · I Wish · What If 피드백 화법 연습 (10분)","planMain":"학급 갤러리 워크 시제품 시연 및 포스트잇/Padlet 동료 피드백 교류 (30분)","planWrap":"우리 모둠이 받은 피드백 분류 및 감사 인사 (5분)"},{"id":"1-13","sem":"sem1","code":"1-13차시","stage":"Stage 5","stageName":"실전구현","sel":"자기관리","title":"레몬으로 레모네이드 만들기(Pivoting): 시행착오를 반영해 시제품 업그레이드","goal":"이펙추에이션 레모네이드 원칙을 적용해 시제품의 문제점과 동료 피드백을 반영한 2차 개선안(Pivoting)을 완성할 수 있다.","mindfulPrompt":"시큼한 레몬(예상치 못한 문제)이 주어졌을 때, 달콤한 레모네이드로 바꾸는 유연한 마음을 떠올립니다.","wsTask":"1차 시제품의 어떤 한계점을 어떻게 수정(피보팅)했는지 [수정 전(v1.0) ➔ 수정 후(v2.0)] 비교표로 기록하세요.","wsAnswer":"[교사 예시답안] 수정 전(v1.0): 평평한 우드락 백보드(병뚜껑 이탈 발생) ➔ 수정 후(v2.0): 투명 페트병 윗부분을 재활용한 깔때기 골망과 눈금 게이지 장착으로 수거율 100% 달성!","planIntro":"1분 탄력성 명상 및 피보팅(Pivoting) 성공 사례 공유 (10분)","planMain":"Stage 5 Gems 코칭 연동 시제품 수정·보완(v2.0) 실습 (30분)","planWrap":"피보팅 전후 변화 사진 비교 기록 (5분)"},{"id":"1-14","sem":"sem1","code":"1-14차시","stage":"Stage 6","stageName":"평가와 진화","sel":"자기인식","title":"마음을 움직이는 3분 스토리텔링 피치덱 제작: 조잘조잘 스타트업 스토리","goal":"현직 스타트업 사례를 참고하여 문제 발견부터 피보팅까지의 과정을 3분 발표 슬라이드(Canva)로 구성할 수 있다.","mindfulPrompt":"잘 보이려는 긴장감을 내려놓고, 우리가 진심으로 고민하고 해결하려 했던 이야기를 친구들에게 들려줄 준비를 합니다.","wsTask":"Stage 6 Gems를 활용해 [1.공감 질문(Hook) - 2.문제와 원인 - 3.해결책과 시제품 - 4.피보팅과 배움] 4단 발표 대본을 완성하세요.","wsAnswer":"[교사 예시답안] 3분 발표 스토리라인 및 모둠원 전원 발언 구간 배분 완료.","planIntro":"1분 자신감 명상 및 조잘조잘 스타트업 스토리텔링 원칙 안내 (10분)","planMain":"Canva 공동작업을 통한 5장 요약 피치덱 완성 및 발표 리허설 (30분)","planWrap":"발표 타이머(3분) 체크 및 상호 격려 (5분)"},{"id":"1-15","sem":"sem1","code":"1-15차시","stage":"Stage 6","stageName":"평가와 진화","sel":"사회적 인식","title":"1학기 「조잘조잘 스타트업 이야기 데모데이」 발표 & 모의 공감 투표","goal":"모둠별 프로젝트를 발표하고, 청중으로서 동료 팀의 도전 과정에 공감 투표와 응원 메시지를 전달할 수 있다.","mindfulPrompt":"무대에 서는 친구에게는 따뜻한 눈빛을, 발표하는 나에게는 당당한 호흡을 선물합니다.","wsTask":"오늘 발표한 다른 모둠 중 가장 인상 깊었던 팀 2곳을 뽑아 가상 투자 포인트와 응원 메시지를 기록하세요.","wsAnswer":"[교사 예시답안] 모든 모둠의 문제정의와 피보팅 스토리에 공감 투표 및 Padlet 응원 댓글 작성 완료.","planIntro":"1분 응원 명상 및 데모데이 경청·투표 매너 안내 (5분)","planMain":"1학기 조잘조잘 스타트업 이야기 데모데이 피칭 및 모의 크라우드 펀딩 투표 (35분)","planWrap":"공감·도전·피보팅 우수 모둠 격려 시상 (5분)"},{"id":"1-16","sem":"sem1","code":"1-16차시","stage":"Stage 6","stageName":"평가와 진화","sel":"통합 성찰","title":"1학기 이커리어 성장 성찰 & 나의 진로적응성 포트폴리오 갈무리","goal":"1학기 16차시 전 과정을 돌아보며 나의 자기주도성, 실수 회복탄력성, 진로적응성 성장을 서술할 수 있다.","mindfulPrompt":"1학기 첫 시간의 나와 오늘의 나를 나란히 떠올리며, 한 뼘 더 자란 나 자신에게 고마움을 전합니다.","wsTask":"1학기 이커리어 여정에서 내가 가장 크게 성장한 역량 1가지와, 2학기 지역사회 실전 트랙에서 도전하고 싶은 주제를 적으세요.","wsAnswer":"[교사 예시답안] 실수를 두려워하지 않고 수정해 나가는 회복탄력성이 자랐다. 2학기에는 교실을 넘어 우리 동네(화성)의 환경·이웃 문제를 해결하는 소셜벤처에 도전하고 싶다.","planIntro":"1분 감사 명상 및 1학기 활동 사진 하이라이트 감상 (10분)","planMain":"개인별 이커리어 성장 성찰 노트 작성 및 생기부 자기평가서 정리 (30분)","planWrap":"1학기 성장 나눔 서클 및 2학기 심화 트랙 예고 (5분)"},{"id":"2-01","sem":"sem2","code":"2-01차시","stage":"Stage 1","stageName":"자기성찰","sel":"자기인식","title":"2학기 체인지메이커 비전 세우기: 나의 진로 키워드와 지역사회·SDGs 연결","goal":"나의 진로 흥미 키워드를 우리 동네(화성) 및 지속가능발전목표(SDGs)와 연결하여 2학기 소셜벤처 비전을 세울 수 있다.","mindfulPrompt":"나의 꿈이 나 혼자만의 성공을 넘어, 우리 동네와 지구를 따뜻하게 만드는 장면을 상상해 봅니다.","wsTask":"나의 진로 관심 분야 1가지와 해결하고 싶은 지역사회·환경 문제(SDGs) 1가지를 결합해 나만의 체인지메이커 비전 문장을 만드세요.","wsAnswer":"[교사 예시답안] 나의 관심(IT·인공지능) + 지역 문제(농어촌 어르신 교통·물류 불편) ➔ \"기술로 우리 동네 어르신들의 일상을 편리하게 잇는 따뜻한 AI 기획자가 되겠다.\"","planIntro":"1분 비전 명상 및 2학기 소셜벤처·메이커 트랙 오리엔테이션 (10분)","planMain":"나의 진로 키워드 × SDGs 매칭 워크숍 및 Stage 1 Gems 비전 코칭 (30분)","planWrap":"공통 관심사를 가진 친구들과 2학기 소셜벤처 프로젝트 팀 구성 (5분)"},{"id":"2-02","sem":"sem2","code":"2-02차시","stage":"Stage 1","stageName":"자기성찰","sel":"자기관리","title":"불확실성 시대의 기업가적 진로 설계: 이펙추에이션 5원칙과 팀 그라운드 룰","goal":"이펙추에이션 5대 원칙을 팀 프로젝트에 적용하고, 2학기 장기 프로젝트를 완주하기 위한 팀 감정·일정 관리 규칙을 세울 수 있다.","mindfulPrompt":"먼 길을 함께 걸어갈 모둠원들의 얼굴을 바라보며 신뢰와 응원의 마음을 보냅니다.","wsTask":"우리 팀의 보유 자원(Bird in Hand) 목록을 통합하고, 2학기 프로젝트 마일스톤과 팀 회복탄력성 약속을 작성하세요.","wsAnswer":"[교사 예시답안] 팀명: 플라스틱 리턴즈 / 보유 자원: 디자인 담당, 데이터 검색 담당, 손재주 메이커 담당, 발표 담당 4인 4색 강점 결합 완료.","planIntro":"1분 신뢰 명상 및 선배 수상팀(로타리 대상·비즈쿨 장관상) 여정 소개 (10분)","planMain":"팀 자원 인벤토리 작성 및 2학기 프로젝트 로드맵 설계 (30분)","planWrap":"팀 비전 선언 및 Padlet 팀 전용 칼럼 개설 (5분)"},{"id":"2-03","sem":"sem2","code":"2-03차시","stage":"Stage 2","stageName":"타인공감","sel":"사회적 인식","title":"우리 동네(화성·조암시장·궁평항) 현장 탐사: 지역사회의 실제 문제 관찰","goal":"학교 밖 지역사회(전통시장, 연안 바닷가, 농어촌 마을)의 현장을 탐색하며 주민들이 겪는 실제 문제를 발굴할 수 있다.","mindfulPrompt":"우리 동네의 골목과 바닷가, 시장 상인 어르신들의 삶의 현장을 존중과 공감의 시선으로 바라봅니다.","wsTask":"우리 동네(조암시장·궁평항·통학로 등)에서 발견한 지역 문제 후보 3가지를 적고, 현장 당사자들에게 물어볼 인터뷰 질문을 설계하세요.","wsAnswer":"[교사 예시답안] ① 조암시장 어르신 상인들의 오래된 가게 스토리가 잊혀가는 문제, ② 궁평항 바닷가에 버려지는 조개껍데기와 해양 플라스틱 쓰레기 문제, ③ 읍·면 지역 택배·물류 비효율 문제.","planIntro":"1분 공감 명상 및 화성 지역사회 주요 이슈 영상·사진 탐색 (10분)","planMain":"지역 문제 리서치 및 Stage 2 Gems 활용 현장 주민 인터뷰 프로토콜 작성 (30분)","planWrap":"모둠별 현장 조사·인터뷰 안전 수칙 및 역할 점검 (5분)"},{"id":"2-04","sem":"sem2","code":"2-04차시","stage":"Stage 2","stageName":"타인공감","sel":"사회적 인식","title":"공공데이터와 현장의 목소리 결합하기: 숫자와 인터뷰로 문제 검증하기","goal":"“관찰과 근거 없는 주장은 받지 않는다”는 원칙에 따라 공공데이터 통계 수치와 인터뷰 기록을 교차 검증할 수 있다.","mindfulPrompt":"막연한 느낌을 넘어, 정확한 숫자와 현장의 생생한 목소리가 만나는 지점을 차분히 찾아봅니다.","wsTask":"우리 팀이 선택한 지역 문제를 뒷받침하는 [공공데이터·통계 수치 1건]과 [현장 인터뷰 핵심 발언 1건]을 나란히 기록하세요.","wsAnswer":"[교사 예시답안] 통계 근거: 연간 연안 해양폐기물 및 폐조개껍데기 발생량 급증 데이터 / 인터뷰 근거: \"관광객들이 조개구이를 먹고 간 뒤 쌓이는 조개껍데기 처리가 늘 고민입니다.\"","planIntro":"1분 명료함 명상 및 공공데이터포털·지역 통계 검색법 안내 (10분)","planMain":"모둠별 통계 데이터 수집 및 인터뷰 결과 교차 검증 워크시트 작성 (30분)","planWrap":"데이터로 증명된 우리 팀의 문제 정의문 1분 브리핑 (5분)"},{"id":"2-05","sem":"sem2","code":"2-05차시","stage":"Stage 3","stageName":"문제정의","sel":"책임있는 의사결정","title":"Impact Gaps(임팩트 갭) 분석: 기존 해결책의 빈틈과 소셜벤처 미션 선언","goal":"기존 해결 방식의 한계(Impact Gaps)를 분석하고, 청소년 소셜벤처로서 우리가 채울 수 있는 고유한 미션을 정의할 수 있다.","mindfulPrompt":"남들이 이미 하고 있는 일과 아직 아무도 해결하지 못한 빈틈 사이를 지혜롭게 들여다봅니다.","wsTask":"이 문제를 해결하기 위해 기존에 있었던 노력들과 그 한계점(Impact Gap)을 적고, 우리 팀만의 소셜벤처 미션 선언문을 작성하세요.","wsAnswer":"[교사 예시답안] 기존 한계: 단순 쓰레기 줍기 봉사는 일회성에 그침 / 우리 팀의 미션: 수거한 궁평항 조개껍데기와 교내 병뚜껑을 화성 공룡알 모티브 굿즈로 업사이클링하여 지속가능한 환경 가치를 만든다.","planIntro":"1분 통찰 명상 및 Impact Gaps(문제-기존해결책-빈틈) 프레임워크 안내 (10분)","planMain":"Stage 3 Gems 활용 Impact Gaps 분석 및 소셜벤처 미션 선언문 작성 (30분)","planWrap":"모둠별 소셜벤처 팀명 및 미션 선언문 발표 (5분)"},{"id":"2-06","sem":"sem2","code":"2-06차시","stage":"Stage 3","stageName":"문제정의","sel":"관계 기술","title":"이해관계자 지도(Stakeholder Map) 작성: 지역 주민·상인·학생 상생 구조","goal":"프로젝트와 관련된 다양한 이해관계자의 입장을 조망하고, 모두가 혜택을 얻는 상생(Win-Win) 구조를 설계할 수 있다.","mindfulPrompt":"나와 내 모둠을 넘어, 우리 프로젝트로 인해 미소 지을 동네 어르신과 이웃들의 얼굴을 떠올려 봅니다.","wsTask":"우리 프로젝트의 핵심 이해관계자 3집단(수혜자·참여자·협력기관)을 적고, 각 집단이 얻게 될 긍정적 가치를 연결하세요.","wsAnswer":"[교사 예시답안] ① 조암시장 상인 어르신(가게 홍보 및 세대 소통), ② 지역 청소년·시민(전통시장 역사 체험 및 QR 스토리북 감상), ③ 시장 상인회·지자체(지역 상권 활성화).","planIntro":"1분 상생 명상 및 이해관계자 지도 개념 안내 (10분)","planMain":"모둠별 이해관계자 맵 그리기 및 상생 가치 흐름도 설계 (30분)","planWrap":"이해관계자 간 예상 갈등 요소 및 윤리적 고려사항 점검 (5분)"},{"id":"2-07","sem":"sem2","code":"2-07차시","stage":"Stage 4","stageName":"아이디어 도출","sel":"자기관리","title":"업사이클링 & 에듀테크 솔루션 도출: 친환경 메이커와 AI 기술의 결합","goal":"폐자원 업사이클링 메이커 기법이나 AI·디지털 도구를 결합하여 지역 문제를 해결할 구체적인 솔루션을 도출할 수 있다.","mindfulPrompt":"쓸모없다고 버려진 것 속에서 보물을 찾아내는 창의적인 시선을 깨웁니다.","wsTask":"Stage 4 Gems와 브레인스토밍하여 우리 팀의 핵심 솔루션(실물 굿즈, 디지털 웹앱, 캠페인 부스 등)을 구체화하세요.","wsAnswer":"[교사 예시답안] 솔루션 1: 폐플라스틱 병뚜껑 사출 커스텀 키보드 키캡 워크숍 / 솔루션 2: 조암시장 어르신 생애사 구술 채록 QR 오디오북 & AI 일러스트 엽서 / 솔루션 3: 농어촌 AI 스마트 공동물류 경로 모델.","planIntro":"1분 창의 명상 및 업사이클링·AI 융합 우수 사례 탐색 (10분)","planMain":"솔루션 구체화 워크숍 및 필요 재료·디지털 도구 리스트업 (30분)","planWrap":"모둠별 솔루션 콘셉트 스케치 공유 (5분)"},{"id":"2-08","sem":"sem2","code":"2-08차시","stage":"Stage 4","stageName":"아이디어 도출","sel":"책임있는 의사결정","title":"소셜벤처 비즈니스 모델 & 원가·손익분기점(BEP)·환경기여도 시뮬레이션","goal":"플랫폼 내장 시뮬레이터(#showcase)를 활용해 시제품 제작 원가, 목표 판매가, 손익분기점 수량 및 탄소 감축량을 계산할 수 있다.","mindfulPrompt":"선한 의도가 반짝하고 사라지지 않도록, 정직한 숫자로 지속가능한 기둥을 세웁니다.","wsTask":"시뮬레이터를 조작하여 우리 시제품의 ① 개당 원가, ② 목표 가격, ③ 손익분기점(BEP) 수량, ④ 예상 환경·사회적 임팩트 수치를 기록하세요.","wsAnswer":"[교사 예시답안] 병뚜껑 1,800개 수거 ➔ 키캡 600개 제작 / 개당 원가 1,000원, 체험가 3,000원 / 손익분기점(BEP) 50개 / 완판 시 사회적 순이익 110만 원 및 탄소 12.96kgCO₂ 감축 검증 완료.","planIntro":"1분 명료함 명상 및 원가·손익분기점(BEP)·사회적 ROI 개념 학습 (10분)","planMain":"웹 플랫폼 내장 업사이클링 손익·탄소 시뮬레이터 실습 및 소셜 린 캔버스 완성 (30분)","planWrap":"시뮬레이션 결과 리포트 복사 및 Padlet 제출 (5분)"},{"id":"2-09","sem":"sem2","code":"2-09차시","stage":"Stage 5","stageName":"실전구현","sel":"관계 기술","title":"메이커 프로토타이핑 실습 I: 업사이클링 굿즈 & 디지털 웹앱 MVP 제작","goal":"안전 수칙을 준수하며 모둠원과 협력하여 실물 업사이클링 시제품(키캡·키링·스토리엽서) 또는 디지털 MVP를 제작할 수 있다.","mindfulPrompt":"도구를 다루는 손끝에 집중하고, 옆자리 모둠원의 안전과 호흡을 먼저 배려합니다.","wsTask":"오늘 제작한 1차 실물·디지털 MVP의 제작 공정 3단계를 적고, 작업 중 모둠원들과 협력해 해결한 문제를 기록하세요.","wsAnswer":"[교사 예시답안] 공정: ① 병뚜껑 색상·재질(HDPE) 분류 및 세척 ➔ ② 안전 가열·금형 프레스 성형 ➔ ③ 마감 및 키보드 축 결합 테스트 완료.","planIntro":"1분 안전·배려 명상 및 메이커 실습 도구 안전 수칙 서약 (10분)","planMain":"모둠별 1차 MVP 시제품 제작 실습 (글루건·프레스·Canva·AI 도구 활용) (30분)","planWrap":"작업장 안전 정리 및 1차 시제품 사진 기록 (5분)"},{"id":"2-10","sem":"sem2","code":"2-10차시","stage":"Stage 5","stageName":"실전구현","sel":"자기관리","title":"메이커 프로토타이핑 실습 II: 현장 부스·캠페인 체험 키트 및 안내문 제작","goal":"동아리 축제나 데모데이 부스를 방문하는 시민·친구들이 직접 참여할 수 있는 체험 키트와 QR 스토리 카드를 제작할 수 있다.","mindfulPrompt":"우리 부스를 찾아올 손님의 설레는 표정을 떠올리며 정성스럽게 안내 자료를 다듬습니다.","wsTask":"방문객이 우리 부스에서 3분 동안 경험할 [환영 인사 ➔ 문제 공감 ➔ MVP 체험 ➔ 환경·나눔 동참] 시나리오를 작성하세요.","wsAnswer":"[교사 예시답안] 부스 방문객이 직접 원하는 색상의 병뚜껑을 골라 키캡을 조합해 보고, 궁평항·교내 플라스틱 감축량 현황판에 스탬프를 붙이는 체험 동선 완성.","planIntro":"1분 정성 명상 및 우수 체험 부스 동선 설계 팁 안내 (10분)","planMain":"부스 배너, QR 스토리 인증 카드, 체험 안내 키트 제작 (30분)","planWrap":"모둠 내 손님 역할극(Role-play) 1차 시연 (5분)"},{"id":"2-11","sem":"sem2","code":"2-11차시","stage":"Stage 5","stageName":"실전구현","sel":"관계 기술","title":"사용자 테스트 & 현장 피보팅(Pivoting): 제작 오류와 난관을 팀워크로 돌파하기","goal":"사전 테스트에서 드러난 시제품 결함이나 운영상의 병목을 팀원들과 원만하게 조율하여 개선(Pivoting)할 수 있다.","mindfulPrompt":"문제가 생겼을 때 범인을 찾는 대신, “어떻게 함께 해결할까?”라고 묻는 성숙한 팀워크를 호흡합니다.","wsTask":"테스트 중 발생한 가장 큰 문제점 1가지와, Stage 5 Gems 및 팀 회의를 통해 찾아낸 피보팅(수정) 해결책을 기록하세요.","wsAnswer":"[교사 예시답안] 문제점: 현장에서 키캡 1개를 만드는 데 시간이 오래 걸려 대기 줄이 길어짐 ➔ 피보팅: 사전 성형된 베이스 키캡에 방문객이 파츠와 각인을 커스텀하는 투트랙 방식으로 체험 시간을 2분으로 단축함!","planIntro":"1분 평정심 명상 및 팀 갈등 예방 대화법 리마인드 (10분)","planMain":"모둠 간 교차 베타 테스트 및 Stage 5 Gems 기반 현장 피보팅 워크숍 (30분)","planWrap":"피보팅 완료된 최종 MVP(v2.0) 확정 및 팀원 상호 칭찬 (5분)"},{"id":"2-12","sem":"sem2","code":"2-12차시","stage":"Stage 6","stageName":"평가와 진화","sel":"자기관리","title":"설득력 있는 소셜벤처 IR 피칭덱(Canva) 완성 & 예상 질문 방어 연습","goal":"지역 문제의 데이터 근거, MVP 시제품, 손익·임팩트 수치, 피보팅 과정을 담은 최종 소셜벤처 피칭덱을 완성할 수 있다.","mindfulPrompt":"우리가 직접 발로 뛰며 모은 데이터와 손으로 만든 시제품이 주는 든든한 자신감을 느껴봅니다.","wsTask":"최종 피칭덱 6장의 핵심 메시지를 요약하고, 심사위원이나 청중에게서 나올 법한 날카로운 예상 질문 2가지와 답변을 준비하세요.","wsAnswer":"[교사 예시답안] 슬라이드 1~6 구성 완료 / 예상 질문: \"수익금은 어떻게 활용하나요?\" ➔ 답변: \"원가를 제외한 순수익 전액은 지역 환경보호 캠페인 및 차기 업사이클링 재료비로 재투자합니다.\"","planIntro":"1분 자신감 명상 및 소셜벤처 IR 피칭 평가 루브릭 공유 (10분)","planMain":"Canva 최종 발표 슬라이드 완성 및 질의응답(Q&A) 방어 연습 (30분)","planWrap":"발표 자료 링크 Padlet 최종 제출 (5분)"},{"id":"2-13","sem":"sem2","code":"2-13차시","stage":"Stage 6","stageName":"평가와 진화","sel":"책임있는 의사결정","title":"YEEP형 모의 크라우드 펀딩 & 소셜벤처 데모데이 리허설 (1,000만 포인트 투자)","goal":"플랫폼 내장 모의 크라우드 펀딩 위젯(#showcase)을 활용해 동료 팀의 사회적 가치와 실현 가능성을 평가하고 투자할 수 있다.","mindfulPrompt":"단순한 인기투표가 아니라, 우리 지역사회를 가장 건강하게 바꿀 가치에 책임감 있게 투자하는 안목을 기릅니다.","wsTask":"모의 크라우드 펀딩(1,000만 포인트)을 3개 이상 팀에 분산 투자하고, 투자한 이유와 마지막 보완 제안을 기록하세요.","wsAnswer":"[교사 예시답안] 조암시장 기억저장소 팀(400만 P), 궁평항 조개껍데기·키캡 팀(350만 P), 농어촌 AI 물류 팀(250만 P) 배분 및 심사평 제출 완료.","planIntro":"1분 공정함 명상 및 엔젤 투자자(Angel Investor) 심사 기준 안내 (10분)","planMain":"모둠별 데모데이 리허설 피칭 및 플랫폼 내장 YEEP 모의펀딩 실시간 투표 (30분)","planWrap":"모의투자 심사평 공유 및 본 발표 최종 점검 (5분)"},{"id":"2-14","sem":"sem2","code":"2-14차시","stage":"Stage 6","stageName":"평가와 진화","sel":"사회적 인식","title":"지역사회 나눔 부스 & 청소년 소셜벤처 페스티벌 실전 발표","goal":"교내외 페스티벌 부스 및 소셜벤처 발표 무대에서 프로젝트 결과물을 시연하고 관객과 소통할 수 있다.","mindfulPrompt":"교실 안에서 연습한 우리의 작은 날갯짓이 학교와 동네 사람들의 마음에 닿는 기쁨을 만끽합니다.","wsTask":"실전 부스 운영 및 발표 현장에서 만난 관객들의 가장 기억에 남는 반응과, 현장에서 느낀 보람을 기록하세요.","wsAnswer":"[교사 예시답안] \"중학생들이 직접 모은 병뚜껑과 조개껍데기로 이렇게 완성도 높은 굿즈를 만들고 지역 어르신 이야기까지 기록하다니 대단하다\"는 현장 칭찬에 큰 성취감을 느낌.","planIntro":"1분 활력 명상 및 부스·발표장 안전 및 소통 에티켓 확인 (5분)","planMain":"청소년 소셜벤처 데모데이 본 발표 및 업사이클링·로컬 상생 부스 운영 (35분)","planWrap":"현장 방문객 피드백 데이터 수합 및 단체 기념 촬영 (5분)"},{"id":"2-15","sem":"sem2","code":"2-15차시","stage":"Stage 6","stageName":"평가와 진화","sel":"자기인식","title":"실패와 도전의 기록장: 한 해 동안 겪은 시행착오가 키운 나의 진로 자신감","goal":"1·2학기에 걸쳐 겪은 실수와 피보팅 경험을 돌아보며, 그 과정이 나의 회복탄력성과 진로 효능감을 어떻게 높였는지 분석할 수 있다.","mindfulPrompt":"올해 우리가 겪었던 가장 아찔했던 실수 순간조차 지금은 웃으며 이야기할 수 있는 멋진 성장의 훈장이 되었음을 느껴봅니다.","wsTask":"올해 이커리어 수업에서 겪은 [가장 큰 실수/난관 1가지] ➔ [교사·친구의 지지와 피보팅 과정] ➔ [그 결과 달라진 나의 태도]를 연결해 서술하세요.","wsAnswer":"[교사 예시답안] 시제품 파손과 의견 충돌로 포기하고 싶었던 순간도 있었지만, 1분 명상으로 마음을 가라앉히고 친구들과 피보팅하며 \"어떤 어려움도 방법만 바꾸면 해결할 수 있다\"는 단단한 회복탄력성을 얻었다.","planIntro":"1분 성찰 명상 및 \"올해 최고의 실패(Best Failure) 상\" 이야기 나눔 (10분)","planMain":"나의 실패-피보팅-성장 타임라인 그래프 그리기 및 에세이 작성 (30분)","planWrap":"모둠원 서로에게 \"네 덕분에 해낼 수 있었어\" 롤링페이퍼 전달 (5분)"},{"id":"2-16","sem":"sem2","code":"2-16차시","stage":"Stage 6","stageName":"평가와 진화","sel":"통합 성찰","title":"연간 32차시 이커리어 마스터 수료식 & 고교학점제·미래 진로 로드맵 선언","goal":"연간 32차시 이커리어 6단계 경험을 고등학교 진학(고교학점제 과목 선택) 및 미래 진로 로드맵으로 확장해 선언할 수 있다.","mindfulPrompt":"지난 1년 32시간 동안 스스로 질문하고, 공감하고, 도전하며 성장한 나 자신에게 가장 큰 박수를 보냅니다.","wsTask":"연간 32차시 이커리어 과정을 통해 발견한 [나의 핵심 강점], [관심 진로·학업 분야], [고등학교 진학 후 도전 계획]을 진로 로드맵으로 정리하세요.","wsAnswer":"[교사 예시답안] 이커리어 32차시를 통해 발견한 문제해결력과 데이터 분석 흥미를 살려, 고등학교에서도 사회문제탐구와 인공지능 기초 과목을 선택해 소셜 이노베이터의 꿈을 이어가겠다.","planIntro":"1분 감사 명상 및 연간 32차시 성장 다큐멘터리 회고 (10분)","planMain":"고교학점제 연계 미래 진로 로드맵 작성 및 연간 자기주도 포트폴리오 최종 갈무리 (30분)","planWrap":"이커리어 마스터 수료 선언 및 격려 (5분)"}];
+const CASES = [{"id":"case-1","stage":2,"stageTag":"Stage 2 타인공감 × 지역 상생","title":"화성 조암시장 어르신 기억저장소","badge":"2026 로타리 청소년 아이디어 발표대회 대상 · 박소율(2학년)","desc":"조암시장 활성화와 세대 통합을 위해 상인 어르신의 구술 생애사와 지역의 기억을 인터뷰로 기록하고 아카이빙하는 플랫폼을 기획한 프로젝트입니다."},{"id":"case-2","stage":5,"stageTag":"Stage 5 실전구현 × 업사이클링 메이커","title":"폐조개껍질 공룡알 굿즈 & 플라스틱 리턴즈 병뚜껑 키캡","badge":"로타리 대회 최우수상 · 경기 비즈쿨 창업캠프 3위(창업진흥원장상)·장려상 · 유리아·이세영·연가은·최은수","desc":"화성 서부 해안의 폐조개껍질로 공룡알 화석산지를 모티프로 한 굿즈를 만들고, 교내 폐플라스틱 병뚜껑(HDPE)을 분쇄·사출해 기계식 키보드 키캡으로 되살린 메이커 창업 사례입니다."},{"id":"case-3","stage":3,"stageTag":"Stage 3 문제정의 × AI·데이터","title":"화성 농어촌 AI 스마트 공동물류 거점·경로 최적화","badge":"2026 농어촌 AI 스마트물류 공학대회 장려상 · 김시온·김태인(2학년)","desc":"넓은 면적에 배송지가 흩어진 농어촌 읍·면 지역의 물류 문제를 마을 공동 거점과 경로 설계 아이디어로 풀어낸 프로젝트입니다."},{"id":"case-4","stage":6,"stageTag":"공유학교 × Padlet 협업","title":"화성 다가치 글로벌 창업 공유학교 캠프 통합 Padlet 보드","badge":"2026.09. 신텍스 & 라비돌리조트 · 28명 참가","desc":"화성 지역 중·고등학생이 외국인 교환학생과 팀을 이루어 지역과 세계의 문제를 연결하고, 팀별 시제품과 피칭 자료를 한 보드에 모은 협업 아카이브입니다."},{"id":"case-5","stage":6,"stageTag":"1학기 1-15차시 데모데이","title":"1학년 「조잘조잘 스타트업 이야기 데모데이」 발표 아카이브","badge":"2026.06. 장안여중 미래교육포럼 연계 · 1학년 전체","desc":"1학기 기초 트랙의 마무리로, 1학년 모둠이 교실과 일상의 작은 불편을 찾아 해결 아이디어를 발표하고 모의 공감 투표를 진행한 교내 데모데이 기록입니다."},{"id":"case-6","stage":6,"stageTag":"Stage 6 평가와 진화 × 대외 확산","title":"아산 유스프러너 데모데이 & 화성 청소년 소셜벤처 피칭덱","badge":"코엑스·킨텍스 데모데이 · 제11회 화성특례시 청소년 소셜벤처 아이디어 공모대회","desc":"교실의 배움을 아산 유스프러너 데모데이와 화성특례시 청소년 소셜벤처 공모대회 무대로 넓혀 발표한 학생팀 피칭 자료 모음입니다."}];
+const SAMPLE_CNS = [{"id":"cns-1","createdAt":"2026-11-16","applicantType":"학생","studentName":"[샘플] 20214 이○연","contact":"2학년 2반 교실 전달","method":"미래진로실 대면상담","category":"고교진학·고교학점제 설계","date":"2026-11-20","timeSlot":"점심시간 (12:40~13:20)","clarity":2,"stress":4,"urgency":"빠른 상담 희망","note":"디자인과 메이커 활동은 정말 재미있는데, 고교학점제에서 일반고를 가서 진로선택과목을 듣는 게 좋을지 특성화고 디자인과를 가는 게 맞을지 확신이 안 서서 불안해요."},{"id":"cns-2","createdAt":"2026-11-16","applicantType":"학부모","studentName":"[샘플] 20308 박○호 (학부모)","contact":"전화 회신 희망","method":"전화 상담","category":"자녀소통·가정내 진로코칭","date":"2026-11-21","timeSlot":"학부모 저녁 전화 (17:00~)","clarity":2,"stress":4,"urgency":"우선·긴급 케어","note":"아이가 2학기 들어 진로 목표를 못 찾겠다며 학업 의욕이 많이 떨어지고 집에서 대화를 피합니다. 학교 이커리어 수업에서는 모둠 활동을 잘한다는데 가정에서 어떻게 지지해 주면 좋을지 상담드리고 싶습니다."},{"id":"cns-3","createdAt":"2026-11-15","applicantType":"학생","studentName":"[샘플] 10421 최○진","contact":"1학년 4반","method":"미래진로실 대면상담","category":"교우관계·SEL 정서·마음돌봄","date":"2026-11-19","timeSlot":"방과후 (15:30~16:20)","clarity":3,"stress":4,"urgency":"빠른 상담 희망","note":"모둠 프로젝트를 할 때 친구들에게 제 의견을 말하다가 거절당할까 봐 자꾸 눈치를 보게 돼요. 마음챙김 명상 시간처럼 평소에 자신감을 키우는 방법을 상담받고 싶습니다."},{"id":"cns-4","createdAt":"2026-11-14","applicantType":"학생","studentName":"[샘플] 20105 김○린","contact":"2학년 1반 창업동아리","method":"미래진로실 대면상담","category":"비즈쿨·창업동아리·대회멘토링","date":"2026-11-22","timeSlot":"진로·자율 공강시간","clarity":5,"stress":2,"urgency":"일반 진로탐색","note":"이번에 우리 모둠이 만든 폐플라스틱 병뚜껑 키캡 시제품을 지역 청소년 소셜벤처 대회에 출품하고 싶은데, 발표 피칭덱과 손익분기점 근거를 어떻게 보강하면 좋을지 멘토링 부탁드립니다!"}];
+const DEFAULT_TASKS = [{"id":"at1","track":"학교·미래진로부","quad":"Q1","due":"2026-11-20","status":"진행중","title":"장안여중 미래진로부 청소년 비즈쿨 및 연간 32차시 이커리어 교육과정 결과 정리"},{"id":"at2","track":"학교·미래진로부","quad":"Q2","due":"2026-11-27","status":"대기","title":"2학기 진로·기업가정신 수업 과정중심 평가 및 생기부 관찰기록 문구 점검"},{"id":"at3","track":"학술·박사연구","quad":"Q1","due":"2026-11-22","status":"진행중","title":"성균관대 교육행정 박사학위 연구모형(PROCESS Macro Model 7 & 영웅 없는 조직문화) 문헌·설문 점검"},{"id":"at4","track":"학술·박사연구","quad":"Q2","due":"2026-12-05","status":"진행중","title":"세종특별자치시교육청 교사 연수 자료 개발 연구 공동 집필"},{"id":"at5","track":"대외·네트워크","quad":"Q3","due":"2026-11-18","status":"완료","title":"2026 청소년 비즈쿨 페스티벌(청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장 진행 결과 아카이빙"},{"id":"at6","track":"대외·네트워크","quad":"Q2","due":"2026-11-30","status":"진행중","title":"아산 티처프러너 EDventure 팀장 회의 및 화성오산 기업가정신·공유학교 TF 공유"}];
+const LEAN_PRESETS = {"keycap":["작은 폐플라스틱 병뚜껑과 서부 해안 폐조개껍질이 재활용되지 못하고 버려짐","개성 있는 커스텀 데스크테리어·키링 굿즈를 선호하는 청소년 및 지역 축제 방문객","내가 모은 병뚜껑 3개가 화성 공룡알·마블링 기계식 키보드 키캡으로 재탄생하는 메이커 경험","교내 병뚜껑 수거 농구대 캠페인 + 커스텀 키캡·공룡알 키링 업사이클링 부스","화성 동아리 축제 부스, 조잘조잘 데모데이, 학급 Padlet 갤러리","수거한 폐자원 수량, 제작 키캡·굿즈 수, 탄소 감축량(아래 BEP 시뮬레이터로 계산)","비즈쿨 메이커 기자재 + 4인 4색 조각보(Crazy Quilt) 학생팀 역할 분담","키링 부자재 및 스위치 프레임 원가(개당 1,000원, 감수 가능한 손실 내 운영)","손익분기점 초과분의 순수익을 환경 캠페인에 재투자"],"market":["조암시장 어르신 상인들의 오랜 점포 역사와 삶의 지혜가 기록 없이 잊혀가고 젊은 발길이 줄어듦","전통시장 상인 어르신 및 지역 역사와 스토리에 관심 있는 청소년·시민","청소년이 직접 채록한 어르신의 생애사를 QR 오디오북과 AI 일러스트 엽서로 만나는 세대 공감 아카이브","공감 인터뷰 채록 + QR 음성 스토리북 + 조암시장 스토리 스탬프 투어 엽서","조암시장 점포 앞 QR 스토리 명패, 학교·지역사회 Padlet 디지털 박물관","채록 완료 점포 수, 기록물 열람 횟수, 어르신·청소년 참여자 수","학생들의 진심 어린 공감 경청 태도와 디지털 스토리텔링 제작 역량","엽서 인쇄비 및 QR 스티커 제작비 (학교 비즈쿨 예산 내 해결)","세대 간 이해 증진 및 지역 전통시장 상권에 대한 청소년 친밀도 향상"],"ai":["화성 농어촌(읍·면) 지역의 넓은 면적 대비 분산된 배송지로 인한 물류 비효율 및 어르신 수령 불편","농어촌 거주 어르신 가구 및 지역 소상공인·택배 배송 기사님","공공데이터와 AI 경로 클러스터링으로 빈틈없는 마을 공동물류 거점을 연결하는 스마트 모델","마을회관 기반 스마트 공동물류 거점 + AI 최적 배송 루트 시뮬레이션","농어촌 AI 스마트물류 공학대회 발표, 지자체 청소년 정책제안","예상 배송 이동거리 단축률(%), 어르신 도보 수령 거리 감소","수업에서 익힌 데이터 묶기(클러스터링) 아이디어와 공공데이터 활용 역량","공공데이터포털 오픈 데이터 및 노코드 프로토타이핑 (비용 0원)","농어촌 물류 소외 해소 및 탄소 배출 저감 효과"]};
+/* ===== QR 코드 인코더 (바이트 모드 · 오류정정 M · 버전 1~10) ===== */
+function qrMatrix(text) {
+  const ECC = [10, 16, 26, 18, 24, 16, 18, 22, 22, 26], BLK = [1, 1, 1, 2, 2, 4, 4, 4, 5, 5];
+  const bytes = Array.from(new TextEncoder().encode(text));
+  const rawCw = v => { let r = (16 * v + 128) * v + 64; if (v >= 2) { const n = Math.floor(v / 7) + 2; r -= (25 * n - 10) * n - 55; if (v >= 7) r -= 36; } return Math.floor(r / 8); };
+  let ver = 0, dataCw = 0;
+  for (let v = 1; v <= 10; v++) { const cap = rawCw(v) - ECC[v - 1] * BLK[v - 1]; if (4 + (v < 10 ? 8 : 16) + bytes.length * 8 <= cap * 8) { ver = v; dataCw = cap; break; } }
+  if (!ver) return null;
+  const bits = []; const put = (val, len) => { for (let i = len - 1; i >= 0; i--) bits.push((val >>> i) & 1); };
+  put(4, 4); put(bytes.length, ver < 10 ? 8 : 16); bytes.forEach(b => put(b, 8));
+  put(0, Math.min(4, dataCw * 8 - bits.length)); while (bits.length % 8) bits.push(0);
+  for (let pad = 0xEC; bits.length < dataCw * 8; pad ^= 0xEC ^ 0x11) put(pad, 8);
+  const data = []; for (let i = 0; i < bits.length; i += 8) data.push(parseInt(bits.slice(i, i + 8).join(''), 2));
+  const mul = (x, y) => { let z = 0; for (let i = 7; i >= 0; i--) { z = (z << 1) ^ ((z >>> 7) * 0x11D); z ^= ((y >>> i) & 1) * x; } return z; };
+  const eccLen = ECC[ver - 1], nb = BLK[ver - 1], raw = rawCw(ver);
+  const gen = new Array(eccLen).fill(0); gen[eccLen - 1] = 1;
+  for (let i = 0, root = 1; i < eccLen; i++) { for (let j = 0; j < eccLen; j++) { gen[j] = mul(gen[j], root); if (j + 1 < eccLen) gen[j] ^= gen[j + 1]; } root = mul(root, 2); }
+  const rs = d => { const r = new Array(eccLen).fill(0); d.forEach(b => { const f = b ^ r.shift(); r.push(0); gen.forEach((g, i) => r[i] ^= mul(g, f)); }); return r; };
+  const nShort = nb - raw % nb, shortLen = Math.floor(raw / nb), blocks = [];
+  for (let i = 0, k = 0; i < nb; i++) { const len = shortLen - eccLen + (i < nShort ? 0 : 1); const d = data.slice(k, k + len); k += len; const e = rs(d); if (i < nShort) d.push(0); blocks.push(d.concat(e)); }
+  const out = [];
+  for (let i = 0; i < blocks[0].length; i++) blocks.forEach((b, j) => { if (i !== shortLen - eccLen || j >= nShort) out.push(b[i]); });
+  const n = ver * 4 + 17, M = [], F = [];
+  for (let y = 0; y < n; y++) { M.push(new Array(n).fill(0)); F.push(new Array(n).fill(0)); }
+  const set = (x, y, v) => { M[y][x] = v ? 1 : 0; F[y][x] = 1; };
+  for (let i = 0; i < n; i++) { set(6, i, i % 2 === 0); set(i, 6, i % 2 === 0); }
+  const finder = (cx, cy) => { for (let dy = -4; dy <= 4; dy++) for (let dx = -4; dx <= 4; dx++) { const d = Math.max(Math.abs(dx), Math.abs(dy)), x = cx + dx, y = cy + dy; if (x >= 0 && x < n && y >= 0 && y < n) set(x, y, d !== 2 && d !== 4); } };
+  finder(3, 3); finder(n - 4, 3); finder(3, n - 4);
+  if (ver >= 2) {
+    const na = Math.floor(ver / 7) + 2, step = Math.ceil((ver * 4 + na * 2 + 1) / (na * 2 - 2)) * 2, pos = [6];
+    for (let p = n - 7; pos.length < na; p -= step) pos.splice(1, 0, p);
+    pos.forEach((ay, i) => pos.forEach((ax, j) => { if ((i === 0 && j === 0) || (i === 0 && j === na - 1) || (i === na - 1 && j === 0)) return; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) set(ax + dx, ay + dy, Math.max(Math.abs(dx), Math.abs(dy)) !== 1); }));
+  }
+  const mask = 0; let fd = (0 << 3) | mask, rem = fd; /* 오류정정 M = 포맷 비트 00 */
+  for (let i = 0; i < 10; i++) rem = (rem << 1) ^ ((rem >>> 9) * 0x537);
+  const fb = ((fd << 10) | rem) ^ 0x5412, bit = i => (fb >>> i) & 1;
+  for (let i = 0; i <= 5; i++) set(8, i, bit(i));
+  set(8, 7, bit(6)); set(8, 8, bit(7)); set(7, 8, bit(8));
+  for (let i = 9; i < 15; i++) set(14 - i, 8, bit(i));
+  for (let i = 0; i < 8; i++) set(n - 1 - i, 8, bit(i));
+  for (let i = 8; i < 15; i++) set(8, n - 15 + i, bit(i));
+  set(8, n - 8, 1);
+  if (ver >= 7) { let r = ver; for (let i = 0; i < 12; i++) r = (r << 1) ^ ((r >>> 11) * 0x1F25); const vb = (ver << 12) | r; for (let i = 0; i < 18; i++) { const a = n - 11 + i % 3, b = Math.floor(i / 3), v = (vb >>> i) & 1; set(a, b, v); set(b, a, v); } }
+  let k = 0;
+  for (let right = n - 1; right >= 1; right -= 2) {
+    if (right === 6) right = 5;
+    for (let vert = 0; vert < n; vert++) for (let j = 0; j < 2; j++) {
+      const x = right - j, up = ((right + 1) & 2) === 0, y = up ? n - 1 - vert : vert;
+      if (!F[y][x] && k < out.length * 8) { M[y][x] = (out[k >>> 3] >>> (7 - (k & 7))) & 1; k++; }
+    }
+  }
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (!F[y][x] && (x + y) % 2 === 0) M[y][x] ^= 1;
+  return M;
+}
+function qrSvg(text, px) {
+  const m = qrMatrix(text); if (!m) return '';
+  const n = m.length, q = 4, s = n + q * 2; let d = '';
+  m.forEach((row, y) => row.forEach((v, x) => { if (v) d += 'M' + (x + q) + ' ' + (y + q) + 'h1v1h-1z'; }));
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + s + ' ' + s + '" width="' + px + '" height="' + px + '" shape-rendering="crispEdges" role="img" aria-label="수업 접속 QR 코드"><rect width="' + s + '" height="' + s + '" fill="#fff"/><path d="' + d + '" fill="#0F172A"/></svg>';
+}
+/* ===== 공통 유틸 ===== */
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const K = { done: 'drk8.done', links: 'drk8.links', gas: 'drk8.gas', refl: 'drk8.refl', cns: 'drk8.cns', tasks: 'drk8.tasks', dark: 'drk8.dark' };
+const load = (k, d) => { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { toast('이 브라우저에서는 저장소를 사용할 수 없어 새로고침 시 내용이 사라집니다.'); } };
+const icons = () => { if (window.lucide) lucide.createIcons(); };
+const safeUrl = u => { u = String(u || '').trim(); return /^https:\/\/[^\s"'<>]+$/i.test(u) ? u : ''; };
+const today = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+const won = n => Math.round(n).toLocaleString('ko-KR');
+
+/* 탭 버튼과 내부 부제목·배지의 활성/비활성 색상을 함께 전환 (글씨 실종 방지) */
+function paint(el, on) {
+  if (!el) return;
+  [el].concat(Array.from(el.querySelectorAll('[data-on]'))).forEach(n => {
+    const a = (n.dataset.on || '').split(' ').filter(Boolean), b = (n.dataset.off || '').split(' ').filter(Boolean);
+    n.classList.remove(...(on ? b : a)); n.classList.add(...(on ? a : b));
+  });
+  el.classList.toggle('is-active', !!on);
+  el.setAttribute(el.getAttribute('role') === 'radio' ? 'aria-checked' : 'aria-selected', on ? 'true' : 'false');
+}
+const paintGroup = (prefix, keys, active) => keys.forEach(k => paint($(prefix + k), k === active));
+
+let toastTimer;
+function toast(msg) { const t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 2600); }
+function copyText(text, msg) {
+  const done = () => toast(msg || '클립보드에 복사했습니다.');
+  const fallback = () => { const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (e) { toast('복사에 실패했습니다. 직접 선택해 복사해 주세요.'); } ta.remove(); };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
+}
+function download(name, content, mime) {
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([content], { type: mime })); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+const csvOf = rows => '﻿' + rows.map(r => r.map(c => '"' + String(c == null ? '' : c).replace(/"/g, '""') + '"').join(',')).join('\r\n');
+
+/* ===== 상태 ===== */
+const S = { lang: 'school', bio: 'short', pv: 0, stage: 1, sem: 'sem1', filter: 'all', wb: 'pov', ws: 'student', wsId: null, planId: null, weather: '', cnsType: '학생', cnsUrg: '일반 진로탐색', cnsFilter: '전체', cnsSel: null, cnsDoc: 'hwp', cnsTab: 'form', ad: 1, taskView: 'kanban', hwp: 'draft', unlocked: false, editing: false, pin: '' };
+let done = load(K.done, []);
+let links = Object.assign({ sem1Canva: '', sem1Padlet: '', sem2Canva: '', sem2Padlet: '', gems: {}, cases: {}, lessons: {} }, window.__BAKED_LINKS__ || {}, load(K.links, {}));
+let gasUrl = load(K.gas, '') || window.__BAKED_GAS_URL__ || '';
+let reflections = load(K.refl, []);
+let cnsList = load(K.cns, null) || SAMPLE_CNS.slice();
+let tasks = load(K.tasks, null) || DEFAULT_TASKS.slice();
+
+const STAGE_UI = {
+  1: { icon: 'compass', chip: 'bg-emerald-50 text-emerald-800 border-emerald-200', bar: 'bg-emerald-500', dark: 'text-emerald-300', hex: '#059669' },
+  2: { icon: 'ear', chip: 'bg-sky-50 text-sky-800 border-sky-200', bar: 'bg-sky-500', dark: 'text-sky-300', hex: '#0284C7' },
+  3: { icon: 'network', chip: 'bg-indigo-50 text-indigo-800 border-indigo-200', bar: 'bg-indigo-500', dark: 'text-indigo-300', hex: '#4F46E5' },
+  4: { icon: 'lightbulb', chip: 'bg-amber-50 text-amber-800 border-amber-200', bar: 'bg-amber-500', dark: 'text-amber-300', hex: '#B45309' },
+  5: { icon: 'hammer', chip: 'bg-rose-50 text-rose-800 border-rose-200', bar: 'bg-rose-500', dark: 'text-rose-300', hex: '#BE123C' },
+  6: { icon: 'presentation', chip: 'bg-violet-50 text-violet-800 border-violet-200', bar: 'bg-violet-500', dark: 'text-violet-300', hex: '#6D28D9' }
+};
+const stageNo = l => Number(l.stage.replace(/\D/g, ''));
+const stageOf = n => STAGES[n - 1];
+const shortName = st => st.name.split(' (')[0];
+const lessonOf = id => LESSONS.find(l => l.id === id);
+const EVAL = {
+  1: '자신의 강점·흥미·가치를 구체적인 경험 근거와 함께 설명하는가',
+  2: '추측과 관찰을 구분하고, 상대의 말을 인용해 필요(Needs)를 기록하는가',
+  3: '표면 현상에서 근본 원인으로 근거를 들어 파고드는가',
+  4: '감수 가능한 손실 범위에서 실행 가능한 아이디어를 제안하는가',
+  5: '동료 피드백과 시행착오를 반영해 시제품을 수정(피보팅)하는가',
+  6: '문제–근거–피보팅–성장을 하나의 이야기로 연결해 발표·성찰하는가'
+};
+
+/* ===== 모달 ===== */
+let openId = null, lastFocus = null;
+function openModal(id) {
+  if (openId) closeModal();
+  lastFocus = document.activeElement; openId = id; $(id).classList.remove('hidden'); document.body.style.overflow = 'hidden';
+  const f = $(id).querySelector('button, a[href], input, textarea, select'); if (f) f.focus(); icons();
+}
+function closeModal() {
+  if (!openId) return;
+  if (openId === 'm-mindful') resetMindful();
+  if (openId === 'm-embed') $('emFrame').removeAttribute('src');
+  $(openId).classList.add('hidden'); openId = null; document.body.style.overflow = '';
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('mousedown', e => { if (e.target.classList && e.target.classList.contains('modal')) closeModal(); });
+
+/* ===== 헤더 유틸: 칠판모드 · QR · 마음챙김 ===== */
+function applyDark(on) { document.body.classList.toggle('board-dark', on); $('darkBtn').setAttribute('aria-pressed', on ? 'true' : 'false'); drawPhd(); drawCnsChart(); }
+function toggleDark() { const on = !document.body.classList.contains('board-dark'); save(K.dark, on); applyDark(on); toast(on ? '칠판모드(눈부심 방지)를 켰습니다.' : '칠판모드를 껐습니다.'); }
+
+function openQr() { const here = /^https?:/.test(location.protocol) ? location.href.split('#')[0] : ''; if (!$('qrUrl').value) $('qrUrl').value = here; openModal('m-qr'); drawQr(); }
+function drawQr() {
+  const u = $('qrUrl').value.trim(), box = $('qrBox'), msg = $('qrMsg');
+  if (!u) { box.innerHTML = '<p class="text-sm text-slate-600 text-center px-4">이 파일을 웹에 올린 뒤(예: GitHub Pages, 학교 홈페이지) 접속 주소를 아래에 붙여 넣으면 QR 코드가 만들어집니다.</p>'; msg.textContent = /^file:/.test(location.protocol) ? '지금은 내 컴퓨터의 파일로 열려 있어 학생 기기에서 접속할 수 없습니다.' : ''; return; }
+  const svg = qrSvg(u, 248);
+  box.innerHTML = svg || '<p class="text-sm text-rose-700 font-bold">주소가 너무 깁니다. 단축 주소를 사용해 주세요.</p>'; msg.textContent = '';
+}
+
+const MF = { t: 0, timer: null };
+function openMindful() { resetMindful(); openModal('m-mindful'); }
+function mfPaint() {
+  const left = 60 - MF.t, ph = Math.floor(MF.t / 4) % 3, c = $('mfCircle');
+  $('mfSec').textContent = Math.max(left, 0);
+  if (left <= 0) { clearInterval(MF.timer); MF.timer = null; c.className = ''; $('mfPhase').textContent = '수고했어요. 천천히 눈을 뜹니다'; $('mfBtn').textContent = '다시 시작'; MF.t = 0; return; }
+  c.className = ['inhale', 'hold', 'exhale'][ph];
+  $('mfPhase').textContent = ['들숨 — 코로 천천히', '머금기 — 잠시 멈춤', '날숨 — 입으로 길게'][ph] + ' ' + (4 - MF.t % 4);
+}
+function toggleMindful() {
+  if (MF.timer) { clearInterval(MF.timer); MF.timer = null; $('mfBtn').textContent = '이어서'; return; }
+  $('mfBtn').textContent = '일시정지'; mfPaint(); MF.timer = setInterval(() => { MF.t++; mfPaint(); }, 1000);
+}
+function resetMindful() { clearInterval(MF.timer); MF.timer = null; MF.t = 0; $('mfCircle').className = ''; $('mfPhase').textContent = '준비'; $('mfSec').textContent = '60'; $('mfBtn').textContent = '시작'; }
+
+/* ===== 히어로: 6단계 타일 + 진도율 ===== */
+function renderHero() {
+  $('heroStages').innerHTML = STAGES.map(st => { const u = STAGE_UI[st.stageNum]; return `<a href="#map" onclick="selectStage(${st.stageNum})" class="block rounded-2xl bg-slate-900 border border-slate-700 hover:border-slate-400 p-3 transition-colors">
+    <span class="block text-[10px] font-extrabold tracking-widest ${u.dark}">STAGE 0${st.stageNum}</span>
+    <span class="block mt-1 text-sm font-extrabold text-white">${esc(shortName(st))}</span>
+    <span class="block mt-0.5 text-[11px] text-slate-300">${esc(st.selCompetency.split(' (')[0])}</span></a>`; }).join('');
+  updateProgress();
+}
+function updateProgress() {
+  const n = done.filter(id => lessonOf(id)).length, pct = Math.round(n / 32 * 100);
+  $('heroPct').textContent = pct; $('heroDone').textContent = n; $('heroBar').style.width = pct + '%'; $('heroBarWrap').setAttribute('aria-valuenow', pct);
+  const next = LESSONS.find(l => !done.includes(l.id));
+  $('heroNext').innerHTML = next
+    ? `<div class="flex items-center justify-between gap-3 rounded-xl bg-slate-800 border border-slate-700 px-3 py-2.5"><div class="min-w-0"><div class="text-[11px] font-bold text-amber-200">다음 차시 · ${esc(next.id)} · ${esc(next.stage)}</div><div class="text-sm font-bold text-white truncate">${esc(next.title)}</div></div><button type="button" onclick="goLesson('${next.id}')" class="btn btn-sm bg-white text-slate-900 hover:bg-slate-100 flex-none">수업 열기</button></div>`
+    : `<div class="rounded-xl bg-emerald-400 text-[#052E1B] px-3 py-2.5 text-sm font-extrabold">연간 32차시 이수를 모두 마쳤습니다.</div>`;
+}
+function goLesson(id) { const l = lessonOf(id); S.sem = l.sem; S.filter = 'all'; $('lessonSearch').value = ''; renderSemTabs(); renderFilters(); renderLessons(); const el = $('lesson-' + id); if (el) el.scrollIntoView({ block: 'center' }); }
+function toggleDone(id) { done = done.includes(id) ? done.filter(x => x !== id) : done.concat(id); save(K.done, done); renderLessons(); updateProgress(); renderSemTabs(); }
+
+/* ===== 1. 프로필 ===== */
+const LANG = {
+  school: { cls: 'border-l-emerald-500', tag: '학교 현장의 언어', tagCls: 'text-emerald-700', text: '아이들이 “내가 뭘 좋아하지?”에서 출발해 친구와 동네의 불편을 직접 관찰하고, 작게 만들어 보고, 실패하면 고쳐서 다시 발표합니다. 매 시간 1분 호흡으로 마음을 고르고, 실수는 점수가 아니라 다음 시도를 위한 데이터로 기록합니다. 1년 32차시가 끝나면 학생은 자신의 강점과 진로 이야기를 자기 말로 설명할 수 있게 됩니다.' },
+  policy: { cls: 'border-l-indigo-500', tag: '교육행정·정책 연구의 언어', tagCls: 'text-indigo-700', text: '프로젝트 기반 기업가정신 교육(X)이 중학생 진로적응성(Y)에 미치는 영향을 ‘실수에 대한 건설적 태도(M)’가 매개하고, 그 경로를 ‘교사 지지(W)’가 조절하는 조절된 매개모형(Hayes PROCESS Macro Model 7)을 교육과정으로 구현한 사례입니다. 소규모 학교에서 특정 교사 개인에 의존하지 않는 ‘영웅 없는 조직문화(Hero-less Culture)’를 통해 프로그램의 지속가능성을 확보하는 운영 구조를 함께 탐구합니다.' }
+};
+function setLang(k) { S.lang = k; paintGroup('langBtn-', ['school', 'policy'], k); const d = LANG[k], b = $('langBanner'); b.classList.remove('border-l-emerald-500', 'border-l-indigo-500'); b.classList.add(d.cls); b.innerHTML = `<div class="eyebrow ${d.tagCls}">${d.tag}</div><p class="mt-2 text-base text-slate-800 leading-relaxed">${d.text}</p>`; }
+const BIO = {
+  short: '권대륜(DR K)은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년째 진로·기업가정신 교육을 실천해 온 교사이다. 중등 1급 정교사(진로진학상담·체육)이며 아산 티처프러너 커뮤니티(EDventure) 팀장으로 활동하고 있다. 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정에서 프로젝트 기반 기업가정신 교육이 중학생 진로적응성에 미치는 영향을 연구한다. 중소벤처기업부 장관 표창(2025)을 수상했다.',
+  talk: '오늘 진행을 맡은 권대륜 선생님을 소개합니다.\n\n권대륜 선생님은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년간 학교 현장을 지켜 온 진로진학상담·체육 교사입니다. 삼괴고등학교 학생안전부장을 거쳐 현재 장안여중에서 이커리어(E-Career) 6단계와 사회정서학습(SEL)을 결합한 연간 32차시 진로·기업가정신 수업을 운영하고 있습니다.\n\n아산 티처프러너 커뮤니티(EDventure) 팀장, 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원으로 활동하며, 2026 청소년 비즈쿨 페스티벌(청주 OSCO)에서 꿈틀 타운홀과 전국 교원 포럼 좌장을 맡았습니다. 2025년 중소벤처기업부 장관 표창, 2026년 경기도교육감 표창을 받았습니다.\n\n성균관대학교 일반대학원 교육행정전공 박사과정에서는 프로젝트 기반 기업가정신 교육이 중학생의 진로적응성에 미치는 영향과 ‘실수에 대한 건설적 태도’, ‘교사 지지’의 역할을 연구하고 있습니다.\n\n“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않습니다.” 권대륜 선생님을 큰 박수로 맞이해 주시기 바랍니다.',
+  hwp: '□ 인적 사항\n  ◦ 성명: 권대륜 (DR K)\n  ◦ 소속·직위: 화성 장안여자중학교 미래진로부장 (2학년부장, 교총분회장, 친목회장)\n□ 경력 및 자격\n  ◦ 2008년 임용 후 무휴직 19년 연속 재직\n    - 삼괴고등학교 12년(학생안전부장 4년) → 장안여자중학교\n  ◦ 중등 1급 정교사 2종(진로진학상담, 체육)\n  ◦ AI 디지털 기반 교육 혁신 선도교사, 사회정서교육(SEL) 선도교사\n□ 학력 및 연구\n  ◦ 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정 (지도교수 배상훈)\n  ◦ 아주대학교 진로진학상담 석사, 경희대학교 체육교육 석사\n  ◦ 경희대학교 태권도학·스포츠경영학 학사\n  ◦ 연구 주제\n    - 프로젝트 기반 기업가정신 교육(X)과 중학생 진로적응성(Y)의 관계에서 실수에 대한 건설적 태도(M)의 매개효과 및 교사 지지(W)의 조절된 매개효과(PROCESS Macro Model 7)\n    - 소규모 학교의 영웅 없는 조직문화(Hero-less Culture)\n□ 주요 표창 및 대외 활동\n  ◦ 중소벤처기업부 장관 표창(2025.10.), 경기도교육감 표창(2026.06.)\n  ◦ 아산 티처프러너 커뮤니티(EDventure) 팀장\n  ◦ 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원\n  ◦ 화성오산교육지원청 창업교육 활성화 TF 위원, 경기도 진로진학교사 협의회 사무국 위원\n  ◦ 2026 청소년 비즈쿨 페스티벌(청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장\n  ◦ 세종특별자치시교육청 교사 연수 자료 개발 연구 공동연구원\n□ 저술\n  ◦ 공저 『청소년 기업가정신 교과서』, 『세상을 바꾸는 기업가정신』\n  ◦ 아산 티처프러너 6기 기업가정신 교육과정(공동 집필)'
+};
+function setBio(k) { S.bio = k; paintGroup('bioTab-', ['short', 'talk', 'hwp'], k); $('bioBox').value = BIO[k]; $('bioLen').textContent = BIO[k].length + '자'; }
+function renderPv() {
+  $('pvTabs').innerHTML = PERSPECTIVES.map((p, i) => `<button type="button" role="tab" id="pvTab-${i}" onclick="S.pv=${i};renderPv()" class="tabbtn px-4 py-2 rounded-full border text-sm font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">${esc(p.tag)}</button>`).join('');
+  PERSPECTIVES.forEach((p, i) => paint($('pvTab-' + i), i === S.pv));
+  const p = PERSPECTIVES[S.pv];
+  $('pvPair').innerHTML = `<article class="card p-6 border-l-4 border-l-emerald-500"><div class="eyebrow text-emerald-700">교사의 설계 의도</div><h4 class="mt-2 font-extrabold text-slate-900">${esc(p.teacherTitle)}</h4><p class="mt-2 text-sm text-slate-700 leading-relaxed">${esc(p.teacherText)}</p></article>
+  <article class="card p-6 border-l-4 border-l-amber-500 bg-amber-50"><div class="flex items-center justify-between gap-2"><span class="eyebrow text-amber-800">아이들의 실제 반응</span><span class="text-[11px] font-bold text-amber-800 border border-amber-300 rounded-full px-2 py-0.5">예시 문장 · 실제 성찰로 교체 가능</span></div><h4 class="mt-2 font-extrabold text-slate-900">${esc(p.studentTitle)}</h4><p class="mt-2 text-sm text-slate-800 leading-relaxed">${esc(p.studentText)}</p></article>`;
+}
+
+/* ===== 2. 6단계 맵 ===== */
+const STAGE_VARS = { 1: ['X', 'W'], 2: ['X'], 3: ['X'], 4: ['X', 'W'], 5: ['M'], 6: ['Y'] };
+function modelSvg(active) {
+  const node = (id, x, y, w, t1, t2) => { const on = active.includes(id); return `<g><rect x="${x}" y="${y}" width="${w}" height="54" rx="12" fill="${on ? '#047857' : '#F1F5F9'}" stroke="${on ? '#047857' : '#94A3B8'}" stroke-width="1.5"/><text x="${x + w / 2}" y="${y + 23}" text-anchor="middle" font-size="13" font-weight="800" fill="${on ? '#FFFFFF' : '#0F172A'}">${t1}</text><text x="${x + w / 2}" y="${y + 41}" text-anchor="middle" font-size="11" font-weight="600" fill="${on ? '#D1FAE5' : '#334155'}">${t2}</text></g>`; };
+  return `<svg viewBox="0 0 440 230" class="w-full" role="img" aria-label="조절된 매개모형(PROCESS Model 7) 경로도"><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#64748B"/></marker></defs>
+  <g stroke="#64748B" stroke-width="1.6" fill="none" marker-end="url(#ah)"><path d="M76 168 L212 64"/><path d="M318 64 L368 166"/><path d="M134 195 L306 195"/><path d="M62 62 L138 112"/></g>
+  <g font-size="11" font-weight="700" fill="#64748B"><text x="156" y="128">a</text><text x="352" y="112">b</text><text x="214" y="188">c′</text></g>
+  ${node('W', 6, 6, 112, 'W 교사 지지', '조절변인')}${node('M', 190, 8, 150, 'M 건설적 태도', '실수에 대한 · 매개')}${node('X', 6, 168, 126, 'X 기업가정신 PBL', '독립변인')}${node('Y', 310, 168, 124, 'Y 진로적응성', '종속변인')}</svg>`;
+}
+function renderStages() {
+  $('stageStepper').innerHTML = STAGES.map(st => { const u = STAGE_UI[st.stageNum]; return `<button type="button" role="tab" id="stBtn-${st.stageNum}" onclick="selectStage(${st.stageNum})" class="tabbtn text-left p-4 rounded-2xl border" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-200 text-slate-900 hover:border-slate-400">
+    <span class="flex items-center justify-between"><span class="text-[11px] font-extrabold tracking-widest" data-on="text-emerald-300" data-off="text-slate-500">STAGE 0${st.stageNum}</span><i data-lucide="${u.icon}" class="w-4 h-4"></i></span>
+    <span class="block mt-2 text-base font-extrabold">${esc(shortName(st))}</span>
+    <span class="block mt-0.5 text-xs font-semibold" data-on="text-slate-200" data-off="text-slate-600">SEL · ${esc(st.selCompetency.split(' (')[0])}</span></button>`; }).join('');
+  selectStage(S.stage);
+}
+function selectStage(n) {
+  S.stage = n; STAGES.forEach(st => paint($('stBtn-' + st.stageNum), st.stageNum === n));
+  const st = stageOf(n), u = STAGE_UI[n], cnt = LESSONS.filter(l => stageNo(l) === n).length;
+  const row = (k, v) => `<div class="rounded-xl bg-slate-50 border border-slate-200 p-4"><dt class="text-xs font-extrabold text-slate-500">${k}</dt><dd class="mt-1 text-sm font-semibold text-slate-800 leading-relaxed">${esc(v)}</dd></div>`;
+  $('stageDetail').innerHTML = `<div class="grid lg:grid-cols-12 gap-6">
+    <div class="lg:col-span-7 card p-6">
+      <div class="flex flex-wrap items-center gap-2"><span class="px-2.5 py-1 rounded-full border text-xs font-extrabold ${u.chip}">Stage ${n}</span><span class="text-xs font-bold text-slate-500">${esc(st.engName)}</span><span class="text-xs font-bold text-slate-500">· 연간 ${cnt}개 차시</span></div>
+      <h3 class="mt-3 text-2xl font-black text-slate-900">${esc(st.name)}</h3>
+      <dl class="mt-5 grid sm:grid-cols-2 gap-3">${row('CASEL SEL 역량', st.selCompetency)}${row('SEL 중점 활동', st.selActivity)}${row('핵심 이론·도구', st.theory)}${row('박사과정 연구 변인', st.phdVariable)}</dl>
+      <figure class="mt-4 rounded-xl border-l-4 border-l-amber-500 bg-amber-50 border border-amber-200 p-4"><figcaption class="text-xs font-extrabold text-amber-800">교사 지지 핵심 발문</figcaption><blockquote class="mt-1 text-sm font-semibold text-slate-800 leading-relaxed">${esc(st.scaffolding)}</blockquote></figure>
+      <div class="mt-5 flex flex-wrap gap-2"><button type="button" onclick="openGems(${n})" class="btn btn-ink px-5 py-3">💎 이커리어 Stage ${n} Gemini Gem 실행</button><button type="button" onclick="S.filter=${n};S.sem='all';renderSemTabs();renderFilters();renderLessons();location.hash='#curriculum'" class="btn btn-ghost px-5 py-3">이 단계 차시 ${cnt}개 보기 →</button></div>
+    </div>
+    <div class="lg:col-span-5 card p-6"><div class="eyebrow text-indigo-700">연구 모형에서의 위치</div><p class="mt-1 text-sm text-slate-600">초록색으로 표시된 변인이 이 단계의 수업과 연결됩니다.</p><div class="mt-3 rounded-xl bg-white border border-slate-200 p-3">${modelSvg(STAGE_VARS[n])}</div><p class="mt-3 text-xs text-slate-600 leading-relaxed">Hayes PROCESS Macro Model 7 — 교사 지지(W)가 X→M 경로(a)를 조절하는 조절된 매개모형</p></div></div>`;
+  icons();
+}
+function openGems(n) {
+  const st = stageOf(n), url = safeUrl(links.gems[n]) || st.gemUrl;
+  $('gmTitle').textContent = st.gemName; $('gmMeta').textContent = `${st.code} ${shortName(st)} · SEL ${st.selCompetency} · ${st.theory}`;
+  $('gmPrompt').value = st.gemStudentPrompt; $('gmLaunch').href = url; openModal('m-gems');
+  if (!safeUrl(links.gems[n])) toast('전용 Gem 링크가 아직 없어 Gemini 기본 화면으로 연결됩니다.');
+}
+
+/* ===== 3. 32차시 허브 ===== */
+const SEMS = [
+  { k: 'sem1', head: '🌱 1학기 (1-01 ~ 1-16)', title: '나에서 출발하는 이커리어 진로·스타트업 기초 트랙', sub: '손안의 새 · 공감 인터뷰 · 시제품 · 조잘조잘 스타트업 데모데이', on: 'text-emerald-300', off: 'text-emerald-700' },
+  { k: 'sem2', head: '🚀 2학기 (2-01 ~ 2-16)', title: '지역과 미래를 바꾸는 소셜벤처·메이커 실전 트랙', sub: '우리 동네 탐사 · 공공데이터 · 업사이클링 MVP · YEEP 모의펀딩', on: 'text-indigo-200', off: 'text-indigo-700' },
+  { k: 'all', head: '📅 1·2학기 통합', title: '전체 32차시 한눈에 보기', sub: '6단계가 학기마다 한 바퀴씩 도는 나선형 교육과정', on: 'text-amber-200', off: 'text-amber-700' }
+];
+function renderSemTabs() {
+  $('semTabs').innerHTML = SEMS.map(s => { const list = LESSONS.filter(l => s.k === 'all' || l.sem === s.k), d = list.filter(l => done.includes(l.id)).length; return `<button type="button" role="tab" id="semTab-${s.k}" onclick="S.sem='${s.k}';renderSemTabs();renderLessons()" class="tabbtn text-left p-5 rounded-2xl border" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-200 text-slate-900 hover:border-slate-400">
+    <span class="flex items-center justify-between gap-2"><span class="text-xs font-extrabold" data-on="${s.on}" data-off="${s.off}">${s.head}</span><span class="sub-badge text-[11px] font-extrabold px-2 py-0.5 rounded-full num" data-on="bg-slate-700 text-white" data-off="bg-slate-100 text-slate-700">${d}/${list.length} 완료</span></span>
+    <span class="block mt-2 text-base font-extrabold leading-snug">${s.title}</span>
+    <span class="block mt-1 text-xs font-medium" data-on="text-slate-200" data-off="text-slate-600">${s.sub}</span></button>`; }).join('');
+  paintGroup('semTab-', SEMS.map(s => s.k), S.sem);
+}
+function renderFilters() {
+  const items = [['all', '전체 보기']].concat(STAGES.map(st => [st.stageNum, `Stage ${st.stageNum} ${shortName(st)}`]));
+  $('stageFilters').innerHTML = items.map(([k, t]) => `<button type="button" role="tab" id="flt-${k}" onclick="S.filter=${k === 'all' ? "'all'" : k};renderFilters();renderLessons()" class="tabbtn px-3.5 py-2 rounded-full border text-xs font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">${esc(t)}</button>`).join('');
+  items.forEach(([k]) => paint($('flt-' + k), k === S.filter));
+}
+function renderLessons() {
+  const q = $('lessonSearch').value.trim().toLowerCase();
+  const list = LESSONS.filter(l => (S.sem === 'all' || l.sem === S.sem) && (S.filter === 'all' || stageNo(l) === S.filter) && (!q || [l.id, l.title, l.goal, l.sel, l.stageName, l.stage, l.mindfulPrompt].join(' ').toLowerCase().includes(q)));
+  $('lessonCount').textContent = `${list.length}개 차시 표시 중`;
+  $('lessonGrid').innerHTML = list.length ? list.map(l => { const n = stageNo(l), u = STAGE_UI[n], ok = done.includes(l.id); return `<article id="lesson-${l.id}" class="card p-5 sm:p-6 flex flex-col">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-1.5 text-xs font-extrabold"><span class="px-2.5 py-1 rounded-lg bg-[#0F172A] text-white border border-slate-600 num">${l.id}차시</span><span class="px-2.5 py-1 rounded-lg border ${u.chip}">Stage ${n} · ${esc(l.stageName)}</span><span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-200">SEL · ${esc(l.sel)}</span></div>
+      <button type="button" onclick="toggleDone('${l.id}')" aria-pressed="${ok}" class="btn btn-sm flex-none ${ok ? 'btn-emerald' : 'btn-ghost'}">${ok ? '✓ 수업완료' : '○ 진도체크'}</button>
+    </div>
+    <h3 class="mt-3.5 text-lg font-extrabold text-slate-900 leading-snug">${esc(l.title)}</h3>
+    <p class="mt-2 text-sm text-slate-700 leading-relaxed"><b class="text-slate-900">학습목표</b> ${esc(l.goal)}</p>
+    <p class="mt-3 text-sm text-slate-700 leading-relaxed rounded-xl bg-slate-50 border border-slate-200 p-3"><b class="text-emerald-700">🧘 1분 마음챙김</b> ${esc(l.mindfulPrompt)}</p>
+    <div class="mt-auto pt-4 grid grid-cols-3 sm:grid-cols-5 gap-2">
+      <button type="button" onclick="openWs('${l.id}')" class="btn btn-sm btn-emerald">📝 활동지</button>
+      <button type="button" onclick="openPlan('${l.id}')" class="btn btn-sm btn-ghost">📋 지도안</button>
+      <button type="button" onclick="openGems(${n})" class="btn btn-sm btn-ghost">💎 Gems</button>
+      <button type="button" onclick="openEmbed('${l.id}','canva')" class="btn btn-sm btn-ghost">📊 슬라이드</button>
+      <button type="button" onclick="openEmbed('${l.id}','padlet')" class="btn btn-sm btn-ghost">📌 Padlet</button>
+    </div></article>`; }).join('') : `<div class="card p-10 text-center text-slate-600 lg:col-span-2">조건에 맞는 차시가 없습니다. 검색어나 필터를 바꿔 보세요.</div>`;
+}
+
+/* 활동지 스튜디오 */
+function wsHtml(l, mode) {
+  const st = stageOf(stageNo(l)), rules = n => Array.from({ length: n }, () => '<div class="rule"></div>').join('');
+  const head = `<div class="flex flex-wrap items-end justify-between gap-3 border-b-2 border-slate-900 pb-3"><div><div class="text-xs font-bold text-slate-600">이커리어 ${esc(l.stage)} ${esc(l.stageName)} · SEL ${esc(l.sel)}</div><div class="mt-1 text-lg font-black text-slate-900">${esc(l.id)}차시 활동지 — ${esc(l.title)}</div></div><div class="text-sm font-semibold text-slate-800">학번 __________ 이름 __________</div></div>
+  <div class="ws-box mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-sm text-slate-800 leading-relaxed"><b>학습목표</b> ${esc(l.goal)}</div>`;
+  if (mode === 'teacher') return head + `<div class="ws-box mt-4 rounded-xl bg-white border border-slate-200 p-4 text-sm text-slate-800 leading-relaxed"><b>활동 과업</b> ${esc(l.wsTask)}</div>
+  <div class="ws-box mt-4 rounded-xl bg-emerald-50 border border-emerald-200 p-4 text-sm text-slate-800 leading-relaxed"><b class="text-emerald-800">교사 예시답안</b><br />${esc(l.wsAnswer.replace('[교사 예시답안] ', ''))}</div>
+  <div class="ws-box mt-4 rounded-xl bg-amber-50 border border-amber-200 p-4 text-sm text-slate-800 leading-relaxed"><b class="text-amber-800">지도 포인트</b><br />◦ 교사 지지 발문: ${esc(st.scaffolding)}<br />◦ 평가 관점: ${EVAL[stageNo(l)]}<br />◦ 예시답안은 정답이 아닙니다. 학생의 관찰과 근거가 드러나는지에 초점을 둡니다.</div>`;
+  return head + `<div class="ws-box mt-4 rounded-xl bg-white border border-slate-200 p-4 text-sm text-slate-800"><b>① 마음날씨 체크인</b> — 지금 내 마음에 ○표 하세요.<div class="mt-2 text-base">☀️ 뿌듯 &nbsp; 🌈 설렘 &nbsp; 🌤️ 차분 &nbsp; 🌧️ 막막 &nbsp; 🔥 다시도전</div></div>
+  <div class="ws-box mt-4 rounded-xl bg-white border border-slate-200 p-4 text-sm text-slate-800 leading-relaxed"><b>② 오늘의 과업</b> ${esc(l.wsTask)}${rules(6)}</div>
+  <div class="ws-box mt-4 rounded-xl bg-white border border-slate-200 p-4 text-sm text-slate-800 leading-relaxed"><b>③ 관찰과 근거</b> — 위 내용을 뒷받침하는 내가 직접 보거나 들은 사실을 적으세요.${rules(3)}</div>
+  <div class="ws-box mt-4 rounded-xl bg-white border border-slate-200 p-4 text-sm text-slate-800 leading-relaxed"><b>④ 성찰 한 줄</b> — 오늘의 실수 또는 바꿔 보고 싶은 점${rules(2)}</div>`;
+}
+function openWs(id) { S.wsId = id; S.ws = 'student'; const l = lessonOf(id); $('wsTitle').textContent = `${l.id}차시 활동지`; openModal('m-ws'); setWs('student'); }
+function setWs(m) { S.ws = m; paintGroup('wsBtn-', ['student', 'teacher'], m); $('wsBody').innerHTML = wsHtml(lessonOf(S.wsId), m); }
+function printWs() { $('printArea').innerHTML = wsHtml(lessonOf(S.wsId), S.ws); window.print(); }
+
+/* 45분 지도안 */
+function planRows(l) {
+  const n = stageNo(l), st = stageOf(n);
+  return [
+    ['도입', '10분', [`1분 마음챙김 호흡(4초 들숨–4초 머금기–4초 날숨): ${l.mindfulPrompt}`, l.planIntro.replace(/\s*\(\d+분\)\s*$/, ''), `학습목표 확인: ${l.goal}`], '마음날씨 체크인 카드'],
+    ['전개', '30분', [l.planMain.replace(/\s*\(\d+분\)\s*$/, ''), `활동지 과업: ${l.wsTask}`, `교사 지지 발문: ${st.scaffolding}`], `${l.id}차시 활동지, 이커리어 Stage ${n} Gem`],
+    ['정리', '5분', [l.planWrap.replace(/\s*\(\d+분\)\s*$/, ''), '자기주도 성찰 한 줄 제출(성찰 폼) 및 다음 차시 예고'], '성찰 폼, Padlet']
+  ];
+}
+function openPlan(id) {
+  S.planId = id; const l = lessonOf(id), n = stageNo(l);
+  $('plTitle').textContent = `${l.id}차시 — ${l.title}`;
+  $('plBody').innerHTML = `<dl class="grid sm:grid-cols-3 gap-3 text-sm"><div class="rounded-xl bg-slate-50 border border-slate-200 p-3"><dt class="text-xs font-extrabold text-slate-500">단계 · SEL</dt><dd class="mt-1 font-semibold text-slate-800">${esc(l.stage)} ${esc(l.stageName)} · ${esc(l.sel)}</dd></div><div class="rounded-xl bg-slate-50 border border-slate-200 p-3 sm:col-span-2"><dt class="text-xs font-extrabold text-slate-500">학습목표</dt><dd class="mt-1 font-semibold text-slate-800">${esc(l.goal)}</dd></div></dl>
+  <div class="mt-4 overflow-x-auto"><table class="w-full text-sm border-collapse"><thead><tr class="bg-[#0F172A] text-white text-left"><th class="p-3 rounded-tl-xl w-20">단계</th><th class="p-3">교수·학습 활동</th><th class="p-3 rounded-tr-xl w-44">자료</th></tr></thead><tbody>${planRows(l).map(r => `<tr class="border-b border-slate-200 align-top"><td class="p-3 font-extrabold text-slate-900">${r[0]}<div class="text-xs font-bold text-emerald-700 num">${r[1]}</div></td><td class="p-3 text-slate-800 leading-relaxed"><ul class="space-y-1.5">${r[2].map(x => `<li>◦ ${esc(x)}</li>`).join('')}</ul></td><td class="p-3 text-slate-700">${esc(r[3])}</td></tr>`).join('')}</tbody></table></div>
+  <p class="mt-4 text-sm text-slate-800 rounded-xl bg-amber-50 border border-amber-200 p-3"><b class="text-amber-800">과정중심 평가 관점</b> ${EVAL[n]}</p>`;
+  openModal('m-plan');
+}
+function planText(l) {
+  const n = stageNo(l);
+  return [`□ ${l.id}차시 교수·학습 과정안 (45분)`, `  ◦ 주제: ${l.title}`, `  ◦ 단계·역량: 이커리어 ${l.stage} ${l.stageName} / SEL ${l.sel}`, `  ◦ 학습목표: ${l.goal}`]
+    .concat(planRows(l).flatMap(r => [`□ ${r[0]} (${r[1]})`].concat(r[2].map(x => `  ◦ ${x}`), [`    - 자료: ${r[3]}`])), [`□ 평가`, `  ◦ 과정중심 평가 관점: ${EVAL[n]}`]).join('\n');
+}
+function copyPlan() { copyText(planText(lessonOf(S.planId)), '지도안을 HWP 개조식으로 복사했습니다.'); }
+
+/* 슬라이드 · Padlet 라이브 임베드 */
+function embedUrl(u, type) { if (type === 'canva' && /canva\.com\/design\//.test(u) && !/[?&]embed\b/.test(u)) return u + (u.includes('?') ? '&embed' : '?embed'); return u; }
+function showEmbed(title, raw, type) { const u = safeUrl(raw); if (!u) return false; $('emTitle').textContent = title; $('emOpen').href = u; openModal('m-embed'); $('emFrame').src = embedUrl(u, type); return true; }
+function openEmbed(id, type) {
+  const l = lessonOf(id), per = (links.lessons[id] || {})[type], sem = links[l.sem + (type === 'canva' ? 'Canva' : 'Padlet')];
+  if (showEmbed(`${l.id}차시 ${type === 'canva' ? '슬라이드' : 'Padlet 보드'} — ${l.title}`, per || sem, type)) return;
+  openWs(id); toast(`연결된 ${type === 'canva' ? 'Canva 슬라이드' : 'Padlet 보드'}가 없어 활동지를 엽니다. 교사 관제실에서 링크를 연결하세요.`);
+}
+
+/* ===== 4. 실습 스튜디오 ===== */
+function setWb(k) { S.wb = k; paintGroup('wbTab-', ['pov', 'lean', 'phd'], k); ['pov', 'lean', 'phd'].forEach(x => $('wb-' + x).hidden = x !== k); if (k === 'phd') drawPhd(); }
+const POV_SAMPLES = {
+  market: ['조암시장에서 40년째 방앗간을 하시는 70대 사장님', '시장을 찾는 젊은 손님이 눈에 띄게 줄었다', '청소년과 젊은 세대가 시장에 올 이유를 느끼지 못한다', '가게마다 쌓인 이야기와 사람이 밖으로 알려지지 않았다', '어르신의 기억과 점포의 역사를 기록하고 전하는 통로가 없다'],
+  keycap: ['분리배출을 열심히 하지만 보람을 느끼지 못하는 우리 반 친구', '교실 분리수거함에 병뚜껑이 섞여 그대로 버려진다', '작은 플라스틱은 선별 과정에서 재활용되지 못한다는 사실을 모른다', '내가 모은 자원이 무엇으로 바뀌는지 눈으로 본 적이 없다', '분리배출의 결과를 직접 만지고 쓸 수 있는 경험이 없다']
+};
+const povVal = () => ['povPersona', 'povPain', 'povWhy1', 'povWhy2', 'povWhy3'].map(id => $(id).value.trim());
+function povText() {
+  const [p, pain, w1, w2, w3] = povVal(), root = w3 || w2 || w1;
+  if (!p && !pain && !root) return { pov: '왼쪽에 페르소나와 불편, Why를 입력하면 문장이 만들어집니다.', hmw: '—' };
+  return { pov: `${p || '[페르소나]'}은(는) ${pain || '[표면적 불편]'}(이)라는 어려움을 겪고 있다. 왜냐하면 ${root || '[근본 통찰]'}(이)기 때문이다.`, hmw: `어떻게 하면 우리가 ${p || '[페르소나]'}을(를) 위해 “${root || '[근본 통찰]'}” 문제를 감수 가능한 손실 안에서 해결할 수 있을까?` };
+}
+function updatePov() { const t = povText(); $('povOut').textContent = t.pov; $('hmwOut').textContent = t.hmw; }
+function loadPov(k) { ['povPersona', 'povPain', 'povWhy1', 'povWhy2', 'povWhy3'].forEach((id, i) => $(id).value = POV_SAMPLES[k][i]); updatePov(); }
+function copyPov() { const t = povText(); copyText(`□ 관점 정의문(POV)\n  ◦ ${t.pov}\n□ HMW 질문\n  ◦ ${t.hmw}`, 'POV·HMW를 복사했습니다.'); }
+const LEAN_TITLES = ['① 핵심 문제', '② 고객·수혜자', '③ 고유 가치 제안(UVP)', '④ 솔루션', '⑤ 채널', '⑥ 핵심 지표(임팩트)', '⑦ 핵심 자원·강점', '⑧ 비용 구조', '⑨ 수익·사회적 가치'];
+function renderLean() { $('leanGrid').innerHTML = LEAN_TITLES.map((t, i) => `<div class="rounded-2xl bg-slate-50 border border-slate-200 p-3"><label class="lbl" for="lean${i}">${t}</label><textarea id="lean${i}" rows="3" class="inp text-sm"></textarea></div>`).join(''); }
+function povToLean() { const [p, pain, w1, w2, w3] = povVal(); if (!p && !pain) return toast('먼저 페르소나와 불편을 입력하세요.'); $('lean0').value = [pain, w3 || w2 || w1].filter(Boolean).join(' → '); $('lean1').value = p; $('lean2').value = povText().hmw; setWb('lean'); toast('POV 내용을 린 캔버스 ①·②·③ 블록에 연동했습니다.'); }
+function applyLean() { const k = $('leanPreset').value; if (!k) return toast('프리셋을 선택하세요.'); LEAN_PRESETS[k].forEach((v, i) => $('lean' + i).value = v); toast('수상작 프리셋을 불러왔습니다.'); }
+function copyLean() { copyText('□ 소셜 린 캔버스\n' + LEAN_TITLES.map((t, i) => `  ◦ ${t.slice(2)}\n    - ${$('lean' + i).value.trim() || '[입력 필요]'}`).join('\n'), '린 캔버스를 HWP 개조식으로 복사했습니다.'); }
+
+/* 네이티브 캔버스 막대그래프 */
+function drawBars(cv, labels, series, max, opt) {
+  if (!cv || !cv.offsetParent) return;
+  const dark = document.body.classList.contains('board-dark'), dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
+  cv.width = W * dpr; cv.height = H * dpr; const c = cv.getContext('2d'); c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, W, H);
+  const ink = dark ? '#F8FAFC' : '#0F172A', sub = dark ? '#CBD5E1' : '#475569', grid = dark ? '#334155' : '#E2E8F0';
+  const padL = 30, padB = (opt && opt.wrap) ? 44 : 30, padT = 18, pw = W - padL - 8, ph = H - padT - padB, font = '600 11px Pretendard, sans-serif';
+  c.font = font; c.textBaseline = 'middle';
+  for (let i = 0; i <= max; i++) { const y = padT + ph - ph * i / max; c.strokeStyle = grid; c.lineWidth = 1; c.beginPath(); c.moveTo(padL, y); c.lineTo(W - 8, y); c.stroke(); c.fillStyle = sub; c.textAlign = 'right'; c.fillText(i, padL - 8, y); }
+  const gw = pw / labels.length, bw = Math.min(34, (gw - 16) / series.length);
+  labels.forEach((lb, i) => {
+    const x0 = padL + gw * i + (gw - bw * series.length - 4 * (series.length - 1)) / 2;
+    series.forEach((s, j) => { const v = s.data[i], h = ph * v / max, x = x0 + j * (bw + 4), y = padT + ph - h; c.fillStyle = Array.isArray(s.color) ? s.color[i % s.color.length] : s.color; c.beginPath(); if (c.roundRect) c.roundRect(x, y, bw, h, [5, 5, 0, 0]); else c.rect(x, y, bw, h); c.fill(); c.fillStyle = ink; c.textAlign = 'center'; c.font = '700 11px Pretendard, sans-serif'; c.fillText(opt && opt.int ? v : v.toFixed(2), x + bw / 2, y - 9); c.font = font; });
+    c.fillStyle = ink; c.textAlign = 'center'; const parts = (opt && opt.wrap) ? lb.split('\n') : [lb]; parts.forEach((t, k) => c.fillText(t, padL + gw * i + gw / 2, padT + ph + 14 + k * 14));
+  });
+}
+const clamp15 = v => Math.max(1, Math.min(5, v));
+function drawPhd() {
+  if (!$('phdX')) return;
+  const X = +$('phdX').value, W = +$('phdW').value, x = X - 3, w = W - 3, a1 = .45, a2 = .30, a3 = .15, b = .50, cp = .25;
+  const M = clamp15(3 + a1 * x + a2 * w + a3 * x * w), Y = clamp15(3 + cp * x + b * (M - 3));
+  $('phdXv').textContent = X.toFixed(1); $('phdWv').textContent = W.toFixed(1); $('phdM').textContent = M.toFixed(2); $('phdY').textContent = Y.toFixed(2);
+  $('phdInd').textContent = ((a1 + a3 * w) * b).toFixed(3); $('phdIdx').textContent = (a3 * b).toFixed(3);
+  const pre = [2.85, 2.55, 3.05, 2.75, 3.00, 2.80], gain = .35 + (M - 3) * .45 + (Y - 3) * .25, wt = [1.0, 1.25, .8, .9, .85, 1.1];
+  const post = pre.map((p, i) => i === 1 ? Math.max(p, M) : i === 5 ? Math.max(p, Y) : clamp15(p + Math.max(0, gain) * wt[i]));
+  drawBars($('phdChart'), ['자기주도성', '실수\n건설적태도', '타인공감', '창의적\n문제해결', '조각보 협업', '진로적응성'], [{ data: pre, color: '#94A3B8' }, { data: post, color: '#059669' }], 5, { wrap: true });
+}
+
+/* ===== 5. 쇼케이스 · BEP · YEEP ===== */
+function renderCases() {
+  $('caseGrid').innerHTML = CASES.map((c, i) => { const has = safeUrl(links.cases[c.id]); return `<article class="card p-6 flex flex-col"><div class="flex items-center justify-between gap-2"><span class="text-3xl font-black text-slate-500 num" aria-hidden="true">0${i + 1}</span><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border ${STAGE_UI[c.stage].chip}">${esc(c.stageTag)}</span></div>
+    <h3 class="mt-3 text-lg font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3><p class="mt-1.5 text-xs font-bold text-amber-700">${esc(c.badge)}</p><p class="mt-3 text-sm text-slate-700 leading-relaxed flex-1">${esc(c.desc)}</p>
+    <button type="button" onclick="openCase('${c.id}')" class="btn mt-5 ${has ? 'btn-ink' : 'btn-ghost'}">${has ? '발표 자료 보기' : '자료 링크 연결 전 [입력 필요]'}</button></article>`; }).join('');
+}
+function openCase(id) { const c = CASES.find(x => x.id === id), u = links.cases[id]; if (!showEmbed(c.title, u, /canva\.com/.test(u || '') ? 'canva' : 'padlet')) toast('연결된 자료가 없습니다. 교사 관제실 → 마스터 링크 제어판에서 연결하세요.'); }
+function bepCalc() { const caps = +$('bepCaps').value, cost = +$('bepCost').value, price = +$('bepPrice').value, fixed = Math.max(0, +$('bepFixed').value || 0), qty = Math.floor(caps / 3), m = price - cost; return { caps, cost, price, fixed, qty, bep: m > 0 ? Math.ceil(fixed / m) : null, profit: qty * m - fixed, co2: caps * 7.2 / 1000 }; }
+function runBep() {
+  const r = bepCalc(); $('bepCapsV').textContent = won(r.caps); $('bepCostV').textContent = won(r.cost); $('bepPriceV').textContent = won(r.price);
+  $('bepQty').textContent = won(r.qty) + '개'; $('bepBep').textContent = r.bep == null ? '달성 불가 (판매가 ≤ 원가)' : won(r.bep) + '개' + (r.bep > r.qty ? ' · 수량 부족' : ''); $('bepProfit').textContent = (r.profit < 0 ? '−' : '') + won(Math.abs(r.profit)) + '원'; $('bepCo2').textContent = r.co2.toFixed(2) + ' kgCO₂';
+}
+function copyBep() { const r = bepCalc(); copyText(`□ 업사이클링 메이커 손익분기점·탄소감축 시뮬레이션\n  ◦ 투입: 폐자원 ${won(r.caps)}개, 개당 원가 ${won(r.cost)}원, 판매·체험가 ${won(r.price)}원, 고정비 ${won(r.fixed)}원\n  ◦ 제작 수량: ${won(r.qty)}개 (병뚜껑 3개당 1개)\n  ◦ 손익분기점(BEP): ${r.bep == null ? '달성 불가' : won(r.bep) + '개'}\n  ◦ 사회적 순이익: ${won(r.profit)}원\n  ◦ 탄소 감축량: ${r.co2.toFixed(2)} kgCO₂ (병뚜껑 1개당 7.2g 가정)`, '시뮬레이션 결과를 복사했습니다.'); }
+const YEEP_TEAMS = ['조암시장 어르신 기억저장소', '폐조개껍질 공룡알 굿즈·병뚜껑 키캡', '농어촌 AI 스마트 공동물류'];
+function renderYeep() { $('yeepRows').innerHTML = YEEP_TEAMS.map((t, i) => `<div><div class="flex justify-between gap-3 text-sm font-bold text-slate-800"><label for="yeep${i}">${esc(t)}</label><span class="num"><span id="yeepV${i}">0</span>만 P</span></div><input id="yeep${i}" type="range" min="0" max="1000" step="50" value="0" oninput="updateYeep(${i})" /></div>`).join(''); updateYeep(0); }
+function updateYeep(i) { const v = [0, 1, 2].map(k => +$('yeep' + k).value), over = v[0] + v[1] + v[2] - 1000; if (over > 0) { v[i] -= over; $('yeep' + i).value = v[i]; } v.forEach((x, k) => $('yeepV' + k).textContent = won(x)); $('yeepLeft').textContent = won(1000 - v[0] - v[1] - v[2]); }
+function copyYeep() { const v = [0, 1, 2].map(k => +$('yeep' + k).value); copyText(`🪙 YEEP 모의 크라우드 펀딩 심사카드\n${YEEP_TEAMS.map((t, k) => `· ${t}: ${won(v[k])}만 포인트`).join('\n')}\n· 미투자 잔액: ${won(1000 - v[0] - v[1] - v[2])}만 포인트\n💬 응원 심사평: ${$('yeepNote').value.trim() || '[입력 필요]'}`, '심사카드를 복사했습니다. Padlet에 붙여 넣으세요.'); }
+
+/* ===== 6. 선물 꾸러미 ===== */
+function scheduleText() { const line = l => `    - ${l.id}차시 [${l.stage} ${l.stageName} / SEL: ${l.sel}] ${l.title}`; return ['□ 2026학년도 이커리어(E-Career) 6단계·사회정서학습(SEL) 기반 진로·기업가정신 연간 32차시 운영 계획', '  ◦ 설계·운영: 장안여자중학교 미래진로부장 권대륜', '  ◦ 1학기(16차시): 나에서 출발하는 이커리어 진로·스타트업 기초 트랙'].concat(LESSONS.filter(l => l.sem === 'sem1').map(line), ['  ◦ 2학기(16차시): 지역과 미래를 바꾸는 소셜벤처·메이커 실전 트랙'], LESSONS.filter(l => l.sem === 'sem2').map(line)).join('\n'); }
+function copyGift(n) {
+  const t = n === 1 ? scheduleText()
+    : n === 2 ? '[이커리어 6단계별 수업 도입 1분 마음챙김 호흡 명상 교사 대본]\n\n' + STAGES.map(st => `□ ${st.code} ${shortName(st)} (SEL: ${st.selCompetency})\n  ◦ 호흡 안내(60초): “허리를 펴고 눈을 감습니다. 4초 동안 코로 들이마시고, 4초 동안 머금고, 4초 동안 입으로 내쉽니다. 다섯 번 반복합니다.”\n  ◦ 단계 연결 활동: ${st.selActivity}\n  ◦ 마무리 발문: ${st.scaffolding}`).join('\n\n')
+    : '[이커리어 6단계 Gemini Gems 제작용 시스템 프롬프트 세트]\n\n' + STAGES.map(st => `### ${st.gemName}\n- 지침(Instructions): ${st.gemSystemInstruction}\n- 학생용 시작 프롬프트: ${st.gemStudentPrompt}`).join('\n\n');
+  copyText(t, ['', '32차시 진도표를 복사했습니다.', '명상 대본 6종을 복사했습니다.', 'Gems 프롬프트 세트를 복사했습니다.'][n]);
+}
+
+/* ===== 7. 성찰 · 구글시트 ===== */
+const WEATHERS = ['☀️ 뿌듯·자신감', '🌈 설렘·호기심', '🌤️ 차분·평온', '🌧️ 막막·아쉬움', '🔥 다시도전!'];
+const CHECKS = ['목표·방법 스스로 정함', '관찰·근거로 말함', '실수에서 피보팅 찾음'];
+function renderWeather() { $('rfWeather').innerHTML = WEATHERS.map((w, i) => `<button type="button" role="radio" id="rfW-${i}" onclick="S.weather=WEATHERS[${i}];renderWeather()" class="tabbtn px-3.5 py-2 rounded-full border text-sm font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">${w}</button>`).join(''); WEATHERS.forEach((w, i) => paint($('rfW-' + i), w === S.weather)); }
+function sendSheet(payload) { if (!safeUrl(gasUrl)) return false; fetch(gasUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) }).catch(() => toast('스프레드시트 전송에 실패했습니다. 기록은 이 기기에 저장되어 있습니다.')); return true; }
+function submitReflection(e) {
+  e.preventDefault(); if (!S.weather) return toast('오늘의 마음날씨를 선택하세요.');
+  const r = { id: 'r' + Date.now(), date: new Date().toLocaleString('ko-KR'), sid: $('rfSid').value.trim(), name: $('rfName').value.trim(), lesson: $('rfLesson').value, weather: S.weather, checks: [1, 2, 3].filter(i => $('rfC' + i).checked).map(i => CHECKS[i - 1]), text: $('rfText').value.trim() };
+  reflections.unshift(r); save(K.refl, reflections);
+  const sent = sendSheet({ type: 'reflection', date: r.date, student: r.sid + ' ' + r.name, lesson: r.lesson, weather: r.weather, checks: r.checks.join(', '), text: r.text });
+  $('rfText').value = ''; [1, 2, 3].forEach(i => $('rfC' + i).checked = false); S.weather = ''; renderWeather(); renderRefl();
+  toast(sent ? '성찰을 저장하고 구글 스프레드시트로 전송했습니다.' : '성찰을 이 기기에 저장했습니다.');
+}
+const stuKey = r => r.sid + ' ' + r.name;
+function renderRefl() {
+  $('rfCount').textContent = `(${reflections.length}건)`;
+  $('rfList').innerHTML = reflections.length ? reflections.slice(0, 30).map(r => `<div class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-sm"><div class="flex flex-wrap justify-between gap-2 text-xs font-bold text-slate-600"><span>${esc(stuKey(r))} · ${esc(r.lesson.split(' ')[0])}</span><span>${esc(r.weather)}</span></div><p class="mt-1 text-slate-800 leading-relaxed">${esc(r.text)}</p></div>`).join('') : '<p class="text-sm text-slate-600">아직 제출된 성찰이 없습니다.</p>';
+  const keys = Array.from(new Set(reflections.map(stuKey))).sort(), cur = $('rfStudentSel').value;
+  $('rfStudentSel').innerHTML = '<option value="">학생을 선택하세요</option>' + keys.map(k => `<option value="${esc(k)}">${esc(k)} (${reflections.filter(r => stuKey(r) === k).length}건)</option>`).join('');
+  if (keys.includes(cur)) $('rfStudentSel').value = cur; synthReflection();
+}
+const NEIS_STAGE = {
+  1: '‘손안의 새’ 원칙으로 자신의 강점과 진로 가치관을 성찰하고 프로젝트 방향을 스스로 설정함.',
+  2: '주변의 불편을 편견 없이 관찰하고 공감적 경청 인터뷰로 상대의 필요를 구체적으로 파악함.',
+  3: 'Why Tree 기법으로 표면 현상 너머의 근본 원인을 근거를 들어 정의함.',
+  4: '감수 가능한 손실 범위에서 실현 가능한 아이디어를 발산하고 린 캔버스로 구조화함.',
+  5: '시제품 제작 과정의 시행착오를 배움의 자료로 받아들여 모델을 수정(피보팅)함.',
+  6: '프로젝트의 문제–근거–성장 과정을 이야기로 엮어 발표하고 자신의 진로 계획과 연결함.'
+};
+function synthReflection() {
+  const k = $('rfStudentSel').value, box = $('rfSynth'); if (!k) { box.value = ''; return; }
+  const rs = reflections.filter(r => stuKey(r) === k).sort((a, b) => a.lesson.localeCompare(b.lesson)), ids = rs.map(r => r.lesson.split(' ')[0]);
+  const stages = Array.from(new Set(rs.map(r => { const l = lessonOf(r.lesson.split(' ')[0]); return l ? stageNo(l) : 0; }).filter(Boolean))).sort();
+  const quotes = rs.map(r => r.text).filter(Boolean).slice(-2).map(t => `‘${t.length > 46 ? t.slice(0, 46) + '…' : t}’`);
+  const kw = ['피보팅', '수정', '다시', '실패', '실수', '바꿔', '고쳐', '보완'].filter(w => rs.some(r => r.text.includes(w)));
+  const low = rs.some(r => r.weather.includes('막막')), up = rs.some(r => /다시도전|뿌듯/.test(r.weather));
+  const chk = CHECKS.map(c => [c, rs.filter(r => r.checks.includes(c)).length]).filter(x => x[1]).sort((a, b) => b[1] - a[1])[0];
+  const s = [`이커리어(E-Career) 6단계 기반 진로·기업가정신 프로젝트 수업에서 ${rs.length}개 차시(${Array.from(new Set(ids)).join(', ')})의 성찰을 꾸준히 기록하며 자기주도적으로 참여함.`].concat(stages.map(n => NEIS_STAGE[n]));
+  if (quotes.length) s.push(`성찰 기록에 ${quotes.join(', ')}(이)라고 적는 등 활동에서 배운 점을 자신의 언어로 정리함.`);
+  if (kw.length) s.push(`성찰 문장에 ‘${kw.slice(0, 3).join('’, ‘')}’ 등의 표현이 반복되어 실수를 개선의 계기로 삼는 태도가 드러남.`);
+  if (low && up) s.push('과제가 막막하게 느껴진 차시 이후에도 다시 도전하려는 의지를 보이며 정서를 스스로 조절함.');
+  if (chk) s.push(`자기주도 점검에서 ‘${chk[0]}’ 항목을 ${chk[1]}회 실천함.`);
+  box.value = s.join(' ') + `\n\n[마음날씨 기록] ${rs.map(r => r.lesson.split(' ')[0] + ' ' + r.weather).join(' → ')}`;
+}
+function exportReflCsv() { if (!reflections.length) return toast('내보낼 성찰 기록이 없습니다.'); download('이커리어_성찰기록_' + today() + '.csv', csvOf([['제출일시', '학번/모둠', '이름', '참여 차시', 'SEL 마음날씨', '자기주도 체크', '성찰 내용']].concat(reflections.map(r => [r.date, r.sid, r.name, r.lesson, r.weather, r.checks.join(', '), r.text]))), 'text/csv;charset=utf-8'); }
+function clearReflections() { if (reflections.length && confirm('이 기기에 저장된 성찰 기록 ' + reflections.length + '건을 모두 삭제할까요? 구글 스프레드시트의 기록은 삭제되지 않습니다.')) { reflections = []; save(K.refl, reflections); renderRefl(); toast('성찰 기록을 삭제했습니다.'); } }
+const GAS_CODE = ['function doPost(e) {', '  var lock = LockService.getScriptLock();', '  lock.waitLock(10000);', '  try {', '    var d = JSON.parse(e.postData.contents);', '    var ss = SpreadsheetApp.getActiveSpreadsheet();', '    var isCns = d.type === "counseling";', '    var name = isCns ? "상담신청" : "성찰기록";', '    var head = isCns', '      ? ["접수일", "신청구분", "학번·학생명", "연락처", "상담방식", "상담영역", "희망일", "희망시간", "진로확신도", "스트레스", "시급도", "사전 고민"]', '      : ["제출일시", "학번·이름", "참여 차시", "SEL 마음날씨", "자기주도 체크", "성찰 내용"];', '    var sh = ss.getSheetByName(name);', '    if (!sh) {', '      sh = ss.insertSheet(name);', '      sh.appendRow(head);', '      sh.getRange(1, 1, 1, head.length).setFontWeight("bold").setBackground("#0F172A").setFontColor("#FFFFFF");', '      sh.setFrozenRows(1);', '    }', '    var row = isCns', '      ? [d.createdAt, d.applicantType, d.student, d.contact, d.method, d.category, d.date, d.time, d.clarity, d.stress, d.urgency, d.note]', '      : [d.date, d.student, d.lesson, d.weather, d.checks, d.text];', '    sh.appendRow(row.map(function (v) { v = v == null ? "" : String(v); return /^[=+\\-@]/.test(v) ? "\'" + v : v; }));', '    return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);', '  } catch (err) {', '    return ContentService.createTextOutput(JSON.stringify({ ok: false, error: String(err) })).setMimeType(ContentService.MimeType.JSON);', '  } finally {', '    lock.releaseLock();', '  }', '}'].join('\n');
+function openSheet() { $('gasCode').value = GAS_CODE; $('gasUrl').value = gasUrl; openModal('m-sheet'); }
+function saveGas() { const v = $('gasUrl').value.trim(); if (v && !/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(v)) return toast('https://script.google.com/macros/s/…/exec 형식의 웹 앱 URL을 입력하세요.'); gasUrl = v; save(K.gas, gasUrl); sheetBadge(); toast(v ? '웹 앱 URL을 저장했습니다.' : '연동을 해제했습니다.'); }
+function testGas() { const v = $('gasUrl').value.trim(); if (!/^https:\/\/script\.google\.com\//.test(v)) return toast('먼저 웹 앱 URL을 입력하세요.'); const old = gasUrl; gasUrl = v; sendSheet({ type: 'reflection', date: new Date().toLocaleString('ko-KR'), student: '[연동 테스트]', lesson: '-', weather: '-', checks: '-', text: '이 행이 보이면 연동이 정상입니다. 삭제하셔도 됩니다.' }); gasUrl = old; toast('테스트 행을 전송했습니다. 스프레드시트 [성찰기록] 탭을 확인하세요.'); }
+function sheetBadge() { const b = $('sheetBadge'), on = !!safeUrl(gasUrl); b.textContent = on ? '● 구글시트 연동됨' : '○ 구글시트 미연동'; b.className = 'text-xs font-bold px-2.5 py-1 rounded-full border ' + (on ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-slate-100 text-slate-700 border-slate-200'); }
+
+/* ===== 8. 상담 센터 ===== */
+const CNS_CATS = ['고교진학·고교학점제 설계', '진로탐색·이커리어 강점발굴', '자기주도 학습습관·학업코칭', '교우관계·SEL 정서·마음돌봄', '비즈쿨·창업동아리·대회멘토링', '자녀소통·가정내 진로코칭'];
+const CNS_URG = [['일반 진로탐색', '🟢'], ['빠른 상담 희망', '🟡'], ['우선·긴급 케어', '🔴']];
+const C_LBL = ['1점 · 매우 막막함', '2점 · 고민 많음', '3점 · 보통', '4점 · 어느 정도 분명', '5점 · 매우 분명'], S_LBL = ['1점 · 매우 평온', '2점 · 양호', '3점 · 보통', '4점 · 높음', '5점 · 매우 높음'];
+const isPriority = c => c.stress >= 4 || c.urgency === '우선·긴급 케어';
+function setCnsTab(k) { S.cnsTab = k; paintGroup('cnsTab-', ['form', 'board'], k); $('cns-form').hidden = k !== 'form'; $('cns-board').hidden = k !== 'board'; if (k === 'board') renderCnsBoard(); }
+function setCnsType(t) { S.cnsType = t; paint($('cnsTypeS'), t === '학생'); paint($('cnsTypeP'), t === '학부모'); }
+function cnsSliders() { $('cnsClarityV').textContent = C_LBL[$('cnsClarity').value - 1]; $('cnsStressV').textContent = S_LBL[$('cnsStress').value - 1]; }
+function renderUrg() { $('cnsUrg').innerHTML = CNS_URG.map(([u, e], i) => `<button type="button" role="radio" id="cnsU-${i}" onclick="S.cnsUrg='${u}';renderUrg()" class="tabbtn py-2.5 px-2 rounded-xl border text-xs font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">${e} ${u}</button>`).join(''); CNS_URG.forEach(([u], i) => paint($('cnsU-' + i), u === S.cnsUrg)); }
+function submitCns(e) {
+  e.preventDefault();
+  const c = { id: 'c' + Date.now(), createdAt: today(), applicantType: S.cnsType, studentName: $('cnsStudent').value.trim() + (S.cnsType === '학부모' ? ' (학부모)' : ''), contact: $('cnsContact').value.trim(), method: $('cnsMethod').value, category: $('cnsCat').value, date: $('cnsDate').value, timeSlot: $('cnsTime').value, clarity: +$('cnsClarity').value, stress: +$('cnsStress').value, urgency: S.cnsUrg, note: $('cnsNote').value.trim() };
+  cnsList.unshift(c); save(K.cns, cnsList);
+  const sent = sendSheet({ type: 'counseling', createdAt: c.createdAt, applicantType: c.applicantType, student: c.studentName, contact: c.contact, method: c.method, category: c.category, date: c.date, time: c.timeSlot, clarity: c.clarity, stress: c.stress, urgency: c.urgency, note: c.note });
+  $('cnsStudent').value = ''; $('cnsContact').value = ''; $('cnsNote').value = ''; S.cnsSel = c.id; S.cnsFilter = '전체'; setCnsTab('board');
+  toast(sent ? '상담 신청을 접수하고 구글 스프레드시트로 전송했습니다.' : '상담 신청을 접수했습니다.');
+}
+function diagnose(c) {
+  if (c.stress >= 4 && c.clarity <= 2) return { q: 0, title: '🔴 정서적 안전기지 & 불확실성 완화 우선형', sum: '진로 방향의 막막함과 스트레스가 함께 높은 상태입니다. 정보 제공보다 불안을 먼저 수용하고, 이미 가진 자원(손안의 새)과 작은 성공 경험을 떠올리게 하는 상담이 필요합니다.', qs: ['요즘 학교나 집에서 마음을 가장 무겁게 하는 순간은 언제인가요?', '정답을 찾지 않아도 된다면, 올해 활동 중 시간 가는 줄 몰랐던 순간은 무엇이었나요?', '오늘 상담이 끝났을 때 어떤 마음이면 다행이라고 느낄까요?'], st: '교사의 정서적·자율성 지지(W)를 가장 먼저 작동시켜 실패 두려움을 낮추고, 이번 주에 해 볼 작은 탐색 과제 1가지만(감수 가능한 손실) 합의합니다.' };
+  if (c.stress >= 4) return { q: 1, title: '🟡 완벽주의·관계 소진 주의형', sum: '진로 관심사는 비교적 분명하지만 성적·관계·수행 과정의 긴장이 높은 유형입니다. 실수를 성장의 데이터(피보팅)로 다시 해석하도록 돕는 개입이 효과적입니다.', qs: ['목표가 뚜렷한 것이 큰 강점인데, 그 과정에서 스스로를 가장 힘들게 하는 기준은 무엇인가요?', '계획대로 되지 않더라도 그 경험에서 얻을 수 있는 배움은 무엇일까요?', '모둠원이나 부모님께 가장 듣고 싶은 응원의 말은 무엇인가요?'], st: 'SEL 자기관리(호흡 루틴)와 관계 기술(나 전달법)을 안내하고, 결과 중심에서 과정·성장 중심으로 시선을 옮깁니다.' };
+  if (c.clarity <= 2) return { q: 2, title: '🧭 손안의 새 강점 발굴 & 진학 로드맵 탐색형', sum: '정서는 안정적이나 자신의 강점과 고교학점제·진학 경로 사이의 연결고리를 아직 찾지 못한 상태입니다. 구체적인 진로 정보와 강점 연결이 도움이 됩니다.', qs: ['친구들이 자주 물어보거나 도움을 청하는 분야는 무엇인가요?', '고등학교에서 가장 배우고 싶은 과목이나 해 보고 싶은 활동 두 가지를 꼽아 볼까요?', '이커리어 6단계 활동 중 가장 흥미로웠던 단계는 어디였나요?'], st: 'Stage 1 Gem 강점 분석 결과와 고교학점제 선택과목 안내를 연결해 진학·진로 로드맵을 함께 설계합니다.' };
+  return { q: 3, title: '🟢 자기주도 체인지메이커 심화 멘토링형', sum: '진로 확신도가 높고 정서가 안정적인 자기주도형 학습자입니다. 교내외 대회, 프로젝트 고도화, 심화 탐구로 확장하도록 돕는 촉진자 역할이 적합합니다.', qs: ['지금 계획에서 한 단계 더 나아가려면 어떤 자원이나 피드백이 가장 필요한가요?', '우리 팀의 해결책을 설득할 때 가장 강력한 근거 자료는 무엇인가요?', '이번 도전을 진로 포트폴리오에 어떻게 기록하고 싶나요?'], st: 'Stage 5~6(시제품 피보팅, 피칭덱 고도화) 코칭을 제공하고, 주도적 탐구 과정을 학교생활기록부 기록과 연결합니다.' };
+}
+function cnsDoc(c, d, kind) {
+  if (kind === 'neis') return `${c.createdAt} ${c.applicantType} 신청 상담(${c.method}, ${c.category}). 사전 자기진단에서 진로확신도 ${c.clarity}점, 스트레스 ${c.stress}점으로 응답함. 주 호소: ${c.note} 상담 방향: ${d.st} 후속 조치: [상담 후 입력 필요]`;
+  return [`□ 상담 개요`, `  ◦ 접수일: ${c.createdAt} / 신청 구분: ${c.applicantType}`, `  ◦ 대상: ${c.studentName} / 연락: ${c.contact || '[입력 필요]'}`, `  ◦ 방식·영역: ${c.method} / ${c.category}`, `  ◦ 희망 일시: ${c.date || '[입력 필요]'} ${c.timeSlot}`, `□ 사전 자기진단`, `  ◦ 진로·진학 확신도 ${c.clarity}점, 스트레스 지수 ${c.stress}점, 시급도 ‘${c.urgency}’`, `  ◦ 사전 분석 유형: ${d.title.replace(/^\S+\s/, '')}`, `□ 주 호소 내용`, `  ◦ ${c.note}`, `□ 상담 계획`, `  ◦ 도입 질문`].concat(d.qs.map(q => `    - ${q}`), [`  ◦ 코칭 전략: ${d.st}`, `□ 상담 결과 및 후속 조치`, `  ◦ [상담 후 입력 필요]`]).join('\n');
+}
+function renderCnsBoard() {
+  const n = cnsList.length, stu = cnsList.filter(c => c.applicantType === '학생').length, pri = cnsList.filter(isPriority).length, avg = k => n ? (cnsList.reduce((a, c) => a + c[k], 0) / n).toFixed(1) : '-';
+  const cnt = {}; cnsList.forEach(c => cnt[c.category] = (cnt[c.category] || 0) + 1); const top = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
+  const kpi = (l, v, s, cls) => `<div class="card p-5"><div class="text-xs font-extrabold text-slate-500">${l}</div><div class="mt-1.5 text-2xl font-black num ${cls}">${v}</div><div class="mt-1 text-xs font-semibold text-slate-600">${s}</div></div>`;
+  $('cnsKpi').innerHTML = kpi('누적 상담 신청', n + '건', `학생 ${stu} · 학부모 ${n - stu}`, 'text-slate-900') + kpi('우선·긴급 케어 대상', pri + '건', '스트레스 4점 이상 또는 긴급 체크', 'text-rose-700') + kpi('평균 확신도 / 스트레스', `${avg('clarity')} / ${avg('stress')}`, '5점 척도', 'text-slate-900') + kpi('최다 신청 영역', top ? esc(top[0].split('·')[0]) : '-', top ? `${esc(top[0])} · ${top[1]}건` : '신청 없음', 'text-indigo-700');
+  const F = ['전체', '학생', '학부모', '🔴 우선케어'];
+  $('cnsFilters').innerHTML = F.map((f, i) => `<button type="button" role="tab" id="cnsF-${i}" onclick="S.cnsFilter='${f}';renderCnsBoard()" class="tabbtn px-3 py-1.5 rounded-full border text-xs font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">${f}</button>`).join(''); F.forEach((f, i) => paint($('cnsF-' + i), f === S.cnsFilter));
+  const list = cnsList.filter(c => S.cnsFilter === '전체' || (S.cnsFilter === '🔴 우선케어' ? isPriority(c) : c.applicantType === S.cnsFilter));
+  if (!list.some(c => c.id === S.cnsSel)) S.cnsSel = list.length ? list[0].id : null;
+  $('cnsList').innerHTML = list.length ? list.map(c => `<button type="button" id="cnsRow-${c.id}" onclick="S.cnsSel='${c.id}';renderCnsBoard()" class="tabbtn w-full text-left p-3 rounded-xl border" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-200 text-slate-900 hover:border-slate-400"><span class="flex items-center justify-between gap-2"><span class="text-sm font-extrabold">${isPriority(c) ? '🔴 ' : ''}${esc(c.studentName)}</span><span class="text-[11px] font-bold" data-on="text-slate-200" data-off="text-slate-500">${esc(c.createdAt)}</span></span><span class="block mt-0.5 text-xs font-semibold" data-on="text-slate-200" data-off="text-slate-600">${esc(c.category)} · 확신 ${c.clarity} / 스트레스 ${c.stress}</span></button>`).join('') : '<p class="text-sm text-slate-600">해당하는 신청서가 없습니다.</p>';
+  list.forEach(c => paint($('cnsRow-' + c.id), c.id === S.cnsSel));
+  renderBrief(); drawCnsChart();
+}
+function renderBrief() {
+  const c = cnsList.find(x => x.id === S.cnsSel);
+  if (!c) { $('cnsBrief').innerHTML = '<div class="card p-10 text-center text-slate-600">왼쪽 목록에서 신청서를 선택하면 사전 브리핑이 생성됩니다.</div>'; return; }
+  const d = diagnose(c), cells = [['확신 낮음 · 스트레스 높음', '안전기지 우선', 0], ['확신 높음 · 스트레스 높음', '소진 주의', 1], ['확신 낮음 · 스트레스 낮음', '강점 발굴', 2], ['확신 높음 · 스트레스 낮음', '심화 멘토링', 3]];
+  $('cnsBrief').innerHTML = `<div class="card p-6"><div class="flex flex-wrap items-start justify-between gap-3"><div><div class="eyebrow text-indigo-700">AI 상담 사전 브리핑 · 규칙 기반 자동 분석</div><h3 class="mt-1 text-xl font-black text-slate-900">${esc(c.studentName)}</h3><p class="mt-1 text-sm text-slate-600">${esc(c.applicantType)} 신청 · ${esc(c.method)} · ${esc(c.date || '날짜 미정')} ${esc(c.timeSlot)} · ${esc(c.urgency)}</p></div><button type="button" onclick="removeCns('${c.id}')" class="text-xs font-bold text-rose-700 underline underline-offset-2">이 신청서 삭제</button></div>
+    <p class="mt-4 text-sm text-slate-800 leading-relaxed rounded-xl bg-slate-50 border border-slate-200 p-4"><b class="text-slate-900">사전 고민</b> ${esc(c.note)}</p>
+    <div class="mt-5 grid sm:grid-cols-5 gap-4"><div class="sm:col-span-2"><div class="text-xs font-extrabold text-slate-500">진로확신도 × 스트레스 매트릭스</div><div class="mt-2 grid grid-cols-2 gap-1.5">${cells.map(x => `<div class="rounded-xl border p-2.5 ${x[2] === d.q ? 'bg-[#0F172A] border-[#0F172A] is-active' : 'bg-slate-50 border-slate-200'}"><div class="text-[10px] font-bold ${x[2] === d.q ? 'text-slate-200' : 'text-slate-500'}">${x[0]}</div><div class="mt-0.5 text-xs font-extrabold ${x[2] === d.q ? 'text-white' : 'text-slate-700'}">${x[1]}</div></div>`).join('')}</div></div>
+    <div class="sm:col-span-3"><div class="text-xs font-extrabold text-slate-500">진단 유형</div><div class="mt-2 text-base font-black text-slate-900">${esc(d.title)}</div><p class="mt-1.5 text-sm text-slate-700 leading-relaxed">${esc(d.sum)}</p></div></div>
+    <div class="mt-5"><div class="text-xs font-extrabold text-slate-500">상담 도입부 추천 오프닝 질문 3선</div><ol class="mt-2 space-y-2">${d.qs.map((q, i) => `<li class="flex gap-3 rounded-xl bg-indigo-50 border border-indigo-200 p-3 text-sm font-semibold text-slate-800"><span class="flex-none w-6 h-6 rounded-full bg-indigo-700 text-white grid place-items-center text-xs font-black">${i + 1}</span><span>“${esc(q)}”</span></li>`).join('')}</ol></div>
+    <p class="mt-4 text-sm text-slate-800 leading-relaxed rounded-xl bg-emerald-50 border border-emerald-200 p-4"><b class="text-emerald-800">맞춤형 코칭 전략</b> ${esc(d.st)}</p>
+    <div class="mt-5 flex flex-wrap items-center justify-between gap-2"><div class="inline-flex p-1 rounded-xl bg-slate-100" role="tablist" aria-label="기록 서식"><button type="button" id="cnsDoc-hwp" onclick="S.cnsDoc='hwp';renderBrief()" class="tabbtn px-3 py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">HWP 상담일지(□ ◦ -)</button><button type="button" id="cnsDoc-neis" onclick="S.cnsDoc='neis';renderBrief()" class="tabbtn px-3 py-2 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-700 hover:bg-white">NEIS 상담기록</button></div><button type="button" onclick="copyText(document.getElementById('cnsDocBox').value,'상담 기록을 복사했습니다.')" class="btn btn-ink btn-sm"><i data-lucide="copy"></i>원클릭 복사</button></div>
+    <textarea id="cnsDocBox" rows="9" class="out mt-3" aria-label="상담 기록 변환 결과">${esc(cnsDoc(c, d, S.cnsDoc))}</textarea>
+    <p class="mt-2 text-xs text-slate-600">사전 분석은 상담 준비를 돕는 참고 자료이며, 학생에 대한 판단은 실제 상담에서 교사가 내립니다.</p></div>`;
+  paintGroup('cnsDoc-', ['hwp', 'neis'], S.cnsDoc); icons();
+}
+function removeCns(id) { if (confirm('이 상담 신청서를 이 기기에서 삭제할까요?')) { cnsList = cnsList.filter(c => c.id !== id); save(K.cns, cnsList); renderCnsBoard(); } }
+function drawCnsChart() { if (!$('cnsChart')) return; const data = CNS_CATS.map(k => cnsList.filter(c => c.category === k).length); drawBars($('cnsChart'), ['고교진학\n학점제', '진로탐색\n강점', '학습습관\n코칭', '교우관계\nSEL', '비즈쿨\n멘토링', '자녀소통\n코칭'], [{ data, color: ['#B45309', '#059669', '#0284C7', '#BE123C', '#4F46E5', '#6D28D9'] }], Math.max(4, ...data), { wrap: true, int: true }); }
+function exportCnsCsv() { if (!cnsList.length) return toast('내보낼 상담 신청이 없습니다.'); download('상담대장_' + today() + '.csv', csvOf([['접수일', '신청구분', '학번·학생명', '연락처', '상담방식', '상담영역', '희망일', '희망시간', '진로확신도', '스트레스', '시급도', '사전 분석 유형', '사전 고민']].concat(cnsList.map(c => [c.createdAt, c.applicantType, c.studentName, c.contact, c.method, c.category, c.date, c.timeSlot, c.clarity, c.stress, c.urgency, diagnose(c).title, c.note]))), 'text/csv;charset=utf-8'); }
+
+/* ===== 9. 교사 관제실 ===== */
+const PIN = '0308';
+function adminButton() { if (S.unlocked) { location.hash = '#admin-panel'; return; } S.pin = ''; pinPaint(''); openModal('m-pin'); }
+function pinPaint(msg) { $('pinDots').innerHTML = [0, 1, 2, 3].map(i => `<span class="w-4 h-4 rounded-full border-2 border-slate-900 ${i < S.pin.length ? 'bg-slate-900' : 'bg-white'}"></span>`).join(''); $('pinMsg').textContent = msg || ''; }
+function pinPress(k) {
+  if (k === 'del') S.pin = S.pin.slice(0, -1); else if (S.pin.length < 4) S.pin += k; pinPaint('');
+  if (S.pin.length === 4) { if (S.pin === PIN) { closeModal(); unlock(); } else { S.pin = ''; pinPaint('PIN이 올바르지 않습니다.'); } }
+}
+document.addEventListener('keydown', e => { if (openId === 'm-pin') { if (/^\d$/.test(e.key)) pinPress(e.key); else if (e.key === 'Backspace') pinPress('del'); } });
+function unlock() { S.unlocked = true; $('admin-panel').hidden = false; $('navAdmin').hidden = false; $('adminBtnIco').textContent = '🔓'; setAd(S.ad); renderTasks(); renderStamps(); renderHwp(); renderLinks(); icons(); $('admin-panel').scrollIntoView(); toast('교사 관제실이 열렸습니다.'); }
+function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; $('admin-panel').hidden = true; $('navAdmin').hidden = true; $('adminBtnIco').textContent = '🔒'; location.hash = '#top'; toast('교사 관제실을 잠갔습니다.'); }
+function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3], n); [1, 2, 3].forEach(i => $('ad-' + i).hidden = i !== n); }
+
+/* 업무 보드 */
+const TRACKS = ['학교·미래진로부', '학술·박사연구', '대외·네트워크'], QUADS = { Q1: '긴급하고 중요 — 지금 실행', Q2: '중요하지만 덜 긴급 — 일정 확보', Q3: '긴급하지만 덜 중요 — 위임·간소화', Q4: '둘 다 낮음 — 줄이기' }, ST_ORDER = ['대기', '진행중', '완료'];
+const ST_CLS = { 대기: 'bg-slate-100 text-slate-700 border-slate-200', 진행중: 'bg-amber-50 text-amber-800 border-amber-200', 완료: 'bg-emerald-50 text-emerald-800 border-emerald-200' };
+function setTaskView(v) { S.taskView = v; renderTasks(); }
+function addTask(e) { e.preventDefault(); tasks.push({ id: 't' + Date.now(), track: $('tkTrack').value, quad: $('tkQuad').value, due: $('tkDue').value, status: '대기', title: $('tkTitle').value.trim() }); save(K.tasks, tasks); $('tkTitle').value = ''; renderTasks(); }
+function cycleTask(id) { const t = tasks.find(x => x.id === id); t.status = ST_ORDER[(ST_ORDER.indexOf(t.status) + 1) % 3]; save(K.tasks, tasks); renderTasks(); }
+function removeTask(id) { tasks = tasks.filter(x => x.id !== id); save(K.tasks, tasks); renderTasks(); }
+function renderTasks() {
+  paintGroup('tkView-', ['kanban', 'matrix'], S.taskView);
+  const card = t => `<div class="rounded-xl bg-white border border-slate-200 p-3"><div class="flex items-center justify-between gap-2 text-[11px] font-extrabold"><span class="text-slate-500">${t.quad} · ${esc(S.taskView === 'matrix' ? t.track : (t.due || '마감 미정'))}</span><button type="button" onclick="removeTask('${t.id}')" class="text-rose-700" aria-label="과제 삭제">삭제</button></div><p class="mt-1.5 text-sm font-semibold text-slate-800 leading-snug ${t.status === '완료' ? 'line-through' : ''}">${esc(t.title)}</p><button type="button" onclick="cycleTask('${t.id}')" class="mt-2 px-2.5 py-1 rounded-full border text-[11px] font-extrabold ${ST_CLS[t.status]}" title="누르면 상태가 바뀝니다">${t.status} ↻</button></div>`;
+  const col = (title, sub, list) => `<section class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><h4 class="text-sm font-extrabold text-slate-900">${title} <span class="text-slate-500 num">${list.length}</span></h4>${sub ? `<p class="text-xs text-slate-600">${sub}</p>` : ''}<div class="mt-3 space-y-2">${list.map(card).join('') || '<p class="text-xs text-slate-600">과제가 없습니다.</p>'}</div></section>`;
+  $('taskBoard').innerHTML = S.taskView === 'kanban' ? `<div class="grid md:grid-cols-3 gap-4">${TRACKS.map(tr => col(tr, '', tasks.filter(t => t.track === tr))).join('')}</div>` : `<div class="grid md:grid-cols-2 gap-4">${Object.keys(QUADS).map(q => col(q, QUADS[q], tasks.filter(t => t.quad === q))).join('')}</div>`;
+}
+function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '8.0', savedAt: new Date().toISOString(), done, links, gasUrl, tasks, reflections, counseling: cnsList }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
+function restoreJson(inp) {
+  const f = inp.files[0]; if (!f) return; const rd = new FileReader();
+  rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (Array.isArray(d.tasks)) { tasks = d.tasks; save(K.tasks, tasks); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } renderAll(); renderTasks(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
+  rd.readAsText(f);
+}
+
+/* 생기부 스탬프 · HWP 3종 */
+const STAMPS = [['🐦 손안의 새 자기성찰', '이펙추에이션의 ‘손안의 새’ 원칙에 따라 자신의 강점과 진로 가치관을 성찰하고 프로젝트 방향을 스스로 설정하는 자기주도성을 보임.'], ['🎧 타인공감 경청 인터뷰', '교실과 지역사회의 불편을 편견 없이 관찰하고 공감적 경청 인터뷰를 수행하여 상대의 필요를 깊이 있게 이해함.'], ['🌳 Why Tree 문제정의', 'Why Tree 기법으로 표면 현상 너머의 근본 원인을 근거를 들어 정의하고 핵심 페르소나를 도출함.'], ['💡 감수손실 아이디어', '감수 가능한 손실 범위에서 실현 가능한 아이디어를 발산하고 소셜 린 캔버스로 모델과 손익분기점을 구조화함.'], ['🍋 실패 재해석·피보팅', '시제품 제작 과정의 시행착오를 실패가 아닌 배움의 자료로 받아들여 모델을 과감히 수정(피보팅)하는 건설적 태도를 보임.'], ['🤝 조각보 협업·갈등조율', '모둠원의 서로 다른 강점을 조각보처럼 연결하고 의견 차이를 원만하게 조율하여 공동의 결과물을 완성함.']];
+function renderStamps() { $('stampBox').innerHTML = STAMPS.map((s, i) => `<label class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 cursor-pointer"><input type="checkbox" class="stamp w-4 h-4 accent-emerald-600" value="${i}" onchange="genRecord()" ${i < 2 ? 'checked' : ''} />${s[0]}</label>`).join(''); genRecord(); }
+function genRecord() { const on = Array.from(document.querySelectorAll('.stamp:checked')).map(c => +c.value); const t = [`「${$('recTrack').value.trim()}」에 주도적으로 참여함.`].concat(on.map(i => STAMPS[i][1])).join(' '); $('recOut').value = t; $('recLen').textContent = `${t.length}자 · ${new Blob([t]).size} bytes`; }
+function setHwp(k) { S.hwp = k; renderHwp(); }
+function renderHwp() {
+  paintGroup('hwTab-', ['draft', 'notice', 'table'], S.hwp);
+  const name = $('hwName').value.trim() || '[입력 필요]', date = $('hwDate').value.trim() || '[입력 필요]', items = $('hwBody').value.split(',').map(s => s.trim()).filter(Boolean);
+  $('hwOut').value = S.hwp === 'draft' ? [`제목: ${name} 계획(안)`, '', '□ 추진 배경 및 필요성', '  ◦ 학생의 자기주도성 회복과 기업가정신(창업가정신) 함양을 위한 체계적 진로교육 필요', '  ◦ 이커리어 6단계와 사회정서학습(SEL)을 결합한 연간 교육과정 운영', '□ 목적', '  ◦ 관찰과 근거에 기반한 문제해결 경험을 통해 진로적응성 신장', '□ 세부 추진 계획', `  ◦ 일시: ${date}`, '  ◦ 대상: [입력 필요]', '  ◦ 장소: [입력 필요]', '  ◦ 주요 내용'].concat(items.map(x => `    - ${x}`), ['  ◦ 소요 예산: [입력 필요]', '□ 기대 효과', '  ◦ 실수에 대한 건설적 태도 형성 및 진로적응성 향상', '  ◦ 학교–지역사회 연계 진로·기업가정신 교육 모델 정착', '', '붙임  세부 운영 계획 1부.  끝.']).join('\n')
+    : S.hwp === 'notice' ? [`[교직원 공지] ${name} 안내`, '', `1. 일시: ${date}`, '2. 대상: [입력 필요]', '3. 주요 내용'].concat(items.map((x, i) => `  ${'가나다라마바사아'[i] || '-'}. ${x}`), ['4. 협조 사항', '  가. 해당 시간 학급 이동 및 활동 장소 사용에 협조 부탁드립니다.', '  나. 학생 관찰 내용은 학교생활기록부 기재 시 참고 자료로 공유하겠습니다.', '5. 문의: 미래진로부 권대륜']).join('\n') : scheduleText();
+}
+
+/* 마스터 링크 제어판 */
+function renderLinks() {
+  const inp = (id, label, val, ph) => `<div><label class="lbl" for="${id}">${label}</label><input id="${id}" type="url" class="inp text-sm" value="${esc(val || '')}" placeholder="${ph || 'https://'}" /></div>`;
+  const box = (title, body) => `<section class="card p-6"><h3 class="text-base font-extrabold text-slate-900">${title}</h3><div class="mt-4 grid md:grid-cols-2 gap-4">${body}</div></section>`;
+  const acc = (sem, title) => `<details class="card p-5"><summary class="cursor-pointer text-sm font-extrabold text-slate-900">${title}</summary><div class="mt-4 space-y-3">${LESSONS.filter(l => l.sem === sem).map(l => `<div class="grid md:grid-cols-12 gap-2 items-center"><div class="md:col-span-4 text-xs font-bold text-slate-700">${l.id} ${esc(l.title.split(':')[0])}</div><input id="lk-${l.id}-canva" type="url" class="inp text-xs md:col-span-4" aria-label="${l.id} Canva 링크" placeholder="Canva 링크" value="${esc((links.lessons[l.id] || {}).canva || '')}" /><input id="lk-${l.id}-padlet" type="url" class="inp text-xs md:col-span-4" aria-label="${l.id} Padlet 링크" placeholder="Padlet 링크" value="${esc((links.lessons[l.id] || {}).padlet || '')}" /></div>`).join('')}</div></details>`;
+  $('linkPanel').innerHTML = box('① 1·2학기 대표 Canva 슬라이드 & Padlet 보드', inp('lk-sem1Canva', '1학기 대표 Canva 슬라이드', links.sem1Canva) + inp('lk-sem1Padlet', '1학기 대표 Padlet 보드', links.sem1Padlet) + inp('lk-sem2Canva', '2학기 대표 Canva 슬라이드', links.sem2Canva) + inp('lk-sem2Padlet', '2학기 대표 Padlet 보드', links.sem2Padlet))
+    + box('② 이커리어 6단계 Gemini Gems 공유 링크', STAGES.map(st => inp('lk-gem-' + st.stageNum, `Stage ${st.stageNum} ${shortName(st)} Gem`, links.gems[st.stageNum], 'https://gemini.google.com/gem/…')).join(''))
+    + box('③ 학생 쇼케이스 6대 사례 Canva/Padlet 링크', CASES.map((c, i) => inp('lk-case-' + c.id, `0${i + 1}. ${c.title}`, links.cases[c.id])).join(''))
+    + `<div class="space-y-3"><h3 class="text-base font-extrabold text-slate-900 px-1">④ 32차시 개별 Canva/Padlet 링크</h3>${acc('sem1', '1학기 16차시 개별 링크 펼치기')}${acc('sem2', '2학기 16차시 개별 링크 펼치기')}</div>`;
+}
+function saveLinks() {
+  let bad = 0; const get = id => { const raw = $(id).value.trim(), ok = safeUrl(raw); if (raw && !ok) bad++; return ok; };
+  ['sem1Canva', 'sem1Padlet', 'sem2Canva', 'sem2Padlet'].forEach(k => links[k] = get('lk-' + k));
+  STAGES.forEach(st => links.gems[st.stageNum] = get('lk-gem-' + st.stageNum)); CASES.forEach(c => links.cases[c.id] = get('lk-case-' + c.id));
+  LESSONS.forEach(l => { const a = get(`lk-${l.id}-canva`), b = get(`lk-${l.id}-padlet`); if (a || b) links.lessons[l.id] = { canva: a, padlet: b }; else delete links.lessons[l.id]; });
+  save(K.links, links); renderCases(); toast(bad ? `저장했습니다. https:// 로 시작하지 않는 주소 ${bad}개는 제외했습니다.` : '마스터 링크를 저장했습니다.');
+}
+
+/* 화면 직접 편집 · 배포용 HTML */
+function toggleEdit() {
+  S.editing = !S.editing; document.body.classList.toggle('editing', S.editing);
+  document.querySelectorAll('main h1, main h2, main h3, main p, main li, main blockquote p, main dd, main dt, footer p').forEach(el => { if (el.closest('[data-dyn]') || el.closest('#admin-panel')) return; if (S.editing) el.setAttribute('contenteditable', 'true'); else el.removeAttribute('contenteditable'); });
+  $('editBtn').textContent = '✏️ 화면 직접 편집 ' + (S.editing ? 'ON' : 'OFF'); toast(S.editing ? '제목과 본문을 직접 눌러 수정할 수 있습니다. 수정 후 배포용 파일을 내려받으세요.' : '편집 모드를 껐습니다.');
+}
+function exportHtml() {
+  const c = document.documentElement.cloneNode(true);
+  c.querySelectorAll('style').forEach(s => { if (/tailwindcss|--tw-/.test(s.textContent)) s.remove(); });
+  c.querySelectorAll('[data-dyn]').forEach(el => el.innerHTML = '');
+  c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+  c.querySelectorAll('.modal').forEach(m => m.classList.add('hidden'));
+  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; });
+  const fr = c.querySelector('#emFrame'); if (fr) fr.removeAttribute('src');
+  c.querySelector('#admin-panel').setAttribute('hidden', ''); c.querySelector('#navAdmin').setAttribute('hidden', '');
+  const body = c.querySelector('body'); body.className = ''; body.removeAttribute('style');
+  c.querySelector('#baked').textContent = 'window.__BAKED_LINKS__ = ' + JSON.stringify(links).replace(/</g, '\\u003c') + '; window.__BAKED_GAS_URL__ = ' + JSON.stringify(gasUrl).replace(/</g, '\\u003c') + '; window.__BAKED_LOCKED__ = true;';
+  download('index.html', '<!DOCTYPE html>\n' + c.outerHTML, 'text/html;charset=utf-8');
+  toast('배포용 index.html을 내려받았습니다. 마스터 링크와 구글시트 URL이 파일에 포함되었습니다.');
+}
+
+/* ===== 초기화 ===== */
+function renderAll() { renderHero(); renderSemTabs(); renderFilters(); renderLessons(); renderCases(); renderRefl(); sheetBadge(); if (S.cnsTab === 'board') renderCnsBoard(); }
+function init() {
+  $('rfLesson').innerHTML = LESSONS.map(l => `<option value="${l.id} ${esc(l.title.split(':')[0])}">${l.id} · ${esc(l.title.split(':')[0])}</option>`).join('');
+  $('cnsCat').innerHTML = CNS_CATS.map(c => `<option>${c}</option>`).join('');
+  $('pinPad').innerHTML = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', 'del'].map(k => k === '' ? '<span></span>' : `<button type="button" onclick="pinPress('${k}')" class="btn btn-ghost h-12 text-lg num" aria-label="${k === 'del' ? '지우기' : k}">${k === 'del' ? '⌫' : k}</button>`).join('');
+  setLang('school'); setBio('short'); renderPv(); renderStages(); renderLean(); renderYeep(); renderWeather(); renderUrg(); renderAll();
+  setWb('pov'); updatePov(); runBep(); setCnsType('학생'); cnsSliders(); setCnsTab('form');
+  applyDark(!!load(K.dark, false)); icons();
+  const navs = Array.from(document.querySelectorAll('#mainNav .navlink'));
+  if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) navs.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-45% 0px -50% 0px' }); document.querySelectorAll('main > section[id]').forEach(s => io.observe(s)); }
+  let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { drawPhd(); drawCnsChart(); }, 150); });
+}
+init();
+  </script>
+</body>
+</html>
