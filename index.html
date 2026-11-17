@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DR K's Ed-Venture &amp; E-Career Lab v11.0 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
+  <title>DR K's Ed-Venture &amp; E-Career Lab v11.1 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
   <meta name="description" content="이커리어(E-Career) 6단계와 사회정서학습(SEL)으로 설계한 연간 32차시 진로·기업가정신 수업, 실습 스튜디오, 성찰·상담 통합 플랫폼" />
   <script id="baked">window.__BAKED_LINKS__ = {"sem1Canva":"https://canva.link/3x38dxnfhw7iewa","sem1Padlet":"https://padlet.com/colossalalarmstudies/2026-ffgaz2aomuqgoaf2","sem2Canva":"https://canva.link/i4uuzd8lqxz5vbw","sem2Padlet":"https://padlet.com/colossalalarmstudies/2-s023oj0r70i3s3lgcb6w","gems":{},"cases":{"case-5":"https://padlet.com/colossalalarmstudies/2026-ffgaz2aomuqgoaf2","case-6":"https://padlet.com/colossalalarmstudies/2026-vrt46gilhq6m0cgv"},"lessons":{"1-14":{"canva":"https://canva.link/115zhekpmjb8sg3"},"2-12":{"canva":"https://canva.link/115zhekpmjb8sg3"}},"community":{"hub":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d1":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d2":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d3":"https://gemini.google.com/gem/10eerQ6B4cmGZn74TqXSDb7fqhdFoI44e?usp=sharing","d4":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri"},"camp":{}}; window.__BAKED_GAS_URL__ = "https://script.google.com/macros/s/AKfycbzPIPKZIKEStJRj_F77A_B24vesCARwkVsKT5oPNIQ8qeW6PdTWo8SL_AC-wwUd_tUf/exec"; window.__BAKED_LOCKED__ = true; window.__BAKED_CONTENT__ = {"lessons":{},"cases":{},"roadmap":null,"members":null,"resources":null,"materials":null,"pin":"","texts":{},"edits":{},"hidden":[]};</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -110,6 +110,7 @@
     body.editing main [data-dyn]:hover { outline: 2px dashed #059669; outline-offset: 4px; cursor: pointer; }
     #printArea .pr-h { font-size: 12pt; font-weight: 800; margin: 14pt 0 5pt; }
     body.student-mode .st-off { display: none !important; }
+    .wz-off { display: none !important; }
     body.survey-only #studentTabs { display: none !important; }
     body.board-dark #classMode { background: #0B1120; }
     #classMode button[disabled] { opacity: .45; cursor: not-allowed; }
@@ -153,7 +154,7 @@
         <a href="#top" class="flex items-center gap-3 min-w-0">
           <span class="flex-none w-9 h-9 rounded-xl bg-emerald-400 text-[#052E1B] grid place-items-center text-[11px] font-black tracking-tight">DR.K</span>
           <span class="min-w-0">
-            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v11.0</span></span>
+            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v11.1</span></span>
             <span class="hidden sm:block text-[11px] text-slate-300 truncate">이커리어 6단계 × SEL · 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</span>
           </span>
         </a>
@@ -182,6 +183,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <p class="text-sm font-bold text-slate-900">학생 전용 화면입니다. 내가 쓴 기록은 선생님만 모아서 볼 수 있습니다.</p>
       <div id="studentTabs" data-dyn class="mt-3 flex flex-wrap gap-2" role="tablist" aria-label="학생 화면 메뉴"></div>
+      <button type="button" id="wizBtn" onclick="wizToggle()" aria-pressed="false" class="mt-3 text-sm font-bold text-emerald-800 underline underline-offset-2">📱 단계별로 쓰기</button>
     </div>
   </div>
   </div>
@@ -714,6 +716,16 @@
             <textarea id="cnsNote" class="inp mt-3" rows="4" required placeholder="상담에서 꼭 이야기하고 싶은 고민이나 질문을 자유롭게 적어 주세요."></textarea>
             <button type="submit" class="btn btn-emerald mt-4 w-full py-3.5 text-sm"><i data-lucide="send"></i>상담 신청서 제출</button>
           </div>
+          <div class="card p-6 lg:col-span-2">
+            <h3 class="text-base font-extrabold text-slate-900">신청 후 진행 절차</h3>
+            <ol class="mt-3 grid sm:grid-cols-3 gap-3 text-sm text-slate-800">
+              <li class="rounded-xl bg-slate-50 border border-slate-200 p-3"><b class="text-emerald-700">① 접수</b><br />신청서를 제출하면 바로 접수됩니다.</li>
+              <li class="rounded-xl bg-slate-50 border border-slate-200 p-3"><b class="text-emerald-700">② 교사 확인</b><br />담당 교사가 내용을 확인합니다.</li>
+              <li class="rounded-xl bg-slate-50 border border-slate-200 p-3"><b class="text-emerald-700">③ 일정 안내</b><br />신청 완료 후 교사 확인을 거쳐 기재해 주신 연락처(또는 교실)로 일정이 안내됩니다.</li>
+            </ol>
+            <button type="button" onclick="toggleMyCns()" class="btn btn-ghost mt-4">🔎 내 신청 조회</button>
+            <div id="myCnsOut" data-dyn hidden class="mt-4" aria-live="polite"></div>
+          </div>
         </form>
 
         <!-- 서브뷰 2: 분석 보드 -->
@@ -769,6 +781,19 @@
             <div><label class="lbl" for="gwNum">번호</label><input id="gwNum" type="number" min="1" max="50" class="inp num" oninput="renderGrowth()" onchange="renderGrowth()" placeholder="예) 14" /></div>
             <div><label class="lbl" for="gwName">이름</label><input id="gwName" class="inp" oninput="renderGrowth()" onchange="renderGrowth()" /></div>
       <div class="col-span-2 sm:col-span-4 flex flex-wrap items-end gap-3"><div><label class="lbl" for="gwPin">확인 번호 4자리</label><input id="gwPin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" class="inp num w-36" placeholder="숫자 4자리" /></div><button type="button" onclick="growthOpen()" class="btn btn-emerald">내 기록 열기</button><p class="text-xs text-slate-600 leading-relaxed">처음이면 지금 정한 번호가 내 확인 번호가 됩니다.<br />잊었으면 선생님께 초기화를 요청하세요.</p></div>
+        <details class="col-span-2 sm:col-span-4 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3">
+          <summary class="cursor-pointer text-sm font-extrabold text-slate-900">🔑 확인 번호 분실 시 조치 안내</summary>
+          <div class="mt-3 text-sm text-slate-800 leading-relaxed">
+            <p><b>학생</b> — 교사 관제실 [명렬표 관리]에서 선생님께 초기화를 요청하세요. 초기화된 뒤 이 화면에서 새 번호 4자리를 넣고 [내 기록 열기]를 누르면 그 번호가 새 확인 번호가 됩니다. 기록은 지워지지 않습니다.</p>
+            <p class="mt-2"><b>교사용 해제 가이드</b></p>
+            <ol class="mt-1 list-decimal pl-5 space-y-1">
+              <li>교사 관제실 → [데이터 · 운영] → [시트와 동기화]를 눌러 확인 번호 목록을 불러옵니다.</li>
+              <li>[명렬표 관리] → ‘학급 보기’에서 해당 학급을 고릅니다.</li>
+              <li>학생 이름 옆 ‘확인번호’의 [초기화]를 누릅니다. 번호를 알려 주기만 할 때는 표시된 번호를 본인에게 직접 전달합니다.</li>
+              <li>구글 시트 연동 없이 쓰는 경우 확인 번호는 학생이 쓴 기기에만 저장되므로 관제실에서 초기화할 수 없습니다. 이때는 그 기기 브라우저의 사이트 데이터를 지워야 하며, 그 기기에 저장된 기록도 함께 지워집니다.</li>
+            </ol>
+          </div>
+        </details>
         </div>
       <div id="gwOut" data-dyn class="mt-5" aria-live="polite"></div>
     </section>
@@ -858,7 +883,8 @@
             <p id="rsCount" class="text-sm font-bold text-slate-800 num" aria-live="polite"></p>
           </div>
           <label for="rsPaste" class="sr-only">명렬표 붙여넣기</label>
-          <textarea id="rsPaste" rows="4" class="inp mt-4 font-mono text-xs" placeholder="1	2	1	홍길동&#10;1	2	2	김가람&#10;또는&#10;10203 이나래"></textarea>
+          <textarea id="rsPaste" oninput="rosterLive()" rows="4" class="inp mt-4 font-mono text-xs" placeholder="1	2	1	홍길동&#10;1	2	2	김가람&#10;또는&#10;10203 이나래"></textarea>
+          <p id="rsCheck" data-dyn class="mt-2" aria-live="polite"></p>
           <div class="mt-3 flex flex-wrap gap-2">
             <button type="button" onclick="importRoster(false)" class="btn btn-emerald">붙여 넣은 내용 추가·갱신</button>
             <button type="button" onclick="importRoster(true)" class="btn btn-ghost">전체 교체</button>
@@ -1044,7 +1070,7 @@
   <footer class="bg-[#0B1120] text-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
       <div>
-        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v11.0</div>
+        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v11.1</div>
         <div class="mt-1">장안여자중학교 미래진로부 · 권대륜 (DR K)</div>
       </div>
       <p class="max-w-xl text-slate-300 leading-relaxed">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
@@ -1200,6 +1226,18 @@
       <div class="mt-4 flex flex-wrap items-end gap-2"><div class="flex-1 min-w-[200px]"><label class="lbl" for="gasKey">동기화 키 (이 기기에만 저장되며 배포 파일에는 담기지 않습니다. 다른 PC에서는 같은 키를 붙여 넣고 저장하세요)</label><input id="gasKey" class="inp font-mono text-xs" autocomplete="off" /></div><button type="button" onclick="saveSyncKey()" class="btn btn-emerald btn-sm h-10">키 저장</button><button type="button" onclick="regenSyncKey()" class="btn btn-ghost btn-sm h-10">키 새로 만들기</button></div>
       <label class="lbl mt-4" for="gasUrl">웹 앱 URL</label>
       <input id="gasUrl" type="url" class="inp" placeholder="https://script.google.com/macros/s/…/exec" />
+      <details class="mt-3 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+        <summary class="cursor-pointer text-sm font-extrabold text-slate-900">🛠️ 연동이 안 될 때 — 자주 생기는 오류와 해결법</summary>
+        <dl class="mt-3 space-y-3 text-sm text-slate-800 leading-relaxed">
+          <div><dt class="font-extrabold text-slate-900">① 웹 앱 URL 형식이 맞는지</dt><dd>주소는 <b>https://script.google.com/macros/s/</b>로 시작하고 <b>/exec</b>로 끝나야 합니다. 스프레드시트 주소(docs.google.com/spreadsheets/…)나 <b>/dev</b>로 끝나는 테스트 주소는 동작하지 않습니다.</dd></div>
+          <div><dt class="font-extrabold text-slate-900">② 학생 제출이 시트에 쌓이지 않을 때 (액세스 권한 누락)</dt><dd>Apps Script 편집기 [배포] → [배포 관리] → 연필(수정) → 액세스 권한을 <b>‘모든 사용자’</b>로, 실행 계정을 <b>‘나’</b>로 바꾸고 버전을 <b>‘새 버전’</b>으로 선택해 [배포]합니다.</dd></div>
+          <div><dt class="font-extrabold text-slate-900">③ ‘모든 사용자’ 항목이 보이지 않을 때</dt><dd>학교(기관) 구글 계정은 외부 공개가 막혀 있을 수 있습니다. 개인 구글 계정으로 스프레드시트와 스크립트를 새로 만들어 배포하세요.</dd></div>
+          <div><dt class="font-extrabold text-slate-900">④ 스크립트를 고쳤는데 그대로일 때</dt><dd>코드를 저장만 해서는 반영되지 않습니다. [배포 관리] → 연필(수정) → 버전 ‘새 버전’ → [배포]를 해야 하며, 이렇게 하면 URL은 바뀌지 않습니다. [새 배포]를 누르면 URL이 바뀌므로 이 칸에 새 주소를 다시 넣어야 합니다.</dd></div>
+          <div><dt class="font-extrabold text-slate-900">⑤ “동기화 키가 배포된 스크립트와 다릅니다”가 나올 때</dt><dd>스크립트 맨 위 <b>SYNC_KEY</b> 값과 이 창의 동기화 키가 글자 하나까지 같은지 확인하고, 고쳤다면 ④처럼 새 버전으로 배포합니다.</dd></div>
+          <div><dt class="font-extrabold text-slate-900">⑥ 처음 배포할 때 “확인되지 않은 앱” 경고가 나올 때</dt><dd>본인이 만든 스크립트이므로 [고급] → [(프로젝트 이름)(으)로 이동] → [허용] 순서로 승인합니다.</dd></div>
+          <div><dt class="font-extrabold text-slate-900">⑦ 확인 방법</dt><dd>학생용 주소(?student)에서 성찰 1건을 제출한 뒤 스프레드시트 [성찰기록] 탭에 행이 생겼는지 보고, 관제실 [시트와 동기화]를 눌러 불러와지는지 확인합니다.</dd></div>
+        </dl>
+      </details>
       <div class="mt-5 flex flex-wrap justify-end gap-2">
         <button type="button" onclick="testGas()" class="btn btn-ghost">테스트 전송</button>
         <button type="button" onclick="saveGas()" class="btn btn-emerald">웹 앱 URL 저장</button>
@@ -1784,7 +1822,7 @@ function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; S.pendin
 function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3, 4, 5, 6], n); [1, 2, 3, 4, 5, 6].forEach(i => $('ad-' + i).hidden = i !== n); if (n === 6) renderEffect(); if (n === 1) { pushInfo(); renderRoster(); } if (n === 5) { renderReflAdmin(); renderMissing(); neisCount(); } if (n === 1) { syncInfo(); aiFill(); } if (n === 5) renderLedger(); }
 
 /* 업무 보드 */
-function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '11.0', savedAt: new Date().toISOString(), done: baseDone(), links, gasUrl, reflections, counseling: cnsList, content, memos: baseMemos(), roster, drafts, surveys, names, doneMap, memoMap, fundings }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
+function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '11.1', savedAt: new Date().toISOString(), done: baseDone(), links, gasUrl, reflections, counseling: cnsList, content, memos: baseMemos(), roster, drafts, surveys, names, doneMap, memoMap, fundings }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
 function restoreJson(inp) {
   const f = inp.files[0]; if (!f) return; const rd = new FileReader();
   rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; curCls = ''; save(K4.cls, ''); setTimeout(renderClsBar, 0); if (d.doneMap && typeof d.doneMap === 'object') { doneMap = d.doneMap; save(K4.doneMap, doneMap); } if (d.memoMap && typeof d.memoMap === 'object') { memoMap = d.memoMap; save(K4.memoMap, memoMap); } if (Array.isArray(d.fundings)) { fundings = d.fundings; save(K4.fund, fundings); } if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (d.memos && typeof d.memos === 'object') { memos = d.memos; save(K2.memo, memos); } if (d.roster && typeof d.roster === 'object') { roster = d.roster; save(K2.roster, roster); } if (d.drafts && typeof d.drafts === 'object') { drafts = d.drafts; save(K3.drafts, drafts); } if (Array.isArray(d.surveys)) { surveys = d.surveys; save(K3.survey, surveys); } if (Array.isArray(d.names)) { names = d.names; save(K3.names, names); renderRoster(); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } if (d.content && typeof d.content === 'object') { content = Object.assign(content, d.content); saveContent(); applyContent(); renderCommunity(); renderMatrix(); renderEditor(); } renderAll(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
@@ -2111,7 +2149,7 @@ function migrateData() {
   /* 예전 '외부 교사 자료실' 목록을 수업자료 라이브러리로 합침 */
   if (Array.isArray(content.resources)) { content.materials = (content.materials || DEFAULT_MATERIALS.filter(x => x.k !== '외부 자료')).concat(content.resources.map(r => ({ k: '외부 자료', t: r.t || '', d: r.d || '', m: r.m || '', url: r.url || '' }))); content.resources = null; saveContent(); }
 }
-const showDone = (title, html) => { $('dnTitle').textContent = title; $('dnBody').innerHTML = html; openModal('m-done'); };
+const showDone = (title, html) => { if (typeof wizReset === 'function') wizReset(); $('dnTitle').textContent = title; $('dnBody').innerHTML = html; openModal('m-done'); };
 /* 교사 전용 기능: 잠겨 있으면 PIN을 먼저 묻고, 통과하면 이어서 실행 */
 function requireAdmin(fn) { if (S.unlocked) return fn(); S.pending = fn; S.pin = ''; pinPaint(''); openModal('m-pin'); }
 
@@ -2165,11 +2203,12 @@ function setCnsTab(k) { if (k === 'board' && !S.unlocked) k = 'form'; S.cnsTab =
 function openCnsBoard() { requireAdmin(() => { setCnsTab('board'); $('counseling').scrollIntoView(); }); }
 async function submitCns(e) {
   e.preventDefault(); if (S.busy) return;
-  const c = { id: 'c' + Date.now(), createdAt: today(), applicantType: S.cnsType, studentName: $('cnsStudent').value.trim() + (S.cnsType === '학부모' ? ' (학부모)' : ''), contact: $('cnsContact').value.trim(), method: $('cnsMethod').value, category: $('cnsCat').value, date: $('cnsDate').value, timeSlot: $('cnsTime').value, clarity: +$('cnsClarity').value, stress: +$('cnsStress').value, urgency: S.cnsUrg, note: $('cnsNote').value.trim(), status: '접수대기', memo: '' };
+  const c = { id: 'c' + Date.now(), mine: true, createdAt: today(), applicantType: S.cnsType, studentName: $('cnsStudent').value.trim() + (S.cnsType === '학부모' ? ' (학부모)' : ''), contact: $('cnsContact').value.trim(), method: $('cnsMethod').value, category: $('cnsCat').value, date: $('cnsDate').value, timeSlot: $('cnsTime').value, clarity: +$('cnsClarity').value, stress: +$('cnsStress').value, urgency: S.cnsUrg, note: $('cnsNote').value.trim(), status: '접수대기', memo: '' };
   cnsList.unshift(c); save(K.cns, cnsList);
   S.busy = true; const sent = await sendSafe({ type: 'counseling', createdAt: c.createdAt, applicantType: c.applicantType, student: c.studentName, contact: c.contact, method: c.method, category: c.category, date: c.date, time: c.timeSlot, clarity: c.clarity, stress: c.stress, urgency: c.urgency, note: c.note });
   S.busy = false; $('cnsStudent').value = ''; $('cnsContact').value = ''; $('cnsNote').value = ''; if (S.unlocked) { S.cnsSel = c.id; if (S.cnsTab === 'board') renderCnsBoard(); }
-  showDone('상담 신청이 접수되었습니다', `<p><b>${esc(c.studentName)}</b> · ${esc(c.applicantType)} 신청</p><p class="mt-1">${esc(c.category)} · ${esc(c.method)}</p><p class="mt-1">희망 일시: ${esc(c.date || '날짜 미정')} ${esc(c.timeSlot)}</p><p class="mt-3 text-slate-600">선생님이 확인한 뒤 ${c.contact ? '남겨 주신 연락처로' : '교실로'} 상담 일정을 알려 드립니다.${sent === 'sent' ? '' : ' ' + sendMsg(sent)}</p>`);
+  if ($('myCnsOut') && !$('myCnsOut').hidden) renderMyCns();
+  showDone('상담 신청이 접수되었습니다', `<p><b>${esc(c.studentName)}</b> · ${esc(c.applicantType)} 신청</p><p class="mt-1">${esc(c.category)} · ${esc(c.method)}</p><p class="mt-1">희망 일시: ${esc(c.date || '날짜 미정')} ${esc(c.timeSlot)}</p><ol class="mt-3 space-y-1 text-slate-800"><li><b>① 접수 완료</b> — 지금 신청이 접수되었습니다.</li><li><b>② 교사 확인</b> — 담당 교사가 내용을 확인합니다.</li><li><b>③ 일정 안내</b> — 신청 완료 후 교사 확인을 거쳐 기재해 주신 연락처(또는 교실)로 일정이 안내됩니다.</li></ol><p class="mt-3 text-slate-600">신청서 아래 [내 신청 조회]에서 이 기기로 낸 신청을 다시 볼 수 있습니다.${sent === 'sent' ? '' : ' ' + sendMsg(sent)}</p>`);
 }
 function renderCnsBoard() {
   const n = cnsList.length, stu = cnsList.filter(c => c.applicantType === '학생').length, pri = cnsList.filter(isPriority).length, avg = k => n ? (cnsList.reduce((a, c) => a + c[k], 0) / n).toFixed(1) : '-';
@@ -2522,7 +2561,7 @@ function printRefl() { const list = raFiltered(); if (!list.length) return toast
 function printCns() { const c = cnsList.find(x => x.id === S.cnsSel); if (!c) return toast('인쇄할 신청서를 선택하세요.'); const d = diagnose(c); printReport('진로·창업 상담일지', `${c.studentName} · ${c.status || '접수대기'}`, prTable(['항목', '내용'], [['접수일 / 신청 구분', `${c.createdAt} / ${c.applicantType}`], ['대상 / 연락처', `${c.studentName} / ${c.contact || '-'}`], ['방식 / 분야', `${c.method} / ${c.category}`], ['희망 일시', `${c.date || '미정'} ${c.timeSlot}`], ['사전 자기진단', `진로확신도 ${c.clarity}점, 스트레스 ${c.stress}점, 시급도 ${c.urgency}`], ['사전 분석 유형', d.title.replace(/^\S+\s/, '')], ['사전 질문·고민', c.note], ['도입 질문', d.qs.map((q, i) => `${i + 1}) ${q}`).join(' ')], ['코칭 전략', d.st], ['상담 일지 메모', c.memo || '']]) + '<div class="pr-sign">상담 교사: ______________ (서명)</div>'); }
 function printEffect() { const rows = effectRows(); if (!rows.length) return toast('인쇄할 진단 응답이 없습니다.'); const st = effectStats(rows); printReport('핵심 역량 사전·사후 진단 결과', $('efCount').textContent, prTable(['영역', '사전 평균 (n)', '사후 평균 (n)', '대응 n', '향상도', 't (df)', 'p', '효과크기 d'], st.map(s => [s.name, `${f2(s.pre)} (${s.nPre})`, `${f2(s.post)} (${s.nPost})`, s.n, s.diff == null ? '-' : (s.diff > 0 ? '+' : '') + f2(s.diff), s.t == null ? '-' : `${f2(s.t)} (${s.df})`, fp(s.p), f2(s.dz)])) + `<div class="pr-bars">${st.map(s => `<div class="pr-bar-row"><span>${esc(s.name)}</span><div><div class="pr-bar pre" style="width:${(s.pre || 0) * 20}%">사전 ${f2(s.pre)}</div><div class="pr-bar post" style="width:${(s.post || 0) * 20}%">사후 ${f2(s.post)}</div></div></div>`).join('')}</div><p class="pr-note">※ 5점 척도 자기보고식 간이 진단(영역별 3문항)이며, 향상도와 t 검정은 사전·사후에 모두 응답한 학생만으로 계산했습니다.</p>`); }
 function printPlan() { const l = lessonOf(S.planId); if (!l) return; const n = stageNo(l); printReport(`${l.id}차시 교수·학습 과정안 (45분)`, l.title, prTable(['항목', '내용'], [['단계 · SEL', `${l.stage} ${l.stageName} · ${l.sel}`], ['학습목표', l.goal]]) + prTable(['단계', '교수·학습 활동', '자료'], planRows(l).map(r => [`${r[0]} (${r[1]})`, r[2].map(x => '◦ ' + x).join('\n'), r[3]])) + prTable(['평가', '수준별 기준'], [['과정중심 평가 관점', EVAL[n]], ['도달', RUBRIC[n][0]], ['진행 중', RUBRIC[n][1]], ['지원 필요', RUBRIC[n][2]]])); }
-/* ===== v11.0 추가: 명렬표 관리 (교사 기기와 [교사관리] 시트에만 저장, 배포 파일에는 담기지 않음) ===== */
+/* ===== v11.1 추가: 명렬표 관리 (교사 기기와 [교사관리] 시트에만 저장, 배포 파일에는 담기지 않음) ===== */
 const classNames = (g, c) => names.filter(x => String(x.g) === String(g) && String(x.c) === String(c)).sort((a, b) => a.n - b.n);
 const classKeys = () => Array.from(new Set(names.map(x => x.g + '-' + x.c))).sort((a, b) => a.localeCompare(b, 'ko', { numeric: true }));
 function parseRoster(text) {
@@ -2535,7 +2574,7 @@ function parseRoster(text) {
   return { out, bad };
 }
 function saveNames(msg) { names.sort((a, b) => a.g - b.g || a.c - b.c || a.n - b.n); save(K3.names, names); renderRoster(); renderMissing(); renderEffect(); idUpgradeAll(); renderLedger(); renderClsBar(); if (msg) toast(msg); }
-function importRoster(replace) {
+function importRoster0(replace) {
   const r = parseRoster($('rsPaste').value); if (!r.out.length) return toast('읽을 수 있는 행이 없습니다. “학년 반 번호 이름” 또는 “학번 이름” 형식으로 붙여 넣으세요.');
   if (replace && names.length && !confirm(`기존 명렬표 ${names.length}명을 지우고 ${r.out.length}명으로 바꿀까요?`)) return;
   if (replace) names = []; r.out.forEach(x => { const i = names.findIndex(y => y.g === x.g && y.c === x.c && y.n === x.n); if (i >= 0) names[i] = x; else names.push(x); });
@@ -2579,7 +2618,7 @@ function renderPick() {
     + `<div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 text-center"><div class="text-5xl font-black num text-slate-900">${last ? show(last) : '?'}</div><div class="mt-2 text-xs font-bold text-slate-600 num">${CM.picked.length ? '순서: ' + CM.picked.map(x => pool.length ? esc((pool.find(p => p.n === x) || {}).name || x) : x).join(' → ') : (pool.length ? `${pool.length}명 중에서 뽑습니다` : `1~${CM.max}${esc(CM.unit)} 중에서 뽑습니다`)} · 남은 ${total - CM.picked.length}</div></div>`;
 }
 function pickOne() { const list = CM.cls ? classNames(...CM.cls.split('-')).map(x => x.n) : [], pool = (list.length ? list : Array.from({ length: CM.max }, (_, i) => i + 1)).filter(x => !CM.picked.includes(x)); if (!pool.length) return toast('모두 뽑았습니다. [다시 섞기]를 누르세요.'); CM.picked.push(pool[Math.floor(Math.random() * pool.length)]); renderPick(); }
-/* ===== v11.0: 전교생·다학급 체제, 명렬표 입력 검증, 오늘의 수업 탭, 모의펀딩 집계, 확인 번호, 전 영역 편집, 성장 카드, AI 코파일럿, 결과보고서 ===== */
+/* ===== v11.1: 전교생·다학급 체제, 명렬표 입력 검증, 오늘의 수업 탭, 모의펀딩 집계, 확인 번호, 전 영역 편집, 성장 카드, AI 코파일럿, 결과보고서 ===== */
 const K4 = { cls: 'drk8.cls', doneMap: 'drk8.doneMap', memoMap: 'drk8.memoMap', wb: 'drk8.wb', ws: 'drk8.ws', pins: 'drk8.pins', pinbook: 'drk8.pinbook', fund: 'drk8.fund', aikey: 'drk8.aikey', aimodel: 'drk8.aimodel' };
 let curCls = load(K4.cls, '') || '', doneMap = load(K4.doneMap, null) || {}, memoMap = load(K4.memoMap, null) || {}, pins = load(K4.pins, null) || {}, pinBook = load(K4.pinbook, null) || {}, fundings = load(K4.fund, null) || [], wsAns = load(K4.ws, null) || {}, aiKey = load(K4.aikey, '') || '', aiModel = load(K4.aimodel, '') || 'gemini-2.5-flash';
 if (!Array.isArray(fundings)) fundings = [];
@@ -2642,7 +2681,7 @@ document.addEventListener('change', e => { const id = e.target && e.target.id ||
 
 /* ---------- 3. 학생 화면: 오늘의 수업·실습 ---------- */
 STABS.unshift(['today', '📚 오늘의 수업·실습']);
-function setStudentTab(k) { if (S.stab === 'growth' && k !== 'growth') { $('gwPin').value = ''; S.gwOk = ''; } setStudentTab0(k); if (k === 'today') renderToday(); }
+function setStudentTab(k) { if (S.stab === 'growth' && k !== 'growth') { $('gwPin').value = ''; S.gwOk = ''; } setStudentTab0(k); if (k === 'today') renderToday(); if (typeof wizApply === 'function' && WIZ[k]) wizApply(k); }
 function renderToday() {
   const sel = $('tdLesson'); if (!sel.options.length) { sel.innerHTML = LESSONS.map(l => `<option value="${l.id}">${l.id} · ${esc(l.title.split(':')[0])}</option>`).join(''); const q = (location.search.match(/[?&]lesson=([\w-]+)/) || [])[1]; if (q && lessonOf(q)) sel.value = q; const g0 = load('drk8.tdg', ''); if (g0) $('tdGrade').value = g0; }
   const l = lessonOf(sel.value); if (!l) return; S.tdGrade = $('tdGrade').value; save('drk8.tdg', S.tdGrade); const a = wsAns[l.id] || {}, n = stageNo(l);
@@ -2652,6 +2691,7 @@ function renderToday() {
     <div class="mt-3 flex flex-wrap gap-2"><button type="button" onclick="openGems(${n})" class="btn btn-ghost btn-sm">💎 Stage ${n} Gems 질문 프롬프트</button><button type="button" onclick="openMindful()" class="btn btn-ghost btn-sm">🧘 1분 마음챙김</button></div></div>
     <div class="mt-4 space-y-4">${ta('task', '② 오늘의 과업', esc(l.wsTask), 5)}${ta('fact', '③ 관찰과 근거', '위 내용을 뒷받침하는, 내가 직접 보거나 들은 사실을 적으세요.', 3)}${ta('refl', '④ 성찰 한 줄', '오늘의 실수 또는 바꿔 보고 싶은 점을 적으세요.', 2)}</div>
     <div class="mt-4 flex flex-wrap items-center gap-2"><button type="button" onclick="wsToRefl()" class="btn btn-emerald">✍️ 성찰 폼 ‘배운 점’으로 옮기기</button><button type="button" onclick="wsCopy()" class="btn btn-ghost">활동지 내용 복사</button><span id="tdSaved" class="text-xs font-bold text-slate-600" aria-live="polite">쓴 내용은 이 기기에 자동 저장됩니다.</span></div>`;
+  if (typeof wizApply === 'function') { if (S.tdCur !== l.id) { wiz.step.today = 0; S.tdCur = l.id; } wizApply('today'); }
 }
 const wsVals = () => ({ task: $('td-task').value.trim(), fact: $('td-fact').value.trim(), refl: $('td-refl').value.trim() });
 function wsInput() { clearTimeout(wsInput.t); wsInput.t = setTimeout(() => { if (!$('td-task')) return; const v = wsVals(); if (v.task || v.fact || v.refl) wsAns[$('tdLesson').value] = v; else delete wsAns[$('tdLesson').value]; save(K4.ws, wsAns); $('tdSaved').textContent = '자동 저장됨 · ' + new Date().toLocaleTimeString('ko-KR'); }, 400); }
@@ -2767,7 +2807,7 @@ function cfgSave(k) {
   content.cfg[k] = v; d.set(JSON.parse(JSON.stringify(v))); saveContent(); refreshCfg(); toast('저장했습니다. 화면에 바로 반영됩니다.');
 }
 function cfgReset(k) { delete content.cfg[k]; CFG_DEF[k].set(JSON.parse(JSON.stringify(ORIG_CFG[k]))); saveContent(); refreshCfg(); cfgLoad(k); toast('기본값으로 되돌렸습니다.'); }
-function refreshCfg() { $('cnsCat').innerHTML = CNS_CATS.map(c => `<option>${esc(c)}</option>`).join(''); renderWeather(); renderLean(); wbRestore(); renderYeep(); renderSurveyForm(); renderUrg(); renderAll(); renderClsBar(); if ($('tdLesson') && $('tdLesson').options.length && isStudentView()) renderToday(); }
+function refreshCfg() { $('cnsCat').innerHTML = CNS_CATS.map(c => `<option>${esc(c)}</option>`).join(''); renderWeather(); renderLean(); wbRestore(); renderYeep(); renderSurveyForm(); renderUrg(); renderAll(); renderClsBar(); if (typeof wizAll === 'function' && isStudentView()) wizAll(); if ($('tdLesson') && $('tdLesson').options.length && isStudentView()) renderToday(); }
 function frWalk(v, q, r, cnt) { if (typeof v === 'string') { const n = v.split(q).length - 1; cnt.n += n; return n ? v.split(q).join(r) : v; } if (Array.isArray(v)) return v.map(x => frWalk(x, q, r, cnt)); if (v && typeof v === 'object') { const o = {}; Object.keys(v).forEach(k => o[k] = frWalk(v[k], q, r, cnt)); return o; } return v; }
 function findReplace(apply) {
   const q = $('frFind').value, r = $('frRep').value; if (!q) return toast('찾을 문구를 입력하세요.'); if (apply && !confirm(`“${q}”을(를) 모두 “${r}”(으)로 바꿀까요? 차시·사례·커뮤니티·자료·설정값·화면 문구에 적용됩니다.`)) return;
@@ -2872,7 +2912,59 @@ function reportText() {
 }
 
 function init11() { renderClsBar(); idUpgradeAll(); wbRestore(); aiFill(); if (isStudentView() && S.stab === 'today') renderToday(); }
-init(); init11();
+/* ===== v11.1: 학생 화면 단계별 입력(위저드), 상담 신청 조회, 명렬표 사전 검증 ===== */
+/* ---------- 1. 단계별 입력 위저드 (학생 화면 전용, 끄면 기존 한 화면 방식) ---------- */
+const wiz = { on: false, step: {} };
+const wizKids = (form, marks) => { /* 폼의 바로 아래 요소를 표식(id)에 따라 단계로 나눔. 표식이 없는 요소는 앞 요소의 단계를 따름 */
+  const steps = marks.map(() => []); let cur = -1; Array.from(form.children).forEach(ch => { if (ch.tagName === 'H3' && cur < 0) return; const i = marks.findIndex(ids => ids.some(id => ch.id === id || ch.querySelector('#' + id))); if (i >= 0) cur = i; if (cur >= 0) steps[cur].push(ch); }); return steps.filter(s => s.length); };
+const WIZ = {
+  today: { host: () => $('tdBody'), names: ['오늘의 차시', '② 오늘의 과업', '③ 관찰과 근거', '④ 성찰 한 줄'], steps: () => { const b = $('tdBody'), cards = Array.from(b.querySelectorAll('.space-y-4 > .card')), rest = Array.from(b.children).filter(c => !c.classList.contains('space-y-4')), btn = rest[rest.length - 1]; return cards.length === 3 ? [rest.slice(0, -1), [cards[0]], [cards[1]], [cards[2], btn]] : []; } },
+  reflection: { host: () => document.querySelector('#reflection form'), names: ['기본 정보', '마음날씨·자기주도 체크', '성찰 쓰기'], steps: () => wizKids(document.querySelector('#reflection form'), [['rfGrade'], ['rfWeather'], ['rfLearned']]) },
+  counseling: { host: () => $('cns-form'), names: ['기본 정보', '사전 자기진단·제출'], steps: () => wizKids($('cns-form'), [['cnsStudent'], ['cnsClarity']]) },
+  survey: { host: () => document.querySelector('#survey form'), names: ['기본 정보'].concat(AREAS), steps: () => { const f = document.querySelector('#survey form'), fs = Array.from($('svItems').children), btn = f.querySelector('button[type=submit]'), head = Array.from(f.children).filter(c => c !== $('svItems') && c !== btn); return fs.length ? [head].concat(fs.map((x, i) => i === fs.length - 1 ? [x, btn] : [x])) : []; } }
+};
+function wizApply(k) {
+  const d = WIZ[k], host = d && d.host(); if (!host) return; let nav = $('wz-' + k); const steps = wiz.on && isStudentView() ? d.steps() : [];
+  host.querySelectorAll('.wz-off').forEach(e => e.classList.remove('wz-off'));
+  if (steps.length < 2) { if (nav) nav.remove(); return; }
+  const i = Math.max(0, Math.min(wiz.step[k] || 0, steps.length - 1)); wiz.step[k] = i; steps.forEach((els, j) => els.forEach(e => { if (e && j !== i) e.classList.add('wz-off'); }));
+  if (!nav) { nav = document.createElement('div'); nav.id = 'wz-' + k; nav.className = 'mt-4 card p-4'; host.insertAdjacentElement('afterend', nav); }
+  nav.innerHTML = `<div class="flex items-center justify-between gap-3"><button type="button" onclick="wizGo('${k}',-1)" class="btn btn-ghost" ${i ? '' : 'disabled'}>← 이전</button><span class="text-sm font-extrabold text-slate-900 text-center num" aria-live="polite">${i + 1} / ${steps.length} 단계<span class="block text-xs font-bold text-slate-600">${esc(d.names[i] || '')}</span></span>${i < steps.length - 1 ? `<button type="button" onclick="wizGo('${k}',1)" class="btn btn-emerald">다음 →</button>` : '<span class="text-xs font-bold text-emerald-700 text-right">마지막 단계입니다.<br />위 버튼으로 마무리하세요.</span>'}</div><div class="mt-3 h-2 rounded-full bg-slate-200 overflow-hidden" aria-hidden="true"><div class="h-full bg-emerald-600" style="width:${Math.round((i + 1) / steps.length * 100)}%"></div></div>`;
+}
+function wizGo(k, dir) {
+  const d = WIZ[k], steps = d.steps(), i = wiz.step[k] || 0;
+  if (dir > 0) { for (const el of steps[i] || []) for (const f of (el.matches('input, select, textarea') ? [el] : Array.from(el.querySelectorAll('input, select, textarea')))) if (!f.checkValidity()) { f.reportValidity(); return; } if (k === 'reflection' && (steps[i] || []).some(el => el.querySelector('#rfWeather')) && !S.weather) return toast('오늘의 마음날씨를 선택하세요.'); }
+  wiz.step[k] = i + dir; wizApply(k); const top = d.host().closest('section') || d.host(); top.scrollIntoView({ block: 'start' });
+}
+function wizAll() { Object.keys(WIZ).forEach(wizApply); const b = $('wizBtn'); if (b) { b.textContent = wiz.on ? '📱 단계별로 쓰기 켜짐 · 한 화면에 보기' : '📱 단계별로 쓰기'; b.setAttribute('aria-pressed', wiz.on ? 'true' : 'false'); } }
+function wizToggle() { wiz.on = !wiz.on; save('drk8.wiz', wiz.on ? 'on' : 'off'); wiz.step = {}; wizAll(); toast(wiz.on ? '한 단계씩 나누어 보여 줍니다.' : '모든 항목을 한 화면에 보여 줍니다.'); }
+function wizReset() { wiz.step = {}; if (wiz.on) wizAll(); }
+/* 숨겨진 단계에 빠진 필수 항목이 있으면 그 단계로 이동 */
+document.addEventListener('invalid', e => { if (!wiz.on || !e.target.closest) return; const k = Object.keys(WIZ).find(x => { const h = WIZ[x].host(); return h && h.contains(e.target); }); if (!k) return; const j = WIZ[k].steps().findIndex(els => els.some(el => el && el.contains(e.target))); if (j >= 0 && j !== wiz.step[k]) { wiz.step[k] = j; wizApply(k); toast('빠진 항목이 있는 단계로 이동했습니다.'); } }, true);
+
+/* ---------- 2. 상담: 이 기기에서 낸 신청 다시 보기 ---------- */
+function renderMyCns() {
+  const box = $('myCnsOut'); if (!box) return; const mine = cnsList.filter(c => c.mine);
+  box.innerHTML = mine.length ? `<ul class="space-y-2">${mine.map(c => `<li class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-sm text-slate-800 leading-relaxed"><div class="flex flex-wrap justify-between gap-2 text-xs font-bold text-slate-600"><span>접수일 ${esc(c.createdAt || '')} · ${esc(c.applicantType || '')} 신청</span><span>접수됨</span></div><b>${esc(c.studentName || '')}</b> · ${esc(c.category || '')} · ${esc(c.method || '')}<br />희망 일시: ${esc(c.date || '날짜 미정')} ${esc(c.timeSlot || '')}${c.note ? `<br />사전 질문: ${esc(c.note)}` : ''}</li>`).join('')}</ul><p class="mt-3 text-xs text-slate-600 leading-relaxed">이 기기에서 낸 신청만 보입니다. 일정은 교사 확인 후 기재해 주신 연락처(또는 교실)로 안내되며, 진행 상황은 이 화면에 자동으로 바뀌지 않습니다.</p>` : '<p class="text-sm text-slate-600">이 기기에서 낸 상담 신청이 없습니다. 다른 기기에서 신청했다면 그 기기에서 확인하세요.</p>';
+}
+function toggleMyCns() { const b = $('myCnsOut'); b.hidden = !b.hidden; if (!b.hidden) renderMyCns(); }
+
+/* ---------- 3. 명렬표 붙여넣기 사전 검증 ---------- */
+function rosterCheck(text) {
+  const ok = [], bad = [], seen = {};
+  String(text).split(/\r?\n/).forEach((line, i) => { if (!line.trim()) return; const r = parseRoster(line), t = line.trim().split(/[\t,;\s]+/).filter(Boolean);
+    if (r.out.length) { const x = r.out[0], k = [x.g, x.c, x.n].join('-'); if (seen[k]) bad.push({ line: i + 1, why: `${seen[k]}행과 학년·반·번호가 같음` }); else { seen[k] = i + 1; ok.push(x); } }
+    else if (r.bad) bad.push({ line: i + 1, why: /^\d{5}$/.test(t[0]) && !t[1] ? '이름 없음' : /^\d+$/.test(t[0]) && t.length >= 4 && !/^[1-3]$/.test(String(parseInt(t[0], 10))) ? '학년은 1~3' : t.length < 4 && !/^\d{5}$/.test(t[0]) ? '칸 수 부족(학년·반·번호·이름)' : '학년·반·번호 형식 오류' }); });
+  return { ok, bad };
+}
+function rosterLive() {
+  const el = $('rsCheck'); if (!el) return; const v = $('rsPaste').value; if (!v.trim()) { el.innerHTML = ''; return; } const r = rosterCheck(v);
+  el.innerHTML = r.bad.length ? `<span class="inline-block px-2.5 py-1 rounded-lg bg-rose-700 text-white text-xs font-extrabold">⚠️ 형식 오류 ${r.bad.length}행</span> <span class="text-sm font-bold text-rose-700">${esc(r.bad.slice(0, 12).map(b => `${b.line}행(${b.why})`).join(', '))}${r.bad.length > 12 ? ' 외' : ''}</span><span class="block mt-1 text-xs text-slate-600">오류 행을 고치거나 지워야 저장됩니다. 읽을 수 있는 행은 ${r.ok.length}명입니다.</span>` : `<span class="inline-block px-2.5 py-1 rounded-lg bg-emerald-700 text-white text-xs font-extrabold">✓ 형식 확인</span> <span class="text-sm font-bold text-slate-800">${r.ok.length}명 · ${new Set(r.ok.map(x => x.g + '-' + x.c)).size}개 학급을 저장할 수 있습니다.</span>`;
+}
+function importRoster(replace) { const r = rosterCheck($('rsPaste').value); rosterLive(); if (r.bad.length) return toast(`형식이 맞지 않는 행이 ${r.bad.length}개 있습니다. ${r.bad.slice(0, 5).map(b => b.line + '행').join(', ')}을(를) 고친 뒤 다시 누르세요.`); importRoster0(replace); rosterLive(); }
+
+function init12() { const pref = load('drk8.wiz', null); wiz.on = pref ? pref === 'on' : window.innerWidth < 640; if (isStudentView()) wizAll(); }
+init(); init11(); init12();
   </script>
 </body>
 </html>
