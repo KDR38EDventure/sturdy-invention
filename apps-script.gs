@@ -1,9 +1,10 @@
 /**
- * DR K's Ed-Venture & E-Career Lab — 구글 스프레드시트 양방향 연동 스크립트 (v11)
+ * DR K's Ed-Venture & E-Career Lab — 구글 스프레드시트 양방향 연동 스크립트 (v11.2)
  *  - doPost: 학생 제출(성찰·상담·역량진단·모의펀딩·성장 기록 확인 번호)을 시트에 쌓고, 교사 관리 데이터(상담 상태·메모, 생기부 초안,
  *            차시 메모, 진도·링크·편집 내용)를 [교사관리] 탭에 저장합니다. 교사 데이터는 SYNC_KEY가 맞아야 저장됩니다.
  *  - doGet : 교사 관제실의 [시트와 동기화]가 호출합니다. SYNC_KEY가 일치할 때만 전체 자료를 응답합니다.
  *            학생 화면은 action=check(명렬표 이름 일치 여부만 응답), action=pin(확인 번호 일치 여부만 응답)만 쓸 수 있습니다.
+ *  - 제출 코드: 관제실에서 켠 ‘수업 시간용 제출 코드’가 있으면 성찰·역량진단·모의펀딩 제출은 코드가 맞아야 저장됩니다(상담 신청은 제외).
  *  - AI   : GEMINI_API_KEY를 넣으면 AI 코파일럿 프록시로 동작합니다. 키는 이 스크립트 안에만 있고 학생 화면으로 나가지 않습니다.
  *            학생은 '성찰 발문 코치'만 쓸 수 있고(대필 금지 지침 고정), 교사용 기능은 SYNC_KEY가 맞아야 합니다.
  * 사용법: 스프레드시트 [확장 프로그램] → [Apps Script]에 전체를 붙여 넣고
@@ -24,6 +25,22 @@ var SHEETS = {
   pin: { name: "확인번호", head: ["학생", "확인 번호", "설정 일시"] },
   teacher: { name: "교사관리", head: ["종류", "키", "값(JSON)", "수정 시각(ms)", "수정 일시"] }
 };
+
+function codeState_() {
+  var p = PropertiesService.getScriptProperties();
+  return { code: p.getProperty("SUBMIT_CODE") || "", exp: Number(p.getProperty("SUBMIT_EXP")) || 0 };
+}
+/* 코드가 설정되어 있으면 일치하고 유효 시간 안일 때만 통과. 설정이 없으면 누구나 제출 가능 */
+function codeOk_(c) {
+  var s = codeState_();
+  if (!s.code) return true;
+  if (s.exp && Date.now() > s.exp) return false;
+  return String(c == null ? "" : c).trim() === s.code;
+}
+function codeInfo_(c) {
+  var s = codeState_(), expired = !!(s.code && s.exp && Date.now() > s.exp);
+  return { ok: true, required: !!s.code, valid: codeOk_(c), expired: expired };
+}
 
 function keyOk_(k) {
   return !!SYNC_KEY && SYNC_KEY.indexOf("__") !== 0 && k === SYNC_KEY;
@@ -140,6 +157,22 @@ function doPost(e) {
       if (!keyOk_(d.key)) return json_({ ok: false, error: "unauthorized" });
       return json_({ ok: true, saved: upsertTeacher_(d.items || []) });
     }
+    if (d.type === "setcode") {
+      if (!keyOk_(d.key)) return json_({ ok: false, error: "unauthorized" });
+      var cd = String(d.code || "").replace(/[^0-9A-Za-z]/g, "").slice(0, 8), mn = Number(d.minutes) || 0;
+      if (cd.length < 3) return json_({ ok: false, error: "bad_request" });
+      var sp = PropertiesService.getScriptProperties();
+      sp.setProperty("SUBMIT_CODE", cd);
+      sp.setProperty("SUBMIT_EXP", mn > 0 ? String(Date.now() + mn * 60000) : "0");
+      return json_({ ok: true });
+    }
+    if (d.type === "clearcode") {
+      if (!keyOk_(d.key)) return json_({ ok: false, error: "unauthorized" });
+      var cp = PropertiesService.getScriptProperties();
+      cp.deleteProperty("SUBMIT_CODE");
+      cp.deleteProperty("SUBMIT_EXP");
+      return json_({ ok: true });
+    }
     if (d.type === "pin") { /* 처음 한 번만 등록. 이미 있으면 바꾸지 않음(초기화는 교사만) */
       var pid = pinId_(d.id);
       if (!pid || !/^\d{4}$/.test(String(d.pin))) return json_({ ok: false, error: "bad_request" });
@@ -154,6 +187,7 @@ function doPost(e) {
       if (ri >= 0) rsh.deleteRow(ri + 2);
       return json_({ ok: true });
     }
+    if (d.type !== "counseling" && !codeOk_(d.code)) return json_({ ok: false, error: "code" });
     var def, row;
     if (d.type === "counseling") {
       def = SHEETS.counseling;
@@ -188,10 +222,13 @@ function doGet(e) {
   var p = (e && e.parameter) || {};
   try {
     if (p.action === "check") return json_(checkName_(p));
+    if (p.action === "code") return json_(codeInfo_(p.code));
     if (p.action === "pin") return json_({ ok: true, state: pinState_(p.id, p.pin) });
     if (!keyOk_(p.key)) return json_({ ok: false, error: "unauthorized" });
     var pins = {}, pr = rows_(SHEETS.pin, 2);
     for (var i = 0; i < pr.length; i++) { var m = String(pr[i][0]).match(/^G(\d+)C(\d+)N(\d+)$/); if (m) pins[m[1] + "-" + m[2] + "-" + m[3]] = pin4_(pr[i][1]); }
+    var cs = codeState_();
+    if (p.only === "code") return json_({ ok: true, submitCode: { code: cs.code, exp: cs.exp, now: Date.now() } });
     if (p.only === "fund") return json_({ ok: true, fundings: rows_(SHEETS.funding) });
     return json_({
       ok: true,
@@ -199,6 +236,7 @@ function doGet(e) {
       counseling: rows_(SHEETS.counseling),
       surveys: rows_(SHEETS.survey),
       fundings: rows_(SHEETS.funding),
+      submitCode: { code: cs.code, exp: cs.exp, now: Date.now() },
       pins: pins,
       teacher: rows_(SHEETS.teacher, 4)
     });
