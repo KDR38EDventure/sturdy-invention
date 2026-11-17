@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DR K's Ed-Venture &amp; E-Career Lab v8.3 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
+  <title>DR K's Ed-Venture &amp; E-Career Lab v8.4 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
   <meta name="description" content="이커리어(E-Career) 6단계와 사회정서학습(SEL)으로 설계한 연간 32차시 진로·기업가정신 수업, 실습 스튜디오, 성찰·상담 통합 플랫폼" />
   <script id="baked">window.__BAKED_LINKS__ = null; window.__BAKED_GAS_URL__ = ""; window.__BAKED_LOCKED__ = false; window.__BAKED_CONTENT__ = null;</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -125,7 +125,7 @@
         <a href="#top" class="flex items-center gap-3 min-w-0">
           <span class="flex-none w-9 h-9 rounded-xl bg-emerald-400 text-[#052E1B] grid place-items-center text-[11px] font-black tracking-tight">DR.K</span>
           <span class="min-w-0">
-            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v8.3</span></span>
+            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v8.4</span></span>
             <span class="hidden sm:block text-[11px] text-slate-300 truncate">이커리어 6단계 × SEL · 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</span>
           </span>
         </a>
@@ -823,7 +823,7 @@
       </div>
       <!-- Tab 4 -->
       <div id="ad-4" class="mt-6" hidden>
-        <p class="text-sm text-slate-700 leading-relaxed rounded-xl bg-emerald-50 border border-emerald-200 p-4"><b class="text-emerald-800">코드 없이 직접 수정하는 방법</b> — ① 이 편집기에서 차시·사례·커뮤니티·자료실 내용을 고치고 저장 → ② 마스터 링크 제어판에서 링크 연결 → ③ 제목·소개 문장은 ‘화면 직접 편집 ON’으로 수정 → ④ ‘외부 배포용 index.html 다운로드’로 모든 변경을 한 파일에 담아 배포합니다.</p>
+        <p class="text-sm text-slate-700 leading-relaxed rounded-xl bg-emerald-50 border border-emerald-200 p-4"><b class="text-emerald-800">코드 없이 직접 수정하는 방법</b> — ① 이 편집기에서 차시·사례·커뮤니티·자료실 내용을 고치고 저장 → ② 마스터 링크 제어판에서 링크 연결 → ③ 프로필·제목·소개 문장은 ‘화면 직접 편집 ON’으로 수정(자동 저장) → ④ ‘외부 배포용 index.html 다운로드’로 모든 변경을 한 파일에 담아 배포합니다. 관제실이 열려 있는 동안에는 수업자료·외부 자료실 카드와 차시 카드에서 바로 추가·수정·삭제할 수 있습니다.</p>
         <div id="editorPanel" data-dyn class="mt-5 space-y-4"></div>
       </div>
     </section>
@@ -832,7 +832,7 @@
   <footer class="bg-[#0B1120] text-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
       <div>
-        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v8.3</div>
+        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v8.4</div>
         <div class="mt-1">장안여자중학교 미래진로부 · 권대륜 (DR K)</div>
       </div>
       <p class="max-w-xl text-slate-300 leading-relaxed">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
@@ -964,6 +964,18 @@
     </div>
   </div>
 
+  <!-- 9. 빠른 입력 -->
+  <div id="m-quick" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="qkTitle">
+    <div class="modal-box max-w-xl p-7">
+      <h3 id="qkTitle" class="text-xl font-black text-slate-900"></h3>
+      <p id="qkHint" class="mt-1 text-sm text-slate-600"></p>
+      <form onsubmit="quickSave(event)" novalidate>
+        <div id="qkBody" class="mt-4 space-y-3"></div>
+        <div class="mt-5 flex justify-end gap-2"><button type="button" onclick="closeModal()" class="btn btn-ghost">취소</button><button type="submit" class="btn btn-emerald">저장</button></div>
+      </form>
+    </div>
+  </div>
+
   <div id="toast" role="status" aria-live="polite"></div>
   <div id="printArea"></div>
 
@@ -1084,7 +1096,7 @@ let reflections = load(K.refl, []);
 let cnsList = load(K.cns, null) || SAMPLE_CNS.slice();
 let tasks = load(K.tasks, null) || DEFAULT_TASKS.slice();
 /* 교사가 편집기에서 고친 내용(차시·사례·커뮤니티·자료실·PIN)을 기본 데이터 위에 덮어씀 */
-let content = Object.assign({ lessons: {}, cases: {}, roadmap: null, members: null, resources: null, pin: '' }, window.__BAKED_CONTENT__ || {}, load(K.content, {}));
+let content = Object.assign({ lessons: {}, cases: {}, roadmap: null, members: null, resources: null, materials: null, pin: '', texts: {}, edits: {}, hidden: [] }, window.__BAKED_CONTENT__ || {}, load(K.content, {}));
 const ORIG = { lessons: JSON.parse(JSON.stringify(LESSONS)), cases: JSON.parse(JSON.stringify(CASES)) };
 function applyContent() { LESSONS.forEach(l => Object.assign(l, ORIG.lessons.find(o => o.id === l.id), content.lessons[l.id] || {})); CASES.forEach(c => Object.assign(c, ORIG.cases.find(o => o.id === c.id), content.cases[c.id] || {})); }
 applyContent();
@@ -1180,7 +1192,7 @@ const LANG = {
   school: { cls: 'border-l-emerald-500', tag: '학교 현장의 언어', tagCls: 'text-emerald-700', text: '아이들이 “내가 뭘 좋아하지?”에서 출발해 친구와 동네의 불편을 직접 관찰하고, 작게 만들어 보고, 실패하면 고쳐서 다시 발표합니다. 매 시간 1분 호흡으로 마음을 고르고, 실수는 점수가 아니라 다음 시도를 위한 데이터로 기록합니다. 1년 32차시가 끝나면 학생은 자신의 강점과 진로 이야기를 자기 말로 설명할 수 있게 됩니다.' },
   policy: { cls: 'border-l-indigo-500', tag: '교육행정·정책 연구의 언어', tagCls: 'text-indigo-700', text: '프로젝트 기반 기업가정신 교육(X)이 중학생 진로적응성(Y)에 미치는 영향을 ‘실수에 대한 건설적 태도(M)’가 매개하고, 그 경로를 ‘교사 지지(W)’가 조절하는 조절된 매개모형(Hayes PROCESS Macro Model 7)을 교육과정으로 구현한 사례입니다. 소규모 학교에서 특정 교사 개인에 의존하지 않는 ‘영웅 없는 조직문화(Hero-less Culture)’를 통해 프로그램의 지속가능성을 확보하는 운영 구조를 함께 탐구합니다.' }
 };
-function setLang(k) { S.lang = k; paintGroup('langBtn-', ['school', 'policy'], k); const d = LANG[k], b = $('langBanner'); b.classList.remove('border-l-emerald-500', 'border-l-indigo-500'); b.classList.add(d.cls); b.innerHTML = `<div class="eyebrow ${d.tagCls}">${d.tag}</div><p class="mt-2 text-base text-slate-800 leading-relaxed">${d.text}</p>`; }
+function setLang(k) { S.lang = k; paintGroup('langBtn-', ['school', 'policy'], k); const d = LANG[k], b = $('langBanner'); b.classList.remove('border-l-emerald-500', 'border-l-indigo-500'); b.classList.add(d.cls); b.innerHTML = `<div class="eyebrow ${d.tagCls}">${d.tag}</div><p class="mt-2 text-base text-slate-800 leading-relaxed">${esc(d.text)}</p>`; }
 const BIO = {
   short: '권대륜(DR K)은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년째 진로·기업가정신 교육을 실천해 온 교사이다. 중등 1급 정교사(진로진학상담·체육)이며 아산 티처프러너 커뮤니티(EDventure) 팀장으로 활동하고 있다. 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정에서 프로젝트 기반 기업가정신 교육이 중학생 진로적응성에 미치는 영향을 연구한다. 중소벤처기업부 장관 표창(2025)을 수상했다.',
   talk: '오늘 진행을 맡은 권대륜 선생님을 소개합니다.\n\n권대륜 선생님은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년간 학교 현장을 지켜 온 진로진학상담·체육 교사입니다. 삼괴고등학교 학생안전부장을 거쳐 현재 장안여중에서 이커리어(E-Career) 6단계와 사회정서학습(SEL)을 결합한 연간 32차시 진로·기업가정신 수업을 운영하고 있습니다.\n\n아산 티처프러너 커뮤니티(EDventure) 팀장, 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원으로 활동하며, 2026 청소년 비즈쿨 페스티벌(청주 OSCO)에서 꿈틀 타운홀과 전국 교원 포럼 좌장을 맡았습니다. 2025년 중소벤처기업부 장관 표창, 2026년 경기도교육감 표창을 받았습니다.\n\n성균관대학교 일반대학원 교육행정전공 박사과정에서는 프로젝트 기반 기업가정신 교육이 중학생의 진로적응성에 미치는 영향과 ‘실수에 대한 건설적 태도’, ‘교사 지지’의 역할을 연구하고 있습니다.\n\n“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않습니다.” 권대륜 선생님을 큰 박수로 맞이해 주시기 바랍니다.',
@@ -1269,7 +1281,7 @@ function renderLessons() {
       <button type="button" onclick="openGems(${n})" class="btn btn-sm btn-ghost">💎 Gems</button>
       <button type="button" onclick="openEmbed('${l.id}','canva')" class="btn btn-sm btn-ghost">📊 슬라이드</button>
       <button type="button" onclick="openEmbed('${l.id}','padlet')" class="btn btn-sm btn-ghost">📌 Padlet</button>
-    </div></article>`; }).join('') : `<div class="card p-10 text-center text-slate-600 lg:col-span-2">조건에 맞는 차시가 없습니다. 검색어나 필터를 바꿔 보세요.</div>`;
+    </div>${S.unlocked ? `<button type="button" onclick="quickLessonLink('${l.id}')" class="mt-3 self-start text-xs font-bold text-indigo-700 underline underline-offset-2">🔗 이 차시 슬라이드·Padlet 링크 관리${links.lessons[l.id] ? ' (개별 연결됨)' : ''}</button>` : ''}</article>`; }).join('') : `<div class="card p-10 text-center text-slate-600 lg:col-span-2">조건에 맞는 차시가 없습니다. 검색어나 필터를 바꿔 보세요.</div>`;
 }
 
 /* 활동지 스튜디오 */
@@ -1472,12 +1484,13 @@ function submitCns(e) {
   $('cnsStudent').value = ''; $('cnsContact').value = ''; $('cnsNote').value = ''; S.cnsSel = c.id; S.cnsFilter = '전체'; setCnsTab('board');
   toast(sent ? '상담 신청을 접수하고 구글 스프레드시트로 전송했습니다.' : '상담 신청을 접수했습니다.');
 }
-function diagnose(c) {
-  if (c.stress >= 4 && c.clarity <= 2) return { q: 0, title: '🔴 정서적 안전기지 & 불확실성 완화 우선형', sum: '진로 방향의 막막함과 스트레스가 함께 높은 상태입니다. 정보 제공보다 불안을 먼저 수용하고, 이미 가진 자원(손안의 새)과 작은 성공 경험을 떠올리게 하는 상담이 필요합니다.', qs: ['요즘 학교나 집에서 마음을 가장 무겁게 하는 순간은 언제인가요?', '정답을 찾지 않아도 된다면, 올해 활동 중 시간 가는 줄 몰랐던 순간은 무엇이었나요?', '오늘 상담이 끝났을 때 어떤 마음이면 다행이라고 느낄까요?'], st: '교사의 정서적·자율성 지지(W)를 가장 먼저 작동시켜 실패 두려움을 낮추고, 이번 주에 해 볼 작은 탐색 과제 1가지만(감수 가능한 손실) 합의합니다.' };
-  if (c.stress >= 4) return { q: 1, title: '🟡 완벽주의·관계 소진 주의형', sum: '진로 관심사는 비교적 분명하지만 성적·관계·수행 과정의 긴장이 높은 유형입니다. 실수를 성장의 데이터(피보팅)로 다시 해석하도록 돕는 개입이 효과적입니다.', qs: ['목표가 뚜렷한 것이 큰 강점인데, 그 과정에서 스스로를 가장 힘들게 하는 기준은 무엇인가요?', '계획대로 되지 않더라도 그 경험에서 얻을 수 있는 배움은 무엇일까요?', '모둠원이나 부모님께 가장 듣고 싶은 응원의 말은 무엇인가요?'], st: 'SEL 자기관리(호흡 루틴)와 관계 기술(나 전달법)을 안내하고, 결과 중심에서 과정·성장 중심으로 시선을 옮깁니다.' };
-  if (c.clarity <= 2) return { q: 2, title: '🧭 손안의 새 강점 발굴 & 진학 로드맵 탐색형', sum: '정서는 안정적이나 자신의 강점과 고교학점제·진학 경로 사이의 연결고리를 아직 찾지 못한 상태입니다. 구체적인 진로 정보와 강점 연결이 도움이 됩니다.', qs: ['친구들이 자주 물어보거나 도움을 청하는 분야는 무엇인가요?', '고등학교에서 가장 배우고 싶은 과목이나 해 보고 싶은 활동 두 가지를 꼽아 볼까요?', '이커리어 6단계 활동 중 가장 흥미로웠던 단계는 어디였나요?'], st: 'Stage 1 Gem 강점 분석 결과와 고교학점제 선택과목 안내를 연결해 진학·진로 로드맵을 함께 설계합니다.' };
-  return { q: 3, title: '🟢 자기주도 체인지메이커 심화 멘토링형', sum: '진로 확신도가 높고 정서가 안정적인 자기주도형 학습자입니다. 교내외 대회, 프로젝트 고도화, 심화 탐구로 확장하도록 돕는 촉진자 역할이 적합합니다.', qs: ['지금 계획에서 한 단계 더 나아가려면 어떤 자원이나 피드백이 가장 필요한가요?', '우리 팀의 해결책을 설득할 때 가장 강력한 근거 자료는 무엇인가요?', '이번 도전을 진로 포트폴리오에 어떻게 기록하고 싶나요?'], st: 'Stage 5~6(시제품 피보팅, 피칭덱 고도화) 코칭을 제공하고, 주도적 탐구 과정을 학교생활기록부 기록과 연결합니다.' };
-}
+const DIAG = [
+  { title: '🔴 정서적 안전기지 & 불확실성 완화 우선형', sum: '진로 방향의 막막함과 스트레스가 함께 높은 상태입니다. 정보 제공보다 불안을 먼저 수용하고, 이미 가진 자원(손안의 새)과 작은 성공 경험을 떠올리게 하는 상담이 필요합니다.', q1: '요즘 학교나 집에서 마음을 가장 무겁게 하는 순간은 언제인가요?', q2: '정답을 찾지 않아도 된다면, 올해 활동 중 시간 가는 줄 몰랐던 순간은 무엇이었나요?', q3: '오늘 상담이 끝났을 때 어떤 마음이면 다행이라고 느낄까요?', st: '교사의 정서적·자율성 지지(W)를 가장 먼저 작동시켜 실패 두려움을 낮추고, 이번 주에 해 볼 작은 탐색 과제 1가지만(감수 가능한 손실) 합의합니다.' },
+  { title: '🟡 완벽주의·관계 소진 주의형', sum: '진로 관심사는 비교적 분명하지만 성적·관계·수행 과정의 긴장이 높은 유형입니다. 실수를 성장의 데이터(피보팅)로 다시 해석하도록 돕는 개입이 효과적입니다.', q1: '목표가 뚜렷한 것이 큰 강점인데, 그 과정에서 스스로를 가장 힘들게 하는 기준은 무엇인가요?', q2: '계획대로 되지 않더라도 그 경험에서 얻을 수 있는 배움은 무엇일까요?', q3: '모둠원이나 부모님께 가장 듣고 싶은 응원의 말은 무엇인가요?', st: 'SEL 자기관리(호흡 루틴)와 관계 기술(나 전달법)을 안내하고, 결과 중심에서 과정·성장 중심으로 시선을 옮깁니다.' },
+  { title: '🧭 손안의 새 강점 발굴 & 진학 로드맵 탐색형', sum: '정서는 안정적이나 자신의 강점과 고교학점제·진학 경로 사이의 연결고리를 아직 찾지 못한 상태입니다. 구체적인 진로 정보와 강점 연결이 도움이 됩니다.', q1: '친구들이 자주 물어보거나 도움을 청하는 분야는 무엇인가요?', q2: '고등학교에서 가장 배우고 싶은 과목이나 해 보고 싶은 활동 두 가지를 꼽아 볼까요?', q3: '이커리어 6단계 활동 중 가장 흥미로웠던 단계는 어디였나요?', st: 'Stage 1 Gem 강점 분석 결과와 고교학점제 선택과목 안내를 연결해 진학·진로 로드맵을 함께 설계합니다.' },
+  { title: '🟢 자기주도 체인지메이커 심화 멘토링형', sum: '진로 확신도가 높고 정서가 안정적인 자기주도형 학습자입니다. 교내외 대회, 프로젝트 고도화, 심화 탐구로 확장하도록 돕는 촉진자 역할이 적합합니다.', q1: '지금 계획에서 한 단계 더 나아가려면 어떤 자원이나 피드백이 가장 필요한가요?', q2: '우리 팀의 해결책을 설득할 때 가장 강력한 근거 자료는 무엇인가요?', q3: '이번 도전을 진로 포트폴리오에 어떻게 기록하고 싶나요?', st: 'Stage 5~6(시제품 피보팅, 피칭덱 고도화) 코칭을 제공하고, 주도적 탐구 과정을 학교생활기록부 기록과 연결합니다.' }
+];
+function diagnose(c) { const q = c.stress >= 4 && c.clarity <= 2 ? 0 : c.stress >= 4 ? 1 : c.clarity <= 2 ? 2 : 3, d = DIAG[q]; return { q, title: d.title, sum: d.sum, qs: [d.q1, d.q2, d.q3], st: d.st }; }
 function cnsDoc(c, d, kind) {
   if (kind === 'neis') return `${c.createdAt} ${c.applicantType} 신청 상담(${c.method}, ${c.category}). 사전 자기진단에서 진로확신도 ${c.clarity}점, 스트레스 ${c.stress}점으로 응답함. 주 호소: ${c.note} 상담 방향: ${d.st} 후속 조치: [상담 후 입력 필요]`;
   return [`□ 상담 개요`, `  ◦ 접수일: ${c.createdAt} / 신청 구분: ${c.applicantType}`, `  ◦ 대상: ${c.studentName} / 연락: ${c.contact || '[입력 필요]'}`, `  ◦ 방식·영역: ${c.method} / ${c.category}`, `  ◦ 희망 일시: ${c.date || '[입력 필요]'} ${c.timeSlot}`, `□ 사전 자기진단`, `  ◦ 진로·진학 확신도 ${c.clarity}점, 스트레스 지수 ${c.stress}점, 시급도 ‘${c.urgency}’`, `  ◦ 사전 분석 유형: ${d.title.replace(/^\S+\s/, '')}`, `□ 주 호소 내용`, `  ◦ ${c.note}`, `□ 상담 계획`, `  ◦ 도입 질문`].concat(d.qs.map(q => `    - ${q}`), [`  ◦ 코칭 전략: ${d.st}`, `□ 상담 결과 및 후속 조치`, `  ◦ [상담 후 입력 필요]`]).join('\n');
@@ -1522,8 +1535,8 @@ function pinPress(k) {
   if (S.pin.length === 4) { if (S.pin === getPin()) { closeModal(); unlock(); } else { S.pin = ''; pinPaint('PIN이 올바르지 않습니다.'); } }
 }
 document.addEventListener('keydown', e => { if (openId === 'm-pin') { if (/^\d$/.test(e.key)) pinPress(e.key); else if (e.key === 'Backspace') pinPress('del'); } });
-function unlock() { S.unlocked = true; $('admin-panel').hidden = false; $('navAdmin').hidden = false; $('adminBtnIco').textContent = '🔓'; setAd(S.ad); renderTasks(); renderStamps(); renderHwp(); renderLinks(); renderEditor(); icons(); $('admin-panel').scrollIntoView(); toast('교사 관제실이 열렸습니다.'); }
-function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; $('admin-panel').hidden = true; $('navAdmin').hidden = true; $('adminBtnIco').textContent = '🔒'; location.hash = '#top'; toast('교사 관제실을 잠갔습니다.'); }
+function unlock() { S.unlocked = true; renderLessons(); renderMaterials(); renderResources(); $('admin-panel').hidden = false; $('navAdmin').hidden = false; $('adminBtnIco').textContent = '🔓'; setAd(S.ad); renderTasks(); renderStamps(); renderHwp(); renderLinks(); renderEditor(); icons(); $('admin-panel').scrollIntoView(); toast('교사 관제실이 열렸습니다.'); }
+function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; renderLessons(); renderMaterials(); renderResources(); $('admin-panel').hidden = true; $('navAdmin').hidden = true; $('adminBtnIco').textContent = '🔒'; location.hash = '#top'; toast('교사 관제실을 잠갔습니다.'); }
 function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3, 4], n); [1, 2, 3, 4].forEach(i => $('ad-' + i).hidden = i !== n); }
 
 /* 업무 보드 */
@@ -1539,7 +1552,7 @@ function renderTasks() {
   const col = (title, sub, list) => `<section class="rounded-2xl bg-slate-50 border border-slate-200 p-4"><h4 class="text-sm font-extrabold text-slate-900">${title} <span class="text-slate-500 num">${list.length}</span></h4>${sub ? `<p class="text-xs text-slate-600">${sub}</p>` : ''}<div class="mt-3 space-y-2">${list.map(card).join('') || '<p class="text-xs text-slate-600">과제가 없습니다.</p>'}</div></section>`;
   $('taskBoard').innerHTML = S.taskView === 'kanban' ? `<div class="grid md:grid-cols-3 gap-4">${TRACKS.map(tr => col(tr, '', tasks.filter(t => t.track === tr))).join('')}</div>` : `<div class="grid md:grid-cols-2 gap-4">${Object.keys(QUADS).map(q => col(q, QUADS[q], tasks.filter(t => t.quad === q))).join('')}</div>`;
 }
-function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '8.3', savedAt: new Date().toISOString(), done, links, gasUrl, tasks, reflections, counseling: cnsList, content }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
+function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '8.4', savedAt: new Date().toISOString(), done, links, gasUrl, tasks, reflections, counseling: cnsList, content }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
 function restoreJson(inp) {
   const f = inp.files[0]; if (!f) return; const rd = new FileReader();
   rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (Array.isArray(d.tasks)) { tasks = d.tasks; save(K.tasks, tasks); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } if (d.content && typeof d.content === 'object') { content = Object.assign(content, d.content); saveContent(); applyContent(); renderCommunity(); renderResources(); renderMatrix(); renderEditor(); } renderAll(); renderTasks(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
@@ -1581,18 +1594,13 @@ function saveLinks() {
 }
 
 /* 화면 직접 편집 · 배포용 HTML */
-function toggleEdit() {
-  S.editing = !S.editing; document.body.classList.toggle('editing', S.editing);
-  document.querySelectorAll('main h1, main h2, main h3, main p, main li, main blockquote p, main dd, main dt, footer p').forEach(el => { if (el.closest('[data-dyn]') || el.closest('#admin-panel')) return; if (S.editing) el.setAttribute('contenteditable', 'true'); else el.removeAttribute('contenteditable'); });
-  $('editBtn').textContent = '✏️ 화면 직접 편집 ' + (S.editing ? 'ON' : 'OFF'); toast(S.editing ? '제목과 본문을 직접 눌러 수정할 수 있습니다. 수정 후 배포용 파일을 내려받으세요.' : '편집 모드를 껐습니다.');
-}
 function exportHtml() {
   const c = document.documentElement.cloneNode(true);
   c.querySelectorAll('style').forEach(s => { if (/tailwindcss|--tw-/.test(s.textContent)) s.remove(); });
   c.querySelectorAll('[data-dyn]').forEach(el => el.innerHTML = '');
   c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
   c.querySelectorAll('.modal').forEach(m => m.classList.add('hidden'));
-  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; });
+  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad', 'qkBody'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; });
   const fr = c.querySelector('#emFrame'); if (fr) fr.removeAttribute('src');
   c.querySelector('#admin-panel').setAttribute('hidden', ''); c.querySelector('#navAdmin').setAttribute('hidden', '');
   const body = c.querySelector('body'); body.className = ''; body.removeAttribute('style');
@@ -1605,12 +1613,13 @@ function exportHtml() {
 function renderAll() { renderHero(); renderSemTabs(); renderFilters(); renderLessons(); renderCases(); renderRefl(); sheetBadge(); if (S.cnsTab === 'board') renderCnsBoard(); }
 function fillLessonSelect() { $('rfLesson').innerHTML = LESSONS.map(l => `<option value="${l.id} ${esc(l.title.split(':')[0])}">${l.id} · ${esc(l.title.split(':')[0])}</option>`).join(''); }
 function init() {
+  applyTexts(); applySections();
   fillLessonSelect();
   $('cnsCat').innerHTML = CNS_CATS.map(c => `<option>${c}</option>`).join('');
   $('pinPad').innerHTML = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '', '0', 'del'].map(k => k === '' ? '<span></span>' : `<button type="button" onclick="pinPress('${k}')" class="btn btn-ghost h-12 text-lg num" aria-label="${k === 'del' ? '지우기' : k}">${k === 'del' ? '⌫' : k}</button>`).join('');
   setLang('school'); setBio('short'); renderPv(); renderStages(); renderLean(); renderYeep(); renderWeather(); renderUrg(); renderAll(); renderCommunity(); renderResources(); renderMatrix(); renderMaterials();
   setWb('pov'); updatePov(); runBep(); setCnsType('학생'); cnsSliders(); setCnsTab('form');
-  applyDark(!!load(K.dark, false)); icons();
+  initEdits(); applyDark(!!load(K.dark, false)); icons();
   const navs = Array.from(document.querySelectorAll('#mainNav .navlink'));
   if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) navs.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-45% 0px -50% 0px' }); document.querySelectorAll('main > section[id]').forEach(s => io.observe(s)); }
   let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { drawPhd(); drawCnsChart(); }, 150); });
@@ -1668,7 +1677,7 @@ function renderCommunity() {
 function renderResources() {
   $('resGrid').innerHTML = resources().map((r, i) => { const n = Number(r.st) || 0, u = STAGE_UI[n]; return `<article class="card p-5 flex flex-col"><span class="self-start px-2.5 py-1 rounded-full border text-[11px] font-extrabold ${u ? u.chip : 'bg-slate-100 text-slate-700 border-slate-200'}">${n ? 'Stage ' + n + ' ' + esc(shortName(stageOf(n))) : '공통'}</span>
     <h4 class="mt-3 text-base font-extrabold text-slate-900">${esc(r.t)}</h4><p class="mt-1.5 text-sm text-slate-700 leading-relaxed flex-1">${esc(r.d)}</p><p class="mt-3 text-xs font-bold text-emerald-700">내 수업 매칭 · ${esc(r.m)}</p>
-    ${safeUrl(r.url) ? `<a href="${esc(safeUrl(r.url))}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm mt-3">사이트 열기 ↗</a>` : '<span class="btn btn-ghost btn-sm mt-3">링크 [입력 필요]</span>'}</article>`; }).join('');
+    ${safeUrl(r.url) ? `<a href="${esc(safeUrl(r.url))}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm mt-3">사이트 열기 ↗</a>` : '<span class="btn btn-ghost btn-sm mt-3">링크 [입력 필요]</span>'}${adminBtns('resources', i)}</article>`; }).join('') + addCard('resources');
 }
 
 /* 연간 32차시 단계 × SEL 분포 */
@@ -1706,15 +1715,6 @@ const LIST_DEF = {
 const ED = {};
 function saveContent() { save(K.content, content); }
 function fieldsHtml(prefix, fields, obj) { return fields.map(([k, label, rows]) => `<div><label class="lbl" for="${prefix}-${k}">${label}</label>${rows > 1 ? `<textarea id="${prefix}-${k}" rows="${rows}" class="inp text-sm">${esc(obj[k])}</textarea>` : `<input id="${prefix}-${k}" class="inp text-sm" value="${esc(obj[k])}" />`}</div>`).join(''); }
-function renderEditor() {
-  const sec = (title, sub, body, open) => `<details class="card p-5" ${open ? 'open' : ''}><summary class="cursor-pointer text-base font-extrabold text-slate-900">${title} <span class="text-xs font-semibold text-slate-600">${sub}</span></summary><div class="mt-4">${body}</div></details>`;
-  $('editorPanel').innerHTML =
-    sec('① 32차시 수업 내용', '차시명 · 학습목표 · 활동지 · 지도안', `<select id="edLessonSel" class="inp" onchange="loadLessonEd()" aria-label="편집할 차시">${LESSONS.map(l => `<option value="${l.id}">${l.id} · ${esc(l.title.split(':')[0])}${content.lessons[l.id] ? ' (수정됨)' : ''}</option>`).join('')}</select><div id="edLessonBox" class="mt-4 grid md:grid-cols-2 gap-4"></div><div class="mt-4 flex flex-wrap gap-2"><button type="button" onclick="saveLessonEd()" class="btn btn-emerald">이 차시 저장</button><button type="button" onclick="resetLessonEd()" class="btn btn-ghost">기본값으로 되돌리기</button></div>`, true)
-    + sec('② 학생 쇼케이스 6대 사례', '프로젝트명 · 수상 정보 · 설명', `<select id="edCaseSel" class="inp" onchange="loadCaseEd()" aria-label="편집할 사례">${CASES.map((c, i) => `<option value="${c.id}">0${i + 1} · ${esc(c.title)}</option>`).join('')}</select><div id="edCaseBox" class="mt-4 grid md:grid-cols-2 gap-4"></div><div class="mt-4 flex flex-wrap gap-2"><button type="button" onclick="saveCaseEd()" class="btn btn-emerald">이 사례 저장</button><button type="button" onclick="resetCaseEd()" class="btn btn-ghost">기본값으로 되돌리기</button></div>`)
-    + Object.keys(LIST_DEF).map((k, i) => sec(['③', '④', '⑤', '⑥'][i] + ' ' + LIST_DEF[k].title, '행 추가 · 삭제 · 수정', `<div id="edList-${k}"></div>`)).join('')
-    + sec('⑦ 관제실 PIN 변경', '숫자 4자리', `<div class="flex flex-wrap items-end gap-3"><div><label class="lbl" for="edPin">새 PIN</label><input id="edPin" class="inp w-40 num" inputmode="numeric" maxlength="4" placeholder="0000" /></div><button type="button" onclick="savePin()" class="btn btn-emerald">PIN 저장</button><p class="text-xs text-slate-600">PIN은 화면 가림용 잠금이며 파일 안에 그대로 저장됩니다. 비밀번호로 쓰는 숫자는 피하세요.</p></div>`);
-  loadLessonEd(); loadCaseEd(); Object.keys(LIST_DEF).forEach(k => { ED[k] = JSON.parse(JSON.stringify(LIST_DEF[k].get())); renderListEd(k); });
-}
 function loadLessonEd() { $('edLessonBox').innerHTML = fieldsHtml('edL', L_FIELDS, lessonOf($('edLessonSel').value)); }
 function saveLessonEd() { const id = $('edLessonSel').value, o = {}; L_FIELDS.forEach(([k]) => o[k] = $('edL-' + k).value.trim()); if (!o.title) return toast('차시명은 비워 둘 수 없습니다.'); content.lessons[id] = o; Object.assign(lessonOf(id), o); saveContent(); afterContent(); toast(id + '차시 내용을 저장했습니다.'); }
 function resetLessonEd() { const id = $('edLessonSel').value; delete content.lessons[id]; Object.assign(lessonOf(id), ORIG.lessons.find(l => l.id === id)); saveContent(); afterContent(); loadLessonEd(); toast(id + '차시를 기본값으로 되돌렸습니다.'); }
@@ -1788,9 +1788,91 @@ function renderMaterials() {
   const cls = { '수업자료': 'bg-indigo-50 text-indigo-800 border-indigo-200', '학생 발표물': 'bg-emerald-50 text-emerald-800 border-emerald-200', '교사 연수': 'bg-amber-50 text-amber-800 border-amber-200' };
   $('matGrid').innerHTML = all.map((x, i) => [x, i]).filter(([x]) => matFilter === '전체' || x.k === matFilter).map(([x, i]) => { const u = safeUrl(x.url), pad = /padlet\.com\//.test(u); return `<article class="card p-5 flex flex-col"><span class="self-start px-2.5 py-1 rounded-full border text-[11px] font-extrabold ${cls[x.k] || 'bg-slate-100 text-slate-700 border-slate-200'}">${esc(x.k)}</span>
     <h4 class="mt-3 text-base font-extrabold text-slate-900 leading-snug">${esc(x.t)}</h4><p class="mt-1.5 text-sm text-slate-700 leading-relaxed flex-1">${esc(x.d)}</p><p class="mt-3 text-xs font-bold text-emerald-700">연결 차시 · ${esc(x.m)}</p>
-    <button type="button" onclick="openMaterial(${i})" class="btn btn-sm mt-3 ${u ? 'btn-ink' : 'btn-ghost'}">${u ? (pad ? '📌 보드 열기' : '자료 열기 ↗') : '링크 [입력 필요]'}</button></article>`; }).join('');
+    <button type="button" onclick="openMaterial(${i})" class="btn btn-sm mt-3 ${u ? 'btn-ink' : 'btn-ghost'}">${u ? (pad ? '📌 보드 열기' : '자료 열기 ↗') : '링크 [입력 필요]'}</button>${adminBtns('materials', i)}</article>`; }).join('') + addCard('materials');
 }
 function openMaterial(i) { const x = materials()[i]; if (!openLink(x.t, x.url)) toast('연결된 링크가 없습니다. 콘텐츠 편집기에서 주소를 입력하세요.'); }
+/* ===== v8.4 추가: 문구 편집 확장 · 화면 직접 편집 자동 저장 · 빠른 자료 관리 · 섹션 표시 ===== */
+const S_FIELDS = [['name', '단계명', 1], ['explore', '탐험 단계명', 1], ['selCompetency', 'CASEL SEL 역량', 1], ['selActivity', 'SEL 중점 활동', 2], ['theory', '핵심 이론·도구', 2], ['phdVariable', '박사과정 연구 변인', 2], ['career', '전생애적 진로 관점', 1], ['comp', '기업가정신 역량', 1], ['scaffolding', '교사 지지 핵심 발문', 3], ['gemName', 'Gem 이름', 1], ['gemStudentPrompt', '학생용 질문 프롬프트', 4], ['gemSystemInstruction', 'Gem 시스템 지침', 4]];
+const TXT_DEF = {
+  bio: { title: '대외 소개문 3종', sub: '250자 요약 · 강연·좌장용 · HWP 개조식', items: () => [['short', '250자 요약'], ['talk', '강연·좌장용'], ['hwp', 'HWP 개조식(□, ◦, -)']], fields: [['text', '본문', 12]], get: k => ({ text: BIO[k] }), set: (k, o) => { BIO[k] = o.text; } },
+  lang: { title: '두 언어 요약 배너', sub: '학교 현장의 언어 · 교육행정·정책 연구의 언어', items: () => [['school', '학교 현장의 언어'], ['policy', '교육행정·정책 연구의 언어']], fields: [['text', '본문', 5]], get: k => ({ text: LANG[k].text }), set: (k, o) => { LANG[k].text = o.text; } },
+  pv: { title: '두 시선 (교사 의도 vs 학생 반응)', sub: '키워드 4개', items: () => PERSPECTIVES.map((p, i) => [String(i), p.tag]), fields: [['tag', '키워드', 1], ['teacherTitle', '교사 카드 제목', 1], ['teacherText', '교사 카드 본문', 4], ['studentTitle', '학생 카드 제목', 1], ['studentText', '학생 카드 본문', 4]], get: i => PERSPECTIVES[i], set: (i, o) => Object.assign(PERSPECTIVES[i], o) },
+  stages: { title: '이커리어 6단계 상세', sub: 'SEL · 발문 · 연구 변인 · Gems 프롬프트', items: () => STAGES.map(s => [String(s.stageNum), s.code + ' ' + shortName(s)]), fields: S_FIELDS, get: n => STAGES[n - 1], set: (n, o) => Object.assign(STAGES[n - 1], o) },
+  stamps: { title: '생기부 관찰기록 스탬프', sub: '스탬프 이름 · 문장 6종', items: () => STAMPS.map((s, i) => [String(i), s[0]]), fields: [['label', '스탬프 이름', 1], ['text', '생기부 문장', 3]], get: i => ({ label: STAMPS[i][0], text: STAMPS[i][1] }), set: (i, o) => { STAMPS[i] = [o.label, o.text]; } },
+  diag: { title: '상담 사전 분석 유형', sub: '4분면 유형 · 오프닝 질문 · 코칭 전략', items: () => DIAG.map((d, i) => [String(i), d.title]), fields: [['title', '진단 유형명', 1], ['sum', '진단 요약', 3], ['q1', '오프닝 질문 1', 2], ['q2', '오프닝 질문 2', 2], ['q3', '오프닝 질문 3', 2], ['st', '코칭 전략', 3]], get: i => DIAG[i], set: (i, o) => Object.assign(DIAG[i], o) }
+};
+const ORIG_TXT = {};
+const pick = (o, fields) => { const r = {}; fields.forEach(([k]) => r[k] = o[k]); return r; };
+function applyTexts() {
+  content.texts = content.texts || {}; content.edits = content.edits || {}; content.hidden = content.hidden || [];
+  Object.keys(TXT_DEF).forEach(k => { const d = TXT_DEF[k]; ORIG_TXT[k] = {}; d.items().forEach(([id]) => ORIG_TXT[k][id] = pick(d.get(id), d.fields)); Object.keys(content.texts[k] || {}).forEach(id => { if (ORIG_TXT[k][id]) d.set(id, content.texts[k][id]); }); });
+}
+function refreshTexts() { setLang(S.lang); setBio(S.bio); renderPv(); renderStages(); renderHero(); renderFilters(); renderResources(); renderMatrix(); if (S.unlocked) { renderStamps(); renderLinks(); } if (S.cnsTab === 'board') renderCnsBoard(); }
+function loadTxtEd(k) { const d = TXT_DEF[k]; $(`edT-${k}-box`).innerHTML = fieldsHtml('edT-' + k, d.fields, d.get($(`edT-${k}-sel`).value)); }
+function saveTxtEd(k) { const d = TXT_DEF[k], id = $(`edT-${k}-sel`).value, o = {}; d.fields.forEach(([f]) => o[f] = $(`edT-${k}-${f}`).value.trim()); if (!o[d.fields[0][0]]) return toast('첫 번째 칸은 비워 둘 수 없습니다.'); content.texts[k] = content.texts[k] || {}; content.texts[k][id] = o; d.set(id, o); saveContent(); refreshTexts(); toast(d.title + ' 내용을 저장했습니다.'); }
+function resetTxtEd(k) { const d = TXT_DEF[k], id = $(`edT-${k}-sel`).value; if (content.texts[k]) delete content.texts[k][id]; d.set(id, JSON.parse(JSON.stringify(ORIG_TXT[k][id]))); saveContent(); refreshTexts(); loadTxtEd(k); toast('기본값으로 되돌렸습니다.'); }
+
+/* 섹션 표시·숨김 */
+const SECTIONS = [['profile', '프로필 & 철학'], ['map', '이커리어 6단계×SEL 맵'], ['curriculum', '연간 32차시 수업 허브'], ['workbench', '실습 스튜디오·연구모형'], ['showcase', '학생 쇼케이스'], ['community', 'EDventure 커뮤니티'], ['gift', '선물 꾸러미'], ['reflection', '자기주도 성찰'], ['counseling', '진로·학부모 상담센터']];
+function applySections() { SECTIONS.forEach(([id]) => { const h = (content.hidden || []).includes(id); $(id).hidden = h; const a = document.querySelector(`#mainNav a[href="#${id}"]`); if (a) a.hidden = h; }); }
+function saveSections() { content.hidden = SECTIONS.map(s => s[0]).filter(id => !$('edSec-' + id).checked); saveContent(); applySections(); toast('섹션 표시 설정을 저장했습니다.'); }
+
+/* 화면 직접 편집: 고친 글자를 이 브라우저에 자동 저장 */
+const EDIT_SEL = 'main h1, main h2, main h3, main p, main li, main blockquote p, main dd, main dt, footer p', EORIG = {};
+const editables = () => Array.from(document.querySelectorAll(EDIT_SEL)).filter(el => !el.closest('[data-dyn]') && !el.closest('#admin-panel') && !el.querySelector('input, select, textarea, button'));
+function cleanHtml(h) { const t = document.createElement('template'); t.innerHTML = h; t.content.querySelectorAll('script, iframe, style, link, object, embed').forEach(n => n.remove()); t.content.querySelectorAll('*').forEach(n => Array.from(n.attributes).forEach(a => { if (/^on/i.test(a.name) || /^\s*javascript:/i.test(a.value)) n.removeAttribute(a.name); })); return t.innerHTML; }
+function initEdits() { editables().forEach((el, i) => { el.dataset.eid = i; const o = el.textContent.trim().slice(0, 80), e = content.edits[i]; EORIG[i] = o; if (e && e.o === o) el.innerHTML = cleanHtml(e.h); }); }
+let editTimer;
+function onEditInput(e) { const el = e.target.closest && e.target.closest('[data-eid]'); if (!el || !S.editing) return; clearTimeout(editTimer); editTimer = setTimeout(() => { content.edits[el.dataset.eid] = { o: EORIG[el.dataset.eid], h: cleanHtml(el.innerHTML) }; saveContent(); const c = $('edEditCount'); if (c) c.textContent = Object.keys(content.edits).length; }, 400); }
+function toggleEdit() {
+  S.editing = !S.editing; document.body.classList.toggle('editing', S.editing);
+  editables().forEach(el => { if (S.editing) el.setAttribute('contenteditable', 'true'); else el.removeAttribute('contenteditable'); });
+  if (S.editing && !toggleEdit.bound) { document.addEventListener('input', onEditInput); toggleEdit.bound = true; }
+  $('editBtn').textContent = '✏️ 화면 직접 편집 ' + (S.editing ? 'ON' : 'OFF'); toast(S.editing ? '제목과 본문을 직접 눌러 수정하세요. 고친 내용은 이 브라우저에 자동 저장됩니다.' : '편집 모드를 껐습니다. 수정 내용은 저장되어 있습니다.');
+}
+function resetEdits() { if (!Object.keys(content.edits).length) return toast('되돌릴 직접 편집 내용이 없습니다.'); if (confirm('화면 직접 편집으로 고친 문구를 모두 원래대로 되돌릴까요?')) { content.edits = {}; saveContent(); location.reload(); } }
+
+/* 빠른 입력 모달 · 페이지 위에서 바로 자료 추가/수정/삭제 */
+const QK = { fields: [], cb: null };
+function openQuick(title, hint, fields, cb) {
+  QK.fields = fields; QK.cb = cb; $('qkTitle').textContent = title; $('qkHint').textContent = hint || '';
+  $('qkBody').innerHTML = fields.map(([k, label, type, val, list]) => `<div><label class="lbl" for="qk-${k}">${esc(label)}</label><input id="qk-${k}" type="${type === 'url' ? 'url' : type}" ${type === 'number' ? 'min="0" max="6"' : ''} ${list ? `list="qkl-${k}"` : ''} class="inp" value="${esc(val == null ? '' : val)}" ${type === 'url' ? 'placeholder="https://"' : ''} />${list ? `<datalist id="qkl-${k}">${list.map(x => `<option value="${esc(x)}"></option>`).join('')}</datalist>` : ''}</div>`).join('');
+  openModal('m-quick');
+}
+function quickSave(e) {
+  e.preventDefault(); const v = {};
+  for (const [k, , type] of QK.fields) { let x = $('qk-' + k).value.trim(); if (type === 'url' && x && !safeUrl(x)) return toast('주소는 https:// 로 시작해야 합니다.'); if (type === 'number') x = Math.max(0, Math.min(6, Number(x) || 0)); v[k] = x; }
+  if ('t' in v && !v.t) return toast('자료명을 입력하세요.');
+  if (QK.cb(v) !== false) closeModal();
+}
+const adminBtns = (key, i) => S.unlocked ? `<div class="mt-2 flex gap-4 text-xs font-bold"><button type="button" onclick="editItem('${key}',${i})" class="text-indigo-700 underline underline-offset-2">수정</button><button type="button" onclick="delItem('${key}',${i})" class="text-rose-700 underline underline-offset-2">삭제</button></div>` : '';
+const addCard = key => S.unlocked ? `<button type="button" onclick="editItem('${key}',-1)" class="rounded-2xl border-2 border-dashed border-slate-300 bg-white text-slate-700 hover:border-slate-500 font-extrabold text-sm p-6 min-h-[120px]">＋ 자료 추가</button>` : '';
+function commitList(key, list, msg) { content[key] = list; saveContent(); afterContent(); if ($('edList-' + key)) { ED[key] = JSON.parse(JSON.stringify(list)); renderListEd(key); } toast(msg); }
+function editItem(key, i) {
+  const def = LIST_DEF[key], list = JSON.parse(JSON.stringify(def.get())), row = i < 0 ? Object.assign({}, def.blank, key === 'materials' && matFilter !== '전체' ? { k: matFilter } : {}) : list[i];
+  openQuick((i < 0 ? '자료 추가' : '자료 수정') + ' — ' + def.title, 'Canva는 [공유] → [공개 보기 링크], Padlet·드라이브·유튜브는 공유 주소를 그대로 붙여 넣으세요.', def.cols.map(([c, label, type]) => [c, label, type, row[c], c === 'k' ? Array.from(new Set(list.map(x => x.k).concat(['수업자료', '학생 발표물', '교사 연수']))) : null]), v => { if (i < 0) list.push(v); else list[i] = v; commitList(key, list, i < 0 ? '자료를 추가했습니다.' : '자료를 수정했습니다.'); });
+}
+function delItem(key, i) { const list = JSON.parse(JSON.stringify(LIST_DEF[key].get())); if (!confirm(`‘${list[i].t || list[i].n || '이 항목'}’을(를) 삭제할까요?`)) return; list.splice(i, 1); commitList(key, list, '삭제했습니다.'); }
+function quickLessonLink(id) {
+  const cur = links.lessons[id] || {};
+  openQuick(id + '차시 슬라이드·Padlet 링크', '비워 두면 학기 대표 링크가 열립니다.', [['canva', 'Canva 슬라이드 주소 (공개 보기 링크)', 'url', cur.canva], ['padlet', 'Padlet 보드 주소', 'url', cur.padlet]], v => { if (v.canva || v.padlet) links.lessons[id] = v; else delete links.lessons[id]; links._v = 2; save(K.links, links); renderLessons(); if ($('linkPanel').innerHTML) renderLinks(); toast(id + '차시 링크를 저장했습니다.'); });
+}
+
+/* 콘텐츠 편집기 (전체) */
+function renderEditor() {
+  let no = 0;
+  const sec = (title, sub, body, open) => `<details class="card p-5" ${open ? 'open' : ''}><summary class="cursor-pointer text-base font-extrabold text-slate-900">${++no}. ${title} <span class="text-xs font-semibold text-slate-600">${sub}</span></summary><div class="mt-4">${body}</div></details>`;
+  const btns = (sv, rs, label) => `<div class="mt-4 flex flex-wrap gap-2"><button type="button" onclick="${sv}" class="btn btn-emerald">${label} 저장</button><button type="button" onclick="${rs}" class="btn btn-ghost">기본값으로 되돌리기</button></div>`;
+  $('editorPanel').innerHTML =
+    sec('32차시 수업 내용', '차시명 · 학습목표 · 활동지 · 지도안', `<select id="edLessonSel" class="inp" onchange="loadLessonEd()" aria-label="편집할 차시">${LESSONS.map(l => `<option value="${l.id}">${l.id} · ${esc(l.title.split(':')[0])}${content.lessons[l.id] ? ' (수정됨)' : ''}</option>`).join('')}</select><div id="edLessonBox" class="mt-4 grid md:grid-cols-2 gap-4"></div>` + btns('saveLessonEd()', 'resetLessonEd()', '이 차시'), true)
+    + sec('학생 쇼케이스 6대 사례', '프로젝트명 · 수상 정보 · 설명', `<select id="edCaseSel" class="inp" onchange="loadCaseEd()" aria-label="편집할 사례">${CASES.map((c, i) => `<option value="${c.id}">0${i + 1} · ${esc(c.title)}</option>`).join('')}</select><div id="edCaseBox" class="mt-4 grid md:grid-cols-2 gap-4"></div>` + btns('saveCaseEd()', 'resetCaseEd()', '이 사례'))
+    + Object.keys(LIST_DEF).map(k => sec(LIST_DEF[k].title, '행 추가 · 삭제 · 수정', `<div id="edList-${k}"></div>`)).join('')
+    + Object.keys(TXT_DEF).map(k => sec(TXT_DEF[k].title, TXT_DEF[k].sub, `<select id="edT-${k}-sel" class="inp" onchange="loadTxtEd('${k}')" aria-label="편집할 항목">${TXT_DEF[k].items().map(([id, l]) => `<option value="${id}">${esc(l)}${(content.texts[k] || {})[id] ? ' (수정됨)' : ''}</option>`).join('')}</select><div id="edT-${k}-box" class="mt-4 grid md:grid-cols-2 gap-4"></div>` + btns(`saveTxtEd('${k}')`, `resetTxtEd('${k}')`, '이 항목'))).join('')
+    + sec('섹션 표시·숨김', '체크를 풀면 해당 섹션과 메뉴가 숨겨집니다', `<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">${SECTIONS.map(([id, t]) => `<label class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm font-semibold text-slate-800 cursor-pointer"><input id="edSec-${id}" type="checkbox" class="w-4 h-4 accent-emerald-600" ${content.hidden.includes(id) ? '' : 'checked'} />${t}</label>`).join('')}</div><button type="button" onclick="saveSections()" class="btn btn-emerald mt-4">섹션 표시 저장</button>`)
+    + sec('화면 직접 편집 내용', '프로필·제목·소개 문장 등', `<p class="text-sm text-slate-700 leading-relaxed">‘화면 직접 편집 ON’으로 고친 문구는 이 브라우저에 자동 저장됩니다. 현재 저장된 수정 <b id="edEditCount" class="num">${Object.keys(content.edits).length}</b>건.</p><button type="button" onclick="resetEdits()" class="btn btn-ghost mt-3">직접 편집 내용 모두 되돌리기</button>`)
+    + sec('관제실 PIN 변경', '숫자 4자리', `<div class="flex flex-wrap items-end gap-3"><div><label class="lbl" for="edPin">새 PIN</label><input id="edPin" class="inp w-40 num" inputmode="numeric" maxlength="4" placeholder="0000" /></div><button type="button" onclick="savePin()" class="btn btn-emerald">PIN 저장</button><p class="text-xs text-slate-600">PIN은 화면 가림용 잠금이며 파일 안에 그대로 저장됩니다. 비밀번호로 쓰는 숫자는 피하세요.</p></div>`);
+  loadLessonEd(); loadCaseEd(); Object.keys(LIST_DEF).forEach(k => { ED[k] = JSON.parse(JSON.stringify(LIST_DEF[k].get())); renderListEd(k); }); Object.keys(TXT_DEF).forEach(loadTxtEd);
+}
 init();
   </script>
 </body>
