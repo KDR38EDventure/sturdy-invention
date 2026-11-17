@@ -270,14 +270,14 @@
           <article class="card p-6 border-t-4 border-t-emerald-500">
             <div class="flex items-center gap-2 text-emerald-700"><i data-lucide="school" class="w-5 h-5"></i><span class="eyebrow">현장 교육가</span></div>
             <h3 class="mt-3 text-xl font-black text-slate-900">권대륜 <span class="text-slate-600 font-bold text-base">DR K</span></h3>
-            <p class="mt-1 text-sm font-semibold text-slate-800">화성 장안여자중학교 미래진로부장 · 진로전담교사</p>
+            <p class="mt-1 text-sm font-semibold text-slate-800">화성 장안여자중학교 미래진로부장 · 진로전담교사 (2026년 진로교사 전환, 그 전까지 체육교사)</p>
             <ul class="mt-4 space-y-2.5 text-sm text-slate-800 leading-relaxed">
               <li><b class="text-slate-900">경력</b> — 2008년 3월 임용 · 2026년 현재 19년 차, 무휴직 (2008~2009년 장안여자중학교 → 2010년 삼괴고등학교 · 학생안전부장 4년 → 2023년 장안여자중학교)</li>
-              <li><b class="text-slate-900">자격</b> — 중등 1급 정교사 2종 (진로진학상담 · 체육)</li>
-              <li><b class="text-slate-900">표창</b> — 중소벤처기업부 장관 표창(2025.10) · 경기도교육감 표창(2026.06)</li>
+              <li><b class="text-slate-900">자격</b> — 중등 1급 정교사(체육) · 중등 2급 정교사(진로진학상담)</li>
+              <li><b class="text-slate-900">표창</b> — 중소벤처기업부 장관 표창(2025.10) · 경기도교육감 표창(2026.12)</li>
               <li><b class="text-slate-900">선도교사</b> — AI 디지털 기반 교육 혁신 · 사회정서교육(SEL)</li>
               <li><b class="text-slate-900">네트워크</b> — 아산 티처프러너 커뮤니티(EDventure) 팀장 · 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원 · 화성오산교육지원청 창업교육 활성화 TF 위원 · 경기도 진로진학교사 협의회 사무국 위원</li>
-              <li><b class="text-slate-900">2026 무대</b> — 청소년 비즈쿨 페스티벌(11.3~5, 청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장 · 화성 다가치 글로벌 창업 공유학교 운영 강사 참여, 조잘조잘 스타트업 데모데이 총괄</li>
+              <li><b class="text-slate-900">2026 무대</b> — 청소년 비즈쿨 페스티벌(11.3~5, 청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장 · 화성 다가치 글로벌 창업 공유학교 운영 강사 참여, 청소년 기업가정신 직무연수 교육과정 개발 퍼실리테이션 강사</li>
             </ul>
           </article>
           <article class="card p-6 border-t-4 border-t-indigo-500">
@@ -289,7 +289,7 @@
               <li><b class="text-slate-900">연구 모형</b> — 프로젝트 기반 기업가정신 교육(X) → 중학생 진로적응성(Y), ‘실수에 대한 건설적 태도(M)’의 매개효과와 ‘교사 지지(W)’의 조절된 매개효과 (Hayes PROCESS Macro Model 7)</li>
               <li><b class="text-slate-900">조직 연구</b> — 소규모 학교의 영웅 없는 조직문화(Hero-less Culture)</li>
               <li><b class="text-slate-900">정책 연구</b> — 세종특별자치시교육청 교사 연수 자료 개발 연구 공동연구원</li>
-              <li><b class="text-slate-900">저술</b> — 공저 『청소년 기업가정신 교과서』, 『세상을 바꾸는 기업가정신』 · 아산 티처프러너 6기 기업가정신 교육과정(공동 집필)</li>
+              <li><b class="text-slate-900">저술</b> — 경기중등진로교육연구회 직업세계와 진로탐색 창업 부분 수업 자료 개발(공동 집필) · 아산 티처프러너 6기 기업가정신 교육과정(공동 집필)</li>
             </ul>
           </article>
         </div>
@@ -703,7 +703,12 @@
               <button type="button" id="cnsTypeP" onclick="setCnsType('학부모')" class="tabbtn py-3 rounded-xl border text-sm font-bold" data-on="bg-[#0F172A] border-[#0F172A] text-white" data-off="bg-white border-slate-300 text-slate-800 hover:border-slate-500">👨‍👩‍👧 학부모 신청</button>
             </div>
             <div class="mt-4 grid sm:grid-cols-2 gap-4">
-              <div><label class="lbl" for="cnsStudent">학번 · 학생 이름</label><input id="cnsStudent" class="inp" required placeholder="예) 20314 홍길동" /></div>
+              <div class="sm:col-span-2"><p class="lbl mb-1">학생 학년·반·번호·이름 <span class="font-semibold text-slate-600">(학부모 신청은 자녀 정보)</span></p><div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div><label class="lbl" for="csGrade">학년</label><select id="csGrade" class="inp" required><option value="1">1학년</option><option value="2">2학년</option><option value="3">3학년</option></select></div>
+                <div><label class="lbl" for="csCls">반</label><input id="csCls" type="number" min="1" max="20" class="inp num" required placeholder="예) 2" /></div>
+                <div><label class="lbl" for="csNum">번호</label><input id="csNum" type="number" min="1" max="50" class="inp num" required placeholder="예) 14" /></div>
+                <div><label class="lbl" for="csName">이름</label><input id="csName" class="inp" required /></div>
+              </div></div>
               <div><label class="lbl" for="cnsContact">연락처 (선택)</label><input id="cnsContact" class="inp" placeholder="예) 2학년 3반 교실로 전달" /></div>
               <div><label class="lbl" for="cnsMethod">희망 상담 방식</label><select id="cnsMethod" class="inp"><option>대면 (미래진로실)</option><option>비대면 (온라인 화상·채팅)</option><option>전화</option></select></div>
               <div><label class="lbl" for="cnsCat">희망 상담 영역</label><select id="cnsCat" data-dyn class="inp"></select></div>
@@ -887,7 +892,7 @@
         </div>
         <div class="card p-6 lg:col-span-3">
           <h3 class="text-lg font-black text-slate-900">AI 코파일럿 설정 (3중 하이브리드)</h3>
-          <p class="mt-1 text-sm text-slate-800 leading-relaxed">① 구글 시트 프록시(apps-script.gs의 <b>GEMINI_API_KEY</b>, 권장) → ② 이 기기의 API 키 → ③ <b>AI 프롬프트 원클릭 복사</b>(무과금) 순으로 시도합니다. 이 기기의 키는 이 브라우저에만 저장되며 배포 파일·구글 시트·학생 화면에는 담기지 않습니다. 학생은 ①의 ‘성찰 발문 코치’만 쓸 수 있습니다.</p>
+          <p class="mt-1 text-sm text-slate-800 leading-relaxed">① 구글 시트 프록시(apps-script.gs의 <b>GEMINI_API_KEY</b>, 권장) → ② 이 기기의 API 키 → ③ <b>AI 프롬프트 원클릭 복사</b>(무과금) 순으로 시도합니다. 이 기기의 키는 이 브라우저에만 저장되며 배포 파일·구글 시트·학생 화면에는 담기지 않습니다. 학생은 ①의 ‘성찰 발문 코치’만 쓸 수 있습니다. <b>휴먼인더루프 원칙:</b> AI 결과는 교사가 검토·수정한 뒤에만 기록에 사용합니다.</p>
           <div class="mt-4 grid md:grid-cols-12 gap-3 items-end">
             <div class="md:col-span-5"><label class="lbl" for="aiKeyInp">이 기기의 Gemini API 키 (선택)</label><input id="aiKeyInp" type="password" autocomplete="off" class="inp" placeholder="비워 두면 ①·③만 사용" /></div>
             <div class="md:col-span-3"><label class="lbl" for="aiModelInp">모델 이름</label><input id="aiModelInp" class="inp" placeholder="gemini-2.5-flash" /></div>
@@ -1546,9 +1551,9 @@ const LANG = {
 };
 function setLang(k) { S.lang = k; paintGroup('langBtn-', ['school', 'policy'], k); const d = LANG[k], b = $('langBanner'); b.classList.remove('border-l-emerald-500', 'border-l-indigo-500'); b.classList.add(d.cls); b.innerHTML = `<div class="eyebrow ${d.tagCls}">${d.tag}</div><p class="mt-2 text-base text-slate-800 leading-relaxed">${esc(d.text)}</p>`; }
 const BIO = {
-  short: '권대륜(DR K)은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년째 진로·기업가정신 교육을 실천해 온 교사이다. 중등 1급 정교사(진로진학상담·체육)이며 아산 티처프러너 커뮤니티(EDventure) 팀장으로 활동하고 있다. 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정에서 프로젝트 기반 기업가정신 교육이 중학생 진로적응성에 미치는 영향을 연구한다. 중소벤처기업부 장관 표창(2025)을 수상했다.',
-  talk: '오늘 진행을 맡은 권대륜 선생님을 소개합니다.\n\n권대륜 선생님은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년간 학교 현장을 지켜 온 진로진학상담·체육 교사입니다. 삼괴고등학교 학생안전부장을 거쳐 현재 장안여중에서 이커리어(E-Career) 6단계와 사회정서학습(SEL)을 결합한 연간 32차시 진로·기업가정신 수업을 운영하고 있습니다.\n\n아산 티처프러너 커뮤니티(EDventure) 팀장, 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원으로 활동하며, 2026 청소년 비즈쿨 페스티벌(청주 OSCO)에서 꿈틀 타운홀과 전국 교원 포럼 좌장을 맡았습니다. 2025년 중소벤처기업부 장관 표창, 2026년 경기도교육감 표창을 받았습니다.\n\n성균관대학교 일반대학원 교육행정전공 박사과정에서는 프로젝트 기반 기업가정신 교육이 중학생의 진로적응성에 미치는 영향과 ‘실수에 대한 건설적 태도’, ‘교사 지지’의 역할을 연구하고 있습니다.\n\n“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않습니다.” 권대륜 선생님을 큰 박수로 맞이해 주시기 바랍니다.',
-  hwp: '□ 인적 사항\n  ◦ 성명: 권대륜 (DR K)\n  ◦ 소속·직위: 화성 장안여자중학교 미래진로부장 · 진로전담교사\n□ 경력 및 자격\n  ◦ 2008년 3월 임용 · 2026년 현재 19년 차, 무휴직\n    - 2008~2009년 장안여자중학교 → 2010년 삼괴고등학교(학생안전부장 4년) → 2023년 장안여자중학교\n  ◦ 중등 1급 정교사 2종(진로진학상담, 체육)\n  ◦ AI 디지털 기반 교육 혁신 선도교사, 사회정서교육(SEL) 선도교사\n□ 학력 및 연구\n  ◦ 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정 (지도교수 배상훈)\n  ◦ 아주대학교 진로진학상담 석사, 경희대학교 체육교육 석사\n  ◦ 경희대학교 태권도학·스포츠경영학 학사\n  ◦ 연구 주제\n    - 프로젝트 기반 기업가정신 교육(X)과 중학생 진로적응성(Y)의 관계에서 실수에 대한 건설적 태도(M)의 매개효과 및 교사 지지(W)의 조절된 매개효과(PROCESS Macro Model 7)\n    - 소규모 학교의 영웅 없는 조직문화(Hero-less Culture)\n□ 주요 표창 및 대외 활동\n  ◦ 중소벤처기업부 장관 표창(2025.10.), 경기도교육감 표창(2026.06.)\n  ◦ 아산 티처프러너 커뮤니티(EDventure) 팀장\n  ◦ 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원\n  ◦ 화성오산교육지원청 창업교육 활성화 TF 위원, 경기도 진로진학교사 협의회 사무국 위원\n  ◦ 2026 청소년 비즈쿨 페스티벌(청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장\n  ◦ 세종특별자치시교육청 교사 연수 자료 개발 연구 공동연구원\n□ 저술\n  ◦ 공저 『청소년 기업가정신 교과서』, 『세상을 바꾸는 기업가정신』\n  ◦ 아산 티처프러너 6기 기업가정신 교육과정(공동 집필)'
+  short: '권대륜(DR K)은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년째 진로·기업가정신 교육을 실천해 온 교사이다. 중등 1급 정교사(체육)이며 아산 티처프러너 커뮤니티(EDventure) 팀장으로 활동하고 있다. 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정에서 프로젝트 기반 기업가정신 교육이 중학생 진로적응성에 미치는 영향을 연구한다. 중소벤처기업부 장관 표창(2025)을 수상했다.',
+  talk: '오늘 진행을 맡은 권대륜 선생님을 소개합니다.\n\n권대륜 선생님은 화성 장안여자중학교 미래진로부장으로, 2008년 임용 이후 19년간 학교 현장을 지켜 온 교사입니다. 체육교사로 근무하다 2026년 진로교사가 되었습니다. 삼괴고등학교 학생안전부장을 거쳐 현재 장안여중에서 이커리어(E-Career) 6단계와 사회정서학습(SEL)을 결합한 연간 32차시 진로·기업가정신 수업을 운영하고 있습니다.\n\n아산 티처프러너 커뮤니티(EDventure) 팀장, 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원으로 활동하며, 2026 청소년 비즈쿨 페스티벌(청주 OSCO)에서 꿈틀 타운홀과 전국 교원 포럼 좌장을 맡았습니다. 2025년 중소벤처기업부 장관 표창, 2026년 경기도교육감 표창을 받았습니다.\n\n성균관대학교 일반대학원 교육행정전공 박사과정에서는 프로젝트 기반 기업가정신 교육이 중학생의 진로적응성에 미치는 영향과 ‘실수에 대한 건설적 태도’, ‘교사 지지’의 역할을 연구하고 있습니다.\n\n“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않습니다.” 권대륜 선생님을 큰 박수로 맞이해 주시기 바랍니다.',
+  hwp: '□ 인적 사항\n  ◦ 성명: 권대륜 (DR K)\n  ◦ 소속·직위: 화성 장안여자중학교 미래진로부장 · 진로전담교사\n□ 경력 및 자격\n  ◦ 2008년 3월 임용 · 2026년 현재 19년 차, 무휴직\n    - 2008~2009년 장안여자중학교 → 2010년 삼괴고등학교(학생안전부장 4년) → 2023년 장안여자중학교\n  ◦ 중등 1급 정교사(체육), 중등 2급 정교사(진로진학상담)\n  ◦ AI 디지털 기반 교육 혁신 선도교사, 사회정서교육(SEL) 선도교사\n□ 학력 및 연구\n  ◦ 성균관대학교 일반대학원 교육학과 교육행정전공 박사과정 (지도교수 배상훈)\n  ◦ 아주대학교 진로진학상담 석사, 경희대학교 체육교육 석사\n  ◦ 경희대학교 태권도학·스포츠경영학 학사\n  ◦ 연구 주제\n    - 프로젝트 기반 기업가정신 교육(X)과 중학생 진로적응성(Y)의 관계에서 실수에 대한 건설적 태도(M)의 매개효과 및 교사 지지(W)의 조절된 매개효과(PROCESS Macro Model 7)\n    - 소규모 학교의 영웅 없는 조직문화(Hero-less Culture)\n□ 주요 표창 및 대외 활동\n  ◦ 중소벤처기업부 장관 표창(2025.10.), 경기도교육감 표창(2026.12.)\n  ◦ 아산 티처프러너 커뮤니티(EDventure) 팀장\n  ◦ 전국 비즈쿨 협의회 청소년 기업가정신 교과활성화 TF 위원\n  ◦ 화성오산교육지원청 창업교육 활성화 TF 위원, 경기도 진로진학교사 협의회 사무국 위원\n  ◦ 2026 청소년 비즈쿨 페스티벌(청주 OSCO) 꿈틀 타운홀·전국 교원 포럼 좌장\n  ◦ 세종특별자치시교육청 교사 연수 자료 개발 연구 공동연구원\n□ 저술\n  ◦ 경기중등진로교육연구회 직업세계와 진로탐색 창업 부분 수업 자료 개발(공동 집필)\n  ◦ 아산 티처프러너 6기 기업가정신 교육과정(공동 집필)'
 };
 function setBio(k) { S.bio = k; paintGroup('bioTab-', ['short', 'talk', 'hwp'], k); $('bioBox').value = BIO[k]; $('bioLen').textContent = BIO[k].length + '자'; }
 function renderPv() {
@@ -2224,11 +2229,11 @@ function clearReflections() { requireAdmin(clearAllRefl); }
 function setCnsTab(k) { if (k === 'board' && !S.unlocked) k = 'form'; S.cnsTab = k; paintGroup('cnsTab-', ['form', 'board'], k); $('cns-form').hidden = k !== 'form'; $('cns-board').hidden = k !== 'board'; if (k === 'board') renderCnsBoard(); }
 function openCnsBoard() { requireAdmin(() => { setCnsTab('board'); $('counseling').scrollIntoView(); }); }
 async function submitCns(e) {
-  e.preventDefault(); if (S.busy) return;
-  const c = { id: 'c' + Date.now(), mine: true, createdAt: today(), applicantType: S.cnsType, studentName: $('cnsStudent').value.trim() + (S.cnsType === '학부모' ? ' (학부모)' : ''), contact: $('cnsContact').value.trim(), method: $('cnsMethod').value, category: $('cnsCat').value, date: $('cnsDate').value, timeSlot: $('cnsTime').value, clarity: +$('cnsClarity').value, stress: +$('cnsStress').value, urgency: S.cnsUrg, note: $('cnsNote').value.trim(), status: '접수대기', memo: '' };
+  e.preventDefault(); if (S.busy) return; if (!(await idGate('cs'))) return;
+  const csSid = $('csGrade').value + pad2(Math.max(1, Number($('csCls').value) || 0)) + pad2(Math.max(1, Number($('csNum').value) || 0)); const c = { id: 'c' + Date.now(), mine: true, createdAt: today(), applicantType: S.cnsType, studentName: csSid + ' ' + $('csName').value.trim() + (S.cnsType === '학부모' ? ' (학부모)' : ''), contact: $('cnsContact').value.trim(), method: $('cnsMethod').value, category: $('cnsCat').value, date: $('cnsDate').value, timeSlot: $('cnsTime').value, clarity: +$('cnsClarity').value, stress: +$('cnsStress').value, urgency: S.cnsUrg, note: $('cnsNote').value.trim(), status: '접수대기', memo: '' };
   cnsList.unshift(c); save(K.cns, cnsList);
   S.busy = true; const sent = await sendSafe({ type: 'counseling', createdAt: c.createdAt, applicantType: c.applicantType, student: c.studentName, contact: c.contact, method: c.method, category: c.category, date: c.date, time: c.timeSlot, clarity: c.clarity, stress: c.stress, urgency: c.urgency, note: c.note });
-  S.busy = false; $('cnsStudent').value = ''; $('cnsContact').value = ''; $('cnsNote').value = ''; if (S.unlocked) { S.cnsSel = c.id; if (S.cnsTab === 'board') renderCnsBoard(); }
+  S.busy = false; ['csCls', 'csNum', 'csName'].forEach(k => $(k).value = ''); $('cnsContact').value = ''; $('cnsNote').value = ''; if (S.unlocked) { S.cnsSel = c.id; if (S.cnsTab === 'board') renderCnsBoard(); }
   if ($('myCnsOut') && !$('myCnsOut').hidden) renderMyCns();
   showDone('상담 신청이 접수되었습니다', `<p><b>${esc(c.studentName)}</b> · ${esc(c.applicantType)} 신청</p><p class="mt-1">${esc(c.category)} · ${esc(c.method)}</p><p class="mt-1">희망 일시: ${esc(c.date || '날짜 미정')} ${esc(c.timeSlot)}</p><ol class="mt-3 space-y-1 text-slate-800"><li><b>① 접수 완료</b> — 지금 신청이 접수되었습니다.</li><li><b>② 교사 확인</b> — 담당 교사가 내용을 확인합니다.</li><li><b>③ 일정 안내</b> — 신청 완료 후 교사 확인을 거쳐 기재해 주신 연락처(또는 교실)로 일정이 안내됩니다.</li></ol><p class="mt-3 text-slate-600">신청서 아래 [내 신청 조회]에서 이 기기로 낸 신청을 다시 볼 수 있습니다.${sent === 'sent' ? '' : ' ' + sendMsg(sent)}</p>`);
 }
@@ -2676,7 +2681,7 @@ function renderClsBar() { const el = $('clsBar'); if (el) el.innerHTML = clsBarH
 function renderClass() { renderClass0(); if (CM.id) $('classBody').insertAdjacentHTML('afterbegin', `<div class="mb-5">${clsBarHtml()}</div>`); }
 
 /* ---------- 2. 명렬표 기반 입력 검증 ---------- */
-const ID_FORMS = ['rf', 'sv', 'gw', 'yp'];
+const ID_FORMS = ['rf', 'sv', 'gw', 'yp', 'cs'];
 const clsMeta = () => { if (names.length) { const m = {}; names.forEach(x => { const k = x.g + '-' + x.c; m[k] = Math.max(m[k] || 0, Number(x.n) || 0); }); return m; } return window.__BAKED_CLASSES__ || {}; };
 function idMsgEl(p) { let el = $(p + 'IdMsg'); if (!el) { el = document.createElement('p'); el.id = p + 'IdMsg'; el.className = 'mt-2 text-sm'; el.setAttribute('aria-live', 'polite'); const host = $(p + 'Name').closest('.grid') || $(p + 'Name').parentElement; host.insertAdjacentElement('afterend', el); } return el; }
 function idSwap(old, opts) { const s = document.createElement('select'); s.id = old.id; s.className = 'inp num'; if (old.required) s.required = true; s.innerHTML = opts; old.replaceWith(s); return s; }
@@ -2942,7 +2947,7 @@ const wizKids = (form, marks) => { /* 폼의 바로 아래 요소를 표식(id)�
 const WIZ = {
   today: { host: () => $('tdBody'), names: ['오늘의 차시', '② 오늘의 과업', '③ 관찰과 근거', '④ 성찰 한 줄'], steps: () => { const b = $('tdBody'), cards = Array.from(b.querySelectorAll('.space-y-4 > .card')), rest = Array.from(b.children).filter(c => !c.classList.contains('space-y-4')), btn = rest[rest.length - 1]; return cards.length === 3 ? [rest.slice(0, -1), [cards[0]], [cards[1]], [cards[2], btn]] : []; } },
   reflection: { host: () => document.querySelector('#reflection form'), names: ['기본 정보', '마음날씨·자기주도 체크', '성찰 쓰기'], steps: () => wizKids(document.querySelector('#reflection form'), [['rfGrade'], ['rfWeather'], ['rfLearned']]) },
-  counseling: { host: () => $('cns-form'), names: ['기본 정보', '사전 자기진단·제출'], steps: () => wizKids($('cns-form'), [['cnsStudent'], ['cnsClarity']]) },
+  counseling: { host: () => $('cns-form'), names: ['기본 정보', '사전 자기진단·제출'], steps: () => wizKids($('cns-form'), [['csGrade'], ['cnsClarity']]) },
   survey: { host: () => document.querySelector('#survey form'), names: ['기본 정보'].concat(AREAS), steps: () => { const f = document.querySelector('#survey form'), fs = Array.from($('svItems').children), btn = f.querySelector('button[type=submit]'), cr = f.querySelector('.code-row'), head = Array.from(f.children).filter(c => c !== $('svItems') && c !== btn && c !== cr); return fs.length ? [head].concat(fs.map((x, i) => i === fs.length - 1 ? [x, cr, btn].filter(Boolean) : [x])) : []; } }
 };
 function wizApply(k) {
@@ -3098,7 +3103,7 @@ async function codeClear() { if (!codeReady()) return; await postSheet({ type: '
 const _clsBarHtml = clsBarHtml; clsBarHtml = function () { const h = _clsBarHtml(); return h + (codeState && codeState.code ? `<p class="mt-2 px-1 text-lg font-black text-slate-900 teacher-only">🔑 오늘 제출 코드 <span class="num text-emerald-700">${esc(codeState.code)}</span></p>` : ''); };
 function init14() { codeShow(); if (isStudentView() && safeUrl(gasUrl)) codeProbe('').then(j => { if (j && j.required) codeRowsShow(true); }); }
 /* ===== 수업을 여는 약속: ‘긍정과 열정 사이, 적극적인 도전’ — 자기주도성 → 문제해결역량 → 기업가정신의 흐름 ===== */
-const MOTTO = { main: '긍정과 열정 사이, 적극적인 도전', lead: '매 수업을 여는 약속입니다. 나를 믿는 긍정에서 출발해, 끝까지 파고드는 열정으로 문제를 풀고, 그 답을 세상에 내놓는 적극적인 도전으로 나아갑니다.', close: '정답은 없습니다. 다만 관찰과 근거로 말하고, 모든 실수는 성장의 데이터로 남깁니다.' };
+const MOTTO = { main: '긍정과 열정 사이, 적극적인 도전', lead: '매 수업을 여는 약속입니다. 나를 믿는 긍정에서 출발해, 끝까지 파고드는 열정으로 문제를 풀고, 그 답을 세상에 내놓는 적극적인 도전으로 나아갑니다.', close: '정답은 없습니다. 다만 관찰과 근거로 말하고, 모든 실수는 성장의 데이터로 남깁니다.', hitl: '휴먼인더루프(Human-in-the-loop): AI는 초안과 질문을 제안하고, 판단·기록·평가는 사람이 합니다. 학생의 생각을 AI가 대신 써 주지 않습니다.' };
 const FLOW = [
   { key: '긍정', title: '자기주도성 회복', stage: 'Stage 1 나를 채우다', desc: '내 강점·흥미·가치를 스스로 찾고, 오늘의 목표와 방법을 내가 정합니다. 할 수 있다는 믿음이 모든 배움의 출발점입니다.', tools: '1분 마음챙김 · 자기주도 체크 · 성찰 쓰기', go: 'map' },
   { key: '열정', title: '문제해결역량 함양', stage: 'Stage 2~4 세상을 읽다 · 문제를 짚다 · 길을 그리다', desc: '관찰과 공감으로 주변의 불편을 찾고, Why Tree로 근본 원인을 정의해 실행할 수 있는 아이디어로 풀어냅니다.', tools: '공감 인터뷰 · Why Tree·POV · 린 캔버스', go: 'workbench' },
@@ -3113,7 +3118,7 @@ function renderFlow() {
   el.innerHTML = `<h2 class="mt-2 text-3xl sm:text-4xl font-black tracking-tight text-slate-900">${esc(MOTTO.main)}</h2><p class="mt-3 max-w-3xl text-slate-800 leading-relaxed">${esc(MOTTO.lead)}</p>
     <ol class="mt-8 grid lg:grid-cols-3 gap-5">${FLOW.map((f, i) => `<li class="relative card p-6 flex flex-col">${i < FLOW.length - 1 ? '<span class="hidden lg:grid absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white border border-slate-300 place-items-center text-slate-700 font-black" aria-hidden="true">→</span>' : ''}<span class="self-start px-3 py-1 rounded-full border text-xs font-extrabold ${FLOW_UI[i % 3][0]} ${FLOW_UI[i % 3][1]}">${i + 1}. ${esc(f.key)}</span><h3 class="mt-3 text-xl font-black text-slate-900">${esc(f.title)}</h3><p class="mt-1 text-xs font-bold text-slate-600">${esc(f.stage)}</p><p class="mt-3 text-sm text-slate-800 leading-relaxed flex-1">${esc(f.desc)}</p><p class="mt-3 text-xs font-bold text-slate-700">이 단계에서 쓰는 도구 — ${esc(f.tools)}</p>${f.go && $(f.go) ? `<a href="#${esc(f.go)}" class="btn btn-ghost btn-sm mt-4 self-start teacher-only">관련 활동 보기</a>` : ''}</li>`).join('')}</ol>
     <div class="mt-6 flex flex-wrap items-center gap-2 text-sm font-extrabold text-slate-900" aria-label="교육의 흐름">${FLOW.map((f, i) => `<span class="px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200">${esc(f.title)}</span>${i < FLOW.length - 1 ? '<span aria-hidden="true" class="text-slate-600">→</span>' : ''}`).join('')}</div>
-    ${MOTTO.close ? `<p class="mt-4 text-sm text-slate-600">${esc(MOTTO.close)}</p>` : ''}`;
+    ${MOTTO.close ? `<p class="mt-4 text-sm text-slate-600">${esc(MOTTO.close)}</p>` : ''}${MOTTO.hitl ? `<div class="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm text-slate-800 leading-relaxed"><b class="text-sky-800">AI 활용 원칙</b> — ${esc(MOTTO.hitl)}</div>` : ''}`;
 }
 const mottoBanner = () => `<div class="mb-5 rounded-2xl bg-[#0F172A] text-white p-5 text-center"><p class="text-xs font-extrabold text-emerald-300">수업을 여는 약속</p><p class="mt-1 text-2xl sm:text-3xl font-black tracking-tight">${esc(MOTTO.main)}</p><p class="mt-2 text-sm text-slate-200">${FLOW.map(f => `${esc(f.key)} → ${esc(f.title)}`).join(' · ')}</p></div>`;
 const _renderClass12 = renderClass; renderClass = function () { _renderClass12(); if (CM.id) $('classBody').insertAdjacentHTML('afterbegin', mottoBanner()); };
