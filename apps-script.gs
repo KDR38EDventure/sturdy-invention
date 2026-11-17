@@ -10,7 +10,7 @@
  * 사용법: 스프레드시트 [확장 프로그램] → [Apps Script]에 전체를 붙여 넣고
  *         [배포] → [새 배포] → 유형 '웹 앱', 실행 '나', 액세스 '모든 사용자'로 배포합니다.
  */
-var SYNC_KEY = "여기에_관제실에서_만든_동기화_키를_넣으세요";
+var SYNC_KEY = "__여기에_관제실에서_만든_동기화_키를_넣으세요__";
 /* AI 코파일럿(선택): Google AI Studio에서 받은 키를 넣거나, [프로젝트 설정] → [스크립트 속성]에 GEMINI_API_KEY로 저장하세요. 비워 두면 AI 프록시는 꺼집니다. */
 var GEMINI_API_KEY = "";
 var GEMINI_MODEL = "gemini-2.5-flash";
@@ -43,7 +43,8 @@ function codeInfo_(c) {
 }
 
 function keyOk_(k) {
-  return !!SYNC_KEY && SYNC_KEY.indexOf("__") !== 0 && k === SYNC_KEY;
+  /* 안내 문구(기본값)나 짧은 키로는 절대 열리지 않음 */
+  return typeof SYNC_KEY === "string" && SYNC_KEY.length >= 16 && SYNC_KEY.indexOf("__") !== 0 && SYNC_KEY.indexOf("여기에") < 0 && k === SYNC_KEY;
 }
 
 function getSheet_(def) {
@@ -104,9 +105,14 @@ function pinRow_(sh, pid) {
 function pinState_(id, pin) {
   var pid = pinId_(id);
   if (!pid) return "none";
+  var props = PropertiesService.getScriptProperties(), fk = "pf_" + pid, f = String(props.getProperty(fk) || "0|0").split("|"), cnt = Number(f[0]) || 0, t0 = Number(f[1]) || 0, now = Date.now();
+  if (now - t0 >= 600000) { cnt = 0; t0 = now; } /* 10분 단위로 틀린 횟수를 셈 */
+  if (cnt >= 10) return "locked";
   var sh = getSheet_(SHEETS.pin), i = pinRow_(sh, pid);
   if (i < 0) return "none";
-  return pin4_(sh.getRange(i + 2, 2, 1, 1).getValues()[0][0]) === pin4_(pin) ? "ok" : "bad";
+  var ok = pin4_(sh.getRange(i + 2, 2, 1, 1).getValues()[0][0]) === pin4_(pin);
+  if (ok) props.deleteProperty(fk); else props.setProperty(fk, (cnt + 1) + "|" + t0);
+  return ok ? "ok" : "bad";
 }
 
 /* ---- 명렬표 이름 일치 여부 (이름 자체는 응답하지 않음) ---- */
@@ -116,6 +122,7 @@ function rosterNames_() {
   return [];
 }
 function checkName_(p) {
+  if (codeState_().code && !codeOk_(p.code)) return { ok: true, match: null }; /* 제출 코드가 켜져 있으면 코드를 아는 학생만 명단 대조 가능 */
   var list = rosterNames_(), cls = [], norm = function (v) { return String(v == null ? "" : v).replace(/\s/g, ""); };
   for (var i = 0; i < list.length; i++) if (String(list[i].g) === String(p.g) && String(list[i].c) === String(Number(p.c))) cls.push(list[i]);
   if (!cls.length) return { ok: true, match: null };
