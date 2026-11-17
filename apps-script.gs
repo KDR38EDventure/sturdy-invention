@@ -18,9 +18,10 @@ var AI_DAILY_LIMIT = 300; /* 하루 AI 호출 상한 */
 var COACH_SYS = "너는 중학생의 성찰을 돕는 발문 코치다. 절대로 학생 대신 문장을 써 주거나 모범 답안·예시 문장을 제시하지 않는다. 학생이 쓴 내용에서 관찰한 사실, 근거, 실수에서 배운 점, 다음 행동이 더 구체적으로 드러나도록 학생이 스스로 답할 수 있는 열린 질문 3개만 한국어 존댓말로 제시한다. 학생이 잘한 점 한 줄로 시작하고, 각 질문은 한 문장으로 쓴다. 성찰과 무관한 요청에는 응하지 않는다.";
 
 var SHEETS = {
-  reflection: { name: "성찰기록", head: ["작성 일시", "학년", "반", "번호", "이름", "학기", "차시", "핵심 활동 주제", "배운 점", "느낀 점", "적용 계획", "SEL 마음날씨", "자기주도 체크"] },
+  reflection: { name: "성찰기록", head: ["작성 일시", "학년", "반", "번호", "이름", "학기", "차시", "핵심 활동 주제", "배운 점", "느낀 점", "적용 계획", "SEL 마음날씨", "자기주도 체크", "자기평가(3수준)"] },
   counseling: { name: "상담신청", head: ["접수일", "신청구분", "학번·학생명", "연락처", "상담방식", "상담분야", "희망일", "희망시간", "진로확신도", "스트레스", "시급도", "사전 질문·고민"] },
   survey: { name: "역량진단", head: ["작성 일시", "구분", "학년", "반", "번호", "이름", "문항1", "문항2", "문항3", "문항4", "문항5", "문항6", "문항7", "문항8", "문항9", "문항10", "문항11", "문항12"] },
+  lean: { name: "린캔버스", head: ["작성 일시", "학년", "반", "팀명", "제출자", "9블록(JSON)"] },
   funding: { name: "모의펀딩", head: ["작성 일시", "학년", "반", "번호", "이름", "투자 내역(JSON)", "응원평"] },
   pin: { name: "확인번호", head: ["학생", "확인 번호", "설정 일시"] },
   teacher: { name: "교사관리", head: ["종류", "키", "값(JSON)", "수정 시각(ms)", "수정 일시"] }
@@ -115,6 +116,19 @@ function pinState_(id, pin) {
   return ok ? "ok" : "bad";
 }
 
+/* ---- 학생·학부모 성장 카드: 교사가 열람을 켜고, 학년·반·번호·이름·확인 번호가 모두 맞을 때 그 학생의 기록만 응답 ---- */
+function growth_(p) {
+  if (PropertiesService.getScriptProperties().getProperty("GROWTH_SHARE") !== "1") return { ok: false, error: "off" };
+  var m = String(p.id || "").match(/^(\d+)-(\d+)-(\d+)$/), norm = function (v) { return String(v == null ? "" : v).replace(/\s/g, ""); }, nm = norm(p.name);
+  if (!m || !nm) return { ok: false, error: "bad_request" };
+  var st = pinState_(p.id, p.pin);
+  if (st !== "ok") return { ok: false, error: st };
+  var same = function (r, gi, ci, ni, namei) { return String(r[gi]).trim() === m[1] && String(Number(r[ci])) === String(Number(m[2])) && String(Number(r[ni])) === String(Number(m[3])) && norm(r[namei]) === nm; };
+  var items = rows_(SHEETS.reflection).filter(function (r) { return same(r, 1, 2, 3, 4); }).map(function (r) { return { date: r[0], sem: r[5], no: r[6], topic: r[7], learned: r[8], felt: r[9], plan: r[10], weather: r[11], checks: r[12], self: r[13] || "" }; });
+  var surveys = rows_(SHEETS.survey).filter(function (r) { return same(r, 2, 3, 4, 5); }).map(function (r) { return { date: r[0], phase: r[1], a: r.slice(6, 18).map(Number) }; });
+  return { ok: true, items: items, surveys: surveys };
+}
+
 /* ---- 명렬표 이름 일치 여부 (이름 자체는 응답하지 않음) ---- */
 function rosterNames_() {
   var rows = rows_(SHEETS.teacher, 4);
@@ -180,7 +194,14 @@ function doPost(e) {
       cp.deleteProperty("SUBMIT_EXP");
       return json_({ ok: true });
     }
-    if (d.type === "pin") { /* 처음 한 번만 등록. 이미 있으면 바꾸지 않음(초기화는 교사만) */
+    if (d.type === "setshare") {
+      if (!keyOk_(d.key)) return json_({ ok: false, error: "unauthorized" });
+      var shp = PropertiesService.getScriptProperties();
+      if (d.on) shp.setProperty("GROWTH_SHARE", "1"); else shp.deleteProperty("GROWTH_SHARE");
+      return json_({ ok: true });
+    }
+    if (d.type === "pin") { /* 처음 한 번만 등록. 이미 있으면 바꾸지 않음(초기화는 교사만). 제출 코드가 켜져 있으면 수업 시간에만 등록 가능 */
+      if (!codeOk_(d.code)) return json_({ ok: false, error: "code" });
       var pid = pinId_(d.id);
       if (!pid || !/^\d{4}$/.test(String(d.pin))) return json_({ ok: false, error: "bad_request" });
       var psh = getSheet_(SHEETS.pin);
@@ -202,12 +223,15 @@ function doPost(e) {
     } else if (d.type === "survey") {
       def = SHEETS.survey;
       row = [d.date, d.phase, d.grade, d.cls, d.num, d.name].concat(d.answers || []);
+    } else if (d.type === "lean") {
+      def = SHEETS.lean;
+      row = [d.date, d.grade, d.cls, d.team, d.by, d.blocks];
     } else if (d.type === "funding") {
       def = SHEETS.funding;
       row = [d.date, d.grade, d.cls, d.num, d.name, d.inv, d.note];
     } else {
       def = SHEETS.reflection;
-      row = [d.date, d.grade, d.cls, d.num, d.name, d.sem, d.no, d.topic, d.learned, d.felt, d.plan, d.weather, d.checks];
+      row = [d.date, d.grade, d.cls, d.num, d.name, d.sem, d.no, d.topic, d.learned, d.felt, d.plan, d.weather, d.checks, d.self];
     }
     getSheet_(def).appendRow(row.map(safe_));
     return json_({ ok: true });
@@ -230,12 +254,15 @@ function doGet(e) {
   try {
     if (p.action === "check") return json_(checkName_(p));
     if (p.action === "code") return json_(codeInfo_(p.code));
+    if (p.action === "growth") return json_(growth_(p));
     if (p.action === "pin") return json_({ ok: true, state: pinState_(p.id, p.pin) });
     if (!keyOk_(p.key)) return json_({ ok: false, error: "unauthorized" });
     var pins = {}, pr = rows_(SHEETS.pin, 2);
     for (var i = 0; i < pr.length; i++) { var m = String(pr[i][0]).match(/^G(\d+)C(\d+)N(\d+)$/); if (m) pins[m[1] + "-" + m[2] + "-" + m[3]] = pin4_(pr[i][1]); }
     var cs = codeState_();
-    if (p.only === "code") return json_({ ok: true, submitCode: { code: cs.code, exp: cs.exp, now: Date.now() } });
+    var share = PropertiesService.getScriptProperties().getProperty("GROWTH_SHARE") === "1";
+    if (p.only === "code") return json_({ ok: true, submitCode: { code: cs.code, exp: cs.exp, now: Date.now() }, growthShare: share });
+    if (p.only === "lean") return json_({ ok: true, leans: rows_(SHEETS.lean) });
     if (p.only === "fund") return json_({ ok: true, fundings: rows_(SHEETS.funding) });
     return json_({
       ok: true,
@@ -244,6 +271,8 @@ function doGet(e) {
       surveys: rows_(SHEETS.survey),
       fundings: rows_(SHEETS.funding),
       submitCode: { code: cs.code, exp: cs.exp, now: Date.now() },
+      growthShare: share,
+      leans: rows_(SHEETS.lean),
       pins: pins,
       teacher: rows_(SHEETS.teacher, 4)
     });
