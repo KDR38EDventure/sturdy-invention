@@ -3208,12 +3208,13 @@ function sidInput(p) {
 }
 
 /* ---------- 5. Stage 5 피보팅 기록 (v1.0 → 피드백 → v2.0) ---------- */
+const PIVOT_IDS = ['1-11', '1-12', '1-13', '2-09', '2-10', '2-11']; /* 시제품 제작·피드백·피보팅 차시 (1-10 팀 빌딩 차시는 제외) */
 const wsVals2 = () => { const g = id => ($(id) ? $(id).value.trim() : ''); return { task: g('td-task'), fact: g('td-fact'), refl: g('td-refl'), v1: g('td-v1'), fb: g('td-fb'), v2: g('td-v2') }; };
 const pivotText = v => [v.v1 && 'v1.0 한계: ' + v.v1, v.fb && '동료 피드백: ' + v.fb, v.v2 && 'v2.0 피보팅: ' + v.v2].filter(Boolean).join('\n');
 WIZ.today.steps = () => { const b = $('tdBody'); if (!b) return []; const cards = Array.from(b.querySelectorAll('.space-y-4 > .card')), rest = Array.from(b.children).filter(c => !c.classList.contains('space-y-4')), btn = rest[rest.length - 1]; if (cards.length < 3) return []; return [rest.slice(0, -1)].concat(cards.slice(0, -1).map(c => [c]), [[cards[cards.length - 1], btn]]); };
 Object.defineProperty(WIZ.today, 'names', { configurable: true, get: () => ['오늘의 차시'].concat(Array.from(document.querySelectorAll('#tdBody .space-y-4 > .card')).map(c => { const l = c.querySelector('.lbl'); return l ? l.textContent.trim() : ''; })) });
 const _renderToday13 = renderToday; renderToday = function () {
-  _renderToday13(); const l = lessonOf($('tdLesson').value); if (!l || stageNo(l) !== 5) return;
+  _renderToday13(); const l = lessonOf($('tdLesson').value); if (!l || !PIVOT_IDS.includes(l.id)) return;
   const a = wsAns[l.id] || {}, first = document.querySelector('#tdBody .space-y-4 > .card'); if (!first || $('td-v1')) return;
   first.insertAdjacentHTML('afterend', `<div class="card p-5 border-2 border-amber-200"><p class="lbl">🔁 피보팅 기록 (v1.0 → v2.0)</p><p class="text-sm text-slate-800 leading-relaxed">실전구현 단계 차시입니다. 1차 시제품의 한계, 친구들의 피드백, 2차 개선안을 차례로 적어 보세요. 실패는 성장의 데이터입니다.</p>
     <label class="lbl mt-3" for="td-v1">① 1차 시제품(v1.0)의 실패·한계</label><textarea id="td-v1" rows="2" class="inp" oninput="wsInput()">${esc(a.v1 || '')}</textarea>
