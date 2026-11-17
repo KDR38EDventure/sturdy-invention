@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DR K's Ed-Venture &amp; E-Career Lab v10.0 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
+  <title>DR K's Ed-Venture &amp; E-Career Lab v10.1 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
   <meta name="description" content="이커리어(E-Career) 6단계와 사회정서학습(SEL)으로 설계한 연간 32차시 진로·기업가정신 수업, 실습 스튜디오, 성찰·상담 통합 플랫폼" />
   <script id="baked">window.__BAKED_LINKS__ = null; window.__BAKED_GAS_URL__ = ""; window.__BAKED_LOCKED__ = false; window.__BAKED_CONTENT__ = null;</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -151,7 +151,7 @@
         <a href="#top" class="flex items-center gap-3 min-w-0">
           <span class="flex-none w-9 h-9 rounded-xl bg-emerald-400 text-[#052E1B] grid place-items-center text-[11px] font-black tracking-tight">DR.K</span>
           <span class="min-w-0">
-            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v10.0</span></span>
+            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v10.1</span></span>
             <span class="hidden sm:block text-[11px] text-slate-300 truncate">이커리어 6단계 × SEL · 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</span>
           </span>
         </a>
@@ -816,7 +816,23 @@
             <label class="btn btn-ghost cursor-pointer"><i data-lucide="upload"></i>JSON 복원<input type="file" accept="application/json" class="hidden" onchange="restoreJson(this)" /></label>
             <button type="button" onclick="yearRollover()" class="btn btn-ghost text-rose-700">🗓️ 학년도 전환</button>
           </div>
+          <div class="card p-6 lg:col-span-3">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div><h3 class="text-lg font-black text-slate-900">명렬표 관리</h3><p class="mt-1 text-sm text-slate-800">엑셀·한글 표에서 <b>학년, 반, 번호, 이름</b> 4칸(또는 <b>학번 5자리, 이름</b>)을 복사해 붙여 넣으세요. 이 기기와 구글 시트 [교사관리] 탭에만 저장되며, 배포용 파일과 학생 화면에는 담기지 않습니다.</p></div>
+            <p id="rsCount" class="text-sm font-bold text-slate-800 num" aria-live="polite"></p>
+          </div>
+          <label for="rsPaste" class="sr-only">명렬표 붙여넣기</label>
+          <textarea id="rsPaste" rows="4" class="inp mt-4 font-mono text-xs" placeholder="1	2	1	홍길동&#10;1	2	2	김가람&#10;또는&#10;10203 이나래"></textarea>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" onclick="importRoster(false)" class="btn btn-emerald">붙여 넣은 내용 추가·갱신</button>
+            <button type="button" onclick="importRoster(true)" class="btn btn-ghost">전체 교체</button>
+            <button type="button" onclick="csvRoster()" class="btn btn-ghost"><i data-lucide="download"></i>명렬표 CSV</button>
+            <button type="button" onclick="clearRoster()" class="btn btn-ghost text-rose-700">전체 삭제</button>
+          </div>
+          <div class="mt-5 flex flex-wrap items-center gap-3"><label class="lbl mb-0" for="rsClass">학급 보기</label><select id="rsClass" data-dyn class="inp w-auto" onchange="renderRoster()"></select></div>
+          <div id="rsList" data-dyn class="mt-3"></div>
         </div>
+      </div>
       </div>
 
       <!-- Tab 6: 핵심 역량 사전·사후 효과성 분석 -->
@@ -836,6 +852,7 @@
             <div class="lg:col-span-2"><label class="lbl" for="efGrade">학년</label><select id="efGrade" class="inp" onchange="renderEffect()"><option value="">전체 학년</option><option value="1">1학년</option><option value="2">2학년</option><option value="3">3학년</option></select></div>
             <div class="lg:col-span-2"><label class="lbl" for="efCls">반</label><select id="efCls" data-dyn class="inp" onchange="renderEffect()"><option value="">전체 반</option></select></div>
             <p id="efCount" class="col-span-2 lg:col-span-8 text-sm font-bold text-slate-800 num" aria-live="polite"></p>
+            <div id="efMissing" data-dyn class="col-span-2 lg:col-span-12" aria-live="polite"></div>
           </div>
           <p class="mt-3 text-xs leading-relaxed text-amber-800 bg-amber-50 border border-amber-200 rounded-xl p-3"><b>해석 유의</b> — 영역별 3문항의 자체 제작 간이 진단입니다. 수업 개선과 사업 결과보고에는 쓸 수 있지만, 타당화된 척도가 아니므로 학위 논문의 측정 도구로는 그대로 쓰지 마세요. 문항은 콘텐츠 편집기에서 검증된 척도 문항으로 바꿀 수 있습니다.</p>
         </div>
@@ -919,7 +936,7 @@
 
         <div class="mt-6 card p-5">
           <h3 class="text-lg font-black text-slate-900">미제출 학생 번호 확인</h3>
-          <p class="mt-1 text-sm text-slate-600">학급과 차시를 고르면 성찰을 낸 번호와 빠진 번호가 표시됩니다. 학급 인원은 한 번 입력하면 기억합니다.</p>
+          <p class="mt-1 text-sm text-slate-600">학급과 차시를 고르면 제출·미제출 현황이 표시됩니다. [데이터·운영]에 명렬표를 넣어 두면 이름까지 나오고, 학생이 입력한 이름이 명렬표와 다르면 알려 줍니다.</p>
           <div class="mt-4 grid grid-cols-2 lg:grid-cols-12 gap-3">
             <div class="lg:col-span-2"><label class="lbl" for="msGrade">학년</label><select id="msGrade" class="inp" onchange="msClassChanged()"><option value="1">1학년</option><option value="2">2학년</option><option value="3">3학년</option></select></div>
             <div class="lg:col-span-2"><label class="lbl" for="msCls">반</label><input id="msCls" type="number" min="1" max="20" class="inp num" oninput="msClassChanged()" placeholder="예) 2" /></div>
@@ -977,7 +994,7 @@
   <footer class="bg-[#0B1120] text-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
       <div>
-        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v10.0</div>
+        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v10.1</div>
         <div class="mt-1">장안여자중학교 미래진로부 · 권대륜 (DR K)</div>
       </div>
       <p class="max-w-xl text-slate-300 leading-relaxed">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
@@ -1671,13 +1688,13 @@ function pinPress(k) {
 document.addEventListener('keydown', e => { if (openId === 'm-pin') { if (/^\d$/.test(e.key)) pinPress(e.key); else if (e.key === 'Backspace') pinPress('del'); } });
 function unlock() { S.unlocked = true; renderReflAdmin(); renderLessons(); renderMaterials(); $('admin-panel').hidden = false; $('navAdmin').hidden = false; $('adminBtnIco').textContent = '🔓'; setAd(S.ad); renderStamps(); renderHwp(); renderLinks(); renderEditor(); icons(); $('admin-panel').scrollIntoView(); toast('교사 관제실이 열렸습니다.'); }
 function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; S.pending = null; setCnsTab('form'); renderLessons(); renderMaterials(); $('admin-panel').hidden = true; $('navAdmin').hidden = true; $('adminBtnIco').textContent = '🔒'; location.hash = '#top'; toast('교사 관제실을 잠갔습니다.'); }
-function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3, 4, 5, 6], n); [1, 2, 3, 4, 5, 6].forEach(i => $('ad-' + i).hidden = i !== n); if (n === 6) renderEffect(); if (n === 1) pushInfo(); if (n === 5) { renderReflAdmin(); renderMissing(); neisCount(); } if (n === 1) syncInfo(); }
+function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3, 4, 5, 6], n); [1, 2, 3, 4, 5, 6].forEach(i => $('ad-' + i).hidden = i !== n); if (n === 6) renderEffect(); if (n === 1) { pushInfo(); renderRoster(); } if (n === 5) { renderReflAdmin(); renderMissing(); neisCount(); } if (n === 1) syncInfo(); }
 
 /* 업무 보드 */
-function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '10.0', savedAt: new Date().toISOString(), done, links, gasUrl, reflections, counseling: cnsList, content, memos, roster, drafts, surveys }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
+function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '10.1', savedAt: new Date().toISOString(), done, links, gasUrl, reflections, counseling: cnsList, content, memos, roster, drafts, surveys, names }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
 function restoreJson(inp) {
   const f = inp.files[0]; if (!f) return; const rd = new FileReader();
-  rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (d.memos && typeof d.memos === 'object') { memos = d.memos; save(K2.memo, memos); } if (d.roster && typeof d.roster === 'object') { roster = d.roster; save(K2.roster, roster); } if (d.drafts && typeof d.drafts === 'object') { drafts = d.drafts; save(K3.drafts, drafts); } if (Array.isArray(d.surveys)) { surveys = d.surveys; save(K3.survey, surveys); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } if (d.content && typeof d.content === 'object') { content = Object.assign(content, d.content); saveContent(); applyContent(); renderCommunity(); renderMatrix(); renderEditor(); } renderAll(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
+  rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (d.memos && typeof d.memos === 'object') { memos = d.memos; save(K2.memo, memos); } if (d.roster && typeof d.roster === 'object') { roster = d.roster; save(K2.roster, roster); } if (d.drafts && typeof d.drafts === 'object') { drafts = d.drafts; save(K3.drafts, drafts); } if (Array.isArray(d.surveys)) { surveys = d.surveys; save(K3.survey, surveys); } if (Array.isArray(d.names)) { names = d.names; save(K3.names, names); renderRoster(); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } if (d.content && typeof d.content === 'object') { content = Object.assign(content, d.content); saveContent(); applyContent(); renderCommunity(); renderMatrix(); renderEditor(); } renderAll(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
   rd.readAsText(f);
 }
 
@@ -2154,23 +2171,12 @@ function mergeSheet(j) {
   save(K.refl, reflections); save(K.cns, cnsList); return { addR, addC, skip };
 }
 /* ----- 미제출 학생 번호 확인 ----- */
-function msClassChanged() { const n = roster[$('msGrade').value + '-' + $('msCls').value]; if (n) $('msSize').value = n; renderMissing(); }
-function renderMissing() {
-  const box = $('msOut'); if (!box) return;
-  const g = $('msGrade').value, c = String(Number($('msCls').value) || ''), id = $('msLesson').value, n = Math.min(60, Math.max(0, Number($('msSize').value) || 0));
-  if (!c || !n) { box.innerHTML = '<p class="text-sm text-slate-600">반과 학급 인원을 입력하면 제출·미제출 번호가 표시됩니다.</p>'; return; }
-  if (roster[g + '-' + c] !== n) { roster[g + '-' + c] = n; save(K2.roster, roster); }
-  const got = new Set(reflections.filter(r => String(r.grade) === g && String(r.cls) === c && String(r.lesson).split(' ')[0] === id).map(r => Number(r.num)));
-  const nums = Array.from({ length: n }, (_, i) => i + 1), miss = nums.filter(x => !got.has(x));
-  box.innerHTML = `<p class="text-sm font-bold text-slate-900 num">${g}학년 ${c}반 · ${id}차시 — 제출 ${n - miss.length}명 / 미제출 ${miss.length}명</p><div class="mt-3 flex flex-wrap gap-1.5">${nums.map(x => `<span class="w-9 h-9 grid place-items-center rounded-lg border text-xs font-extrabold num ${got.has(x) ? 'bg-emerald-600 border-emerald-600 text-white' : 'bg-white border-rose-300 text-rose-700'}" title="${got.has(x) ? '제출' : '미제출'}">${x}</span>`).join('')}</div><div class="mt-3 flex flex-wrap items-center gap-2"><span class="text-sm text-slate-800">미제출 번호: <b class="num">${miss.length ? miss.join(', ') : '없음'}</b></span>${miss.length ? `<button type="button" onclick="copyText('${g}학년 ${c}반 ${id}차시 성찰 미제출: ${miss.join(', ')}번','미제출 번호를 복사했습니다.')" class="btn btn-ghost btn-sm">번호 복사</button>` : ''}</div>`;
-}
-
 /* ----- 학년도 전환 ----- */
 function yearRollover() {
-  if (!confirm('학년도 전환을 진행할까요?\n\n① 현재 데이터를 JSON 파일로 백업합니다.\n② 수업 진도, 성찰 기록, 상담 신청, 역량 진단 응답, 생기부 초안, 차시 메모, 학급 인원을 비웁니다.\n\n수업 내용·링크·편집한 문구는 그대로 유지됩니다.')) return;
+  if (!confirm('학년도 전환을 진행할까요?\n\n① 현재 데이터를 JSON 파일로 백업합니다.\n② 수업 진도, 성찰 기록, 상담 신청, 역량 진단 응답, 생기부 초안, 차시 메모, 학급 인원, 명렬표를 비웁니다.\n\n수업 내용·링크·편집한 문구는 그대로 유지됩니다.')) return;
   backupJson();
   if (!confirm('백업 파일이 내려받아졌는지 확인하셨나요? [확인]을 누르면 기록을 비웁니다.')) return toast('전환을 취소했습니다. 백업 파일만 내려받았습니다.');
-  done = []; reflections = []; cnsList = []; memos = {}; roster = {}; drafts = {}; surveys = []; save(K3.drafts, drafts); save(K3.survey, surveys); save(K.done, done); save(K.refl, reflections); save(K.cns, cnsList); save(K2.memo, memos); save(K2.roster, roster);
+  done = []; reflections = []; cnsList = []; memos = {}; roster = {}; drafts = {}; surveys = []; names = []; save(K3.drafts, drafts); save(K3.survey, surveys); save(K3.names, names); renderRoster(); save(K.done, done); save(K.refl, reflections); save(K.cns, cnsList); save(K2.memo, memos); save(K2.roster, roster);
   S.openStages = null; renderAll(); renderReflAdmin(); renderMissing(); renderEffect(); toast('새 학년도를 시작합니다. 진도와 기록을 비웠습니다.');
 }
 
@@ -2207,13 +2213,12 @@ function timerStop() { clearInterval(CM.run); CM.run = null; }
 function timerSet(s) { timerStop(); CM.left = CM.total = Math.max(0, Math.min(5999, s)); timerPaint(); }
 function beep() { try { const a = new (window.AudioContext || window.webkitAudioContext)(), o = a.createOscillator(), g = a.createGain(); o.connect(g); g.connect(a.destination); o.frequency.value = 880; g.gain.value = .15; o.start(); o.stop(a.currentTime + .7); } catch (e) { /* 소리를 낼 수 없는 환경 */ } }
 function timerToggle() { if (CM.run) { timerStop(); return timerPaint(); } if (CM.left <= 0) CM.left = CM.total || 300; CM.run = setInterval(() => { CM.left--; if (CM.left <= 0) { CM.left = 0; timerStop(); beep(); toast('⏰ 시간이 끝났습니다.'); } timerPaint(); }, 1000); timerPaint(); }
-function renderPick() { const el = $('cmPick'); if (!el) return; const last = CM.picked[CM.picked.length - 1]; el.innerHTML = `<div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 text-center"><div class="text-5xl font-black num text-slate-900">${last ? last + '<span class="text-2xl">' + esc(CM.unit) + '</span>' : '?'}</div><div class="mt-2 text-xs font-bold text-slate-600 num">${CM.picked.length ? '순서: ' + CM.picked.join(' → ') : `1~${CM.max}${esc(CM.unit)} 중에서 뽑습니다`} · 남은 ${CM.max - CM.picked.length}</div></div>`; }
-function pickOne() { const pool = Array.from({ length: CM.max }, (_, i) => i + 1).filter(x => !CM.picked.includes(x)); if (!pool.length) return toast('모두 뽑았습니다. [다시 섞기]를 누르세요.'); CM.picked.push(pool[Math.floor(Math.random() * pool.length)]); renderPick(); }
 let memoTimer;
 function saveMemo() { clearTimeout(memoTimer); memoTimer = setTimeout(() => { const v = $('cmMemo') ? $('cmMemo').value : ''; if (v.trim()) memos[CM.id] = v; else delete memos[CM.id]; save(K2.memo, memos); }, 400); }
 document.addEventListener('keydown', e => { if (e.key !== 'Escape') return; const had = !!openId; setTimeout(() => { if (!had && CM.id) closeClass(); }, 0); }, true);
 /* ===== v10.0 추가: 교사 데이터 양방향 동기화 · 전송 실패 복구 큐 · 나의 성장 기록 · 역량 사전·사후 진단 · A4 리포트 인쇄 ===== */
-const K3 = { outbox: 'drk8.outbox', survey: 'drk8.survey', drafts: 'drk8.drafts', tstamp: 'drk8.tstamp', dirty: 'drk8.dirty' };
+const K3 = { outbox: 'drk8.outbox', survey: 'drk8.survey', drafts: 'drk8.drafts', tstamp: 'drk8.tstamp', dirty: 'drk8.dirty', names: 'drk8.names' };
+let names = load(K3.names, null) || []; if (!Array.isArray(names)) names = [];
 let outbox = load(K3.outbox, null) || [], surveys = load(K3.survey, null) || [], drafts = load(K3.drafts, null) || {}, tstamp = load(K3.tstamp, null) || {}, dirty = load(K3.dirty, null) || [];
 if (!Array.isArray(outbox)) outbox = []; if (!Array.isArray(surveys)) surveys = []; if (!Array.isArray(dirty)) dirty = [];
 const hash = s => { let h = 5381; for (const ch of String(s)) h = ((h << 5) + h + ch.codePointAt(0)) >>> 0; return h.toString(36); };
@@ -2244,7 +2249,7 @@ window.addEventListener('online', () => flushOutbox(false));
 /* ----- 1-B. 교사 관리 데이터 양방향 동기화 (상담 상태·메모, 생기부 초안, 차시 메모, 진도·링크·편집 내용·학급 인원) ----- */
 const cnsHash = c => hash([c.applicantType, c.studentName, c.note].join('|'));
 const cnsMeta = c => ({ status: c.status || '접수대기', memo: c.memo || '', memoAt: c.memoAt || '' });
-const STATE_KEYS = { 'state:done': () => done, 'state:links': () => links, 'state:content': () => content, 'state:roster': () => roster };
+const STATE_KEYS = { 'state:done': () => done, 'state:links': () => links, 'state:content': () => content, 'state:roster': () => roster, 'state:names': () => names };
 const snap = { cns: {}, memo: {}, draft: {} };
 let applying = false;
 function snapInit() { cnsList.forEach(c => snap.cns[cnsHash(c)] = JSON.stringify(cnsMeta(c))); snap.memo = Object.assign({}, memos); snap.draft = Object.assign({}, drafts); }
@@ -2255,7 +2260,7 @@ function onSaved(k) {
   if (k === K.cns) cnsList.forEach(c => { const h = cnsHash(c), m = JSON.stringify(cnsMeta(c)); if (snap.cns[h] === undefined) { snap.cns[h] = m; if (m !== '{"status":"접수대기","memo":"","memoAt":""}') tMark('cns:' + h); } else if (snap.cns[h] !== m) { snap.cns[h] = m; tMark('cns:' + h); } });
   else if (k === K2.memo) Array.from(new Set(Object.keys(memos).concat(Object.keys(snap.memo)))).forEach(id => { if ((memos[id] || '') !== (snap.memo[id] || '')) { snap.memo[id] = memos[id] || ''; tMark('memo:' + id); } });
   else if (k === K3.drafts) Array.from(new Set(Object.keys(drafts).concat(Object.keys(snap.draft)))).forEach(id => { if ((drafts[id] || '') !== (snap.draft[id] || '')) { snap.draft[id] = drafts[id] || ''; tMark('draft:' + id); } });
-  else if (k === K.done) tMark('state:done'); else if (k === K.links) tMark('state:links'); else if (k === K.content) tMark('state:content'); else if (k === K2.roster) tMark('state:roster');
+  else if (k === K.done) tMark('state:done'); else if (k === K.links) tMark('state:links'); else if (k === K.content) tMark('state:content'); else if (k === K2.roster) tMark('state:roster'); else if (k === K3.names) tMark('state:names');
 }
 function tValue(key) {
   const i = key.indexOf(':'), kind = key.slice(0, i), id = key.slice(i + 1);
@@ -2284,10 +2289,11 @@ function applyTeacher(rows) {
     else if (kind === 'draft') { if (v) drafts[id] = String(v); else delete drafts[id]; snap.draft[id] = drafts[id] || ''; }
     else if (key === 'state:done' && Array.isArray(v)) done = v;
     else if (key === 'state:roster' && v && typeof v === 'object') roster = v;
+    else if (key === 'state:names' && Array.isArray(v)) names = v.filter(x => x && x.name);
     else if (key === 'state:links' && v && typeof v === 'object') { rawSave(K.links, Object.assign({}, v, { _v: 2 })); reload = true; }
     else if (key === 'state:content' && v && typeof v === 'object') { rawSave(K.content, v); reload = true; }
   });
-  applyCnsMeta(); rawSave(K.cns, cnsList); rawSave(K2.memo, memos); rawSave(K3.drafts, drafts); rawSave(K.done, done); rawSave(K2.roster, roster); rawSave(K3.tstamp, tstamp); rawSave(K3.dirty, dirty);
+  applyCnsMeta(); rawSave(K.cns, cnsList); rawSave(K2.memo, memos); rawSave(K3.drafts, drafts); rawSave(K.done, done); rawSave(K2.roster, roster); rawSave(K3.names, names); rawSave(K3.tstamp, tstamp); rawSave(K3.dirty, dirty);
   return { n, reload };
 }
 function mergeSurveys(rows) {
@@ -2310,7 +2316,7 @@ async function syncFromSheet() {
     applying = true; const r = mergeSheet(j), sv = mergeSurveys(j.surveys), tr = applyTeacher(j.teacher); applying = false;
     save(K2.lastsync, new Date().toLocaleString('ko-KR'));
     if (tr.reload) { toast('다른 기기에서 바꾼 링크·편집 내용을 불러왔습니다. 화면을 새로 고칩니다.'); return setTimeout(() => location.reload(), 1200); }
-    renderAll(); renderReflAdmin(); renderMissing(); renderEffect(); if (S.cnsTab === 'board') renderCnsBoard(); syncInfo(); pushInfo();
+    renderAll(); renderReflAdmin(); renderMissing(); renderEffect(); renderRoster(); if (S.cnsTab === 'board') renderCnsBoard(); syncInfo(); pushInfo();
     toast(`성찰 ${r.addR}건, 상담 ${r.addC}건, 역량진단 ${sv}건, 교사 관리 데이터 ${tr.n}건을 불러왔습니다.` + (r.skip ? ` 형식이 다른 ${r.skip}행은 건너뛰었습니다.` : ''));
   } catch (err) { applying = false; if (el) el.textContent = '동기화 실패: ' + err.message; toast('시트와 동기화하지 못했습니다. 배포 설정(액세스: 모든 사용자)과 동기화 키를 확인하세요.'); }
 }
@@ -2398,6 +2404,7 @@ function renderEffect() {
   const rows = effectRows(), st = effectStats(rows);
   $('efCount').textContent = `응답 ${rows.length}건 · 사전 ${rows.filter(r => r.phase === '사전').length} · 사후 ${rows.filter(r => r.phase === '사후').length} · 사전·사후 모두 응답한 학생 ${st[4].n}명`;
   box.innerHTML = rows.length ? `<table class="w-full text-sm border-collapse min-w-[760px]"><thead><tr class="bg-[#0F172A] text-white text-left"><th class="p-2.5 rounded-tl-xl">영역</th><th class="p-2.5">사전 평균 (n)</th><th class="p-2.5">사후 평균 (n)</th><th class="p-2.5">대응 n</th><th class="p-2.5">향상도 (사후−사전)</th><th class="p-2.5">t (df)</th><th class="p-2.5">p</th><th class="p-2.5 rounded-tr-xl">효과크기 d</th></tr></thead><tbody>${st.map(s => `<tr class="border-b border-slate-200 ${s.name === '전체' ? 'font-extrabold' : ''}"><th class="p-2.5 text-left text-slate-900">${s.name}</th><td class="p-2.5 text-slate-800 num">${f2(s.pre)} (${s.nPre})</td><td class="p-2.5 text-slate-800 num">${f2(s.post)} (${s.nPost})</td><td class="p-2.5 text-slate-800 num">${s.n}</td><td class="p-2.5 num font-extrabold ${s.diff > 0 ? 'text-emerald-700' : s.diff < 0 ? 'text-rose-700' : 'text-slate-800'}">${s.diff == null ? '-' : (s.diff > 0 ? '+' : '') + f2(s.diff)}</td><td class="p-2.5 text-slate-800 num">${s.t == null ? '-' : f2(s.t) + ' (' + s.df + ')'}</td><td class="p-2.5 text-slate-800 num">${fp(s.p)}</td><td class="p-2.5 text-slate-800 num">${f2(s.dz)}</td></tr>`).join('')}</tbody></table>` : '<p class="p-8 text-center text-sm text-slate-600">아직 진단 응답이 없습니다. 학생에게 진단 링크를 안내하거나 [시트와 동기화]로 불러오세요.</p>';
+  rosterEffect();
   drawBars($('efChart'), AREAS.map(a => a.replace(' ', '\n')).concat('전체'), [{ data: st.map(s => s.pre || 0), color: '#94A3B8' }, { data: st.map(s => s.post || 0), color: '#059669' }], 5, { wrap: true });
 }
 function csvEffectRaw() { const rows = effectRows(); if (!rows.length) return toast('내보낼 진단 응답이 없습니다.'); download('역량진단_원자료_' + today() + '.csv', csvOf([['작성 일시', '구분', '학년', '반', '번호', '이름'].concat(SV_ITEMS.map((_, i) => '문항' + (i + 1)), AREAS.map(a => a + ' 평균'), ['전체 평균'])].concat(rows.map(r => [r.date, r.phase, r.grade, r.cls, r.num, r.name].concat(r.a, svScores(r.a).map(v => v.toFixed(2)))))), 'text/csv;charset=utf-8'); }
@@ -2411,6 +2418,63 @@ function printRefl() { const list = raFiltered(); if (!list.length) return toast
 function printCns() { const c = cnsList.find(x => x.id === S.cnsSel); if (!c) return toast('인쇄할 신청서를 선택하세요.'); const d = diagnose(c); printReport('진로·창업 상담일지', `${c.studentName} · ${c.status || '접수대기'}`, prTable(['항목', '내용'], [['접수일 / 신청 구분', `${c.createdAt} / ${c.applicantType}`], ['대상 / 연락처', `${c.studentName} / ${c.contact || '-'}`], ['방식 / 분야', `${c.method} / ${c.category}`], ['희망 일시', `${c.date || '미정'} ${c.timeSlot}`], ['사전 자기진단', `진로확신도 ${c.clarity}점, 스트레스 ${c.stress}점, 시급도 ${c.urgency}`], ['사전 분석 유형', d.title.replace(/^\S+\s/, '')], ['사전 질문·고민', c.note], ['도입 질문', d.qs.map((q, i) => `${i + 1}) ${q}`).join(' ')], ['코칭 전략', d.st], ['상담 일지 메모', c.memo || '']]) + '<div class="pr-sign">상담 교사: ______________ (서명)</div>'); }
 function printEffect() { const rows = effectRows(); if (!rows.length) return toast('인쇄할 진단 응답이 없습니다.'); const st = effectStats(rows); printReport('핵심 역량 사전·사후 진단 결과', $('efCount').textContent, prTable(['영역', '사전 평균 (n)', '사후 평균 (n)', '대응 n', '향상도', 't (df)', 'p', '효과크기 d'], st.map(s => [s.name, `${f2(s.pre)} (${s.nPre})`, `${f2(s.post)} (${s.nPost})`, s.n, s.diff == null ? '-' : (s.diff > 0 ? '+' : '') + f2(s.diff), s.t == null ? '-' : `${f2(s.t)} (${s.df})`, fp(s.p), f2(s.dz)])) + `<div class="pr-bars">${st.map(s => `<div class="pr-bar-row"><span>${esc(s.name)}</span><div><div class="pr-bar pre" style="width:${(s.pre || 0) * 20}%">사전 ${f2(s.pre)}</div><div class="pr-bar post" style="width:${(s.post || 0) * 20}%">사후 ${f2(s.post)}</div></div></div>`).join('')}</div><p class="pr-note">※ 5점 척도 자기보고식 간이 진단(영역별 3문항)이며, 향상도와 t 검정은 사전·사후에 모두 응답한 학생만으로 계산했습니다.</p>`); }
 function printPlan() { const l = lessonOf(S.planId); if (!l) return; const n = stageNo(l); printReport(`${l.id}차시 교수·학습 과정안 (45분)`, l.title, prTable(['항목', '내용'], [['단계 · SEL', `${l.stage} ${l.stageName} · ${l.sel}`], ['학습목표', l.goal]]) + prTable(['단계', '교수·학습 활동', '자료'], planRows(l).map(r => [`${r[0]} (${r[1]})`, r[2].map(x => '◦ ' + x).join('\n'), r[3]])) + prTable(['평가', '수준별 기준'], [['과정중심 평가 관점', EVAL[n]], ['도달', RUBRIC[n][0]], ['진행 중', RUBRIC[n][1]], ['지원 필요', RUBRIC[n][2]]])); }
+/* ===== v10.1 추가: 명렬표 관리 (교사 기기와 [교사관리] 시트에만 저장, 배포 파일에는 담기지 않음) ===== */
+const classNames = (g, c) => names.filter(x => String(x.g) === String(g) && String(x.c) === String(c)).sort((a, b) => a.n - b.n);
+const classKeys = () => Array.from(new Set(names.map(x => x.g + '-' + x.c))).sort((a, b) => a.localeCompare(b, 'ko', { numeric: true }));
+function parseRoster(text) {
+  const out = []; let bad = 0;
+  String(text).split(/\r?\n/).forEach(line => { const t = line.trim().split(/[\t,;\s]+/).filter(Boolean); if (!t.length) return; let g, c, n, name;
+    if (/^\d{5}$/.test(t[0]) && t[1]) { g = t[0][0]; c = String(Number(t[0].slice(1, 3))); n = Number(t[0].slice(3)); name = t.slice(1).join(' '); }
+    else if (t.length >= 4 && /^\d+/.test(t[0]) && /^\d+/.test(t[1]) && /^\d+/.test(t[2])) { g = String(parseInt(t[0], 10)); c = String(parseInt(t[1], 10)); n = parseInt(t[2], 10); name = t.slice(3).join(' '); }
+    else { if (/\d/.test(line)) bad++; return; }
+    if (!/^[1-3]$/.test(g) || !(Number(c) >= 1) || !(n >= 1) || !name) { bad++; return; } out.push({ g, c, n, name }); });
+  return { out, bad };
+}
+function saveNames(msg) { names.sort((a, b) => a.g - b.g || a.c - b.c || a.n - b.n); save(K3.names, names); renderRoster(); renderMissing(); renderEffect(); if (msg) toast(msg); }
+function importRoster(replace) {
+  const r = parseRoster($('rsPaste').value); if (!r.out.length) return toast('읽을 수 있는 행이 없습니다. “학년 반 번호 이름” 또는 “학번 이름” 형식으로 붙여 넣으세요.');
+  if (replace && names.length && !confirm(`기존 명렬표 ${names.length}명을 지우고 ${r.out.length}명으로 바꿀까요?`)) return;
+  if (replace) names = []; r.out.forEach(x => { const i = names.findIndex(y => y.g === x.g && y.c === x.c && y.n === x.n); if (i >= 0) names[i] = x; else names.push(x); });
+  $('rsPaste').value = ''; saveNames(`${r.out.length}명을 반영했습니다.` + (r.bad ? ` 형식이 맞지 않는 ${r.bad}행은 건너뛰었습니다.` : ''));
+}
+function removeName(g, c, n) { names = names.filter(x => !(x.g === g && x.c === c && x.n === n)); saveNames('명렬표에서 삭제했습니다.'); }
+function clearRoster() { if (!names.length) return toast('명렬표가 비어 있습니다.'); if (!confirm(`명렬표 ${names.length}명을 모두 삭제할까요?`)) return; names = []; saveNames('명렬표를 모두 삭제했습니다.'); }
+function csvRoster() { if (!names.length) return toast('내보낼 명렬표가 없습니다.'); download('명렬표_' + today() + '.csv', csvOf([['학년', '반', '번호', '이름']].concat(names.map(x => [x.g, x.c, x.n, x.name]))), 'text/csv;charset=utf-8'); }
+function renderRoster() {
+  const box = $('rsList'); if (!box) return; const keys = classKeys(), sel = $('rsClass'), cur = sel.value;
+  sel.innerHTML = keys.length ? keys.map(k => `<option value="${k}">${k.replace('-', '학년 ')}반 (${classNames(...k.split('-')).length}명)</option>`).join('') : '<option value="">등록된 학급 없음</option>'; if (keys.includes(cur)) sel.value = cur;
+  $('rsCount').textContent = `전체 ${names.length}명 · ${keys.length}개 학급`;
+  const [g, c] = (sel.value || '-').split('-'), list = sel.value ? classNames(g, c) : [];
+  box.innerHTML = list.length ? `<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">${list.map(x => `<div class="flex items-center justify-between gap-2 rounded-xl bg-slate-50 border border-slate-200 px-3 py-2 text-sm"><span class="font-bold text-slate-900"><span class="num text-slate-600">${x.n}번</span> ${esc(x.name)}</span><button type="button" onclick="removeName('${x.g}','${x.c}',${x.n})" class="text-xs font-bold text-rose-700 underline underline-offset-2">삭제</button></div>`).join('')}</div>` : '<p class="text-sm text-slate-600">명렬표를 붙여 넣으면 학급별로 표시됩니다.</p>';
+}
+/* 미제출 확인: 명렬표가 있으면 이름까지, 없으면 학급 인원 수 기준 */
+function msClassChanged() { const g = $('msGrade').value, c = String(Number($('msCls').value) || ''), list = classNames(g, c); if (list.length) $('msSize').value = list[list.length - 1].n; else if (roster[g + '-' + c]) $('msSize').value = roster[g + '-' + c]; renderMissing(); }
+function renderMissing() {
+  const box = $('msOut'); if (!box) return;
+  const g = $('msGrade').value, c = String(Number($('msCls').value) || ''), id = $('msLesson').value, list = classNames(g, c), n = list.length ? list[list.length - 1].n : Math.min(60, Math.max(0, Number($('msSize').value) || 0));
+  if (!c || !n) { box.innerHTML = '<p class="text-sm text-slate-600">반을 입력하면 제출·미제출 현황이 표시됩니다. 명렬표가 없는 반은 학급 인원도 입력하세요.</p>'; return; }
+  if (!list.length && roster[g + '-' + c] !== n) { roster[g + '-' + c] = n; save(K2.roster, roster); }
+  const got = {}; reflections.filter(r => String(r.grade) === g && String(r.cls) === c && String(r.lesson).split(' ')[0] === id).forEach(r => got[Number(r.num)] = r.name);
+  const nm = {}; list.forEach(x => nm[x.n] = x.name); const nums = list.length ? list.map(x => x.n) : Array.from({ length: n }, (_, i) => i + 1), miss = nums.filter(x => !(x in got)), label = x => x + '번' + (nm[x] ? ' ' + nm[x] : '');
+  const diff = Object.keys(got).map(Number).filter(x => list.length && (!nm[x] || nm[x].replace(/\s/g, '') !== String(got[x]).replace(/\s/g, '')));
+  box.innerHTML = `<p class="text-sm font-bold text-slate-900 num">${g}학년 ${c}반 · ${id}차시 — 제출 ${nums.length - miss.length}명 / 미제출 ${miss.length}명${list.length ? ' · 명렬표 기준' : ''}</p><div class="mt-3 flex flex-wrap gap-1.5">${nums.map(x => `<span class="min-w-[2.25rem] h-9 px-1.5 grid place-items-center rounded-lg border text-xs font-extrabold num ${x in got ? 'bg-emerald-600 border-emerald-600 text-white' : 'bg-white border-rose-300 text-rose-700'}" title="${esc(label(x))} · ${x in got ? '제출' : '미제출'}">${x}</span>`).join('')}</div>
+    <div class="mt-3 flex flex-wrap items-center gap-2"><span class="text-sm text-slate-800">미제출: <b>${miss.length ? esc(miss.map(label).join(', ')) : '없음'}</b></span>${miss.length ? `<button type="button" onclick="copyText(this.dataset.t,'미제출 명단을 복사했습니다.')" data-t="${esc(`${g}학년 ${c}반 ${id}차시 성찰 미제출: ${miss.map(label).join(', ')}`)}" class="btn btn-ghost btn-sm">명단 복사</button>` : ''}</div>
+    ${diff.length ? `<p class="mt-3 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-xl p-3"><b>명렬표와 다른 입력</b> — ${esc(diff.map(x => `${x}번: 제출 이름 “${got[x]}”` + (nm[x] ? ` / 명렬표 “${nm[x]}”` : ' / 명렬표에 없는 번호')).join(', '))}</p>` : ''}`;
+}
+/* 효과성 분석: 선택한 학급의 사전·사후 미응답자 */
+function rosterEffect() {
+  const el = $('efMissing'); if (!el) return; const g = $('efGrade').value, c = $('efCls').value, list = g && c ? classNames(g, c) : [];
+  if (!list.length) { el.innerHTML = ''; return; }
+  const miss = ph => { const have = new Set(surveys.filter(r => String(r.grade) === g && String(r.cls) === c && r.phase === ph).map(r => Number(r.num))); return list.filter(x => !have.has(x.n)).map(x => `${x.n}번 ${x.name}`); }, pre = miss('사전'), post = miss('사후');
+  el.innerHTML = `<p class="text-sm text-slate-800"><b>사전 미응답 ${pre.length}명</b> ${esc(pre.join(', ') || '없음')}</p><p class="mt-1 text-sm text-slate-800"><b>사후 미응답 ${post.length}명</b> ${esc(post.join(', ') || '없음')}</p>`;
+}
+/* 수업 모드 뽑기: 학급을 고르면 이름으로 뽑기 */
+function renderPick() {
+  const el = $('cmPick'); if (!el) return; const keys = classKeys(), pool = CM.cls ? classNames(...CM.cls.split('-')) : [], total = pool.length || CM.max, last = CM.picked[CM.picked.length - 1], show = x => pool.length ? esc((pool.find(p => p.n === x) || {}).name || x) : x + '<span class="text-2xl">' + esc(CM.unit) + '</span>';
+  el.innerHTML = (keys.length ? `<label for="cmCls" class="sr-only">학급 선택</label><select id="cmCls" onchange="CM.cls=this.value;CM.picked=[];renderPick()" class="inp mb-3 py-1.5"><option value="">번호·모둠으로 뽑기</option>${keys.map(k => `<option value="${k}" ${CM.cls === k ? 'selected' : ''}>${k.replace('-', '학년 ')}반 이름으로 뽑기</option>`).join('')}</select>` : '')
+    + `<div class="rounded-2xl bg-slate-50 border border-slate-200 p-4 text-center"><div class="text-5xl font-black num text-slate-900">${last ? show(last) : '?'}</div><div class="mt-2 text-xs font-bold text-slate-600 num">${CM.picked.length ? '순서: ' + CM.picked.map(x => pool.length ? esc((pool.find(p => p.n === x) || {}).name || x) : x).join(' → ') : (pool.length ? `${pool.length}명 중에서 뽑습니다` : `1~${CM.max}${esc(CM.unit)} 중에서 뽑습니다`)} · 남은 ${total - CM.picked.length}</div></div>`;
+}
+function pickOne() { const list = CM.cls ? classNames(...CM.cls.split('-')).map(x => x.n) : [], pool = (list.length ? list : Array.from({ length: CM.max }, (_, i) => i + 1)).filter(x => !CM.picked.includes(x)); if (!pool.length) return toast('모두 뽑았습니다. [다시 섞기]를 누르세요.'); CM.picked.push(pool[Math.floor(Math.random() * pool.length)]); renderPick(); }
 init();
   </script>
 </body>
