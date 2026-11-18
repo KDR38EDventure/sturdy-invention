@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DR K's Ed-Venture &amp; E-Career Lab v11.7 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
+  <title>DR K's Ed-Venture &amp; E-Career Lab v11.8 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
   <meta name="description" content="이커리어(E-Career) 6단계와 사회정서학습(SEL)으로 설계한 연간 32차시 진로·기업가정신 수업, 실습 스튜디오, 성찰·상담 통합 플랫폼" />
   <script id="baked">window.__BAKED_LINKS__ = {"sem1Canva":"https://canva.link/3x38dxnfhw7iewa","sem1Padlet":"https://padlet.com/colossalalarmstudies/2026-ffgaz2aomuqgoaf2","sem2Canva":"https://canva.link/i4uuzd8lqxz5vbw","sem2Padlet":"https://padlet.com/colossalalarmstudies/2-s023oj0r70i3s3lgcb6w","gems":{},"cases":{"case-5":"https://padlet.com/colossalalarmstudies/2026-ffgaz2aomuqgoaf2","case-6":"https://padlet.com/colossalalarmstudies/2026-vrt46gilhq6m0cgv"},"lessons":{"1-14":{"canva":"https://canva.link/115zhekpmjb8sg3"},"2-12":{"canva":"https://canva.link/115zhekpmjb8sg3"}},"community":{"hub":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d1":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d2":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d3":"https://gemini.google.com/gem/10eerQ6B4cmGZn74TqXSDb7fqhdFoI44e?usp=sharing","d4":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri"},"camp":{}}; window.__BAKED_GAS_URL__ = "https://script.google.com/macros/s/AKfycbzPIPKZIKEStJRj_F77A_B24vesCARwkVsKT5oPNIQ8qeW6PdTWo8SL_AC-wwUd_tUf/exec"; window.__BAKED_LOCKED__ = true; window.__BAKED_CONTENT__ = {"lessons":{},"cases":{},"roadmap":null,"members":null,"resources":null,"materials":null,"pin":"","texts":{},"edits":{},"hidden":[]};</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -154,7 +154,7 @@
         <a href="#top" class="flex items-center gap-3 min-w-0">
           <span class="flex-none w-9 h-9 rounded-xl bg-emerald-400 text-[#052E1B] grid place-items-center text-[11px] font-black tracking-tight">DR.K</span>
           <span class="min-w-0">
-            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v11.7</span></span>
+            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v11.8</span></span>
             <span class="hidden sm:block text-[11px] text-slate-300 truncate">이커리어 6단계 × SEL · 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</span>
           </span>
         </a>
@@ -797,9 +797,10 @@
       <div class="eyebrow text-emerald-700">Today's Lesson &amp; Studio</div>
       <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-900">오늘의 수업·실습</h2>
       <p class="mt-2 text-slate-600">오늘 차시의 활동지를 쓰고 실습 도구를 바로 사용하세요. 쓴 내용은 이 기기에 자동 저장되고, 한 번에 성찰 폼으로 옮길 수 있습니다.</p>
-      <div class="mt-6 card p-5 grid sm:grid-cols-3 gap-3">
+      <div class="mt-6 card p-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div><label class="lbl" for="tdGrade">학년</label><select id="tdGrade" class="inp" onchange="renderToday()"><option value="1">1학년</option><option value="2">2학년</option><option value="3">3학년</option></select></div>
-        <div class="sm:col-span-2"><label class="lbl" for="tdLesson">차시</label><select id="tdLesson" data-dyn class="inp" onchange="renderToday()"></select></div>
+        <div><label class="lbl" for="tdCls">반 <span class="font-semibold text-slate-500">(우리 반 Padlet)</span></label><input id="tdCls" type="number" min="1" max="20" class="inp num" placeholder="예: 1" oninput="tdClsSet(this.value)" /></div>
+        <div class="col-span-2"><label class="lbl" for="tdLesson">차시</label><select id="tdLesson" data-dyn class="inp" onchange="renderToday()"></select></div>
       </div>
       <div id="tdBody" data-dyn class="mt-5"></div>
       <div class="mt-5 card p-5">
@@ -1207,7 +1208,7 @@
   <footer class="bg-[#0B1120] text-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
       <div>
-        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v11.7</div>
+        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v11.8</div>
         <div class="mt-1">장안여자중학교 미래진로부 · 권대륜 (DR K)</div>
       </div>
       <p class="max-w-xl text-slate-300 leading-relaxed">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
@@ -1431,6 +1432,18 @@
         <div id="anBody" data-dyn class="mt-4 max-h-[60vh] overflow-auto"></div>
       </div>
       <div class="px-6 pb-6 flex flex-wrap justify-end gap-2"><button type="button" onclick="anonRefresh()" class="btn btn-ghost">시트에서 새로 불러오기</button><button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button></div>
+    </div>
+  </div>
+  <div id="m-padhub" class="modal hidden" role="dialog" aria-modal="true" aria-label="학급 Padlet 모음">
+    <div class="modal-box max-w-4xl">
+      <div class="p-6">
+        <h3 class="text-lg font-black text-slate-900">📌 학급 Padlet 모음</h3>
+        <p class="mt-1 text-xs text-slate-600">버튼을 누르면 화면 안에서 보드가 열립니다. 보드 공개 범위(비밀번호·학교 계정 로그인 등)는 Padlet의 [공유] 설정에서 정합니다.</p>
+        <div id="padHubBody" data-dyn class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        <h4 class="mt-5 text-sm font-extrabold text-slate-900">차시별 올릴 섹션</h4>
+        <ul id="padHubSec" data-dyn class="mt-2 text-sm text-slate-800 space-y-1"></ul>
+        <div class="mt-5 flex gap-2"><button type="button" onclick="closeModal();setAd(3)" class="btn btn-ghost">마스터 링크 제어판에서 고치기</button><button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button></div>
+      </div>
     </div>
   </div>
   <div id="m-libedit" class="modal hidden" role="dialog" aria-modal="true" aria-label="특강·팀빌딩 항목 편집">
@@ -2024,7 +2037,7 @@ function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; S.pendin
 function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3, 4, 5, 6], n); [1, 2, 3, 4, 5, 6].forEach(i => $('ad-' + i).hidden = i !== n); if (n === 6) renderEffect(); if (n === 1) { pushInfo(); renderRoster(); } if (n === 5) { renderReflAdmin(); renderMissing(); neisCount(); } if (n === 1) { syncInfo(); aiFill(); } if (n === 5) renderLedger(); }
 
 /* 업무 보드 */
-function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '11.7', savedAt: new Date().toISOString(), done: baseDone(), links, gasUrl, reflections, counseling: cnsList, content, memos: baseMemos(), roster, drafts, surveys, names, doneMap, memoMap, fundings }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
+function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '11.8', savedAt: new Date().toISOString(), done: baseDone(), links, gasUrl, reflections, counseling: cnsList, content, memos: baseMemos(), roster, drafts, surveys, names, doneMap, memoMap, fundings }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
 function restoreJson(inp) {
   const f = inp.files[0]; if (!f) return; const rd = new FileReader();
   rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; curCls = ''; save(K4.cls, ''); setTimeout(renderClsBar, 0); if (d.doneMap && typeof d.doneMap === 'object') { doneMap = d.doneMap; save(K4.doneMap, doneMap); } if (d.memoMap && typeof d.memoMap === 'object') { memoMap = d.memoMap; save(K4.memoMap, memoMap); } if (Array.isArray(d.fundings)) { fundings = d.fundings; save(K4.fund, fundings); } if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (d.memos && typeof d.memos === 'object') { memos = d.memos; save(K2.memo, memos); } if (d.roster && typeof d.roster === 'object') { roster = d.roster; save(K2.roster, roster); } if (d.drafts && typeof d.drafts === 'object') { drafts = d.drafts; save(K3.drafts, drafts); } if (Array.isArray(d.surveys)) { surveys = d.surveys; save(K3.survey, surveys); } if (Array.isArray(d.names)) { names = d.names; save(K3.names, names); renderRoster(); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } if (d.content && typeof d.content === 'object') { content = Object.assign(content, d.content); saveContent(); applyContent(); renderCommunity(); renderMatrix(); renderEditor(); } renderAll(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
@@ -3443,7 +3456,7 @@ function exportTemplate() {
   c.querySelectorAll('script').forEach(s => { if (s.id === 'baked' || s.src) return; s.textContent = s.textContent
     .replace(/const DEFAULT_LINKS = \{[\s\S]*?\};\n/, 'const DEFAULT_LINKS = {};\n').replace(/const CASES = \[[\s\S]*?\];\n/, 'const CASES = [];\n')
     .replace(/const DEFAULT_WORKS = \[[\s\S]*?\];\n/, 'const DEFAULT_WORKS = [];\n').replace(/DEFAULT_WORKS\.push\([\s\S]*?\n\);\n/, '')
-    .replace(/const DEFAULT_CLASS_LINKS = \{[\s\S]*?\};\n/, 'const DEFAULT_CLASS_LINKS = {};\n').replace(/const DEFAULT_MEMBERS = \[[\s\S]*?\];\n/, 'const DEFAULT_MEMBERS = [];\n')
+    .replace(/const DEFAULT_CLASS_LINKS = \{[\s\S]*?\};\n/, 'const DEFAULT_CLASS_LINKS = {};\n').replace(/\nconst DEFAULT_CLASS_BOARDS = \{[^\n]*\n/, '\nconst DEFAULT_CLASS_BOARDS = {};\n').replace(/\nconst PAD_SEC_HINTS = \[[^\n]*\n/, '\nconst PAD_SEC_HINTS = [];\n').replace(/\nconst LIB_SEED = \[\n[\s\S]*?\n\];\n/, '\nconst LIB_SEED = [];\n').replace(/const DEFAULT_MEMBERS = \[[\s\S]*?\];\n/, 'const DEFAULT_MEMBERS = [];\n')
     .replace(/^\s*\{ k: '학생 발표물'.*\n/gm, ''); });
   c.querySelector('#baked').textContent = 'window.__BAKED_LINKS__ = {}; window.__BAKED_GAS_URL__ = ""; window.__BAKED_CLASSES__ = {}; window.__BAKED_LOCKED__ = true; window.__BAKED_CONTENT__ = ' + JSON.stringify({ hidden: ['profile', 'community', 'showcase'] }) + ';';
   download('index_template.html', '<!DOCTYPE html>\n' + c.outerHTML, 'text/html;charset=utf-8');
@@ -4050,7 +4063,51 @@ const _applyTeacher18 = applyTeacher; applyTeacher = function (rows) {
   return r;
 };
 function init21() { renderLib(); }
-init(); init11(); init12(); init13(); init14(); init15(); init16(); init17(); init18(); init19(); init20(); init21();
+/* ===== v11.8 학급별 Padlet 연결 강화 =====
+   - 학급마다 대표 보드 + 추가 보드 여러 개(links.classes[k].boards = [{t,u}])
+   - 차시별 Padlet 섹션 안내(links.padSec = {차시: '섹션 이름'})
+   - 학생 [오늘의 수업]에서 학년·반을 고르면 우리 반 Padlet과 올릴 섹션 안내
+   - 교사용 [학급 Padlet 모음] */
+const PAD_SEC_HINTS = ['진로와 직업의 의미', '직업흥미검사(H)', '직업적성검사', '나 사용 설명서', 'YEEP 기업가정신 역량진단', '국립중앙박물관 현장체험활동', 'AI 기업가정신 프로젝트', '모둠별 C레벨 역할 정하기', '브랜드 아이덴티티 구축하기', '마스코트 디자인 스케치하기', '파운더 최종 창업 선언 및 서명', '기업가정신 AI 동영상 제작', 'AER 키즈노트 사례 탐구', 'Ai 식물도감']; /* 진로 2학년 1반 보드의 섹션 제목 */
+const DEFAULT_CLASS_BOARDS = { '2-1': [{ t: '창창 아이디어 스케치', u: 'https://padlet.com/colossalalarmstudies/2-1-g5nkiidvm47f1o05' }], '2-2': [{ t: '창창 아이디어 스케치', u: 'https://padlet.com/colossalalarmstudies/2-2-t1xkk54xn79ov21b' }] };
+if (!links._cl && !Object.keys(links.classes || {}).length) links.classes = JSON.parse(JSON.stringify(DEFAULT_CLASS_LINKS));
+if (!links._cb) { links.classes = links.classes || {}; Object.entries(DEFAULT_CLASS_BOARDS).forEach(([k, b]) => { const o = links.classes[k] = links.classes[k] || {}; if (!Array.isArray(o.boards) || !o.boards.length) o.boards = JSON.parse(JSON.stringify(b)); }); }
+links.padSec = links.padSec || {};
+const clsBoards = k => { const o = (links.classes || {})[k] || {}, L = []; if (safeUrl(o.padlet)) L.push({ t: '우리 반 대표 Padlet', u: o.padlet, main: true }); (o.boards || []).forEach(b => { if (b && safeUrl(b.u)) L.push({ t: b.t || 'Padlet', u: b.u }); }); return L; };
+const padBtn = (k, b, cls) => `<button type="button" onclick="openLink(${esc(JSON.stringify(k.replace('-', '학년 ') + '반 ' + b.t))}, ${esc(JSON.stringify(b.u))})" class="btn ${cls || (b.main ? 'btn-ink' : 'btn-ghost')} btn-sm">📌 ${esc(b.t)}</button>`;
+/* 학생 오늘의 수업 */
+let tdCls = load('drk8.tdc', '') || '';
+function tdClsSet(v) { tdCls = String(Number(v) || ''); save('drk8.tdc', tdCls); clearTimeout(tdClsSet.t); tdClsSet.t = setTimeout(renderToday, 300); }
+function tdPadHtml() {
+  const g = $('tdGrade') ? $('tdGrade').value : '', id = $('tdLesson') ? $('tdLesson').value : '', k = g && tdCls ? g + '-' + tdCls : '', sec = (links.padSec || {})[id];
+  if (!k) return `<div id="tdPad" class="card p-4 mb-4 bg-sky-50 border-sky-200"><p class="text-sm font-bold text-sky-900">📌 위에서 <b>반</b>을 입력하면 우리 반 Padlet 바로가기가 나타납니다.</p></div>`;
+  const L = clsBoards(k);
+  if (!L.length) return `<div id="tdPad" class="card p-4 mb-4"><p class="text-sm text-slate-600">${esc(k.replace('-', '학년 '))}반 Padlet이 아직 연결되지 않았습니다. 선생님께 여쭤 보세요.</p></div>`;
+  return `<div id="tdPad" class="card p-4 mb-4 border-2 border-sky-300 bg-sky-50"><div class="flex flex-wrap items-center gap-2"><span class="text-sm font-black text-sky-900">📌 ${esc(k.replace('-', '학년 '))}반 Padlet</span>${L.map(b => padBtn(k, b)).join('')}</div>${sec ? `<p class="mt-2 text-sm font-bold text-slate-900">오늘 활동 결과는 대표 Padlet의 <span class="px-1.5 py-0.5 rounded bg-white border border-sky-300 text-sky-800">${esc(sec)}</span> 칸에 올리세요.</p>` : ''}<p class="mt-1 text-[11px] text-slate-600">올리기 전에 확인 — 얼굴·실명·연락처 등 개인정보는 올리지 않습니다.</p></div>`;
+}
+const _renderToday19 = renderToday; renderToday = function () { const c = $('tdCls'); if (c && document.activeElement !== c) c.value = tdCls; _renderToday19(); const b = $('tdBody'); if (b) b.insertAdjacentHTML('afterbegin', tdPadHtml()); };
+/* 칠판 모드: 이 차시 섹션 안내 + 학급 보드 */
+const _renderClass19 = renderClass; renderClass = function () { _renderClass19(); if (!CM.id) return; const sec = (links.padSec || {})[CM.id], L = curCls ? clsBoards(curCls) : []; if (!sec && !L.length) return; const h = `<div class="card p-4 mt-4 border-2 border-sky-300 bg-sky-50"><div class="flex flex-wrap items-center gap-2"><span class="text-sm font-black text-sky-900">📌 ${curCls ? esc(curCls.replace('-', '학년 ')) + '반 ' : ''}Padlet</span>${L.map(b => padBtn(curCls, b)).join('')}</div>${sec ? `<p class="mt-2 text-base font-bold text-slate-900">오늘 결과물 → <span class="px-2 py-0.5 rounded bg-white border border-sky-300 text-sky-800">${esc(sec)}</span> 칸</p>` : ''}</div>`; const g = $('classBody').querySelector('.grid.lg\\:grid-cols-12'); if (g) g.insertAdjacentHTML('beforebegin', h); else $('classBody').insertAdjacentHTML('beforeend', h); };
+/* 교사: 학급 Padlet 모음 */
+function openPadHub() { requireAdmin(() => { const keys = classLinkKeys(); $('padHubBody').innerHTML = keys.length ? keys.map(k => { const L = clsBoards(k); return `<div class="rounded-xl border border-slate-200 bg-white p-3"><p class="text-sm font-black text-slate-900">${esc(k.replace('-', '학년 '))}반</p><div class="mt-2 flex flex-wrap gap-1.5">${L.length ? L.map(b => padBtn(k, b)).join('') : '<span class="text-xs text-slate-500">연결 전 — 마스터 링크 제어판 ①-3·①-4에서 넣으세요</span>'}</div></div>`; }).join('') : '<p class="text-sm text-slate-600">학급이 없습니다.</p>'; $('padHubSec').innerHTML = LESSONS.filter(l => links.padSec[l.id]).map(l => `<li><b class="num">${l.id}</b> ${esc(l.title.split(':')[0])} → <span class="font-bold text-sky-800">${esc(links.padSec[l.id])}</span></li>`).join('') || '<li class="text-slate-500">아직 지정한 차시가 없습니다. 마스터 링크 제어판 ①-5에서 지정하세요.</li>'; openModal('m-padhub'); }); }
+const _clsBarHtml19 = clsBarHtml; clsBarHtml = function () { return _clsBarHtml19().replace('👥 C레벨 팀 편성</button>', '👥 C레벨 팀 편성</button><button type="button" onclick="openPadHub()" class="btn btn-ghost btn-sm">📌 학급 Padlet 모음</button>'); };
+/* 마스터 링크 제어판: ①-4 추가 보드, ①-5 차시별 섹션 */
+const _renderLinks19 = renderLinks; renderLinks = function () {
+  _renderLinks19(); const p = $('linkPanel'); if (!p) return; const anchor = Array.from(p.querySelectorAll('section')).find(s => (s.querySelector('h3') || {}).textContent && s.querySelector('h3').textContent.startsWith('①-3'));
+  const h = `<section class="card p-6"><h3 class="text-base font-extrabold text-slate-900">①-4 학급별 추가 Padlet 보드 (활동별 보드를 여러 개 쓸 때)</h3><p class="mt-1 text-xs text-slate-600">한 줄에 하나씩 <b>보드 이름 | 주소</b> 형식으로 적습니다. 예: 창창 아이디어 스케치 | https://padlet.com/…</p><div class="mt-4 grid md:grid-cols-2 gap-4">${classLinkKeys().map(k => `<div><label class="lbl" for="lk-cb-${k}">${esc(k.replace('-', '학년 '))}반 추가 보드</label><textarea id="lk-cb-${k}" class="inp text-xs" rows="3" placeholder="보드 이름 | https://padlet.com/…">${esc((((links.classes || {})[k] || {}).boards || []).map(b => `${b.t} | ${b.u}`).join('\n'))}</textarea></div>`).join('')}</div></section>
+    <section class="card p-6"><h3 class="text-base font-extrabold text-slate-900">①-5 차시별 Padlet 섹션 안내</h3><p class="mt-1 text-xs text-slate-600">학급 Padlet을 활동별 섹션으로 나눠 쓰는 경우, 차시마다 학생이 올릴 섹션 이름을 적습니다. 학생 [오늘의 수업]과 칠판 모드에 “오늘 결과물 → ○○ 칸”으로 안내됩니다. 칸을 누르면 진로 2학년 1반 보드의 섹션 이름이 추천됩니다.</p><datalist id="padSecList">${PAD_SEC_HINTS.map(s => `<option value="${esc(s)}"></option>`).join('')}</datalist><details class="mt-3"><summary class="cursor-pointer text-sm font-extrabold text-slate-900">32차시 섹션 지정 펼치기 (지정 ${Object.keys(links.padSec || {}).length}개)</summary><div class="mt-3 grid md:grid-cols-2 gap-2">${LESSONS.map(l => `<div class="grid grid-cols-5 gap-2 items-center"><label for="lk-ps-${l.id}" class="col-span-2 text-xs font-bold text-slate-800">${l.id} ${esc(l.title.split(':')[0].slice(0, 18))}</label><input id="lk-ps-${l.id}" list="padSecList" class="inp text-xs col-span-3 py-1.5" maxlength="40" value="${esc((links.padSec || {})[l.id] || '')}" placeholder="섹션 이름" /></div>`).join('')}</div></details></section>`;
+  if (anchor) anchor.insertAdjacentHTML('afterend', h); else p.insertAdjacentHTML('beforeend', h);
+};
+const _saveLinks19 = saveLinks; saveLinks = function () {
+  const boards = {}, secs = {}; let bad = 0;
+  classLinkKeys().forEach(k => { const el = $('lk-cb-' + k); if (!el) return; boards[k] = el.value.split('\n').map(line => { const m = line.split('|'); if (m.length < 2) { if (line.trim()) bad++; return null; } const u = safeUrl(m.slice(1).join('|').trim()); if (!u) { bad++; return null; } return { t: m[0].trim().slice(0, 30) || 'Padlet', u }; }).filter(Boolean); });
+  const hasSec = !!$('lk-ps-' + LESSONS[0].id); LESSONS.forEach(l => { const el = $('lk-ps-' + l.id); if (el && el.value.trim()) secs[l.id] = el.value.trim().slice(0, 40); });
+  _saveLinks19();
+  links.classes = links.classes || {}; Object.entries(boards).forEach(([k, b]) => { if (b.length) { links.classes[k] = links.classes[k] || {}; links.classes[k].boards = b; } else if (links.classes[k]) delete links.classes[k].boards; });
+  if (hasSec) links.padSec = secs; links._cb = 1; save(K.links, links); renderClsBar(); if (bad) toast(`추가 보드 ${bad}줄은 ‘이름 | https://주소’ 형식이 아니어서 제외했습니다.`);
+};
+function init22() { if ($('tdCls')) $('tdCls').value = tdCls; }
+init(); init11(); init12(); init13(); init14(); init15(); init16(); init17(); init18(); init19(); init20(); init21(); init22();
   </script>
 </body>
 </html>
