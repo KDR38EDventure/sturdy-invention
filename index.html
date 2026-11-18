@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DR K's Ed-Venture &amp; E-Career Lab v11.5 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
+  <title>DR K's Ed-Venture &amp; E-Career Lab v11.6 | 이커리어 6단계 &amp; SEL 기반 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</title>
   <meta name="description" content="이커리어(E-Career) 6단계와 사회정서학습(SEL)으로 설계한 연간 32차시 진로·기업가정신 수업, 실습 스튜디오, 성찰·상담 통합 플랫폼" />
   <script id="baked">window.__BAKED_LINKS__ = {"sem1Canva":"https://canva.link/3x38dxnfhw7iewa","sem1Padlet":"https://padlet.com/colossalalarmstudies/2026-ffgaz2aomuqgoaf2","sem2Canva":"https://canva.link/i4uuzd8lqxz5vbw","sem2Padlet":"https://padlet.com/colossalalarmstudies/2-s023oj0r70i3s3lgcb6w","gems":{},"cases":{"case-5":"https://padlet.com/colossalalarmstudies/2026-ffgaz2aomuqgoaf2","case-6":"https://padlet.com/colossalalarmstudies/2026-vrt46gilhq6m0cgv"},"lessons":{"1-14":{"canva":"https://canva.link/115zhekpmjb8sg3"},"2-12":{"canva":"https://canva.link/115zhekpmjb8sg3"}},"community":{"hub":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d1":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d2":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri","d3":"https://gemini.google.com/gem/10eerQ6B4cmGZn74TqXSDb7fqhdFoI44e?usp=sharing","d4":"https://padlet.com/colossalalarmstudies/2026-edventure-season-2-s025ft52webuaf2qdwri"},"camp":{}}; window.__BAKED_GAS_URL__ = "https://script.google.com/macros/s/AKfycbzPIPKZIKEStJRj_F77A_B24vesCARwkVsKT5oPNIQ8qeW6PdTWo8SL_AC-wwUd_tUf/exec"; window.__BAKED_LOCKED__ = true; window.__BAKED_CONTENT__ = {"lessons":{},"cases":{},"roadmap":null,"members":null,"resources":null,"materials":null,"pin":"","texts":{},"edits":{},"hidden":[]};</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -154,7 +154,7 @@
         <a href="#top" class="flex items-center gap-3 min-w-0">
           <span class="flex-none w-9 h-9 rounded-xl bg-emerald-400 text-[#052E1B] grid place-items-center text-[11px] font-black tracking-tight">DR.K</span>
           <span class="min-w-0">
-            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v11.5</span></span>
+            <span class="block text-sm font-extrabold tracking-tight truncate">DR K's Ed-Venture &amp; E-Career Lab <span class="ml-1 align-middle text-[10px] font-bold text-emerald-300 border border-emerald-400 rounded-full px-1.5 py-0.5">v11.6</span></span>
             <span class="hidden sm:block text-[11px] text-slate-300 truncate">이커리어 6단계 × SEL · 연간 32차시 진로·기업가정신 &amp; 상담 통합 플랫폼</span>
           </span>
         </a>
@@ -986,6 +986,14 @@
               <div class="col-span-2"><label class="lbl" for="schedTitle">할 일 · 일정명</label><input id="schedTitle" class="inp" maxlength="80" required placeholder="예: 비즈쿨 결과보고서 제출" /></div>
               <div><label class="lbl" for="schedCat">분류</label><select id="schedCat" class="inp"></select></div>
               <div><label class="lbl" for="schedRepeat">반복</label><select id="schedRepeat" class="inp"><option value="">없음</option><option value="w">매주</option><option value="m">매월</option></select></div>
+              <div class="col-span-2 rounded-xl bg-slate-50 border border-slate-200 p-3">
+                <p class="text-xs font-extrabold text-slate-800">아이젠하워 분류</p>
+                <div class="mt-2 grid grid-cols-2 gap-3">
+                  <label class="flex items-center gap-2 text-sm font-bold text-slate-800"><input id="schedImp" type="checkbox" class="w-4 h-4 accent-emerald-600" />⭐ 중요한 일</label>
+                  <div><label class="sr-only" for="schedUrg">긴급도</label><select id="schedUrg" class="inp py-1.5 text-sm"><option value="auto">⚡ 긴급: 자동(마감 3일 이내)</option><option value="y">⚡ 긴급함</option><option value="n">긴급하지 않음</option></select></div>
+                </div>
+                <p class="mt-1.5 text-[11px] text-slate-600">중요 = 학생 성장·내 목표에 직접 이어지는 일 · 긴급 = 마감이 임박해 지금 손대야 하는 일</p>
+              </div>
               <div class="col-span-2"><label class="lbl" for="schedMemo">메모 <span class="font-semibold text-slate-500">(선택)</span></label><textarea id="schedMemo" class="inp" rows="2" maxlength="300" placeholder="준비물, 관련 공문 번호, 장소 등"></textarea></div>
             </div>
             <input id="schedEditId" type="hidden" />
@@ -1005,15 +1013,17 @@
           <div class="lg:col-span-2 space-y-6">
             <div class="card p-5">
               <div class="flex flex-wrap items-center justify-between gap-2">
-                <h3 class="text-lg font-black text-slate-900">할 일 목록</h3>
+                <h3 class="text-lg font-black text-slate-900">할 일 관리</h3>
                 <div class="inline-flex p-1 rounded-xl bg-slate-100 border border-slate-200" role="tablist" aria-label="일정 보기">
+                  <button type="button" id="schedV-mx" onclick="schedSetView('mx')" class="tabbtn px-3 py-1.5 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-800 hover:bg-white">아이젠하워 매트릭스</button>
                   <button type="button" id="schedV-up" onclick="schedSetView('up')" class="tabbtn px-3 py-1.5 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-800 hover:bg-white">다가오는 일정</button>
                   <button type="button" id="schedV-all" onclick="schedSetView('all')" class="tabbtn px-3 py-1.5 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-800 hover:bg-white">전체</button>
                   <button type="button" id="schedV-done" onclick="schedSetView('done')" class="tabbtn px-3 py-1.5 rounded-lg text-xs font-bold" data-on="bg-[#0F172A] text-white" data-off="text-slate-800 hover:bg-white">완료</button>
                 </div>
               </div>
-              <div id="schedSummary" data-dyn class="mt-3 grid grid-cols-3 gap-2"></div>
+              <div id="schedSummary" data-dyn class="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2"></div>
               <div id="schedFilterNote" data-dyn class="mt-3"></div>
+              <div id="schedMatrix" data-dyn class="mt-3"></div>
               <ul id="schedList" data-dyn class="mt-3 space-y-2"></ul>
             </div>
             <div class="card p-5">
@@ -1177,7 +1187,7 @@
   <footer class="bg-[#0B1120] text-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
       <div>
-        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v11.5</div>
+        <div class="font-extrabold text-white">DR K's Ed-Venture &amp; E-Career Lab v11.6</div>
         <div class="mt-1">장안여자중학교 미래진로부 · 권대륜 (DR K)</div>
       </div>
       <p class="max-w-xl text-slate-300 leading-relaxed">“정답은 없습니다. 다만 관찰과 근거 없는 주장은 받지 않으며, 모든 실수는 피보팅(성장)의 데이터로 기록됩니다.”</p>
@@ -1401,6 +1411,16 @@
         <div id="anBody" data-dyn class="mt-4 max-h-[60vh] overflow-auto"></div>
       </div>
       <div class="px-6 pb-6 flex flex-wrap justify-end gap-2"><button type="button" onclick="anonRefresh()" class="btn btn-ghost">시트에서 새로 불러오기</button><button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button></div>
+    </div>
+  </div>
+  <div id="m-scedit" class="modal hidden" role="dialog" aria-modal="true" aria-label="쇼케이스 사례 수정">
+    <div class="modal-box max-w-3xl">
+      <div class="p-6">
+        <h3 class="text-lg font-black text-slate-900">✏️ 쇼케이스 사례 수정</h3>
+        <p class="mt-1 text-xs text-slate-600">학생 실명은 보호자·학생 동의서를 받은 경우에만 ‘게시 동의 확인’에 Y를 넣으세요. Y가 아니면 실명 모드에서도 성만 표시됩니다.</p>
+        <div id="scEdBody" data-dyn class="mt-4 grid sm:grid-cols-2 gap-3"></div>
+        <div class="mt-5 flex flex-wrap gap-2"><button type="button" onclick="scEditSave()" class="btn btn-emerald">저장</button><button type="button" onclick="scEditReset()" class="btn btn-ghost">기본값으로 되돌리기</button><button type="button" onclick="closeModal()" class="btn btn-ink">닫기</button></div>
+      </div>
     </div>
   </div>
   <div id="m-cteam" class="modal hidden" role="dialog" aria-modal="true" aria-label="C레벨 팀 편성">
@@ -1974,7 +1994,7 @@ function lockAdmin() { if (S.editing) toggleEdit(); S.unlocked = false; S.pendin
 function setAd(n) { S.ad = n; paintGroup('adTab-', [1, 2, 3, 4, 5, 6], n); [1, 2, 3, 4, 5, 6].forEach(i => $('ad-' + i).hidden = i !== n); if (n === 6) renderEffect(); if (n === 1) { pushInfo(); renderRoster(); } if (n === 5) { renderReflAdmin(); renderMissing(); neisCount(); } if (n === 1) { syncInfo(); aiFill(); } if (n === 5) renderLedger(); }
 
 /* 업무 보드 */
-function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '11.5', savedAt: new Date().toISOString(), done: baseDone(), links, gasUrl, reflections, counseling: cnsList, content, memos: baseMemos(), roster, drafts, surveys, names, doneMap, memoMap, fundings }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
+function backupJson() { download('drk_ecareer_backup_' + today() + '.json', JSON.stringify({ version: '11.6', savedAt: new Date().toISOString(), done: baseDone(), links, gasUrl, reflections, counseling: cnsList, content, memos: baseMemos(), roster, drafts, surveys, names, doneMap, memoMap, fundings }, null, 2), 'application/json'); toast('전체 데이터를 JSON으로 백업했습니다.'); }
 function restoreJson(inp) {
   const f = inp.files[0]; if (!f) return; const rd = new FileReader();
   rd.onload = () => { try { const d = JSON.parse(rd.result); if (!confirm('백업 파일의 내용으로 이 기기의 데이터를 덮어쓸까요?')) return; curCls = ''; save(K4.cls, ''); setTimeout(renderClsBar, 0); if (d.doneMap && typeof d.doneMap === 'object') { doneMap = d.doneMap; save(K4.doneMap, doneMap); } if (d.memoMap && typeof d.memoMap === 'object') { memoMap = d.memoMap; save(K4.memoMap, memoMap); } if (Array.isArray(d.fundings)) { fundings = d.fundings; save(K4.fund, fundings); } if (Array.isArray(d.done)) { done = d.done; save(K.done, done); } if (d.links) { links = Object.assign(links, d.links); save(K.links, links); } if (typeof d.gasUrl === 'string') { gasUrl = d.gasUrl; save(K.gas, gasUrl); } if (d.memos && typeof d.memos === 'object') { memos = d.memos; save(K2.memo, memos); } if (d.roster && typeof d.roster === 'object') { roster = d.roster; save(K2.roster, roster); } if (d.drafts && typeof d.drafts === 'object') { drafts = d.drafts; save(K3.drafts, drafts); } if (Array.isArray(d.surveys)) { surveys = d.surveys; save(K3.survey, surveys); } if (Array.isArray(d.names)) { names = d.names; save(K3.names, names); renderRoster(); } if (Array.isArray(d.reflections)) { reflections = d.reflections; save(K.refl, reflections); } if (Array.isArray(d.counseling)) { cnsList = d.counseling; save(K.cns, cnsList); } if (d.content && typeof d.content === 'object') { content = Object.assign(content, d.content); saveContent(); applyContent(); renderCommunity(); renderMatrix(); renderEditor(); } renderAll(); renderLinks(); toast('백업을 복원했습니다.'); } catch (e) { toast('올바른 백업 파일이 아닙니다.'); } inp.value = ''; };
@@ -2026,7 +2046,7 @@ function exportHtml() {
   c.querySelectorAll('[data-dyn]').forEach(el => el.innerHTML = '');
   c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
   c.querySelectorAll('.modal').forEach(m => m.classList.add('hidden'));
-  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad', 'qkBody', 'scState', 'qrCode', 'syncInfo', 'schedList', 'schedCal', 'schedSummary', 'schedBadge', 'ctBody', 'classBody'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; }); c.querySelectorAll('[id$="IdMsg"]').forEach(el => el.remove()); /* 명렬표 확인 문구·제출 코드가 배포 파일에 남지 않게 함 */
+  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad', 'qkBody', 'scState', 'qrCode', 'syncInfo', 'schedList', 'schedCal', 'schedSummary', 'schedBadge', 'ctBody', 'classBody', 'schedMatrix'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; }); c.querySelectorAll('[id$="IdMsg"]').forEach(el => el.remove()); /* 명렬표 확인 문구·제출 코드가 배포 파일에 남지 않게 함 */
   const fr = c.querySelector('#emFrame'); if (fr) fr.removeAttribute('src');
   c.querySelector('#admin-panel').setAttribute('hidden', ''); c.querySelector('#navAdmin').setAttribute('hidden', '');
   const body = c.querySelector('body'); body.className = ''; body.removeAttribute('style');
@@ -3156,10 +3176,10 @@ renderCases = function () {
   const aw = c => c.award ? `<span class="self-start text-[11px] font-extrabold px-2.5 py-1 rounded-full border bg-amber-50 border-amber-200 text-amber-800">🏆 ${esc(c.award)}</span>` : '';
   const by = c => byText(c.by, c) ? `<p class="mt-1 text-xs font-bold text-slate-700">${esc(byText(c.by, c))}</p>` : '', img = c => safeUrl(c.img) ? `<img src="${esc(safeUrl(c.img))}" alt="${esc(c.title)} 대표 이미지" loading="lazy" referrerpolicy="no-referrer" class="w-full h-40 object-cover rounded-xl border border-slate-200 mb-3" />` : '';
   const btn = c => `<button type="button" onclick="openCase('${esc(c.id)}')" class="btn mt-4 ${url(c) ? 'btn-ink' : 'btn-ghost'}">${url(c) ? '발표 자료 보기' : '자료 링크 연결 전 [입력 필요]'}</button>`;
-  const card = (c, i) => `<article class="card p-6 flex flex-col">${img(c)}<div class="flex items-center justify-between gap-2"><span class="text-3xl font-black text-slate-600 num" aria-hidden="true">${pad2(i + 1)}</span><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border ${chip(c)}">${esc(c.stageTag)}</span></div><div class="mt-3 flex">${aw(c)}</div><h3 class="mt-2 text-lg font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3>${by(c)}<p class="mt-1.5 text-xs font-bold text-amber-700">${esc(c.badge)}</p><p class="mt-3 text-sm text-slate-800 leading-relaxed flex-1">${esc(c.desc)}</p>${btn(c)}</article>`;
-  const tile = c => `<article class="card p-4 flex flex-col">${img(c)}<div class="flex flex-col gap-1.5 items-start">${aw(c)}<span class="text-[11px] font-extrabold px-2 py-0.5 rounded-full border ${chip(c)}">${esc(c.stageTag)}</span></div><h3 class="mt-2 text-sm font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3>${by(c)}${c.ym ? `<p class="mt-1 text-xs font-semibold text-slate-600 num">${esc(c.ym)}</p>` : ''}<div class="flex-1"></div>${btn(c)}</article>`;
+  const card = (c, i) => `<article data-cid="${esc(c.id)}" class="card p-6 flex flex-col">${img(c)}<div class="flex items-center justify-between gap-2"><span class="text-3xl font-black text-slate-600 num" aria-hidden="true">${pad2(i + 1)}</span><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border ${chip(c)}">${esc(c.stageTag)}</span></div><div class="mt-3 flex">${aw(c)}</div><h3 class="mt-2 text-lg font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3>${by(c)}<p class="mt-1.5 text-xs font-bold text-amber-700">${esc(c.badge)}</p><p class="mt-3 text-sm text-slate-800 leading-relaxed flex-1">${esc(c.desc)}</p>${btn(c)}</article>`;
+  const tile = c => `<article data-cid="${esc(c.id)}" class="card p-4 flex flex-col">${img(c)}<div class="flex flex-col gap-1.5 items-start">${aw(c)}<span class="text-[11px] font-extrabold px-2 py-0.5 rounded-full border ${chip(c)}">${esc(c.stageTag)}</span></div><h3 class="mt-2 text-sm font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3>${by(c)}${c.ym ? `<p class="mt-1 text-xs font-semibold text-slate-600 num">${esc(c.ym)}</p>` : ''}<div class="flex-1"></div>${btn(c)}</article>`;
   const byYm = () => CASES.slice().sort((a, b) => (b.ym || '').localeCompare(a.ym || ''));
-  const line = (c, full) => `<li class="pl-6 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ${c.award ? 'bg-amber-500' : 'bg-emerald-600'} border-2 border-white" aria-hidden="true"></span><div class="text-xs font-extrabold text-slate-700 num">${esc(c.ym || '시기 [입력 필요]')}</div>${full ? `<article class="mt-1 card p-5">${img(c)}<div class="flex flex-wrap items-center gap-2">${aw(c)}<span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border ${chip(c)}">${esc(c.stageTag)}</span></div><h3 class="mt-2 text-lg font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3>${by(c)}<p class="mt-1.5 text-xs font-bold text-amber-700">${esc(c.badge)}</p><p class="mt-2 text-sm text-slate-800 leading-relaxed">${esc(c.desc)}</p>${btn(c)}</article>` : `<button type="button" onclick="openCase('${esc(c.id)}')" class="text-left text-sm font-bold text-slate-900 hover:underline">${c.award ? '🏆 ' : ''}${esc(c.title)}${byText(c.by, c) ? ` <span class="font-semibold text-slate-600">· ${esc(byText(c.by, c))}</span>` : ''}</button>`}</li>`;
+  const line = (c, full) => `<li class="pl-6 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full ${c.award ? 'bg-amber-500' : 'bg-emerald-600'} border-2 border-white" aria-hidden="true"></span><div class="text-xs font-extrabold text-slate-700 num">${esc(c.ym || '시기 [입력 필요]')}</div>${full ? `<article data-cid="${esc(c.id)}" class="mt-1 card p-5">${img(c)}<div class="flex flex-wrap items-center gap-2">${aw(c)}<span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border ${chip(c)}">${esc(c.stageTag)}</span></div><h3 class="mt-2 text-lg font-extrabold text-slate-900 leading-snug">${esc(c.title)}</h3>${by(c)}<p class="mt-1.5 text-xs font-bold text-amber-700">${esc(c.badge)}</p><p class="mt-2 text-sm text-slate-800 leading-relaxed">${esc(c.desc)}</p>${btn(c)}</article>` : `<button type="button" onclick="openCase('${esc(c.id)}')" class="text-left text-sm font-bold text-slate-900 hover:underline">${c.award ? '🏆 ' : ''}${esc(c.title)}${byText(c.by, c) ? ` <span class="font-semibold text-slate-600">· ${esc(byText(c.by, c))}</span>` : ''}</button>`}</li>`;
   const head = (t, s) => `<div class="mb-3"><h3 class="text-xl font-black text-slate-900">${t}</h3>${s ? `<p class="mt-0.5 text-sm text-slate-600">${s}</p>` : ''}</div>`;
   if (!CASES.length) { host.className = 'mt-8'; host.innerHTML = '<div class="card p-10 text-center text-slate-600">표시할 사례가 없습니다. 교사 관제실 → 콘텐츠 편집기 → [쇼케이스 구성]에서 사례를 추가하세요.</div>'; return; }
   if (L === 'gallery') { host.className = 'mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3'; host.innerHTML = CASES.map(tile).join(''); return; }
@@ -3388,7 +3408,7 @@ function exportTemplate() {
   const c = document.documentElement.cloneNode(true);
   c.querySelectorAll('style').forEach(s => { if (/tailwindcss|--tw-/.test(s.textContent)) s.remove(); });
   c.querySelectorAll('[data-dyn]').forEach(el => el.innerHTML = ''); c.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable')); c.querySelectorAll('.modal').forEach(m => m.classList.add('hidden'));
-  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad', 'qkBody', 'scState', 'qrCode', 'syncInfo', 'schedList', 'schedCal', 'schedSummary', 'schedBadge', 'ctBody', 'classBody'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; }); c.querySelectorAll('[id$="IdMsg"]').forEach(el => el.remove()); /* 명렬표 확인 문구·제출 코드가 배포 파일에 남지 않게 함 */
+  ['wsBody', 'plBody', 'printArea', 'qrBox', 'toast', 'pinDots', 'pinPad', 'qkBody', 'scState', 'qrCode', 'syncInfo', 'schedList', 'schedCal', 'schedSummary', 'schedBadge', 'ctBody', 'classBody', 'schedMatrix'].forEach(id => { const el = c.querySelector('#' + id); if (el) el.innerHTML = ''; }); c.querySelectorAll('[id$="IdMsg"]').forEach(el => el.remove()); /* 명렬표 확인 문구·제출 코드가 배포 파일에 남지 않게 함 */
   const fr = c.querySelector('#emFrame'); if (fr) fr.removeAttribute('src'); c.querySelector('#admin-panel').setAttribute('hidden', ''); c.querySelector('#navAdmin').setAttribute('hidden', ''); const body = c.querySelector('body'); body.className = ''; body.removeAttribute('style');
   c.querySelectorAll('script').forEach(s => { if (s.id === 'baked' || s.src) return; s.textContent = s.textContent
     .replace(/const DEFAULT_LINKS = \{[\s\S]*?\};\n/, 'const DEFAULT_LINKS = {};\n').replace(/const CASES = \[[\s\S]*?\];\n/, 'const CASES = [];\n')
@@ -3538,11 +3558,14 @@ const K7 = { sched: 'drk8.sched' };
 const SCHED_CAT = [['class', '수업', 'bg-emerald-100 text-emerald-800'], ['bizcool', '비즈쿨·행사', 'bg-amber-100 text-amber-800'], ['train', '연수·강의', 'bg-sky-100 text-sky-800'], ['contest', '대회·공모', 'bg-rose-100 text-rose-800'], ['admin', '행정·공문', 'bg-slate-200 text-slate-800'], ['research', '연구·학위', 'bg-violet-100 text-violet-800'], ['etc', '기타', 'bg-slate-100 text-slate-700']];
 let scheds = load(K7.sched, null) || [];
 if (!Array.isArray(scheds)) scheds = [];
-let schedView = 'up', schedDay = '', schedYm = today().slice(0, 7);
+let schedView = 'mx', schedDay = '', schedYm = today().slice(0, 7);
 const schedCat = c => SCHED_CAT.find(x => x[0] === c) || SCHED_CAT[6];
 const schedDiff = d => Math.round((new Date(d + 'T00:00:00') - new Date(today() + 'T00:00:00')) / 864e5);
 const schedDday = d => { const n = schedDiff(d); return n === 0 ? 'D-DAY' : n > 0 ? 'D-' + n : 'D+' + (-n); };
 const schedNext = d => { const n = new Date(d + 'T00:00:00'); n.setDate(n.getDate() + 1); return n.getFullYear() + String(n.getMonth() + 1).padStart(2, '0') + String(n.getDate()).padStart(2, '0'); };
+const schedUrgent = it => it.urg === 'y' || (it.urg !== 'n' && !it.done && schedDiff(it.date) <= 3);
+const schedQ = it => it.imp ? (schedUrgent(it) ? 1 : 2) : (schedUrgent(it) ? 3 : 4);
+const SCHED_QS = { 1: ['🔥 지금 하기', '중요 · 긴급', 'border-rose-300 bg-rose-50', 'text-rose-800', '오늘 바로 처리합니다.'], 2: ['📅 계획하기', '중요 · 긴급하지 않음', 'border-emerald-300 bg-emerald-50', 'text-emerald-800', '성장의 핵심 영역입니다. 달력에 시간을 먼저 확보하세요.'], 3: ['🤝 맡기기·빠르게', '긴급 · 중요하지 않음', 'border-amber-300 bg-amber-50', 'text-amber-800', '부서·동료와 나누거나 짧게 끝냅니다.'], 4: ['🧹 줄이기', '긴급하지도 중요하지도 않음', 'border-slate-300 bg-slate-50', 'text-slate-700', '미루거나 지워도 되는지 검토합니다.'] };
 const schedSort = (a, b) => (a.date + (a.time || '99:99')).localeCompare(b.date + (b.time || '99:99'));
 function schedStore() { save(K7.sched, scheds); schedRender(); }
 function schedFillCats() { const el = $('schedCat'); if (el && !el.options.length) el.innerHTML = SCHED_CAT.map(c => `<option value="${c[0]}">${c[1]}</option>`).join(''); }
@@ -3550,7 +3573,7 @@ function schedReset() { $('schedForm').reset(); $('schedEditId').value = ''; $('
 function schedAddDays(d, n, monthly) { const x = new Date(d + 'T00:00:00'); if (monthly) { const day = x.getDate(); x.setDate(1); x.setMonth(x.getMonth() + n); const last = new Date(x.getFullYear(), x.getMonth() + 1, 0).getDate(); x.setDate(Math.min(day, last)); } else x.setDate(x.getDate() + n * 7); return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0'); }
 function schedSave(e) {
   if (e) e.preventDefault();
-  const v = { date: $('schedDate').value, time: $('schedTime').value, title: $('schedTitle').value.trim(), cat: $('schedCat').value, memo: $('schedMemo').value.trim() };
+  const v = { date: $('schedDate').value, time: $('schedTime').value, title: $('schedTitle').value.trim(), cat: $('schedCat').value, memo: $('schedMemo').value.trim(), imp: $('schedImp').checked, urg: $('schedUrg').value };
   if (!v.date || !v.title) { toast('날짜와 일정명을 입력하세요.'); return; }
   const id = $('schedEditId').value;
   if (id) { const it = scheds.find(x => x.id === id); if (it) Object.assign(it, v); toast('일정을 수정했습니다.'); }
@@ -3561,7 +3584,7 @@ function schedSave(e) {
   }
   scheds.sort(schedSort); schedStore(); schedReset();
 }
-function schedEdit(id) { const it = scheds.find(x => x.id === id); if (!it) return; $('schedEditId').value = id; $('schedDate').value = it.date; $('schedTime').value = it.time || ''; $('schedTitle').value = it.title; $('schedCat').value = it.cat; $('schedMemo').value = it.memo || ''; $('schedRepeat').value = ''; $('schedRepeat').disabled = true; $('schedFormTitle').textContent = '일정 수정'; $('schedTitle').focus(); }
+function schedEdit(id) { const it = scheds.find(x => x.id === id); if (!it) return; $('schedEditId').value = id; $('schedDate').value = it.date; $('schedTime').value = it.time || ''; $('schedTitle').value = it.title; $('schedCat').value = it.cat; $('schedMemo').value = it.memo || ''; $('schedImp').checked = !!it.imp; $('schedUrg').value = it.urg || 'auto'; $('schedRepeat').value = ''; $('schedRepeat').disabled = true; $('schedFormTitle').textContent = '일정 수정'; $('schedTitle').focus(); }
 function schedToggle(id) { const it = scheds.find(x => x.id === id); if (it) { it.done = !it.done; schedStore(); } }
 function schedDel(id) {
   const it = scheds.find(x => x.id === id); if (!it) return;
@@ -3598,10 +3621,11 @@ function schedItemHtml(it) {
 }
 function schedRender() {
   if (!$('ad-7')) return;
-  schedFillCats(); paintGroup('schedV-', ['up', 'all', 'done'], schedView);
+  schedFillCats(); paintGroup('schedV-', ['mx', 'up', 'all', 'done'], schedView);
   const t = today(), open = scheds.filter(x => !x.done), late = open.filter(x => x.date < t), tod = open.filter(x => x.date === t), wk = open.filter(x => { const n = schedDiff(x.date); return n >= 0 && n <= 7; });
-  $('schedBadge').textContent = (tod.length || late.length) ? `· 오늘 ${tod.length}${late.length ? ' · 지남 ' + late.length : ''}` : '';
-  $('schedSummary').innerHTML = [['오늘', tod.length, 'text-emerald-700'], ['7일 이내', wk.length, 'text-amber-700'], ['기한 지남', late.length, 'text-rose-700']].map(x => `<div class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-center"><p class="text-xs font-bold text-slate-600">${x[0]}</p><p class="text-2xl font-black num ${x[2]}">${x[1]}</p></div>`).join('');
+  const q1 = open.filter(x => schedQ(x) === 1).length; $('schedBadge').textContent = (q1 || tod.length || late.length) ? `· 🔥${q1} · 오늘 ${tod.length}${late.length ? ' · 지남 ' + late.length : ''}` : '';
+  $('schedSummary').innerHTML = [['🔥 지금 하기', open.filter(x => schedQ(x) === 1).length, 'text-rose-700'], ['오늘', tod.length, 'text-emerald-700'], ['7일 이내', wk.length, 'text-amber-700'], ['기한 지남', late.length, 'text-rose-700']].map(x => `<div class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-center"><p class="text-xs font-bold text-slate-600">${x[0]}</p><p class="text-2xl font-black num ${x[2]}">${x[1]}</p></div>`).join('');
+  const mxOn = schedView === 'mx' && !schedDay; $('schedMatrix').innerHTML = mxOn ? schedMatrixHtml(open) : ''; $('schedList').hidden = mxOn;
   let list;
   if (schedDay) list = scheds.filter(x => x.date === schedDay);
   else if (schedView === 'done') list = scheds.filter(x => x.done).reverse();
@@ -3610,6 +3634,13 @@ function schedRender() {
   $('schedFilterNote').innerHTML = schedDay ? `<p class="text-xs font-bold text-slate-700">${esc(schedDay)} 일정만 보는 중 · <button type="button" class="underline" onclick="schedPick('${schedDay}')">전체로 돌아가기</button></p>` : '';
   $('schedList').innerHTML = list.length ? list.map(schedItemHtml).join('') : `<li class="rounded-xl bg-slate-50 border border-dashed border-slate-300 p-5 text-center text-sm text-slate-600">${schedView === 'done' && !schedDay ? '완료한 일정이 없습니다.' : '등록된 일정이 없습니다. 왼쪽에서 추가하세요.'}</li>`;
   schedRenderCal();
+}
+function schedImpToggle(id) { const it = scheds.find(x => x.id === id); if (it) { it.imp = !it.imp; schedStore(); } }
+function schedUrgToggle(id) { const it = scheds.find(x => x.id === id); if (it) { it.urg = schedUrgent(it) ? 'n' : 'y'; schedStore(); } }
+function schedMatrixHtml(open) {
+  const by = { 1: [], 2: [], 3: [], 4: [] }; open.forEach(it => by[schedQ(it)].push(it));
+  const row = it => { const n = schedDiff(it.date), late = n < 0; return `<li class="rounded-lg bg-white border border-slate-200 p-2"><div class="flex items-start gap-2"><input type="checkbox" class="mt-0.5 w-4 h-4 accent-emerald-600" onchange="schedToggle('${it.id}')" aria-label="완료 표시: ${esc(it.title)}" /><button type="button" onclick="schedEdit('${it.id}')" class="flex-1 text-left text-sm font-bold text-slate-900 leading-snug">${esc(it.title)}</button><span class="text-[11px] font-black num ${late ? 'text-rose-700' : n <= 3 ? 'text-amber-700' : 'text-slate-500'}">${late ? '지남 ' : ''}${schedDday(it.date)}</span></div><div class="mt-1 flex flex-wrap items-center gap-1 pl-6"><span class="text-[11px] text-slate-600 num">${esc(it.date.slice(5))}${it.time ? ' ' + esc(it.time) : ''} · ${schedCat(it.cat)[1]}</span><button type="button" onclick="schedImpToggle('${it.id}')" class="ml-auto text-[11px] font-bold px-1.5 py-0.5 rounded border border-slate-300 hover:bg-slate-100" title="중요 표시 바꾸기">${it.imp ? '⭐ 중요 해제' : '☆ 중요로'}</button><button type="button" onclick="schedUrgToggle('${it.id}')" class="text-[11px] font-bold px-1.5 py-0.5 rounded border border-slate-300 hover:bg-slate-100" title="긴급 표시 바꾸기">${schedUrgent(it) ? '⚡ 긴급 해제' : '⚡ 긴급으로'}</button></div></li>`; };
+  return `<div class="grid sm:grid-cols-2 gap-3">${[1, 2, 3, 4].map(q => { const Q = SCHED_QS[q], L = by[q]; return `<section class="rounded-2xl border-2 ${Q[2]} p-3" aria-label="${Q[0]}"><div class="flex items-baseline justify-between gap-2"><h4 class="text-sm font-black ${Q[3]}">${Q[0]} <span class="num">${L.length}</span></h4><span class="text-[11px] font-bold text-slate-600">${Q[1]}</span></div><p class="mt-0.5 text-[11px] text-slate-600">${Q[4]}</p><ul class="mt-2 space-y-1.5 max-h-72 overflow-auto">${L.length ? L.map(row).join('') : '<li class="text-xs text-slate-500 py-2 text-center">비어 있음</li>'}</ul></section>`; }).join('')}</div><p class="mt-2 text-xs text-slate-500">긴급은 ‘자동’이면 마감 3일 이내(지난 일 포함)로 판단합니다. 일정명을 누르면 수정 칸으로 불러옵니다.</p>`;
 }
 function schedRenderCal() {
   if (!$('schedCal')) return;
@@ -3793,7 +3824,85 @@ const _applyTeacher16 = applyTeacher; applyTeacher = function (rows) {
   return r;
 };
 function init19() { /* 데이터 준비만 — 화면은 각 렌더 함수가 그림 */ }
-init(); init11(); init12(); init13(); init14(); init15(); init16(); init17(); init18(); init19();
+/* ===== v11.6 쇼케이스 카드 직접 수정 · 사이트 전체 링크 편집 ===== */
+/* 1) 쇼케이스: 관제실을 연 상태에서 카드마다 [수정·순서·삭제], 상단에 [사례 추가·구성·이름 표시] */
+const _renderCases17 = renderCases; renderCases = function () {
+  _renderCases17(); const host = $('caseGrid'); if (!host) return; let bar = $('scAdminBar');
+  if (!S.unlocked) { if (bar) bar.remove(); return; }
+  if (!bar) { bar = document.createElement('div'); bar.id = 'scAdminBar'; bar.setAttribute('data-dyn', ''); host.insertAdjacentElement('beforebegin', bar); }
+  const sc = scCfg(), nm = nameMode();
+  bar.className = 'mt-6 rounded-2xl border-2 border-dashed border-rose-300 bg-rose-50 p-4';
+  bar.innerHTML = `<div class="flex flex-wrap items-end gap-3"><p class="flex-1 min-w-[14rem] text-sm font-bold text-rose-900">🔓 쇼케이스 직접 편집 — 카드의 ✏️로 제목·설명·학생·링크·이미지를 고치고, ▲▼로 순서를 바꿉니다. 저장하면 배포 파일에도 반영됩니다.</p>
+    <label class="block"><span class="lbl">구성 방식</span><select class="inp w-auto py-1.5 text-sm" onchange="scLayout(this.value)">${[['mix', '수상+갤러리+타임라인'], ['cards', '카드'], ['gallery', '갤러리'], ['timeline', '타임라인']].map(o => `<option value="${o[0]}" ${sc.layout === o[0] ? 'selected' : ''}>${o[1]}</option>`).join('')}</select></label>
+    <label class="block"><span class="lbl">학생 이름</span><select class="inp w-auto py-1.5 text-sm" onchange="scNameMode(this.value)">${[['mask', '성만(땡땡)'], ['real', '실명(동의 Y만)'], ['hide', '숨김']].map(o => `<option value="${o[0]}" ${nm === o[0] ? 'selected' : ''}>${o[1]}</option>`).join('')}</select></label>
+    <button type="button" onclick="scAdd17()" class="btn btn-emerald btn-sm">＋ 사례 추가</button><button type="button" onclick="scRestore()" class="btn btn-ghost btn-sm">기본 사례 복원</button></div>`;
+  host.querySelectorAll('article[data-cid]').forEach(a => {
+    const id = a.dataset.cid, i = CASES.findIndex(c => c.id === id);
+    a.insertAdjacentHTML('beforeend', `<div class="mt-3 pt-3 border-t border-dashed border-rose-300 flex flex-wrap gap-1"><button type="button" onclick="scEdit17('${esc(id)}')" class="btn btn-sm bg-rose-600 text-white">✏️ 수정</button><button type="button" onclick="scMove('${esc(id)}',-1)" class="btn btn-ghost btn-sm" ${i <= 0 ? 'disabled' : ''} aria-label="앞으로">▲</button><button type="button" onclick="scMove('${esc(id)}',1)" class="btn btn-ghost btn-sm" ${i >= CASES.length - 1 ? 'disabled' : ''} aria-label="뒤로">▼</button><button type="button" onclick="scDel('${esc(id)}')" class="btn btn-ghost btn-sm" aria-label="삭제">🗑️</button></div>`);
+  });
+};
+function scEdit17(id) {
+  const c = CASES.find(x => x.id === id); if (!c) return; S.scEd = id;
+  const u = links.cases[id] || c.url || '', v = Object.assign({}, c, { url: u });
+  $('scEdBody').innerHTML = C_FIELDS.map(([k, lab, rows]) => `<div class="${rows > 1 || k === 'desc' ? 'sm:col-span-2' : ''}"><label class="lbl" for="scE-${k}">${esc(lab)}</label>${rows > 1 ? `<textarea id="scE-${k}" class="inp" rows="${rows}">${esc(v[k] || '')}</textarea>` : `<input id="scE-${k}" class="inp" value="${esc(v[k] || '')}" ${k === 'url' || k === 'img' ? 'type="url" placeholder="https://"' : ''} />`}</div>`).join('')
+    + `<div><label class="lbl" for="scE-stage">이커리어 단계(카드 색)</label><select id="scE-stage" class="inp">${[1, 2, 3, 4, 5, 6].map(n => `<option value="${n}" ${Number(c.stage) === n ? 'selected' : ''}>Stage ${n}</option>`).join('')}</select></div>`;
+  openModal('m-scedit'); setTimeout(() => { const t = $('scE-title'); if (t) t.focus(); }, 50);
+}
+function scEditSave() {
+  const id = S.scEd, c = CASES.find(x => x.id === id); if (!c) return; const o = {};
+  C_FIELDS.forEach(([k]) => { const el = $('scE-' + k); if (el) o[k] = el.value.trim(); });
+  if (!o.title) return toast('프로젝트명은 비워 둘 수 없습니다.');
+  for (const k of ['url', 'img']) if (o[k] && !safeUrl(o[k])) return toast(`${k === 'url' ? '자료 링크' : '이미지 주소'}는 https://로 시작하는 주소여야 합니다.`);
+  o.stage = Number($('scE-stage').value) || 6; if (o.consent) o.consent = o.consent.toUpperCase();
+  content.cases[id] = o; Object.assign(c, o); links.cases[id] = safeUrl(o.url) || ''; save(K.links, links);
+  saveContent(); closeModal(); scRebuild(false); renderCases(); toast('쇼케이스 사례를 저장했습니다.');
+}
+function scEditReset() { const id = S.scEd; if (!id || !confirm('이 사례를 처음 기본값으로 되돌릴까요?')) return; delete content.cases[id]; delete links.cases[id]; save(K.links, links); saveContent(); closeModal(); scRebuild(false); renderCases(); toast('기본값으로 되돌렸습니다.'); }
+function scAdd17() { const id = 'work-x' + Date.now(), sc = content.showcase; sc.added = (sc.added || []).concat({ id, stage: 6, stageTag: '학생 프로젝트', title: '새 사례', by: '', ym: '', badge: '', desc: '', url: '' }); scSave(); scRebuild(false); renderCases(); scEdit17(id); }
+const _unlock17 = unlock; unlock = function () { _unlock17(); renderCases(); };
+const _lock17 = lockAdmin; lockAdmin = function () { _lock17(); renderCases(); };
+
+/* 2) 사이트 전체 링크 바꾸기: content.hrefs = { 원래주소: 새주소 } — 화면의 모든 링크와 자료 열기에 적용 */
+const HREF_SKIP = /^https?:\/\/(cdn\.|unpkg\.com|fonts\.|www\.w3\.org|script\.google\.com|calendar\.google\.com\/calendar\/render|cdnjs\.|chart|api\.|generativelanguage)/i;
+const hrefMap = u => { const m = content.hrefs || {}; return (u && m[u]) || u; };
+const _openLink17 = openLink; openLink = function (title, raw) { return _openLink17(title, hrefMap(String(raw || '').trim())); };
+function applyHrefs() {
+  const m = content.hrefs || {}; document.querySelectorAll('a[href]').forEach(a => {
+    const o = a.dataset.ohref || a.getAttribute('href'); if (!/^https?:/i.test(o)) return;
+    const n = m[o]; if (n && safeUrl(n)) { a.dataset.ohref = o; if (a.getAttribute('href') !== n) a.setAttribute('href', n); } else if (a.dataset.ohref) { a.setAttribute('href', a.dataset.ohref); delete a.dataset.ohref; }
+  });
+}
+let _hrefTick = 0; new MutationObserver(() => { if (_hrefTick) return; _hrefTick = requestAnimationFrame(() => { _hrefTick = 0; applyHrefs(); }); }).observe(document.body, { childList: true, subtree: true });
+function siteUrls() {
+  const found = new Map(), add = (u, label) => { u = u.replace(/[.,;:]+$/, ''); if (!/^https?:\/\//i.test(u) || HREF_SKIP.test(u) || u.length > 400) return; const cur = found.get(u); if (!cur) found.set(u, new Set(label ? [label] : [])); else if (label && cur.size < 3) cur.add(label); };
+  document.querySelectorAll('a[href]').forEach(a => add(a.dataset.ohref || a.getAttribute('href'), (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40)));
+  CASES.forEach(c => { if (c.url) add(c.url, '쇼케이스 · ' + c.title); });
+  const scan = (obj, label) => { const s = JSON.stringify(obj || {}); (s.match(/https?:\/\/[^\s"'<>`\\)]+/g) || []).forEach(u => add(u, label)); };
+  scan(links, '마스터 링크'); scan(Object.assign({}, content, { hrefs: null }), '편집 내용');
+  (document.body.innerHTML.match(/https?:\/\/[^\s"'<>`\\)&]+/g) || []).forEach(u => add(u, ''));
+  Object.keys(content.hrefs || {}).forEach(u => add(u, ''));
+  return Array.from(found.entries()).map(([u, l]) => ({ u, l: Array.from(l).filter(Boolean).join(' / ') })).sort((a, b) => a.u.localeCompare(b.u));
+}
+function renderHrefEd() {
+  const box = $('hrefEd'); if (!box) return; const q = ($('hrefQ') && $('hrefQ').value || '').trim().toLowerCase(), m = content.hrefs || {};
+  const list = siteUrls().filter(x => !q || (x.u + ' ' + x.l + ' ' + (m[x.u] || '')).toLowerCase().includes(q));
+  $('hrefCount').textContent = `링크 ${list.length}개 · 바꾼 링크 ${Object.keys(m).length}개`;
+  box.innerHTML = list.map((x, i) => `<div class="rounded-xl border ${m[x.u] ? 'border-emerald-400 bg-emerald-50' : 'border-slate-200 bg-white'} p-3"><p class="text-xs font-bold text-slate-700 break-all">${x.l ? esc(x.l) + ' · ' : ''}<a href="${esc(x.u)}" target="_blank" rel="noopener" class="underline text-indigo-700">${esc(x.u.length > 90 ? x.u.slice(0, 90) + '…' : x.u)}</a></p><div class="mt-2 flex gap-2"><label class="sr-only" for="hr-${i}">새 주소</label><input id="hr-${i}" data-orig="${esc(x.u)}" type="url" class="inp text-xs py-1.5" placeholder="바꿀 새 주소(https://) — 비우면 원래 주소" value="${esc(m[x.u] || '')}" /></div></div>`).join('') || '<p class="text-sm text-slate-600">찾는 링크가 없습니다.</p>';
+}
+function saveHrefs() {
+  const m = Object.assign({}, content.hrefs || {}); let bad = 0, n = 0;
+  document.querySelectorAll('#hrefEd input[data-orig]').forEach(el => { const o = el.dataset.orig, v = el.value.trim(); if (!v || v === o) { delete m[o]; return; } const ok = safeUrl(v); if (!ok) { bad++; return; } m[o] = ok; n++; });
+  content.hrefs = m; saveContent(); applyHrefs(); renderHrefEd(); toast(bad ? `https:// 주소가 아닌 ${bad}건은 저장하지 않았습니다.` : `링크를 저장했습니다(바꾼 링크 ${Object.keys(m).length}개). 배포 파일에도 반영됩니다.`);
+}
+const _renderLinks17 = renderLinks; renderLinks = function () {
+  _renderLinks17(); const p = $('linkPanel'); if (!p) return;
+  p.insertAdjacentHTML('beforeend', `<section class="card p-6 border-2 border-emerald-300"><h3 class="text-base font-extrabold text-slate-900">⑦ 사이트 전체 링크 찾기·바꾸기</h3><p class="mt-1 text-sm text-slate-700 leading-relaxed">홈페이지에 들어 있는 모든 외부 링크(프로필·자료실·커뮤니티·쇼케이스·안내 문구 등)를 한곳에 모았습니다. 바꿀 링크에 새 주소를 넣고 [전체 링크 저장]을 누르면, 그 주소를 쓰는 모든 곳이 새 주소로 열립니다. 위 ①~⑥ 칸에서 바꿀 수 있는 링크는 그곳에서 고쳐도 됩니다.</p>
+    <div class="mt-3 flex flex-wrap items-center gap-2"><label class="sr-only" for="hrefQ">링크 검색</label><input id="hrefQ" class="inp w-64 py-1.5 text-sm" placeholder="검색(예: canva, padlet, 자료 이름)" oninput="renderHrefEd()" /><span id="hrefCount" class="text-xs font-bold text-slate-600 num"></span><button type="button" onclick="saveHrefs()" class="btn btn-emerald btn-sm">💾 전체 링크 저장</button></div>
+    <div id="hrefEd" data-dyn class="mt-3 grid md:grid-cols-2 gap-2 max-h-[32rem] overflow-auto pr-1"></div></section>`);
+  renderHrefEd();
+};
+function init20() { applyHrefs(); }
+init(); init11(); init12(); init13(); init14(); init15(); init16(); init17(); init18(); init19(); init20();
   </script>
 </body>
 </html>
